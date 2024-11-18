@@ -1,4 +1,4 @@
-import { FaGithub, FaYoutube, FaDribbble } from "react-icons/fa";
+import { FaGithub, FaDribbble } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
@@ -56,6 +56,15 @@ const Banner = () => {
               Software Engineering student and Fullstack Web Developer. I enjoy
               challenges and learning new things.
             </motion.p>
+
+            <motion.h2
+              variants={fadeIn("up", 0.5)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.7 }}
+              className="mv-8 max-w-lg mx-auto lg:mx-0 pb-3"
+            >This site is still under construction, almost nothing works for now</motion.h2>
+
             <motion.div
               variants={fadeIn("up", 0.7)}
               initial="hidden"
@@ -76,10 +85,7 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className="flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0"
             >
-              <a href="#">
-                <FaYoutube></FaYoutube>
-              </a>
-              <a href="#">
+              <a href="https://github.com/VelaSam">
                 <FaGithub></FaGithub>
               </a>
               <a href="#">
