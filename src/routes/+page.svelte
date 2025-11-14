@@ -13,10 +13,10 @@
 			<h1 class="name">Samuel Velasco</h1>
 			<p class="title">Programmer & Profesionnal Vim Tweaker</p>
 			<p class="bio">
-				Just a kid trying to figure things out, one thing at a time. 
-				Not taking myself too seriously, but definitely taking life seriously.
+				One day I will have things figured out. Today is not that day.
+				Don't take yourself too seriously.
 
-				You should try the moonlander.
+				You should try the moonlander you'll impress your boss.
 			</p>
 			
 			<div class="contact-section">
