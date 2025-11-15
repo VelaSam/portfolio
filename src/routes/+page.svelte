@@ -15,8 +15,9 @@
 			<p class="bio">
 				One day I will have things figured out. Today is not that day.
 				Don't take yourself too seriously.
-
-				You should try the moonlander you'll impress your boss.
+			</p>
+			<p>
+				You should try the moonlander
 			</p>
 			
 			<div class="contact-section">
