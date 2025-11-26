@@ -16,7 +16,7 @@
 				One day I will have things figured out. Today is not that day.
 				Don't take yourself too seriously.
 			</p>
-			<p>
+			<p class="bio">
 				You should try the moonlander
 			</p>
 			
