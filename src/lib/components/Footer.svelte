@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { i18n } from '$lib/i18n.svelte';
+
 	const currentYear = new Date().getFullYear();
 </script>
 
@@ -11,25 +13,27 @@
 					<span class="brand-title">Samuel Velasco</span>
 				</div>
 				<p class="brand-desc">
-					Développeur logiciel passionné par les systèmes embarqués, la vision par ordinateur et la robotique.
+					{i18n.locale === 'en'
+						? 'Software engineer exploring bare-metal microcontrollers, computer vision pipelines, and robotics.'
+						: 'Développeur logiciel passionné par les systèmes embarqués, la vision par ordinateur et la robotique.'}
 				</p>
 			</div>
 
 			<div class="footer-cols">
 				<div class="footer-col">
-					<span class="col-title">Navigation</span>
-					<a href="/" class="col-link">Accueil</a>
-					<a href="/cv" class="col-link">CV & Expérience</a>
-					<a href="/contact" class="col-link">Contact</a>
+					<span class="col-title">{i18n.locale === 'en' ? 'Navigation' : 'Navigation'}</span>
+					<a href="/" class="col-link interactive">{i18n.locale === 'en' ? 'Home' : 'Accueil'}</a>
+					<a href="/cv" class="col-link interactive">{i18n.locale === 'en' ? 'Resume & Experience' : 'CV & Expérience'}</a>
+					<a href="/contact" class="col-link interactive">{i18n.locale === 'en' ? 'Contact' : 'Contact'}</a>
 				</div>
 
 				<div class="footer-col">
-					<span class="col-title">Réseaux</span>
+					<span class="col-title">{i18n.locale === 'en' ? 'Networks' : 'Réseaux'}</span>
 					<a
 						href="https://github.com/VelaSam"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="col-link"
+						class="col-link interactive"
 					>
 						GitHub ↗
 					</a>
@@ -37,11 +41,11 @@
 						href="https://www.linkedin.com/in/samuelvelascodev"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="col-link"
+						class="col-link interactive"
 					>
 						LinkedIn ↗
 					</a>
-					<a href="mailto:svelasco514@gmail.com" class="col-link">
+					<a href="mailto:svelasco514@gmail.com" class="col-link interactive">
 						Email ↗
 					</a>
 				</div>
@@ -51,12 +55,23 @@
 		<div class="footer-divider"></div>
 
 		<div class="footer-bottom">
-			<p class="copyright">
-				© {currentYear} Samuel Velasco • Conçu avec soin & typographie éditoriale
-			</p>
+			<!-- Funny Self-Deprecating Easter Egg (Clickable) -->
+			<div class="easter-egg-wrap">
+				<span class="copyright-main">© {currentYear} Samuel Velasco</span>
+				<span class="separator">•</span>
+				<button
+					class="easter-egg-btn interactive"
+					onclick={() => i18n.cycleEgg()}
+					title={i18n.locale === 'en' ? 'Click for another quote' : 'Cliquer pour une autre citation'}
+				>
+					<span class="egg-quote">{i18n.currentEgg}</span>
+					<span class="egg-dice" aria-hidden="true">🎲</span>
+				</button>
+			</div>
+
 			<p class="location">
 				<span class="location-dot"></span>
-				Basé à Montréal, QC
+				{i18n.locale === 'en' ? 'Montréal, QC (EST)' : 'Montréal, QC'}
 			</p>
 		</div>
 	</div>
@@ -66,7 +81,7 @@
 	.footer {
 		margin-top: 6rem;
 		border-top: 1px solid var(--border-subtle);
-		background: rgba(247, 243, 235, 0.6);
+		background: rgba(246, 241, 233, 0.7);
 		padding: 4rem 1.5rem 3rem;
 	}
 
@@ -94,7 +109,7 @@
 	}
 
 	.brand-icon {
-		width: 24px;
+		width: 22px;
 		height: auto;
 	}
 
@@ -124,10 +139,10 @@
 	}
 
 	.col-title {
-		font-size: 0.75rem;
+		font-size: 0.72rem;
 		font-weight: 600;
 		text-transform: uppercase;
-		letter-spacing: 0.05em;
+		letter-spacing: 0.06em;
 		color: var(--text-tertiary);
 		margin-bottom: 0.35rem;
 	}
@@ -156,13 +171,57 @@
 		justify-content: space-between;
 		align-items: center;
 		flex-wrap: wrap;
-		gap: 1rem;
+		gap: 1.25rem;
 		font-size: 0.82rem;
 		color: var(--text-tertiary);
 	}
 
-	.copyright {
-		margin: 0;
+	.easter-egg-wrap {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.copyright-main {
+		font-weight: 600;
+		color: var(--text-primary);
+	}
+
+	.separator {
+		color: var(--text-muted);
+	}
+
+	.easter-egg-btn {
+		background: rgba(255, 255, 255, 0.6);
+		border: 1px solid var(--border-subtle);
+		border-radius: 3px; /* Sharp corners */
+		padding: 0.25rem 0.55rem;
+		font-family: inherit;
+		font-size: 0.82rem;
+		color: var(--text-secondary);
+		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		text-align: left;
+		transition: all 0.2s ease;
+	}
+
+	.easter-egg-btn:hover {
+		background: #ffffff;
+		border-color: var(--border-medium);
+		color: var(--text-primary);
+		transform: translateY(-1px);
+	}
+
+	.egg-quote {
+		font-style: italic;
+	}
+
+	.egg-dice {
+		font-size: 0.85rem;
+		opacity: 0.7;
 	}
 
 	.location {
@@ -173,9 +232,9 @@
 	}
 
 	.location-dot {
-		width: 6px;
-		height: 6px;
-		border-radius: 50%;
+		width: 5px;
+		height: 5px;
+		border-radius: 1px; /* Sharp */
 		background: #10b981;
 	}
 

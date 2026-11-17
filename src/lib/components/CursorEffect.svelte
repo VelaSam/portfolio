@@ -1,17 +1,17 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	let mouseX = $state(-100);
-	let mouseY = $state(-100);
-	let followerX = $state(-100);
-	let followerY = $state(-100);
+	let mouseX = $state(-200);
+	let mouseY = $state(-200);
+	let followerX = $state(-200);
+	let followerY = $state(-200);
 	let isHovering = $state(false);
+	let isOverComponent = $state(false);
 	let isClicking = $state(false);
 	let isVisible = $state(false);
 	let isTouch = $state(false);
 
 	onMount(() => {
-		// Detect touch device
 		if (window.matchMedia('(pointer: coarse)').matches) {
 			isTouch = true;
 			return;
@@ -32,18 +32,32 @@
 
 		const handleOver = (e: MouseEvent) => {
 			const target = e.target as HTMLElement | null;
-			if (
-				target &&
-				(target.closest('a') ||
-					target.closest('button') ||
-					target.closest('input') ||
-					target.closest('textarea') ||
-					target.closest('.interactive'))
-			) {
-				isHovering = true;
-			} else {
-				isHovering = false;
-			}
+			if (!target) return;
+
+			// Check if hovering clickable links/buttons
+			const isClickable = Boolean(
+				target.closest('a') ||
+				target.closest('button') ||
+				target.closest('input') ||
+				target.closest('textarea') ||
+				target.closest('.interactive')
+			);
+			isHovering = isClickable;
+
+			// Check if cursor is over any content surface/card/component
+			const isComponent = Boolean(
+				target.closest('.skill-card') ||
+				target.closest('.timeline-item') ||
+				target.closest('.project-box') ||
+				target.closest('.info-card') ||
+				target.closest('.form-card') ||
+				target.closest('.edu-card') ||
+				target.closest('.quote-container') ||
+				target.closest('.cta-banner-inner') ||
+				target.closest('.navbar') ||
+				target.closest('.milestone-item')
+			);
+			isOverComponent = isComponent;
 		};
 
 		window.addEventListener('mousemove', handleMouseMove, { passive: true });
@@ -53,9 +67,9 @@
 		document.addEventListener('mouseleave', handleMouseLeave);
 		document.addEventListener('mouseenter', handleMouseEnter);
 
-		// Physics loop: Slow ominous trailing with smooth dampening
+		// Physics loop: Much slower, ominous heavy drag
 		const loop = () => {
-			const ease = 0.09; // Slow ominous drag
+			const ease = 0.04; // Very slow and ominous
 			followerX += (mouseX - followerX) * ease;
 			followerY += (mouseY - followerY) * ease;
 			rafId = requestAnimationFrame(loop);
@@ -76,19 +90,19 @@
 </script>
 
 {#if !isTouch}
-	<!-- Ominous blurry shadow trailing behind -->
+	<!-- Ominous blurry shadow residing in the background -->
 	<div
 		class="ominous-aura"
 		class:visible={isVisible}
-		class:hovering={isHovering}
+		class:over-component={isOverComponent}
 		class:clicking={isClicking}
 		style="transform: translate3d({followerX}px, {followerY}px, 0);"
 	>
-		<div class="shadow-core"></div>
+		<div class="shadow-core" class:deep-blur={isOverComponent}></div>
 		<div class="pixel-grain"></div>
 	</div>
 
-	<!-- Precision magnetic dot -->
+	<!-- Sharp precision cursor point -->
 	<div
 		class="cursor-dot"
 		class:visible={isVisible}
@@ -99,24 +113,25 @@
 {/if}
 
 <style>
+	/* Positioned far in the background behind components */
 	.ominous-aura {
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 320px;
-		height: 320px;
-		margin-top: -160px;
-		margin-left: -160px;
+		width: 220px;
+		height: 220px;
+		margin-top: -110px;
+		margin-left: -110px;
 		pointer-events: none;
-		z-index: 9998;
+		z-index: 1; /* In the background layer */
 		opacity: 0;
 		mix-blend-mode: multiply;
-		transition: opacity 0.4s ease, transform 0.05s linear;
+		transition: opacity 0.6s ease;
 		will-change: transform;
 	}
 
 	.ominous-aura.visible {
-		opacity: 0.85;
+		opacity: 0.28;
 	}
 
 	.shadow-core {
@@ -125,62 +140,61 @@
 		border-radius: 50%;
 		background: radial-gradient(
 			circle,
-			rgba(20, 16, 25, 0.22) 0%,
-			rgba(88, 28, 135, 0.16) 35%,
-			rgba(124, 58, 237, 0.08) 55%,
+			rgba(20, 16, 25, 0.45) 0%,
+			rgba(88, 28, 135, 0.35) 30%,
+			rgba(124, 58, 237, 0.18) 50%,
 			rgba(0, 0, 0, 0) 70%
 		);
 		filter: blur(28px);
 		transform: scale(1);
-		transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+		transition: filter 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+	}
+
+	/* When passing over components, blob diffuses heavily into the background */
+	.shadow-core.deep-blur {
+		filter: blur(55px);
+		transform: scale(1.3);
+		opacity: 0.7;
+	}
+
+	.ominous-aura.over-component {
+		opacity: 0.18;
 	}
 
 	.pixel-grain {
 		position: absolute;
-		inset: 20%;
+		inset: 15%;
 		border-radius: 50%;
-		opacity: 0.35;
-		background-image: radial-gradient(rgba(28, 25, 23, 0.25) 1px, transparent 1px);
-		background-size: 4px 4px;
-		filter: blur(1px);
+		opacity: 0.2;
+		background-image: radial-gradient(rgba(28, 25, 23, 0.3) 1px, transparent 1px);
+		background-size: 3px 3px;
+		filter: blur(0.5px);
 		mix-blend-mode: overlay;
 		pointer-events: none;
 	}
 
-	.ominous-aura.hovering .shadow-core {
-		transform: scale(1.4);
-		filter: blur(34px);
-		background: radial-gradient(
-			circle,
-			rgba(109, 40, 217, 0.28) 0%,
-			rgba(20, 16, 25, 0.25) 40%,
-			rgba(124, 58, 237, 0.12) 60%,
-			rgba(0, 0, 0, 0) 75%
-		);
-	}
-
 	.ominous-aura.clicking .shadow-core {
-		transform: scale(0.9);
-		filter: blur(20px);
+		transform: scale(0.85);
+		filter: blur(22px);
 	}
 
 	.cursor-dot {
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 8px;
-		height: 8px;
-		margin-top: -4px;
-		margin-left: -4px;
-		border-radius: 50%;
+		width: 6px;
+		height: 6px;
+		margin-top: -3px;
+		margin-left: -3px;
+		border-radius: 1px; /* Sharper geometric designer dot */
 		background: #6d28d9;
 		pointer-events: none;
 		z-index: 9999;
 		opacity: 0;
-		box-shadow: 0 0 10px rgba(109, 40, 217, 0.4);
-		transition: opacity 0.2s ease, width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-			height 0.25s cubic-bezier(0.16, 1, 0.3, 1), margin 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-			background-color 0.25s ease;
+		box-shadow: 0 0 8px rgba(109, 40, 217, 0.3);
+		transition: opacity 0.2s ease, width 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+			height 0.2s cubic-bezier(0.16, 1, 0.3, 1), margin 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+			background-color 0.2s ease, border-radius 0.2s ease;
 		will-change: transform;
 	}
 
@@ -189,17 +203,18 @@
 	}
 
 	.cursor-dot.hovering {
-		width: 32px;
-		height: 32px;
-		margin-top: -16px;
-		margin-left: -16px;
-		background: rgba(109, 40, 217, 0.12);
-		border: 1.5px solid rgba(109, 40, 217, 0.6);
+		width: 24px;
+		height: 24px;
+		margin-top: -12px;
+		margin-left: -12px;
+		background: rgba(109, 40, 217, 0.08);
+		border: 1px solid rgba(109, 40, 217, 0.7);
+		border-radius: 3px; /* Sharp corners on hover */
 		backdrop-filter: blur(2px);
 	}
 
 	.cursor-dot.clicking {
-		transform: scale(0.75);
+		transform: scale(0.7);
 	}
 
 	@media (prefers-reduced-motion: reduce) {

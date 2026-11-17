@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { i18n } from '$lib/i18n.svelte';
+
 	let firstName = $state('');
 	let lastName = $state('');
 	let email = $state('');
@@ -11,33 +13,84 @@
 		if (!firstName || !email || !message) return;
 		submitted = true;
 	}
+
+	const content = $derived({
+		en: {
+			tag: 'Get in Touch',
+			title: 'Let’s talk engineering & systems.',
+			subtitle: 'Whether you have an engineering role, a technical inquiry, or want to discuss bare-metal and robotics, feel free to drop a line.',
+			directTitle: 'Direct Channels',
+			directDesc: 'I typically respond within 24 to 48 business hours.',
+			emailLabel: 'Direct Email',
+			phoneLabel: 'Mobile Phone',
+			locLabel: 'Location',
+			locVal: 'Montréal, Québec, Canada',
+			socialTitle: 'Online Profiles',
+			firstNameLabel: 'First Name',
+			firstNamePh: 'e.g. Samuel',
+			lastNameLabel: 'Last Name',
+			lastNamePh: 'e.g. Velasco',
+			emailFormLabel: 'Email Address',
+			emailPh: 'you@example.com',
+			subjectLabel: 'Subject',
+			subjectPh: 'Software role, embedded project, etc.',
+			messageLabel: 'Message',
+			messagePh: 'Tell me about your team, project, or technical challenge...',
+			btnSubmit: 'Send Message',
+			successTitle: 'Message Received!',
+			successText: 'Thank you {name}, your message has been recorded. I will get back to you shortly.',
+			btnReset: 'Send another message'
+		},
+		fr: {
+			tag: 'Prendre contact',
+			title: 'Parlons d’ingénierie et de projets.',
+			subtitle: 'Que ce soit pour une opportunité logicielle, une collaboration technique ou une question sur mes projets, n’hésitez pas à m’écrire.',
+			directTitle: 'Coordonnées directes',
+			directDesc: 'Je réponds généralement en moins de 24 à 48 heures ouvrables.',
+			emailLabel: 'Email professionnel',
+			phoneLabel: 'Téléphone mobile',
+			locLabel: 'Localisation',
+			locVal: 'Montréal, Québec, Canada',
+			socialTitle: 'Profils en ligne',
+			firstNameLabel: 'Prénom',
+			firstNamePh: 'Ex. Samuel',
+			lastNameLabel: 'Nom',
+			lastNamePh: 'Ex. Velasco',
+			emailFormLabel: 'Courriel',
+			emailPh: 'votre.nom@exemple.com',
+			subjectLabel: 'Sujet de discussion',
+			subjectPh: 'Opportunité logicielle, projet embarqué, etc.',
+			messageLabel: 'Message',
+			messagePh: 'Parlez-moi de votre projet, de vos besoins ou de votre équipe...',
+			btnSubmit: 'Envoyer le message',
+			successTitle: 'Message reçu !',
+			successText: 'Merci {name}, votre message a été enregistré avec succès. Je vous répondrai dans les plus brefs délais.',
+			btnReset: 'Envoyer un autre message'
+		}
+	}[i18n.locale]);
 </script>
 
 <svelte:head>
-	<title>Contact • Samuel Velasco</title>
+	<title>{i18n.locale === 'en' ? 'Contact • Samuel Velasco' : 'Contact • Samuel Velasco'}</title>
 	<meta
 		name="description"
-		content="Prendre contact avec Samuel Velasco — Développeur Logiciel & Systèmes Embarqués."
+		content="Get in touch with Samuel Velasco — Software Developer & Systems Engineer."
 	/>
 </svelte:head>
 
 <div class="contact-page">
 	<header class="contact-header">
-		<span class="header-tag">Prendre contact</span>
-		<h1 class="contact-title">Parlons d’ingénierie et de projets.</h1>
-		<p class="contact-subtitle">
-			Que ce soit pour une opportunité d’emploi, une collaboration technique ou une question sur mes projets, n’hésitez pas à m’écrire.
-		</p>
+		<span class="header-tag">{content.tag}</span>
+		<h1 class="contact-title">{content.title}</h1>
+		<p class="contact-subtitle">{content.subtitle}</p>
 	</header>
 
 	<div class="contact-grid">
 		<!-- Left: Direct Channels & Information -->
 		<div class="contact-info-col">
-			<div class="info-card">
-				<h2 class="info-card-title">Coordonnées directes</h2>
-				<p class="info-card-desc">
-					Je réponds généralement en moins de 24 à 48 heures ouvrables.
-				</p>
+			<div class="info-card interactive">
+				<h2 class="info-card-title">{content.directTitle}</h2>
+				<p class="info-card-desc">{content.directDesc}</p>
 
 				<div class="channels-list">
 					<a href="mailto:svelasco514@gmail.com" class="channel-item interactive">
@@ -48,7 +101,7 @@
 							</svg>
 						</div>
 						<div class="channel-details">
-							<span class="channel-label">Email professionnel</span>
+							<span class="channel-label">{content.emailLabel}</span>
 							<span class="channel-value">svelasco514@gmail.com</span>
 						</div>
 					</a>
@@ -60,7 +113,7 @@
 							</svg>
 						</div>
 						<div class="channel-details">
-							<span class="channel-label">Téléphone mobile</span>
+							<span class="channel-label">{content.phoneLabel}</span>
 							<span class="channel-value">(438) 923-3372</span>
 						</div>
 					</a>
@@ -73,14 +126,14 @@
 							</svg>
 						</div>
 						<div class="channel-details">
-							<span class="channel-label">Localisation</span>
-							<span class="channel-value">Montréal, Québec, Canada</span>
+							<span class="channel-label">{content.locLabel}</span>
+							<span class="channel-value">{content.locVal}</span>
 						</div>
 					</div>
 				</div>
 
 				<div class="social-box">
-					<span class="social-box-title">Profils en ligne</span>
+					<span class="social-box-title">{content.socialTitle}</span>
 					<div class="social-links-grid">
 						<a
 							href="https://linkedin.com/in/samuelvelascodev"
@@ -113,9 +166,9 @@
 			</div>
 		</div>
 
-		<!-- Right: Clean Contact Form -->
+		<!-- Right: Sharp Contact Form -->
 		<div class="contact-form-col">
-			<div class="form-card">
+			<div class="form-card interactive">
 				{#if submitted}
 					<div class="success-message">
 						<div class="success-icon">
@@ -123,78 +176,78 @@
 								<polyline points="20 6 9 17 4 12"></polyline>
 							</svg>
 						</div>
-						<h3 class="success-title">Message reçu !</h3>
+						<h3 class="success-title">{content.successTitle}</h3>
 						<p class="success-text">
-							Merci <strong>{firstName}</strong>, votre message a été enregistré avec succès. Je vous répondrai dans les plus brefs délais.
+							{content.successText.replace('{name}', firstName)}
 						</p>
 						<button class="btn-reset interactive" onclick={() => (submitted = false)}>
-							Envoyer un autre message
+							{content.btnReset}
 						</button>
 					</div>
 				{:else}
 					<form onsubmit={handleSubmit} class="contact-form">
 						<div class="form-row">
 							<div class="form-group">
-								<label for="firstName" class="form-label">Prénom <span class="required">*</span></label>
+								<label for="firstName" class="form-label">{content.firstNameLabel} <span class="required">*</span></label>
 								<input
 									id="firstName"
 									type="text"
 									class="form-input"
-									placeholder="Ex. Jane"
+									placeholder={content.firstNamePh}
 									bind:value={firstName}
 									required
 								/>
 							</div>
 
 							<div class="form-group">
-								<label for="lastName" class="form-label">Nom</label>
+								<label for="lastName" class="form-label">{content.lastNameLabel}</label>
 								<input
 									id="lastName"
 									type="text"
 									class="form-input"
-									placeholder="Ex. Doe"
+									placeholder={content.lastNamePh}
 									bind:value={lastName}
 								/>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="email" class="form-label">Courriel <span class="required">*</span></label>
+							<label for="email" class="form-label">{content.emailFormLabel} <span class="required">*</span></label>
 							<input
 								id="email"
 								type="email"
 								class="form-input"
-								placeholder="votre.nom@exemple.com"
+								placeholder={content.emailPh}
 								bind:value={email}
 								required
 							/>
 						</div>
 
 						<div class="form-group">
-							<label for="subject" class="form-label">Sujet de discussion</label>
+							<label for="subject" class="form-label">{content.subjectLabel}</label>
 							<input
 								id="subject"
 								type="text"
 								class="form-input"
-								placeholder="Opportunité logicielle, projet embarqué, etc."
+								placeholder={content.subjectPh}
 								bind:value={subject}
 							/>
 						</div>
 
 						<div class="form-group">
-							<label for="message" class="form-label">Message <span class="required">*</span></label>
+							<label for="message" class="form-label">{content.messageLabel} <span class="required">*</span></label>
 							<textarea
 								id="message"
 								rows="5"
 								class="form-textarea"
-								placeholder="Parlez-moi de votre projet, de vos besoins ou de votre équipe..."
+								placeholder={content.messagePh}
 								bind:value={message}
 								required
 							></textarea>
 						</div>
 
 						<button type="submit" class="btn-submit interactive">
-							<span>Envoyer le message</span>
+							<span>{content.btnSubmit}</span>
 							<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
 								<line x1="3" y1="8" x2="13" y2="8"></line>
 								<polyline points="9 4 13 8 9 12"></polyline>
@@ -219,7 +272,7 @@
 	}
 
 	.header-tag {
-		font-size: 0.78rem;
+		font-size: 0.76rem;
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
 		font-weight: 600;
@@ -238,7 +291,7 @@
 	}
 
 	.contact-subtitle {
-		font-size: 1.1rem;
+		font-size: 1.05rem;
 		line-height: 1.6;
 		color: var(--text-secondary);
 		margin: 0;
@@ -247,19 +300,29 @@
 	.contact-grid {
 		display: grid;
 		grid-template-columns: 1fr 1.3fr;
-		gap: 2.5rem;
+		gap: 2.25rem;
 		align-items: start;
 	}
 
 	/* Left Col */
 	.info-card {
 		background: rgba(255, 255, 255, 0.75);
+		backdrop-filter: blur(18px);
+		-webkit-backdrop-filter: blur(18px);
 		border: 1px solid var(--border-subtle);
-		border-radius: 1.5rem;
+		border-radius: 4px; /* Sharp corners */
 		padding: 2.25rem;
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
+		transition: all 0.25s ease;
+	}
+
+	.info-card:hover {
+		background: rgba(255, 255, 255, 0.96);
+		backdrop-filter: blur(32px);
+		-webkit-backdrop-filter: blur(32px);
+		border-color: var(--border-medium);
 	}
 
 	.info-card-title {
@@ -280,44 +343,43 @@
 	.channels-list {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		gap: 0.85rem;
 	}
 
 	.channel-item {
 		display: flex;
 		align-items: center;
 		gap: 1rem;
-		padding: 1rem 1.25rem;
+		padding: 0.9rem 1.15rem;
 		background: rgba(250, 246, 240, 0.7);
 		border: 1px solid var(--border-subtle);
-		border-radius: 1rem;
+		border-radius: 3px; /* Sharp */
 		text-decoration: none;
 		color: inherit;
-		transition: all 0.25s ease;
+		transition: all 0.2s ease;
 	}
 
 	.channel-item:hover {
 		background: #ffffff;
 		border-color: var(--border-medium);
 		transform: translateX(3px);
-		box-shadow: 0 4px 14px -2px rgba(28, 25, 23, 0.05);
 	}
 
 	.channel-icon {
-		width: 40px;
-		height: 40px;
+		width: 36px;
+		height: 36px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		background: rgba(109, 40, 217, 0.08);
-		border-radius: 50%;
+		border-radius: 2px; /* Sharp */
 		color: var(--accent-purple);
 		flex-shrink: 0;
 	}
 
 	.channel-icon svg {
-		width: 18px;
-		height: 18px;
+		width: 17px;
+		height: 17px;
 	}
 
 	.channel-details {
@@ -327,7 +389,7 @@
 	}
 
 	.channel-label {
-		font-size: 0.72rem;
+		font-size: 0.7rem;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		color: var(--text-tertiary);
@@ -335,7 +397,7 @@
 	}
 
 	.channel-value {
-		font-size: 0.94rem;
+		font-size: 0.92rem;
 		font-weight: 600;
 		color: var(--text-primary);
 	}
@@ -345,11 +407,11 @@
 		border-top: 1px solid var(--border-subtle);
 		display: flex;
 		flex-direction: column;
-		gap: 0.85rem;
+		gap: 0.75rem;
 	}
 
 	.social-box-title {
-		font-size: 0.75rem;
+		font-size: 0.72rem;
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
 		font-weight: 600;
@@ -367,20 +429,20 @@
 		align-items: center;
 		justify-content: center;
 		gap: 0.5rem;
-		padding: 0.75rem 1rem;
+		padding: 0.7rem 0.9rem;
 		background: #ffffff;
 		border: 1px solid var(--border-subtle);
-		border-radius: 0.75rem;
+		border-radius: 3px; /* Sharp */
 		text-decoration: none;
 		color: var(--text-primary);
-		font-size: 0.86rem;
+		font-size: 0.84rem;
 		font-weight: 600;
 		transition: all 0.2s ease;
 	}
 
 	.social-btn svg {
-		width: 15px;
-		height: 15px;
+		width: 14px;
+		height: 14px;
 		color: var(--accent-purple);
 	}
 
@@ -388,22 +450,30 @@
 		border-color: var(--accent-purple);
 		color: var(--accent-purple);
 		transform: translateY(-1px);
-		box-shadow: 0 4px 12px -2px rgba(109, 40, 217, 0.15);
 	}
 
 	/* Right Col - Form */
 	.form-card {
-		background: #ffffff;
+		background: rgba(255, 255, 255, 0.85);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
 		border: 1px solid var(--border-subtle);
-		border-radius: 1.5rem;
-		padding: 2.5rem;
-		box-shadow: 0 10px 30px -4px rgba(28, 25, 23, 0.04);
+		border-radius: 4px; /* Sharp */
+		padding: 2.25rem;
+		box-shadow: 0 4px 20px -2px rgba(28, 25, 23, 0.04);
+		transition: all 0.25s ease;
+	}
+
+	.form-card:hover {
+		backdrop-filter: blur(34px);
+		-webkit-backdrop-filter: blur(34px);
+		border-color: var(--border-medium);
 	}
 
 	.contact-form {
 		display: flex;
 		flex-direction: column;
-		gap: 1.5rem;
+		gap: 1.35rem;
 	}
 
 	.form-row {
@@ -415,11 +485,11 @@
 	.form-group {
 		display: flex;
 		flex-direction: column;
-		gap: 0.45rem;
+		gap: 0.4rem;
 	}
 
 	.form-label {
-		font-size: 0.84rem;
+		font-size: 0.82rem;
 		font-weight: 600;
 		color: var(--text-primary);
 	}
@@ -431,11 +501,11 @@
 	.form-input,
 	.form-textarea {
 		font-family: inherit;
-		font-size: 0.94rem;
-		padding: 0.85rem 1.15rem;
+		font-size: 0.92rem;
+		padding: 0.8rem 1rem;
 		background: var(--bg-canvas);
 		border: 1px solid var(--border-subtle);
-		border-radius: 0.75rem;
+		border-radius: 3px; /* Sharp */
 		color: var(--text-primary);
 		transition: all 0.2s ease;
 		outline: none;
@@ -445,7 +515,7 @@
 	.form-textarea:focus {
 		background: #ffffff;
 		border-color: var(--accent-purple);
-		box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.12);
+		box-shadow: 0 0 0 2px rgba(109, 40, 217, 0.12);
 	}
 
 	.form-textarea {
@@ -458,28 +528,28 @@
 		align-items: center;
 		justify-content: center;
 		gap: 0.65rem;
-		padding: 1rem 2rem;
+		padding: 0.85rem 1.75rem;
 		background: var(--text-primary);
 		color: #faf7f2;
 		border: none;
-		border-radius: 9999px;
-		font-size: 0.96rem;
+		border-radius: 3px; /* Sharp */
+		font-size: 0.94rem;
 		font-weight: 600;
 		cursor: pointer;
-		transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-		margin-top: 0.5rem;
+		transition: all 0.2s ease;
+		margin-top: 0.25rem;
 	}
 
 	.btn-submit svg {
-		width: 16px;
-		height: 16px;
-		transition: transform 0.25s ease;
+		width: 15px;
+		height: 15px;
+		transition: transform 0.2s ease;
 	}
 
 	.btn-submit:hover {
 		background: var(--accent-purple);
 		transform: translateY(-2px);
-		box-shadow: 0 8px 24px -4px rgba(109, 40, 217, 0.35);
+		box-shadow: 0 6px 18px -3px rgba(109, 40, 217, 0.3);
 	}
 
 	.btn-submit:hover svg {
@@ -497,9 +567,9 @@
 	}
 
 	.success-icon {
-		width: 56px;
-		height: 56px;
-		border-radius: 50%;
+		width: 52px;
+		height: 52px;
+		border-radius: 2px;
 		background: rgba(16, 185, 129, 0.12);
 		color: #10b981;
 		display: flex;
@@ -508,8 +578,8 @@
 	}
 
 	.success-icon svg {
-		width: 28px;
-		height: 28px;
+		width: 26px;
+		height: 26px;
 	}
 
 	.success-title {
@@ -521,7 +591,7 @@
 	}
 
 	.success-text {
-		font-size: 1rem;
+		font-size: 0.98rem;
 		color: var(--text-secondary);
 		line-height: 1.6;
 		max-width: 420px;
@@ -529,13 +599,13 @@
 	}
 
 	.btn-reset {
-		margin-top: 1rem;
-		padding: 0.75rem 1.5rem;
+		margin-top: 0.75rem;
+		padding: 0.65rem 1.35rem;
 		background: rgba(243, 238, 228, 0.7);
 		border: 1px solid var(--border-medium);
-		border-radius: 9999px;
+		border-radius: 3px; /* Sharp */
 		color: var(--text-primary);
-		font-size: 0.88rem;
+		font-size: 0.86rem;
 		font-weight: 600;
 		cursor: pointer;
 		transition: all 0.2s ease;

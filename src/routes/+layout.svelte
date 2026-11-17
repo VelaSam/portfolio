@@ -20,10 +20,10 @@
 </svelte:head>
 
 <div class="site-container">
-	<!-- Custom ominous shadow cursor -->
+	<!-- Custom ominous shadow cursor behind components -->
 	<CursorEffect />
 
-	<!-- Bespoke textured background grain -->
+	<!-- Subtle linen background grain -->
 	<div class="ambient-grain" aria-hidden="true"></div>
 
 	<!-- Top navigation -->
@@ -45,7 +45,7 @@
 		--bg-surface: #ffffff;
 		--bg-surface-elevated: #ffffff;
 		--bg-surface-soft: #f4eee2;
-		--bg-card: rgba(255, 255, 255, 0.75);
+		--bg-card: rgba(255, 255, 255, 0.76);
 
 		/* Typography colors */
 		--text-primary: #1c1917;
@@ -54,8 +54,8 @@
 		--text-muted: #a8a096;
 
 		/* Borders and dividers */
-		--border-subtle: #e8e0d2;
-		--border-medium: #d6ccbd;
+		--border-subtle: #e6ded0;
+		--border-medium: #d4cabb;
 		--border-focus: #6d28d9;
 
 		/* Brand Purple accents */
@@ -64,15 +64,20 @@
 		--accent-purple-dark: #4c1d95;
 		--accent-purple-tint: rgba(109, 40, 217, 0.08);
 
+		/* Sharp radius variables to prevent generic AI curves */
+		--radius-sm: 2px;
+		--radius-md: 4px;
+		--radius-lg: 6px;
+
 		/* Fonts */
 		--font-display: 'Instrument Serif', Georgia, serif;
 		--font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 		--font-mono: 'JetBrains Mono', monospace;
 
 		/* Shadows */
-		--shadow-subtle: 0 2px 10px -2px rgba(28, 25, 23, 0.03), 0 1px 3px rgba(28, 25, 23, 0.02);
-		--shadow-card: 0 10px 30px -4px rgba(28, 25, 23, 0.05), 0 2px 8px -2px rgba(28, 25, 23, 0.03);
-		--shadow-elevated: 0 20px 40px -8px rgba(28, 25, 23, 0.08), 0 4px 14px -2px rgba(28, 25, 23, 0.04);
+		--shadow-subtle: 0 1px 3px rgba(28, 25, 23, 0.03);
+		--shadow-card: 0 4px 16px -2px rgba(28, 25, 23, 0.04);
+		--shadow-elevated: 0 12px 28px -6px rgba(28, 25, 23, 0.06);
 	}
 
 	:global(html) {
@@ -101,7 +106,7 @@
 		color: inherit;
 	}
 
-	:global(selection) {
+	:global(::selection) {
 		background: rgba(109, 40, 217, 0.15);
 		color: var(--text-primary);
 	}
@@ -117,7 +122,7 @@
 		position: fixed;
 		inset: 0;
 		pointer-events: none;
-		z-index: 1;
+		z-index: 0;
 		opacity: 0.035;
 		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 	}
