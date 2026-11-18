@@ -6,7 +6,7 @@ export const easterEggs = [
 	'You should try the moonlander. Seriously.',
 	'White Monster.',
 	'Don’t take yourself too seriously. Nobody else does anyway.',
-	'I once accidentally joined a competitive salsa dance competition because I thought it was a tortilla chip tasting, but I’ll never tell anybody.',
+	'I once sat through a 3-hour seminar on finite element fatigue analysis of helical bevel gears because the flyer promised free pizza.',
 	'Neovim Tweaker Level 99. Still searching for the exit command.'
 ];
 
