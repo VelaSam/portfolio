@@ -30,31 +30,33 @@
 <!-- Full-bleed transparent borderless header spanning 100% viewport width -->
 <header class="header-full-bleed">
 	<nav class="navbar" aria-label="Main Navigation">
-		<!-- Brand Logo & Name (Samuel Velasco) -->
-		<a href="/" class="brand interactive" onclick={closeMobileMenu}>
-			<div class="brand-logo-container">
-				<img src="/logo-emblem.png" alt="Samuel Velasco Logo" class="brand-logo" />
-			</div>
-			<div class="brand-text">
-				<span class="brand-name">Samuel Velasco</span>
-				<span class="brand-role">
-					{i18n.locale === 'en' ? 'Software Developer' : 'Développeur Logiciel'}
-				</span>
-			</div>
-		</a>
+		<!-- Left Group: Samuel Velasco Brand + Montreal Indicator (on right of Samuel Velasco, left of Home) -->
+		<div class="nav-left-group">
+			<a href="/" class="brand interactive" onclick={closeMobileMenu}>
+				<div class="brand-logo-container">
+					<img src="/logo-emblem.png" alt="Samuel Velasco Logo" class="brand-logo" />
+				</div>
+				<div class="brand-text">
+					<span class="brand-name">Samuel Velasco</span>
+					<span class="brand-role">
+						{i18n.locale === 'en' ? 'Software Developer' : 'Développeur Logiciel'}
+					</span>
+				</div>
+			</a>
 
-		<!-- Montreal telemetry indicator: placed to the right of Samuel Velasco and to the left of Home -->
-		<div
-			class="montreal-indicator"
-			title={i18n.locale === 'en' ? 'Based in Montreal, QC' : 'Basé à Montréal, QC'}
-		>
-			<span class="status-pulse-dot" aria-hidden="true"></span>
-			<span class="location-name">Montréal, QC</span>
-			<span class="location-sep" aria-hidden="true">•</span>
-			<span class="location-coords">45.50° N, 73.56° W</span>
+			<div class="nav-sep" aria-hidden="true"></div>
+
+			<!-- Montreal telemetry indicator: placed to the right of Samuel Velasco and to the left of Home -->
+			<div
+				class="montreal-indicator"
+				title={i18n.locale === 'en' ? 'Based in Montreal, QC' : 'Basé à Montréal, QC'}
+			>
+				<span class="status-pulse-dot" aria-hidden="true"></span>
+				<span class="location-name">Montréal, QC</span>
+			</div>
 		</div>
 
-		<!-- Nav Links starting with Home -->
+		<!-- Right Group: Nav Links starting with Home -->
 		<div class="nav-links">
 			{#each navItems as item}
 				{@const isActive = page.url.pathname === item.href}
@@ -63,6 +65,7 @@
 					class="nav-item interactive"
 					class:active={isActive}
 					aria-current={isActive ? 'page' : undefined}
+					onclick={closeMobileMenu}
 				>
 					<span class="nav-label">{item.label}</span>
 					{#if isActive}
@@ -90,7 +93,6 @@
 			<div class="mobile-location-row">
 				<span class="status-pulse-dot" aria-hidden="true"></span>
 				<span class="location-name">Montréal, QC</span>
-				<span class="location-coords">45.50° N, 73.56° W</span>
 			</div>
 
 			<div class="mobile-nav-links">
@@ -144,7 +146,7 @@
 		background: transparent;
 		border: none;
 		box-shadow: none;
-		padding: 1.5rem 3rem 1rem;
+		padding: 1.25rem 2.5rem 0.75rem;
 		position: relative;
 		z-index: 900;
 		box-sizing: border-box;
@@ -157,12 +159,21 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: 2rem;
+		gap: 1.5rem;
+		flex-wrap: nowrap;
 		background: transparent;
 		border: none;
 		box-shadow: none;
 		padding: 0;
 		box-sizing: border-box;
+	}
+
+	/* Left group: Brand + Montreal */
+	.nav-left-group {
+		display: flex;
+		align-items: center;
+		gap: 1.25rem;
+		flex-shrink: 0;
 	}
 
 	/* Brand */
@@ -215,6 +226,7 @@
 		font-weight: 500;
 		color: var(--text-primary);
 		letter-spacing: -0.01em;
+		white-space: nowrap;
 	}
 
 	.brand-role {
@@ -224,15 +236,22 @@
 		font-weight: 500;
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
+		white-space: nowrap;
+	}
+
+	.nav-sep {
+		width: 1px;
+		height: 20px;
+		background: var(--border-subtle);
 	}
 
 	/* Montreal Telemetry Widget (Between Samuel Velasco and Home) */
 	.montreal-indicator {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.55rem;
-		padding: 0.4rem 0.9rem;
-		background: rgba(255, 255, 255, 0.5);
+		gap: 0.5rem;
+		padding: 0.32rem 0.7rem;
+		background: rgba(255, 255, 255, 0.55);
 		backdrop-filter: blur(12px);
 		-webkit-backdrop-filter: blur(12px);
 		border: 1px solid var(--border-subtle);
@@ -242,6 +261,8 @@
 		color: var(--text-secondary);
 		transition: all 0.2s ease;
 		user-select: none;
+		white-space: nowrap;
+		flex-shrink: 0;
 	}
 
 	.montreal-indicator:hover {
@@ -276,21 +297,11 @@
 		color: var(--text-primary);
 	}
 
-	.location-sep {
-		color: var(--border-medium);
-		font-size: 0.7rem;
-	}
-
-	.location-coords {
-		color: var(--text-tertiary);
-		font-size: 0.72rem;
-	}
-
 	/* Nav Links */
 	.nav-links {
 		display: flex;
 		align-items: center;
-		gap: 2.25rem;
+		gap: 2rem;
 		background: transparent;
 		border: none;
 		padding: 0;
@@ -308,15 +319,12 @@
 		font-weight: 500;
 		transition: color 0.2s ease;
 		letter-spacing: -0.01em;
+		white-space: nowrap;
 	}
 
-	.nav-item:hover {
-		color: var(--text-primary);
-	}
-
+	.nav-item:hover,
 	.nav-item.active {
 		color: var(--text-primary);
-		font-weight: 600;
 	}
 
 	.active-hairline {
@@ -426,7 +434,6 @@
 	}
 
 	.mobile-drawer {
-		display: none;
 		margin-top: 1rem;
 		background: rgba(255, 255, 255, 0.98);
 		backdrop-filter: blur(20px);
@@ -434,6 +441,7 @@
 		border-radius: 4px;
 		padding: 1.25rem;
 		box-shadow: 0 10px 25px -4px rgba(44, 38, 30, 0.08);
+		display: flex;
 		flex-direction: column;
 		gap: 0.85rem;
 	}
@@ -481,18 +489,13 @@
 	}
 
 	/* Responsive */
-	@media (max-width: 960px) {
+	@media (max-width: 900px) {
 		.header-full-bleed {
-			padding: 1.25rem 2rem 0.75rem;
-		}
-
-		.location-coords,
-		.location-sep {
-			display: none;
+			padding: 1.25rem 1.75rem 0.5rem;
 		}
 
 		.nav-links {
-			gap: 1.5rem;
+			gap: 1.35rem;
 		}
 
 		.screen-lang-dock {
@@ -501,18 +504,18 @@
 		}
 	}
 
-	@media (max-width: 780px) {
+	@media (max-width: 768px) {
 		.header-full-bleed {
-			padding: 1.25rem 1.25rem 0.5rem;
+			padding: 1.1rem 1.25rem 0.5rem;
 		}
 
 		.montreal-indicator,
+		.nav-sep,
 		.nav-links {
 			display: none;
 		}
 
-		.mobile-toggle,
-		.mobile-drawer {
+		.mobile-toggle {
 			display: flex;
 		}
 

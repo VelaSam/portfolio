@@ -83,6 +83,7 @@
 	:global(html) {
 		scroll-behavior: smooth;
 		background-color: var(--bg-canvas);
+		scrollbar-gutter: stable;
 	}
 
 	:global(body) {

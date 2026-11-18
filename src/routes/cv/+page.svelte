@@ -20,7 +20,6 @@
 			btnContact: 'Get in Touch',
 			metaLocation: 'Location',
 			metaEmail: 'Email',
-			metaPhone: 'Phone',
 			metaLinkedIn: 'LinkedIn',
 			sec1Num: '01',
 			sec1Title: 'Technical Competencies',
@@ -248,7 +247,6 @@
 			btnContact: 'Entrer en contact',
 			metaLocation: 'Localisation',
 			metaEmail: 'Email',
-			metaPhone: 'Téléphone',
 			metaLinkedIn: 'LinkedIn',
 			sec1Num: '01',
 			sec1Title: 'Compétences Techniques',
@@ -506,11 +504,6 @@
 		<div class="meta-item">
 			<span class="meta-label">{content.metaEmail}</span>
 			<a href="mailto:svelasco514@gmail.com" class="meta-val link interactive">svelasco514@gmail.com</a>
-		</div>
-		<div class="meta-divider"></div>
-		<div class="meta-item">
-			<span class="meta-label">{content.metaPhone}</span>
-			<a href="tel:+14389233372" class="meta-val link interactive">(438) 923-3372</a>
 		</div>
 		<div class="meta-divider"></div>
 		<div class="meta-item">
