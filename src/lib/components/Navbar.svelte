@@ -34,7 +34,7 @@
 	<nav class="navbar" aria-label="Main Navigation">
 		<!-- Left Group: Samuel Velasco Brand -->
 		<div class="nav-left-group">
-			<a href="/" data-sveltekit-reload class="brand interactive" onclick={closeMobileMenu}>
+			<a href="/" class="brand interactive" onclick={closeMobileMenu}>
 				<img src="/logo-emblem.png" alt="Samuel Velasco Logo" class="brand-logo" />
 				<div class="brand-text">
 					<span class="brand-name">Samuel Velasco</span>
@@ -53,7 +53,6 @@
 					(item.href === '/experience' && page.url.pathname === '/cv')}
 				<a
 					href={item.href}
-					data-sveltekit-reload
 					class="nav-item interactive"
 					class:active={isActive}
 					aria-current={isActive ? 'page' : undefined}
@@ -89,7 +88,6 @@
 						(item.href === '/experience' && page.url.pathname === '/cv')}
 					<a
 						href={item.href}
-						data-sveltekit-reload
 						class="mobile-nav-item"
 						class:active={isActive}
 						onclick={closeMobileMenu}

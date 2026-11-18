@@ -15,11 +15,30 @@
 					idx: '01 / CAPSTONE',
 					title: 'Autonomous Search & Rescue (Drone + Ground Robot)',
 					context: 'Software Engineering Capstone (ÉTS Montréal)',
-					stack: ['Python', 'ROS 2', 'Computer Vision', 'WebSockets / WebRTC', 'Embedded Linux'],
+					stack: [
+						'ModalAI Starling 2 Max (VOXL 2)',
+						'Waveshare UGV Rover (Jetson Orin Nano + ESP32)',
+						'Python',
+						'ROS 2 Humble',
+						'Computer Vision',
+						'WebSockets / WebRTC'
+					],
 					bullets: [
-						'Built an autonomous aerial-ground Search & Rescue system where a drone explores indoor / GPS-denied spaces and coordinates with a ground rover.',
-						'Implemented real-time computer vision to detect human shapes/victims from the drone’s live video feed.',
-						'Handled spatial orientation and coordinate alignment so the drone can locate itself in space and relay target positions to the ground robot for autonomous navigation.'
+						'Built an autonomous aerial-ground Search & Rescue system pairing a ModalAI Starling 2 Max drone (VOXL 2 flight computer, Qualcomm QRB5165, stereo & IMX412 cameras) with a Waveshare UGV Rover (Nvidia Jetson Orin Nano running ROS 2 Humble + ESP32 sub-controller and LDLiDAR).',
+						'Implemented real-time computer vision to recognize human shapes and victims from the drone’s live video stream in indoor, GPS-denied environments.',
+						'Handled spatial orientation and coordinate alignment so the autonomous drone locates itself in space and relays target coordinates to the ground rover for autonomous navigation.'
+					],
+					hardwareGallery: [
+						{
+							src: '/starling-2-max.png',
+							label: 'Fig. 01a — Aerial Platform: ModalAI Starling 2 Max',
+							specs: 'VOXL 2 (Qualcomm QRB5165, 15 TOPS NPU, PX4) • OnSemi AR0144 stereo + Sony IMX412 cameras • 5G Sierra Wireless EM9291'
+						},
+						{
+							src: '/waveshare-ugv-rover.jpg',
+							label: 'Fig. 01b — Ground Platform: Waveshare UGV Rover',
+							specs: 'Nvidia Jetson Orin Nano (Ubuntu 22.04, ROS 2 Humble) • ESP32 motor/encoder sub-controller (JSON over UART) • LDLiDAR & pan-tilt camera'
+						}
 					]
 				},
 				{
@@ -36,7 +55,7 @@
 					],
 					showcaseImage: {
 						src: '/canbankx-deployment.png',
-						label: 'Fig. 01 — Microservices Deployment View',
+						label: 'Fig. 02 — Microservices Deployment View',
 						caption: 'Phase 3 distributed deployment architecture showing KrakenD API Gateway, isolated Go microservices, Redis cache, MySQL databases, and Prometheus/Grafana observability.',
 						isDiagram: true
 					}
@@ -44,17 +63,18 @@
 				{
 					idx: '03 / MULTIDISCIPLINARY',
 					title: 'Automated Tower Crane',
-					context: '1st-Year Multidisciplinary Project (2nd Semester • ÉTS Montréal)',
+					context: '1st-Year Multidisciplinary Project (ÉTS Montréal)',
+					repoUrl: 'https://github.com/VelaSam/crane',
 					stack: ['SolidWorks CAD', 'Embedded C', 'RF Telemetry', 'Laser Cutting CNC', 'Mechanical Transmission'],
 					bullets: [
-						'Designed, modeled, and built a functional scale tower crane for the mandatory 2nd-semester multidisciplinary engineering project at ÉTS.',
+						'Designed, modeled, and built a functional scale tower crane for the 1st-year multidisciplinary engineering project at ÉTS.',
 						'Modeled full 3D assembly in SolidWorks: lattice mast tower, counterweighted boom, rotational slewing bearing, and trolley winch drive.',
 						'Engineered a custom spur-and-pinion transmission driven by a micro-metal gearmotor for smooth horizontal slewing.',
 						'Hand-wired a standalone wireless remote controller with a dual-axis joystick, RF telemetry link, and live status display.'
 					],
 					showcaseImage: {
 						src: '/crane-team.jpg',
-						label: 'Fig. 02 — Team & Prototype',
+						label: 'Fig. 03 — Team & Prototype',
 						caption: 'Our 6-person student engineering team standing with the functional scale tower crane on competition day at ÉTS.',
 						isDiagram: false
 					}
@@ -86,11 +106,30 @@
 					idx: '01 / PFE',
 					title: 'Système Autonome de Recherche & Sauvetage (Drone + Robot)',
 					context: 'Projet de fin d’études en génie logiciel (ÉTS Montréal)',
-					stack: ['Python', 'ROS 2', 'Vision par ordinateur', 'WebSockets / WebRTC', 'Linux embarqué'],
+					stack: [
+						'ModalAI Starling 2 Max (VOXL 2)',
+						'Waveshare UGV Rover (Jetson Orin Nano + ESP32)',
+						'Python',
+						'ROS 2 Humble',
+						'Vision par ordinateur',
+						'WebSockets / WebRTC'
+					],
 					bullets: [
-						'Développement d’un système autonome de recherche et sauvetage (S&R) combinant un drone autonome et un robot terrestre en milieu intérieur sans GPS.',
-						'Intégration de vision par ordinateur pour la reconnaissance de formes humaines (détection de victimes) à partir du flux vidéo du drone.',
-						'Gestion de l’orientation spatiale du drone et relayage en temps réel des coordonnées vers le robot au sol pour qu’il s’y rende de manière autonome.'
+						'Développement d’un système autonome de recherche et sauvetage (S&R) combinant un drone ModalAI Starling 2 Max (ordinateur de vol VOXL 2, Qualcomm QRB5165, caméras stéréo et IMX412) et un robot terrestre Waveshare UGV Rover (Nvidia Jetson Orin Nano sous ROS 2 Humble + sous-contrôleur ESP32 et LDLiDAR).',
+						'Intégration de vision par ordinateur pour la reconnaissance de formes humaines (détection de victimes) à partir du flux vidéo du drone en milieu intérieur sans GPS.',
+						'Gestion de l’orientation spatiale du drone autonome et relayage en temps réel des coordonnées vers le robot au sol pour qu’il s’y rende de manière autonome.'
+					],
+					hardwareGallery: [
+						{
+							src: '/starling-2-max.png',
+							label: 'Fig. 01a — Plateforme aérienne : ModalAI Starling 2 Max',
+							specs: 'VOXL 2 (Qualcomm QRB5165, NPU 15 TOPS, PX4) • Caméras stéréo OnSemi AR0144 + Sony IMX412 • Modem 5G Sierra Wireless EM9291'
+						},
+						{
+							src: '/waveshare-ugv-rover.jpg',
+							label: 'Fig. 01b — Plateforme terrestre : Waveshare UGV Rover',
+							specs: 'Nvidia Jetson Orin Nano (Ubuntu 22.04, ROS 2 Humble) • Sous-contrôleur ESP32 moteurs/encodeurs (JSON sur UART) • LDLiDAR & caméra pan-tilt'
+						}
 					]
 				},
 				{
@@ -107,7 +146,7 @@
 					],
 					showcaseImage: {
 						src: '/canbankx-deployment.png',
-						label: 'Fig. 01 — Diagramme de déploiement microservices',
+						label: 'Fig. 02 — Diagramme de déploiement microservices',
 						caption: 'Architecture de déploiement distribuée (Phase 3) illustrant KrakenD API Gateway, les microservices Go isolés, Redis, MySQL et la télémétrie Prometheus/Grafana.',
 						isDiagram: true
 					}
@@ -115,17 +154,18 @@
 				{
 					idx: '03 / MULTIDISCIPLINAIRE',
 					title: 'Grue à tour automatisée',
-					context: 'Projet multidisciplinaire de 1re année (2e session • ÉTS Montréal)',
+					context: 'Projet multidisciplinaire de 1re année (ÉTS Montréal)',
+					repoUrl: 'https://github.com/VelaSam/crane',
 					stack: ['SolidWorks CAO', 'C embarqué', 'Télémétrie RF', 'Découpe laser CNC', 'Transmission mécanique'],
 					bullets: [
-						'Conception, modélisation et fabrication d’une grue à tour automatisée à échelle réduite dans le cadre du projet multidisciplinaire de 2e session à l’ÉTS.',
+						'Conception, modélisation et fabrication d’une grue à tour automatisée à échelle réduite dans le cadre du projet multidisciplinaire de 1re année à l’ÉTS.',
 						'Modélisation 3D complète sous SolidWorks : mât en treillis, flèche rotative avec contrepoids, couronne d’orientation et chariot treuil.',
 						'Conception d’un boîtier de réduction sur mesure avec pignon et couronne dentée entraînés par micro-motoréducteur métallique.',
 						'Câblage complet d’une radiocommande sans fil avec joystick analogique, liaison RF et affichage d’état en direct.'
 					],
 					showcaseImage: {
 						src: '/crane-team.jpg',
-						label: 'Fig. 02 — L’Équipe & Prototype',
+						label: 'Fig. 03 — L’Équipe & Prototype',
 						caption: 'Notre équipe de 6 étudiants réunie autour de la grue à tour automatisée le jour de la compétition à l’ÉTS.',
 						isDiagram: false
 					}
@@ -164,7 +204,7 @@
 				<h1 class="projects-title">{content.title}</h1>
 				<p class="projects-subtitle">{content.subtitle}</p>
 			</div>
-			<a href="/contact" data-sveltekit-reload class="header-cta interactive">
+			<a href="/contact" class="header-cta interactive">
 				{content.btnContact}
 			</a>
 		</div>
@@ -219,6 +259,22 @@
 						{/each}
 					</ul>
 
+					{#if proj.hardwareGallery}
+						<div class="hardware-grid">
+							{#each proj.hardwareGallery as hw}
+								<figure class="study-figure">
+									<div class="study-frame diagram-frame hw-frame">
+										<img src={hw.src} alt={hw.label} class="study-img hw-img" />
+									</div>
+									<figcaption class="study-caption">
+										<strong>{hw.label}</strong>
+										<span class="hw-specs">{hw.specs}</span>
+									</figcaption>
+								</figure>
+							{/each}
+						</div>
+					{/if}
+
 					{#if proj.showcaseImage}
 						<figure class="study-figure">
 							<div class="study-frame" class:diagram-frame={proj.showcaseImage.isDiagram}>
@@ -243,7 +299,7 @@
 	<section class="projects-colophon">
 		<p class="colophon-text">
 			{content.colophonLead}
-			<a href="/experience" data-sveltekit-reload class="colophon-link interactive">
+			<a href="/experience" class="colophon-link interactive">
 				{content.colophonLink}
 			</a>
 		</p>
@@ -441,6 +497,33 @@
 		color: var(--text-secondary);
 	}
 
+	/* 2-Column Hardware Platform Gallery */
+	.hardware-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.25rem;
+		margin-top: 0.5rem;
+	}
+
+	.hw-frame {
+		aspect-ratio: 4 / 3;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.hw-img {
+		max-height: 220px;
+		width: auto !important;
+		max-width: 100%;
+		object-fit: contain;
+	}
+
+	.hw-specs {
+		display: block;
+		margin-top: 0.2rem;
+	}
+
 	/* Uncropped Natural Aspect Ratio Figure */
 	.study-figure {
 		margin: 0.5rem 0 0;
@@ -468,7 +551,7 @@
 
 	.study-caption {
 		font-family: var(--font-mono);
-		font-size: 0.75rem;
+		font-size: 0.74rem;
 		line-height: 1.5;
 		color: var(--text-tertiary);
 	}
@@ -499,7 +582,8 @@
 	}
 
 	@media (max-width: 900px) {
-		.project-study {
+		.project-study,
+		.hardware-grid {
 			grid-template-columns: 1fr;
 			gap: 1.5rem;
 		}

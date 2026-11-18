@@ -106,7 +106,7 @@
 					title: 'Automated Tower Crane',
 					category: '1st-Year Multidisciplinary Project',
 					stack: 'SolidWorks • Embedded C • RF Telemetry • Laser Cutting',
-					desc: 'Functional scale tower crane built for the 2nd-semester ÉTS multidisciplinary project: laser-cut lattice mast, custom SolidWorks gear transmission, and wireless joystick controller.',
+					desc: 'Functional scale tower crane built for the 1st-year ÉTS multidisciplinary project: laser-cut lattice mast, custom SolidWorks gear transmission, and wireless joystick controller.',
 					link: '/projects'
 				}
 			],
@@ -217,7 +217,7 @@
 					title: 'Grue à tour automatisée',
 					category: 'Projet multidisciplinaire (1re année)',
 					stack: 'SolidWorks • C embarqué • Télémétrie RF • Découpe Laser',
-					desc: 'Grue à échelle réduite conçue dans le cadre du projet multidisciplinaire de 2e session à l’ÉTS : mât en treillis découpé au laser, transmission SolidWorks et télécommande sans fil.',
+					desc: 'Grue à échelle réduite conçue dans le cadre du projet multidisciplinaire de 1re année à l’ÉTS : mât en treillis découpé au laser, transmission SolidWorks et télécommande sans fil.',
 					link: '/projects'
 				}
 			],
@@ -259,15 +259,15 @@
 				</p>
 
 				<nav class="hero-nav-links" aria-label="Primary actions">
-					<a href="/experience" data-sveltekit-reload class="editorial-cta-primary interactive">
+					<a href="/experience" class="editorial-cta-primary interactive">
 						<span>{content.btnCV}</span>
 						<span class="arrow">→</span>
 					</a>
-					<a href="/projects" data-sveltekit-reload class="editorial-cta-link interactive">
+					<a href="/projects" class="editorial-cta-link interactive">
 						<span>{content.btnProjects}</span>
 						<span class="arrow">→</span>
 					</a>
-					<a href="/contact" data-sveltekit-reload class="editorial-cta-link interactive">
+					<a href="/contact" class="editorial-cta-link interactive">
 						<span>{content.btnContact}</span>
 						<span class="arrow">→</span>
 					</a>
@@ -354,7 +354,7 @@
 		<div class="section-rail">
 			<span class="rail-index">{content.trajectoryNum}</span>
 			<h2 class="rail-heading">{content.trajectoryTitle}</h2>
-			<a href="/experience" data-sveltekit-reload class="rail-link interactive">
+			<a href="/experience" class="rail-link interactive">
 				<span>{content.viewFullCV}</span>
 				<span>→</span>
 			</a>
@@ -363,7 +363,7 @@
 		<div class="section-main">
 			<div class="ledger-table">
 				{#each content.milestones as item}
-					<a href="/experience" data-sveltekit-reload class="ledger-row interactive">
+					<a href="/experience" class="ledger-row interactive">
 						<div class="ledger-period">
 							<span class="period-text">{item.period}</span>
 							<span class="period-kind">{item.type}</span>
@@ -387,7 +387,7 @@
 		<div class="section-rail">
 			<span class="rail-index">{content.projectsNum}</span>
 			<h2 class="rail-heading">{content.projectsTitle}</h2>
-			<a href="/projects" data-sveltekit-reload class="rail-link interactive">
+			<a href="/projects" class="rail-link interactive">
 				<span>{content.viewFullProjects}</span>
 				<span>→</span>
 			</a>
@@ -396,7 +396,7 @@
 		<div class="section-main">
 			<div class="work-index">
 				{#each content.featuredProjects as proj}
-					<a href={proj.link} data-sveltekit-reload class="work-row interactive">
+					<a href={proj.link} class="work-row interactive">
 						<div class="work-meta-line">
 							<span class="work-idx">{proj.idx} / {proj.category}</span>
 							<span class="work-stack">{proj.stack}</span>
@@ -416,7 +416,7 @@
 	<section class="editorial-colophon">
 		<p class="colophon-text">
 			{content.colophonLead}
-			<a href="/contact" data-sveltekit-reload class="colophon-cta interactive">
+			<a href="/contact" class="colophon-cta interactive">
 				{content.colophonLink} →
 			</a>
 		</p>

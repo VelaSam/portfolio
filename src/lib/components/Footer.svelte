@@ -22,10 +22,10 @@
 			<div class="footer-cols">
 				<div class="footer-col">
 					<span class="col-title">Navigation</span>
-					<a href="/" data-sveltekit-reload class="col-link interactive">{i18n.locale === 'en' ? 'Home' : 'Accueil'}</a>
-					<a href="/experience" data-sveltekit-reload class="col-link interactive">{i18n.locale === 'en' ? 'Experience' : 'Expérience'}</a>
-					<a href="/projects" data-sveltekit-reload class="col-link interactive">{i18n.locale === 'en' ? 'Projects' : 'Projets'}</a>
-					<a href="/contact" data-sveltekit-reload class="col-link interactive">Contact</a>
+					<a href="/" class="col-link interactive">{i18n.locale === 'en' ? 'Home' : 'Accueil'}</a>
+					<a href="/experience" class="col-link interactive">{i18n.locale === 'en' ? 'Experience' : 'Expérience'}</a>
+					<a href="/projects" class="col-link interactive">{i18n.locale === 'en' ? 'Projects' : 'Projets'}</a>
+					<a href="/contact" class="col-link interactive">Contact</a>
 				</div>
 
 				<div class="footer-col">

@@ -26,7 +26,7 @@
 				},
 				{
 					category: 'AI, Vision & Signal Processing',
-					skills: ['OpenCV', 'Computer Vision', 'ROS 2', 'Edge Inference (Raspberry Pi)', 'Facial Tracking', 'rPPG', 'OCR', 'Python']
+					skills: ['OpenCV', 'Computer Vision', 'ROS 2', 'Edge Inference (Raspberry Pi)', 'Facial Tracking', 'rPPG', 'Python']
 				},
 				{
 					category: 'Engineering, CAD & Industrial Tools',
@@ -182,7 +182,7 @@
 				},
 				{
 					category: 'IA, Vision & Traitement de Signal',
-					skills: ['OpenCV', 'Vision par ordinateur', 'ROS 2', 'Inférence Edge (Raspberry Pi)', 'Suivi facial', 'rPPG', 'OCR', 'Python']
+					skills: ['OpenCV', 'Vision par ordinateur', 'ROS 2', 'Inférence Edge (Raspberry Pi)', 'Suivi facial', 'rPPG', 'Python']
 				},
 				{
 					category: 'Ingénierie, CAO & Outils Industriels',
@@ -337,7 +337,7 @@
 			<div class="cv-meta-links no-print">
 				<a href="mailto:svelasco514@gmail.com" class="meta-link interactive">svelasco514@gmail.com ↗</a>
 				<a href="https://linkedin.com/in/samuelvelascodev" target="_blank" rel="noopener noreferrer" class="meta-link interactive">LinkedIn ↗</a>
-				<a href="/contact" data-sveltekit-reload class="meta-cta interactive">{content.btnContact}</a>
+				<a href="/contact" class="meta-cta interactive">{content.btnContact}</a>
 			</div>
 		</div>
 	</header>
@@ -456,7 +456,7 @@
 	<section class="cv-colophon no-print">
 		<p class="colophon-text">
 			{content.projectsColophon}
-			<a href="/projects" data-sveltekit-reload class="colophon-link interactive">
+			<a href="/projects" class="colophon-link interactive">
 				{content.projectsColophonLink}
 			</a>
 		</p>
