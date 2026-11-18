@@ -14,6 +14,16 @@
 			viewRepo: 'View repository on GitHub',
 			projects: [
 				{
+					title: 'Autonomous Multi-Agent Search & Rescue Drone-Rover System',
+					context: 'Software Engineering Capstone Project (PFE ÉTS)',
+					stack: ['Python', 'ROS 2', 'OpenCV', 'Distributed Architecture', 'Linux'],
+					bullets: [
+						'Engineered distributed telemetry and messaging architecture coordinating autonomous aerial and terrestrial search agents via ROS 2.',
+						'Developed real-time computer vision detection pipelines and coordinate mapping algorithms to locate missing persons in simulated hazardous zones.',
+						'Implemented resilient state machines, heartbeat monitoring, and automated mission fail-safes for autonomous operations.'
+					]
+				},
+				{
 					title: 'CanBankX — Distributed Microservices Platform',
 					context: 'Distributed Systems & Cloud Architecture (Go, Docker, Redis)',
 					repoUrl: 'https://github.com/VelaSam/CanBankX_Samuel_Velasco',
@@ -46,16 +56,6 @@
 					]
 				},
 				{
-					title: 'Autonomous Multi-Agent Search & Rescue Drone-Rover System',
-					context: 'Software Engineering Capstone Project (PFE ÉTS)',
-					stack: ['Python', 'ROS 2', 'OpenCV', 'Distributed Architecture', 'Linux'],
-					bullets: [
-						'Engineered distributed telemetry and messaging architecture coordinating autonomous aerial and terrestrial search agents via ROS 2.',
-						'Developed real-time computer vision detection pipelines and coordinate mapping algorithms to locate missing persons in simulated hazardous zones.',
-						'Implemented resilient state machines, heartbeat monitoring, and automated mission fail-safes for autonomous operations.'
-					]
-				},
-				{
 					hidden: true,
 					title: 'Micro-Kernel & Low-Level Hardware Driver Architecture',
 					context: 'Systems Programming & Memory Management',
@@ -78,6 +78,16 @@
 			metaLinkedIn: 'LinkedIn',
 			viewRepo: 'Voir le dépôt sur GitHub',
 			projects: [
+				{
+					title: 'Système Autonome de Recherche & Sauvetage Drone-Rover',
+					context: 'Projet de fin d’études en génie logiciel (PFE ÉTS)',
+					stack: ['Python', 'ROS 2', 'OpenCV', 'Architecture distribuée', 'Linux'],
+					bullets: [
+						'Conception de l’architecture de communication distribuée et de télémétrie entre drone et rover terrestre via ROS 2.',
+						'Développement de pipelines de vision par ordinateur en temps réel et d’algorithmes de calcul de coordonnées géospatiales.',
+						'Mise en place de machines à états résilientes et de protocoles de sécurité pour les opérations autonomes de recherche.'
+					]
+				},
 				{
 					title: 'CanBankX — Plateforme de Microservices Distribués',
 					context: 'Systèmes Distribués & Architecture Cloud (Go, Docker, Redis)',
@@ -108,16 +118,6 @@
 							badge: 'Photo de couverture • Jour de compétition ÉTS',
 							caption: 'Notre équipe de 6 étudiants réunie fièrement autour de la grue à tour automatisée le jour de la compétition à l’ÉTS.'
 						}
-					]
-				},
-				{
-					title: 'Système Autonome de Recherche & Sauvetage Drone-Rover',
-					context: 'Projet de fin d’études en génie logiciel (PFE ÉTS)',
-					stack: ['Python', 'ROS 2', 'OpenCV', 'Architecture distribuée', 'Linux'],
-					bullets: [
-						'Conception de l’architecture de communication distribuée et de télémétrie entre drone et rover terrestre via ROS 2.',
-						'Développement de pipelines de vision par ordinateur en temps réel et d’algorithmes de calcul de coordonnées géospatiales.',
-						'Mise en place de machines à états résilientes et de protocoles de sécurité pour les opérations autonomes de recherche.'
 					]
 				},
 				{
@@ -208,10 +208,6 @@
 								alt={craneImg.label}
 								class="crane-active-img"
 							/>
-							<div class="crane-badge-overlay">
-								<span class="crane-badge-dot"></span>
-								<span>{craneImg.badge}</span>
-							</div>
 						</div>
 						<div class="crane-caption-bar">
 							<p class="crane-caption-text">
@@ -434,30 +430,6 @@
 		object-fit: contain;
 		display: block;
 		transition: opacity 0.3s ease;
-	}
-
-	.crane-badge-overlay {
-		position: absolute;
-		top: 0.85rem;
-		left: 0.85rem;
-		background: rgba(28, 25, 23, 0.85);
-		backdrop-filter: blur(8px);
-		color: #ffffff;
-		padding: 0.35rem 0.75rem;
-		border-radius: 3px;
-		font-size: 0.76rem;
-		font-weight: 600;
-		display: inline-flex;
-		align-items: center;
-		gap: 0.45rem;
-		border: 1px solid rgba(255, 255, 255, 0.15);
-	}
-
-	.crane-badge-dot {
-		width: 6px;
-		height: 6px;
-		border-radius: 1px;
-		background: var(--accent-purple-light);
 	}
 
 	.crane-caption-bar {
