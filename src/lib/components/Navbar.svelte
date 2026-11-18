@@ -6,12 +6,14 @@
 		i18n.locale === 'en'
 			? [
 					{ label: 'Home', href: '/' },
-					{ label: 'Resume & Experience', href: '/cv' },
+					{ label: 'Experience', href: '/experience' },
+					{ label: 'Projects', href: '/projects' },
 					{ label: 'Contact', href: '/contact' }
 				]
 			: [
 					{ label: 'Accueil', href: '/' },
-					{ label: 'CV & Expérience', href: '/cv' },
+					{ label: 'Expérience', href: '/experience' },
+					{ label: 'Projets', href: '/projects' },
 					{ label: 'Contact', href: '/contact' }
 				]
 	);
@@ -32,7 +34,7 @@
 	<nav class="navbar" aria-label="Main Navigation">
 		<!-- Left Group: Samuel Velasco Brand + Montreal Indicator (on right of Samuel Velasco, left of Home) -->
 		<div class="nav-left-group">
-			<a href="/" class="brand interactive" onclick={closeMobileMenu}>
+			<a href="/" data-sveltekit-reload class="brand interactive" onclick={closeMobileMenu}>
 				<div class="brand-logo-container">
 					<img src="/logo-emblem.png" alt="Samuel Velasco Logo" class="brand-logo" />
 				</div>
@@ -59,9 +61,12 @@
 		<!-- Right Group: Nav Links starting with Home -->
 		<div class="nav-links">
 			{#each navItems as item}
-				{@const isActive = page.url.pathname === item.href}
+				{@const isActive =
+					page.url.pathname === item.href ||
+					(item.href === '/experience' && page.url.pathname === '/cv')}
 				<a
 					href={item.href}
+					data-sveltekit-reload
 					class="nav-item interactive"
 					class:active={isActive}
 					aria-current={isActive ? 'page' : undefined}
@@ -97,9 +102,12 @@
 
 			<div class="mobile-nav-links">
 				{#each navItems as item}
-					{@const isActive = page.url.pathname === item.href}
+					{@const isActive =
+						page.url.pathname === item.href ||
+						(item.href === '/experience' && page.url.pathname === '/cv')}
 					<a
 						href={item.href}
+						data-sveltekit-reload
 						class="mobile-nav-item"
 						class:active={isActive}
 						onclick={closeMobileMenu}

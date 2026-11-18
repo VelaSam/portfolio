@@ -77,28 +77,28 @@
 			projectsTag: 'Projects & Engineering',
 			projectsTitle: 'Featured Projects (School & Side Work)',
 			projectsDesc: 'Distributed microservices, electromechanical prototypes, and autonomous multi-agent robotics.',
-			viewFullProjects: 'Explore all projects & photo galleries in CV',
+			viewFullProjects: 'Explore all projects & photo galleries',
 			featuredProjects: [
 				{
 					title: 'CanBankX — Distributed Microservices Platform',
 					category: 'Distributed Systems & Cloud',
 					stack: 'Go • Docker Compose • Redis • KrakenD • k6',
 					desc: 'Distributed banking backend in Go with Database-per-Microservice isolation across 3 MySQL databases, KrakenD API gateway routing, and extreme concurrent ACID transaction stress testing.',
-					link: '/cv'
+					link: '/projects'
 				},
 				{
 					title: 'Automated Robotic Tower Crane',
 					category: 'Electromechanical & Embedded',
 					stack: 'SolidWorks • C • RF 2.4 GHz • Laser Cutting',
 					desc: 'Full-scale functional scale tower crane engineered for the ÉTS engineering competition: laser-cut timber lattice mast, custom SolidWorks gear transmission, and hand-wired RF joystick controller.',
-					link: '/cv'
+					link: '/projects'
 				},
 				{
 					title: 'Search & Rescue Autonomous Drone & Rover',
 					category: 'Autonomous Perception & Robotics',
 					stack: 'Python • ROS 2 • OpenCV • Linux',
 					desc: 'Embedded flight software and coordinated multi-agent protocol detecting targets from video feeds via onboard computer vision and dispatching ground rover units.',
-					link: '/cv'
+					link: '/projects'
 				}
 			],
 			ctaTitle: 'Have an engineering challenge or opportunity to discuss?',
@@ -179,28 +179,28 @@
 			projectsTag: 'Projets & Ingénierie',
 			projectsTitle: 'Projets Choisis (Académiques & Personnels)',
 			projectsDesc: 'Architectures microservices distribuées, prototypes électromécaniques et robotique multi-agents.',
-			viewFullProjects: 'Explorer tous les projets et galeries photo dans le CV',
+			viewFullProjects: 'Explorer tous les projets et galeries photo',
 			featuredProjects: [
 				{
 					title: 'CanBankX — Plateforme Microservices Répartie',
 					category: 'Systèmes Distribués & Cloud',
 					stack: 'Go • Docker Compose • Redis • KrakenD • k6',
 					desc: 'Backend bancaire distribué en Go avec isolation par base de données MySQL, passerelle KrakenD API Gateway et validation de transactions ACID concurrentes par tests de charge extrêmes.',
-					link: '/cv'
+					link: '/projects'
 				},
 				{
 					title: 'Grue à Tour Automatisée & Téléguidée',
 					category: 'Électromécanique & Embarqué',
 					stack: 'SolidWorks • C • RF 2.4 GHz • Découpe Laser',
 					desc: 'Grue à échelle réduite électromécanique conçue lors de la compétition d’ingénierie à l’ÉTS : mât en treillis de bois découpé au laser, réducteur d’engrenages SolidWorks et télécommande radio sans fil.',
-					link: '/cv'
+					link: '/projects'
 				},
 				{
 					title: 'Système Autonome Drone & Rover',
 					category: 'Perception Autonome & Robotique',
 					stack: 'Python • ROS 2 • OpenCV • Linux',
 					desc: 'Module logiciel embarqué sur drone et protocole de communication multi-agents guidant le rover terrestre par vision par ordinateur et coordonnées géospatiales temps réel.',
-					link: '/cv'
+					link: '/projects'
 				}
 			],
 			ctaTitle: 'Un projet ou une opportunité à discuter ?',
@@ -254,7 +254,7 @@
 			</p>
 
 			<div class="hero-actions">
-				<a href="/cv" class="btn-primary interactive">
+				<a href="/experience" data-sveltekit-reload class="btn-primary interactive">
 					<span>{content.btnCV}</span>
 					<svg
 						class="btn-icon"
@@ -270,7 +270,7 @@
 					</svg>
 				</a>
 
-				<a href="/contact" class="btn-secondary interactive">
+				<a href="/contact" data-sveltekit-reload class="btn-secondary interactive">
 					<span>{content.btnContact}</span>
 				</a>
 			</div>
@@ -424,7 +424,7 @@
 					<span class="section-tag">{content.projectsTag}</span>
 					<h2 class="section-title">{content.projectsTitle}</h2>
 				</div>
-				<a href="/cv" class="link-more interactive">
+				<a href="/projects" data-sveltekit-reload class="link-more interactive">
 					<span>{content.viewFullProjects}</span>
 					<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
 						<path d="M6 3l5 5-5 5"></path>
@@ -436,7 +436,7 @@
 
 		<div class="featured-projects-grid">
 			{#each content.featuredProjects as proj}
-				<a href={proj.link} class="featured-project-card interactive">
+				<a href={proj.link} data-sveltekit-reload class="featured-project-card interactive">
 					<div class="proj-badge-row">
 						<span class="proj-category">{proj.category}</span>
 						<span class="proj-arrow">↗</span>
