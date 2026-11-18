@@ -113,6 +113,15 @@
 {/if}
 
 <style>
+	/* Hide native OS cursor on desktop when custom purple square cursor is active */
+	@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+		:global(html),
+		:global(body),
+		:global(*) {
+			cursor: none !important;
+		}
+	}
+
 	/* Positioned far in the background behind components */
 	.ominous-aura {
 		position: fixed;
