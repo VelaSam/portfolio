@@ -114,7 +114,7 @@
 		onclick={() => i18n.toggleLocale()}
 		title={i18n.locale === 'en'
 			? 'Passer au français québécois (Mode QC ⚜️)'
-			: 'Switch to English (Standard mode 🇨🇦)'}
+			: 'Switch to English (Standard mode 🍁)'}
 		aria-label="Toggle language"
 	>
 		{#if i18n.locale === 'en'}
@@ -123,7 +123,7 @@
 			<span class="lang-divider" aria-hidden="true">/</span>
 			<span class="lang-alt">FR</span>
 		{:else}
-			<span class="lang-flag" aria-hidden="true">🇨🇦</span>
+			<span class="lang-flag" aria-hidden="true">🍁</span>
 			<span class="lang-active">EN</span>
 			<span class="lang-divider" aria-hidden="true">/</span>
 			<span class="lang-alt">ENG</span>

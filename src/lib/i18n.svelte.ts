@@ -6,7 +6,7 @@ export const easterEggs = [
 	'You should try the moonlander. Seriously.',
 	'White Monster.',
 	'Don’t take yourself too seriously. Nobody else does anyway.',
-	'I once sat through a 3-hour seminar on finite element fatigue analysis of helical bevel gears because the flyer promised free pizza.',
+	'I once sat through a 3-hour CSME-CFDSC-CSR Computational Fluid Dynamics & Rheology talk at ÉTS (idk what any of that means, I had to look it up) just because they had free pizza.',
 	'Neovim Tweaker Level 99. Still searching for the exit command.'
 ];
 
