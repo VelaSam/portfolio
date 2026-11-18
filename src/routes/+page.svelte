@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { i18n } from '$lib/i18n.svelte';
 
-	let activeAnnotation = $state<string | null>(null);
+	let selectedCraneIndex = $state(0);
 
 	const content = $derived({
 		en: {
@@ -41,6 +41,53 @@
 					id: 'pepsi',
 					title: 'Caffeine Reserve',
 					desc: 'Standard issue fuel for bare-metal debugging sessions.'
+				}
+			],
+			craneTag: 'Engineering Roots • Undergrad Project',
+			craneTitle: 'Automated Robotic Tower Crane',
+			craneSubtitle:
+				'Conceived, modeled, and manufactured during our first undergraduate engineering challenge at ÉTS. A complete electromechanical scale crane featuring laser-cut timber structure, custom SolidWorks gear transmission, and an embedded wireless joystick controller.',
+			craneCoverLabel: 'Cover Photo: The Team & Prototype',
+			craneImages: [
+				{
+					id: 'team',
+					src: '/crane-team.jpg',
+					label: 'Team & Prototype',
+					badge: 'Cover Photo • ÉTS Competition Arena',
+					caption:
+						'Our 6-person student engineering team proudly standing with the fully functional scale tower crane on competition day at ÉTS.'
+				},
+				{
+					id: 'cad',
+					src: '/crane-cad-1.jpg',
+					label: 'SolidWorks Assembly',
+					badge: '3D Kinematics & Structure',
+					caption:
+						'Complete SolidWorks CAD assembly: lattice mast tower, counterweighted boom, rotational bearing slewing ring, and cable trolley carriage.'
+				},
+				{
+					id: 'gears',
+					src: '/crane-gears.jpg',
+					label: 'Gearbox & Drive',
+					badge: 'Custom Mechanical Transmission',
+					caption:
+						'Detail of the custom rotational drive assembly: 3D printed motor bracket, micro-metal gearmotor, pinion (m0.5 N10) and spur slewing ring (N48).'
+				},
+				{
+					id: 'circuit',
+					src: '/crane-circuit.jpg',
+					label: 'Embedded Controller',
+					badge: 'Wireless RF Circuit & Telemetry',
+					caption:
+						'Hand-wired remote controller prototype: DIP microcontroller, dual-axis thumbstick, 2.4 GHz NRF24L01 wireless transceiver, and 1602A LCD real-time display.'
+				},
+				{
+					id: 'render',
+					src: '/crane-render.jpg',
+					label: '3D Render',
+					badge: 'Structural Assembly View',
+					caption:
+						'SolidWorks visualization of the interlocking laser-cut plywood truss sections and self-stabilizing cross base.'
 				}
 			],
 			quote:
@@ -138,6 +185,53 @@
 					desc: 'La ration de base pour déboguer des registres matériels.'
 				}
 			],
+			craneTag: 'Racines d’Ingénierie • Premier Projet',
+			craneTitle: 'Grue à Tour Automatisée & Téléguidée',
+			craneSubtitle:
+				'Conception, modélisation et usinage complet lors de notre tout premier grand projet d’ingénierie à l’ÉTS. Une grue à échelle réduite électromécanique avec mât en bois découpé au laser, réducteur de transmission SolidWorks et télécommande radio sans fil avec télémétrie LCD.',
+			craneCoverLabel: 'Photo de couverture : L’équipe & le prototype',
+			craneImages: [
+				{
+					id: 'team',
+					src: '/crane-team.jpg',
+					label: 'L’Équipe & Prototype',
+					badge: 'Photo de couverture • Jour de compétition ÉTS',
+					caption:
+						'Notre équipe de 6 étudiants réunie fièrement autour de la grue à tour automatisée le jour de la compétition à l’ÉTS.'
+				},
+				{
+					id: 'cad',
+					src: '/crane-cad-1.jpg',
+					label: 'Assemblage SolidWorks',
+					badge: 'Cinématique 3D & Structure',
+					caption:
+						'Assemblage CAD complet sous SolidWorks : mât en treillis découpé au laser, flèche rotative, contrepoids et chariot de levage.'
+				},
+				{
+					id: 'gears',
+					src: '/crane-gears.jpg',
+					label: 'Boîtier & Engrenages',
+					badge: 'Transmission Mécanique',
+					caption:
+						'Vue détaillée de la transmission mécanique : support moteur usiné, pignon moteur (m0.5 N10) et couronne dentée (N48) pour la rotation fluide de la flèche.'
+				},
+				{
+					id: 'circuit',
+					src: '/crane-circuit.jpg',
+					label: 'Contrôleur Sans Fil',
+					badge: 'Circuit Embarqué & Télémétrie',
+					caption:
+						'Télécommande sans fil sur platine d’expérimentation : microcontrôleur DIP, joystick analogique, module radio NRF24L01 et écran LCD 1602A pour le retour d’état.'
+				},
+				{
+					id: 'render',
+					src: '/crane-render.jpg',
+					label: 'Rendu 3D',
+					badge: 'Rendu d’Assemblage',
+					caption:
+						'Modélisation 3D finale illustrant la structure en contreplaqué imbriqué, la flèche et la base en croix stabilisatrice.'
+				}
+			],
 			quote:
 				'Allier la précision du bas niveau et des microcontrôleurs aux interfaces modernes, pour résoudre des problématiques tangibles d’ingénierie.',
 			domainsTag: 'Domaines d’intervention',
@@ -195,6 +289,15 @@
 			ctaBtn: 'Initier le contact'
 		}
 	}[i18n.locale]);
+
+	function nextCraneImage() {
+		selectedCraneIndex = (selectedCraneIndex + 1) % content.craneImages.length;
+	}
+
+	function prevCraneImage() {
+		selectedCraneIndex =
+			(selectedCraneIndex - 1 + content.craneImages.length) % content.craneImages.length;
+	}
 </script>
 
 <svelte:head>
@@ -299,7 +402,7 @@
 		</div>
 	</section>
 
-	<!-- "Average Dev Setup" Hilarious Feature Card -->
+	<!-- "Average Dev Setup" Feature Card (High-Res Version) -->
 	<section class="section-block setup-section">
 		<div class="section-header">
 			<span class="section-tag">{content.setupTag}</span>
@@ -311,7 +414,7 @@
 			<div class="setup-image-wrap">
 				<img
 					src="/dev-setup.jpg"
-					alt="Samuel Velasco's honest development setup with backpack keyboard and drone"
+					alt="Samuel Velasco's development setup with backpack keyboard and drone"
 					class="setup-img"
 				/>
 				<div class="setup-overlay-badge">
@@ -329,6 +432,86 @@
 						</div>
 						<p class="annotation-desc">{item.desc}</p>
 					</div>
+				{/each}
+			</div>
+		</div>
+	</section>
+
+	<!-- First Undergrad Project Showcase: Automated Tower Crane -->
+	<section class="section-block crane-section">
+		<div class="section-header">
+			<span class="section-tag">{content.craneTag}</span>
+			<h2 class="section-title">{content.craneTitle}</h2>
+			<p class="section-desc">{content.craneSubtitle}</p>
+		</div>
+
+		<div class="crane-showcase-card interactive">
+			<!-- Main Display Area -->
+			<div class="crane-main-viewer">
+				<div class="crane-image-stage">
+					<img
+						src={content.craneImages[selectedCraneIndex].src}
+						alt={content.craneImages[selectedCraneIndex].label}
+						class="crane-active-img"
+					/>
+
+					<!-- Badges & Counter -->
+					<div class="crane-badge-overlay">
+						<span class="crane-badge-dot"></span>
+						<span>{content.craneImages[selectedCraneIndex].badge}</span>
+					</div>
+
+					<div class="crane-nav-overlay">
+						<button
+							class="crane-nav-btn interactive"
+							onclick={prevCraneImage}
+							aria-label="Previous project photo"
+							title="Previous photo"
+						>
+							<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+								<polyline points="10 3 5 8 10 13"></polyline>
+							</svg>
+						</button>
+						<span class="crane-counter">
+							{selectedCraneIndex + 1} / {content.craneImages.length}
+						</span>
+						<button
+							class="crane-nav-btn interactive"
+							onclick={nextCraneImage}
+							aria-label="Next project photo"
+							title="Next photo"
+						>
+							<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+								<polyline points="6 3 11 8 6 13"></polyline>
+							</svg>
+						</button>
+					</div>
+				</div>
+
+				<div class="crane-caption-bar">
+					<p class="crane-caption-text">
+						<strong>{content.craneImages[selectedCraneIndex].label} :</strong>
+						{content.craneImages[selectedCraneIndex].caption}
+					</p>
+				</div>
+			</div>
+
+			<!-- Interactive Thumbnail Strip -->
+			<div class="crane-thumbnail-strip">
+				{#each content.craneImages as img, idx}
+					{@const isSelected = selectedCraneIndex === idx}
+					<button
+						class="crane-thumb-btn interactive"
+						class:selected={isSelected}
+						onclick={() => (selectedCraneIndex = idx)}
+						title={img.label}
+					>
+						<img src={img.src} alt={img.label} class="crane-thumb-img" />
+						<div class="crane-thumb-info">
+							<span class="crane-thumb-idx">{idx === 0 ? '★ Cover' : `0${idx + 1}`}</span>
+							<span class="crane-thumb-name">{img.label}</span>
+						</div>
+					</button>
 				{/each}
 			</div>
 		</div>
@@ -746,6 +929,206 @@
 		margin: 0;
 	}
 
+	/* Crane Undergrad Project Showcase */
+	.crane-showcase-card {
+		background: rgba(255, 255, 255, 0.82);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
+		border: 1px solid var(--border-subtle);
+		border-radius: 4px;
+		padding: 1.75rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		box-shadow: 0 4px 20px -2px rgba(28, 25, 23, 0.04);
+		transition: backdrop-filter 0.3s ease, border-color 0.25s ease;
+	}
+
+	.crane-showcase-card:hover {
+		backdrop-filter: blur(34px);
+		-webkit-backdrop-filter: blur(34px);
+		border-color: var(--border-medium);
+	}
+
+	.crane-main-viewer {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.crane-image-stage {
+		position: relative;
+		width: 100%;
+		height: 480px;
+		background: #181513;
+		border-radius: 3px;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid var(--border-subtle);
+	}
+
+	.crane-active-img {
+		max-width: 100%;
+		max-height: 100%;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		display: block;
+		transition: opacity 0.3s ease;
+	}
+
+	.crane-badge-overlay {
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+		background: rgba(28, 25, 23, 0.85);
+		backdrop-filter: blur(8px);
+		color: #ffffff;
+		padding: 0.35rem 0.75rem;
+		border-radius: 3px;
+		font-size: 0.76rem;
+		font-weight: 600;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		border: 1px solid rgba(255, 255, 255, 0.15);
+	}
+
+	.crane-badge-dot {
+		width: 6px;
+		height: 6px;
+		border-radius: 1px;
+		background: var(--accent-purple-light);
+	}
+
+	.crane-nav-overlay {
+		position: absolute;
+		bottom: 1rem;
+		right: 1rem;
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		background: rgba(28, 25, 23, 0.85);
+		backdrop-filter: blur(8px);
+		padding: 0.25rem 0.5rem;
+		border-radius: 3px;
+		border: 1px solid rgba(255, 255, 255, 0.15);
+	}
+
+	.crane-nav-btn {
+		width: 28px;
+		height: 28px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: transparent;
+		border: none;
+		color: #ffffff;
+		cursor: pointer;
+		border-radius: 2px;
+		transition: background 0.2s ease;
+	}
+
+	.crane-nav-btn:hover {
+		background: rgba(255, 255, 255, 0.2);
+	}
+
+	.crane-nav-btn svg {
+		width: 14px;
+		height: 14px;
+	}
+
+	.crane-counter {
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		color: #e5e5e5;
+		padding: 0 0.35rem;
+	}
+
+	.crane-caption-bar {
+		background: rgba(250, 246, 240, 0.85);
+		border: 1px solid var(--border-subtle);
+		border-radius: 3px;
+		padding: 0.9rem 1.25rem;
+	}
+
+	.crane-caption-text {
+		margin: 0;
+		font-size: 0.88rem;
+		line-height: 1.5;
+		color: var(--text-secondary);
+	}
+
+	.crane-caption-text strong {
+		color: var(--text-primary);
+	}
+
+	/* Thumbnail Strip */
+	.crane-thumbnail-strip {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 0.75rem;
+	}
+
+	.crane-thumb-btn {
+		background: rgba(250, 246, 240, 0.75);
+		border: 1px solid var(--border-subtle);
+		border-radius: 3px;
+		padding: 0.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.45rem;
+		cursor: pointer;
+		text-align: left;
+		transition: all 0.2s ease;
+	}
+
+	.crane-thumb-btn:hover {
+		background: #ffffff;
+		border-color: var(--border-medium);
+		transform: translateY(-2px);
+	}
+
+	.crane-thumb-btn.selected {
+		background: #ffffff;
+		border-color: var(--accent-purple);
+		box-shadow: 0 0 0 1px var(--accent-purple);
+	}
+
+	.crane-thumb-img {
+		width: 100%;
+		height: 72px;
+		object-fit: cover;
+		border-radius: 2px;
+		display: block;
+		background: #181513;
+	}
+
+	.crane-thumb-info {
+		display: flex;
+		flex-direction: column;
+		gap: 0.1rem;
+		overflow: hidden;
+	}
+
+	.crane-thumb-idx {
+		font-family: var(--font-mono);
+		font-size: 0.68rem;
+		color: var(--accent-purple);
+		font-weight: 700;
+	}
+
+	.crane-thumb-name {
+		font-size: 0.74rem;
+		font-weight: 600;
+		color: var(--text-primary);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
 	/* Quote Strip */
 	.quote-strip {
 		padding: 1rem 0;
@@ -823,7 +1206,7 @@
 		font-size: 1.02rem;
 		color: var(--text-secondary);
 		margin: 0;
-		max-width: 650px;
+		max-width: 680px;
 	}
 
 	/* Skills Grid */
@@ -1077,6 +1460,14 @@
 			grid-template-columns: 1fr 1fr;
 		}
 
+		.crane-thumbnail-strip {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.crane-image-stage {
+			height: 380px;
+		}
+
 		.skills-grid {
 			grid-template-columns: 1fr;
 		}
@@ -1098,6 +1489,14 @@
 	@media (max-width: 600px) {
 		.setup-annotations-grid {
 			grid-template-columns: 1fr;
+		}
+
+		.crane-thumbnail-strip {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.crane-image-stage {
+			height: 300px;
 		}
 	}
 </style>
