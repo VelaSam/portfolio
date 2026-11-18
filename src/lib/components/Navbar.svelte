@@ -27,9 +27,10 @@
 	}
 </script>
 
-<header class="navbar-wrapper">
+<!-- Full-bleed transparent borderless header spanning 100% viewport width -->
+<header class="header-full-bleed">
 	<nav class="navbar" aria-label="Main Navigation">
-		<!-- Brand Logo -->
+		<!-- Brand Logo & Name -->
 		<a href="/" class="brand interactive" onclick={closeMobileMenu}>
 			<div class="brand-logo-container">
 				<img src="/logo-emblem.png" alt="Samuel Velasco Logo" class="brand-logo" />
@@ -42,7 +43,7 @@
 			</div>
 		</a>
 
-		<!-- Desktop Nav Links -->
+		<!-- Clean Borderless Nav Links -->
 		<div class="nav-links">
 			{#each navItems as item}
 				{@const isActive = page.url.pathname === item.href}
@@ -52,15 +53,17 @@
 					class:active={isActive}
 					aria-current={isActive ? 'page' : undefined}
 				>
-					<span class="nav-indicator"></span>
 					<span class="nav-label">{item.label}</span>
+					{#if isActive}
+						<span class="active-hairline"></span>
+					{/if}
 				</a>
 			{/each}
 		</div>
 
-		<!-- Status Badge, Fun Quebec Switcher & CTA -->
+		<!-- Status, Fun Quebec Switcher & CTA -->
 		<div class="nav-right">
-			<!-- Fun Quebec/English Language Switcher -->
+			<!-- Quebec / English Toggle Button -->
 			<button
 				class="lang-switcher interactive"
 				onclick={() => i18n.toggleLocale()}
@@ -80,7 +83,7 @@
 
 			<div class="status-pill" title={i18n.locale === 'en' ? 'Based in Montreal, QC' : 'Basé à Montréal, QC'}>
 				<span class="status-indicator"></span>
-				<span class="status-text">Montréal</span>
+				<span class="status-text">Montréal, QC</span>
 			</div>
 
 			<a href="/contact" class="nav-cta interactive">
@@ -132,7 +135,13 @@
 				{/each}
 
 				<div class="mobile-lang-row">
-					<button class="mobile-lang-btn" onclick={() => { i18n.toggleLocale(); closeMobileMenu(); }}>
+					<button
+						class="mobile-lang-btn"
+						onclick={() => {
+							i18n.toggleLocale();
+							closeMobileMenu();
+						}}
+					>
 						{i18n.locale === 'en' ? '⚜️ Passer en Français (QC)' : '🇨🇦 Switch to English'}
 					</button>
 				</div>
@@ -146,29 +155,29 @@
 </header>
 
 <style>
-	.navbar-wrapper {
-		position: sticky;
-		top: 1rem;
-		z-index: 900;
+	/* Full-bleed transparent header spanning the full width (100%) */
+	.header-full-bleed {
 		width: 100%;
-		max-width: 1100px;
-		margin: 0 auto;
-		padding: 0 1.25rem;
+		background: transparent;
+		border: none;
+		box-shadow: none;
+		padding: 1.5rem 2.5rem 1rem;
+		position: relative;
+		z-index: 900;
 	}
 
-	/* Sharp, architectural rectangular frame */
+	/* Max-width container inside full-bleed header */
 	.navbar {
+		max-width: 1150px;
+		margin: 0 auto;
+		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 0.65rem 1.15rem;
-		background: rgba(255, 255, 255, 0.82);
-		backdrop-filter: blur(20px);
-		-webkit-backdrop-filter: blur(20px);
-		border: 1px solid var(--border-subtle);
-		border-radius: 4px; /* Sharp corners */
-		box-shadow: 0 2px 8px -1px rgba(44, 38, 30, 0.04);
-		transition: all 0.25s ease;
+		background: transparent;
+		border: none;
+		box-shadow: none;
+		padding: 0;
 	}
 
 	.brand {
@@ -177,8 +186,7 @@
 		gap: 0.75rem;
 		text-decoration: none;
 		color: var(--text-primary);
-		padding: 0.25rem 0.5rem;
-		border-radius: 3px;
+		padding: 0.2rem 0;
 		transition: transform 0.2s ease;
 	}
 
@@ -187,15 +195,15 @@
 	}
 
 	.brand-logo-container {
-		width: 30px;
-		height: 30px;
+		width: 32px;
+		height: 32px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: rgba(109, 40, 217, 0.06);
+		background: rgba(109, 40, 217, 0.08);
 		border: 1px solid rgba(109, 40, 217, 0.18);
-		border-radius: 3px; /* Sharp corners */
-		transition: transform 0.35s ease;
+		border-radius: 3px;
+		transition: transform 0.25s ease;
 	}
 
 	.brand:hover .brand-logo-container {
@@ -203,7 +211,7 @@
 	}
 
 	.brand-logo {
-		width: 17px;
+		width: 18px;
 		height: auto;
 		display: block;
 	}
@@ -216,7 +224,7 @@
 
 	.brand-name {
 		font-family: var(--font-display);
-		font-size: 1.18rem;
+		font-size: 1.25rem;
 		font-weight: 500;
 		color: var(--text-primary);
 		letter-spacing: -0.01em;
@@ -225,67 +233,56 @@
 	.brand-role {
 		font-size: 0.68rem;
 		color: var(--text-tertiary);
-		font-weight: 500;
-		letter-spacing: 0.03em;
+		font-weight: 600;
+		letter-spacing: 0.04em;
 		text-transform: uppercase;
 	}
 
+	/* Borderless Nav Links */
 	.nav-links {
 		display: flex;
 		align-items: center;
-		gap: 0.2rem;
-		background: rgba(243, 238, 228, 0.5);
-		padding: 0.2rem 0.3rem;
-		border-radius: 3px; /* Sharp */
-		border: 1px solid rgba(226, 219, 206, 0.7);
+		gap: 1.75rem;
+		background: transparent;
+		border: none;
+		padding: 0;
 	}
 
 	.nav-item {
-		display: flex;
+		display: inline-flex;
 		align-items: center;
-		gap: 0.45rem;
-		padding: 0.4rem 0.85rem;
-		border-radius: 2px; /* Sharp */
+		position: relative;
+		padding: 0.4rem 0;
 		text-decoration: none;
 		color: var(--text-secondary);
-		font-size: 0.85rem;
+		font-size: 0.88rem;
 		font-weight: 500;
-		transition: all 0.2s ease;
-		position: relative;
-	}
-
-	.nav-indicator {
-		width: 4px;
-		height: 4px;
-		border-radius: 1px; /* Sharp */
-		background: transparent;
-		transition: all 0.2s ease;
+		transition: color 0.2s ease;
 	}
 
 	.nav-item:hover {
 		color: var(--text-primary);
-		background: rgba(255, 255, 255, 0.75);
-	}
-
-	.nav-item:hover .nav-indicator {
-		background: var(--accent-purple);
 	}
 
 	.nav-item.active {
 		color: var(--text-primary);
-		background: #ffffff;
-		border: 1px solid rgba(226, 219, 206, 0.8);
 		font-weight: 600;
 	}
 
-	.nav-item.active .nav-indicator {
+	.active-hairline {
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		right: 0;
+		height: 2px;
 		background: var(--accent-purple);
+		border-radius: 1px;
 	}
 
 	.nav-right {
 		display: flex;
 		align-items: center;
-		gap: 0.65rem;
+		gap: 0.75rem;
 	}
 
 	/* Quebec / English Fun Switcher */
@@ -294,9 +291,9 @@
 		align-items: center;
 		gap: 0.35rem;
 		padding: 0.35rem 0.65rem;
-		background: #ffffff;
+		background: rgba(255, 255, 255, 0.6);
 		border: 1px solid var(--border-medium);
-		border-radius: 3px; /* Sharp */
+		border-radius: 3px;
 		color: var(--text-primary);
 		font-family: var(--font-mono);
 		font-size: 0.76rem;
@@ -307,7 +304,7 @@
 
 	.lang-switcher:hover {
 		border-color: var(--accent-purple);
-		background: rgba(109, 40, 217, 0.05);
+		background: #ffffff;
 		transform: translateY(-1px);
 	}
 
@@ -321,9 +318,9 @@
 		align-items: center;
 		gap: 0.45rem;
 		padding: 0.35rem 0.65rem;
-		background: rgba(243, 239, 230, 0.7);
+		background: rgba(255, 255, 255, 0.5);
 		border: 1px solid var(--border-subtle);
-		border-radius: 3px; /* Sharp */
+		border-radius: 3px;
 		font-size: 0.74rem;
 		color: var(--text-secondary);
 		font-weight: 500;
@@ -332,7 +329,7 @@
 	.status-indicator {
 		width: 5px;
 		height: 5px;
-		border-radius: 1px; /* Sharp indicator */
+		border-radius: 1px;
 		background: #10b981;
 	}
 
@@ -340,10 +337,10 @@
 		display: flex;
 		align-items: center;
 		gap: 0.45rem;
-		padding: 0.45rem 1rem;
+		padding: 0.45rem 1.05rem;
 		background: var(--text-primary);
 		color: #faf7f2;
-		border-radius: 3px; /* Sharp */
+		border-radius: 3px;
 		text-decoration: none;
 		font-size: 0.84rem;
 		font-weight: 600;
@@ -395,19 +392,19 @@
 
 	.mobile-drawer {
 		display: none;
-		margin-top: 0.5rem;
+		margin-top: 1rem;
 		background: rgba(255, 255, 255, 0.98);
 		backdrop-filter: blur(20px);
 		border: 1px solid var(--border-subtle);
-		border-radius: 4px; /* Sharp */
-		padding: 1rem;
+		border-radius: 4px;
+		padding: 1.25rem;
 		box-shadow: 0 10px 25px -4px rgba(44, 38, 30, 0.08);
 	}
 
 	.mobile-nav-links {
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		gap: 0.65rem;
 	}
 
 	.mobile-nav-item {
@@ -465,6 +462,10 @@
 	}
 
 	@media (max-width: 860px) {
+		.header-full-bleed {
+			padding: 1.25rem 1.25rem 0.5rem;
+		}
+
 		.nav-links,
 		.status-pill,
 		.nav-cta {
