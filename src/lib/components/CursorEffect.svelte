@@ -360,7 +360,7 @@
 		margin-top: -10px;
 		margin-left: -10px;
 		pointer-events: none;
-		z-index: 9999;
+		z-index: 100000;
 		opacity: 0;
 		filter: drop-shadow(0 2px 6px rgba(109, 40, 217, 0.35));
 		transition:
