@@ -215,6 +215,13 @@
 			</div>
 
 			<aside class="hero-spec-ledger" aria-label="Quick specifications">
+				<div class="spec-identity">
+					<img src="/giraffe-avatar.jpg" alt="Samuel Velasco profile" class="spec-avatar" />
+					<div class="spec-id-text">
+						<span class="spec-id-name">Samuel Velasco</span>
+						<span class="spec-id-handle">@VelaSam</span>
+					</div>
+				</div>
 				<div class="spec-row">
 					<span class="spec-key">{content.metaRoleLabel}</span>
 					<span class="spec-val">{content.metaRoleVal}</span>
@@ -230,7 +237,7 @@
 				<div class="spec-row spec-links">
 					<a href="https://github.com/VelaSam" target="_blank" rel="noopener noreferrer" class="spec-ext interactive">GitHub ↗</a>
 					<a href="https://www.linkedin.com/in/samuelvelascodev" target="_blank" rel="noopener noreferrer" class="spec-ext interactive">LinkedIn ↗</a>
-					<a href="mailto:svelasco514@gmail.com" class="spec-ext interactive">svelasco514@gmail.com ↗</a>
+					<a href="mailto:contact@samuelvelasco.dev" class="spec-ext interactive">contact@samuelvelasco.dev ↗</a>
 				</div>
 			</aside>
 		</div>
@@ -465,6 +472,43 @@
 		display: flex;
 		flex-direction: column;
 		border-top: 1px solid var(--border-medium);
+	}
+
+	.spec-identity {
+		display: flex;
+		align-items: center;
+		gap: 0.9rem;
+		padding: 0.9rem 0;
+		border-bottom: 1px solid var(--border-subtle);
+	}
+
+	.spec-avatar {
+		width: 52px;
+		height: 52px;
+		object-fit: cover;
+		border: 1px solid var(--border-medium);
+		border-radius: 2px;
+		display: block;
+		flex-shrink: 0;
+	}
+
+	.spec-id-text {
+		display: flex;
+		flex-direction: column;
+		gap: 0.1rem;
+	}
+
+	.spec-id-name {
+		font-family: var(--font-display);
+		font-size: 1.25rem;
+		color: var(--text-primary);
+		line-height: 1.1;
+	}
+
+	.spec-id-handle {
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		color: var(--text-tertiary);
 	}
 
 	.spec-row {

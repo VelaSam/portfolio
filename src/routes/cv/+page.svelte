@@ -335,7 +335,7 @@
 				<p class="cv-subtitle">{content.subtitle}</p>
 			</div>
 			<div class="cv-meta-links no-print">
-				<a href="mailto:svelasco514@gmail.com" class="meta-link interactive">svelasco514@gmail.com ↗</a>
+				<a href="mailto:contact@samuelvelasco.dev" class="meta-link interactive">contact@samuelvelasco.dev ↗</a>
 				<a href="https://linkedin.com/in/samuelvelascodev" target="_blank" rel="noopener noreferrer" class="meta-link interactive">LinkedIn ↗</a>
 				<a href="/contact" class="meta-cta interactive">{content.btnContact}</a>
 			</div>

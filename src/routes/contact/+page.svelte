@@ -25,8 +25,8 @@
 		if (!accessKey) {
 			submitError =
 				i18n.locale === 'en'
-					? 'Web3Forms access key not found. Please add VITE_WEB3FORMS_ACCESS_KEY in your .env file or reach out directly at svelasco514@gmail.com.'
-					: 'Clé d’accès Web3Forms introuvable. Ajoutez VITE_WEB3FORMS_ACCESS_KEY dans votre fichier .env ou écrivez directement à svelasco514@gmail.com.';
+					? 'Web3Forms access key not found. Please add VITE_WEB3FORMS_ACCESS_KEY in your .env file or reach out directly at contact@samuelvelasco.dev.'
+					: 'Clé d’accès Web3Forms introuvable. Ajoutez VITE_WEB3FORMS_ACCESS_KEY dans votre fichier .env ou écrivez directement à contact@samuelvelasco.dev.';
 			return;
 		}
 
@@ -59,14 +59,14 @@
 				submitError =
 					data.message ||
 					(i18n.locale === 'en'
-						? 'Unable to transmit message. Please contact me directly at svelasco514@gmail.com.'
-						: 'Impossible d’acheminer le message. Écrivez-moi directement à svelasco514@gmail.com.');
+						? 'Unable to transmit message. Please contact me directly at contact@samuelvelasco.dev.'
+						: 'Impossible d’acheminer le message. Écrivez-moi directement à contact@samuelvelasco.dev.');
 			}
 		} catch {
 			submitError =
 				i18n.locale === 'en'
-					? 'Network connection error. Please try again or reach out at svelasco514@gmail.com.'
-					: 'Erreur réseau. Veuillez réessayer ou m’écrire à svelasco514@gmail.com.';
+					? 'Network connection error. Please try again or reach out at contact@samuelvelasco.dev.'
+					: 'Erreur réseau. Veuillez réessayer ou m’écrire à contact@samuelvelasco.dev.';
 		} finally {
 			isSubmitting = false;
 		}
@@ -154,8 +154,8 @@
 			<div class="directory-ledger">
 				<div class="dir-row">
 					<span class="dir-key">{content.emailLabel}</span>
-					<a href="mailto:svelasco514@gmail.com" class="dir-val dir-link interactive">
-						svelasco514@gmail.com ↗
+					<a href="mailto:contact@samuelvelasco.dev" class="dir-val dir-link interactive">
+						contact@samuelvelasco.dev ↗
 					</a>
 				</div>
 

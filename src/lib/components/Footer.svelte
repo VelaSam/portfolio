@@ -46,7 +46,7 @@
 					>
 						LinkedIn ↗
 					</a>
-					<a href="mailto:svelasco514@gmail.com" class="col-link interactive">
+					<a href="mailto:contact@samuelvelasco.dev" class="col-link interactive">
 						Email ↗
 					</a>
 				</div>
