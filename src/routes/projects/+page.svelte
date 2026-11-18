@@ -29,10 +29,10 @@
 					repoUrl: 'https://github.com/VelaSam/CanBankX_Samuel_Velasco',
 					stack: ['Go', 'Docker Compose', 'Redis', 'KrakenD API Gateway', 'MySQL', 'Prometheus', 'Grafana', 'k6'],
 					bullets: [
-						'Architected an event-driven banking backend implementing the Database-per-Microservice pattern across isolated Go services (User, Account, Transaction, Ledger).',
-						'Integrated KrakenD API Gateway for centralized authentication, rate limiting, and unified request routing across downstream microservices.',
-						'Implemented Redis caching for sub-millisecond session validation and hot balance verification, dramatically reducing primary database load.',
-						'Demonstrated high throughput and zero-data-loss consistency through rigorous k6 stress testing and Grafana/Prometheus telemetry metrics.'
+						'Built a microservices banking backend in Go with an isolated database per service (User, Account, Transaction, Ledger).',
+						'Placed KrakenD API Gateway in front of the services to handle auth, rate limiting, and request routing.',
+						'Added Redis caching for session checks and frequently accessed account balances.',
+						'Load-tested the stack with k6 and monitored service metrics using Prometheus and Grafana.'
 					],
 					showcaseImage: {
 						src: '/canbankx-deployment.png',
@@ -42,11 +42,11 @@
 					}
 				},
 				{
-					title: 'Automated Robotic Tower Crane',
-					context: '1st-Year Undergraduate Engineering Challenge (ÉTS Montréal)',
-					stack: ['SolidWorks CAD', 'Embedded C', 'NRF24L01 RF Telemetry', 'Laser Cutting CNC', 'Mechanical Transmission'],
+					title: 'Automated Tower Crane',
+					context: '1st-Year Multidisciplinary Project (2nd Semester • ÉTS Montréal)',
+					stack: ['SolidWorks CAD', 'Embedded C', 'RF Telemetry', 'Laser Cutting CNC', 'Mechanical Transmission'],
 					bullets: [
-						'Designed, modeled, and manufactured a scale automated tower crane as our first-year undergraduate engineering competition project at ÉTS.',
+						'Designed, modeled, and built a functional scale tower crane for the mandatory 2nd-semester multidisciplinary engineering project at ÉTS.',
 						'Modeled full 3D assembly in SolidWorks: lattice mast tower, counterweighted boom, rotational slewing bearing, and trolley winch drive.',
 						'Engineered a custom spur-and-pinion transmission driven by a micro-metal gearmotor for smooth horizontal slewing.',
 						'Hand-wired a standalone wireless remote controller with a dual-axis joystick, RF telemetry link, and live status display.'
@@ -97,10 +97,10 @@
 					repoUrl: 'https://github.com/VelaSam/CanBankX_Samuel_Velasco',
 					stack: ['Go', 'Docker Compose', 'Redis', 'KrakenD API Gateway', 'MySQL', 'Prometheus', 'Grafana', 'k6'],
 					bullets: [
-						'Conception et développement d’un backend bancaire distribué suivant le pattern Database-per-Microservice en Go (User, Account, Transaction, Ledger).',
-						'Mise en place de la passerelle KrakenD API Gateway pour la centralisation de l’authentification, du rate-limiting et du routage.',
-						'Implémentation de caches Redis ultra-rapides pour la validation des sessions et la consultation des soldes chauds.',
-						'Validation de la haute disponibilité et de la cohérence des données par des tests de charge k6 intensifs et métriques Grafana/Prometheus.'
+						'Backend bancaire en microservices (Go) avec une base de données dédiée par service (User, Account, Transaction, Ledger).',
+						'Passerelle KrakenD API Gateway pour gérer l’authentification, le rate-limiting et le routage des requêtes.',
+						'Cache Redis pour la validation des sessions et la lecture rapide des soldes de comptes.',
+						'Tests de charge avec k6 et suivi des métriques via Prometheus et Grafana.'
 					],
 					showcaseImage: {
 						src: '/canbankx-deployment.png',
@@ -110,11 +110,11 @@
 					}
 				},
 				{
-					title: 'Grue à Tour Automatisée Robotisée',
-					context: 'Défi d’ingénierie de première année (Baccalauréat ÉTS Montréal)',
-					stack: ['SolidWorks CAO', 'C embarqué', 'Télémétrie RF NRF24L01', 'Découpe laser CNC', 'Transmission mécanique'],
+					title: 'Grue à tour automatisée',
+					context: 'Projet multidisciplinaire de 1re année (2e session • ÉTS Montréal)',
+					stack: ['SolidWorks CAO', 'C embarqué', 'Télémétrie RF', 'Découpe laser CNC', 'Transmission mécanique'],
 					bullets: [
-						'Conception, modélisation et fabrication d’une grue à tour automatisée à échelle réduite dans le cadre du projet d’intégration à l’ÉTS.',
+						'Conception, modélisation et fabrication d’une grue à tour automatisée à échelle réduite dans le cadre du projet multidisciplinaire de 2e session à l’ÉTS.',
 						'Modélisation 3D complète sous SolidWorks : mât en treillis, flèche rotative avec contrepoids, couronne d’orientation et chariot treuil.',
 						'Conception d’un boîtier de réduction sur mesure avec pignon et couronne dentée entraînés par micro-motoréducteur métallique.',
 						'Câblage complet d’une radiocommande sans fil avec joystick analogique, liaison RF et affichage d’état en direct.'

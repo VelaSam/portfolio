@@ -18,7 +18,7 @@
 			sec3Num: '03',
 			sec3Title: 'Education & Community Involvement',
 			projectsCtaTitle: 'Looking for Engineering & Software Projects?',
-			projectsCtaDesc: 'Explore CanBankX (Go Microservices), the Automated Robotic Tower Crane, and autonomous multi-agent robotics.',
+			projectsCtaDesc: 'Explore CanBankX (Go Microservices), the Automated Tower Crane (1st-Year Multidisciplinary Project), and autonomous Search & Rescue.',
 			projectsCtaBtn: 'Explore Projects Page ↗',
 			technicalSkills: [
 				{
@@ -178,7 +178,7 @@
 			sec3Num: '03',
 			sec3Title: 'Formation & Implication',
 			projectsCtaTitle: 'Vous cherchez mes projets logiciels & d’ingénierie ?',
-			projectsCtaDesc: 'Découvrez CanBankX (Microservices Go), la Grue à Tour Robotisée et nos systèmes robotiques multi-agents.',
+			projectsCtaDesc: 'Découvrez CanBankX (Microservices Go), la Grue à tour automatisée (projet multidisciplinaire de 1re année) et notre projet de recherche et sauvetage.',
 			projectsCtaBtn: 'Explorer la page Projets ↗',
 			technicalSkills: [
 				{

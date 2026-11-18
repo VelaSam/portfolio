@@ -83,14 +83,14 @@
 					title: 'CanBankX — Distributed Microservices Platform',
 					category: 'Distributed Systems & Cloud',
 					stack: 'Go • Docker Compose • Redis • KrakenD • k6',
-					desc: 'Distributed banking backend in Go with Database-per-Microservice isolation across 3 MySQL databases, KrakenD API gateway routing, and extreme concurrent ACID transaction stress testing.',
+					desc: 'Microservices banking backend in Go with isolated MySQL databases, KrakenD API Gateway routing, Redis caching, and k6 load testing.',
 					link: '/projects'
 				},
 				{
-					title: 'Automated Robotic Tower Crane',
-					category: 'Electromechanical & Embedded',
-					stack: 'SolidWorks • C • RF 2.4 GHz • Laser Cutting',
-					desc: 'Full-scale functional scale tower crane engineered for the ÉTS engineering competition: laser-cut timber lattice mast, custom SolidWorks gear transmission, and hand-wired RF joystick controller.',
+					title: 'Automated Tower Crane',
+					category: '1st-Year Multidisciplinary Project',
+					stack: 'SolidWorks • C • RF • Laser Cutting',
+					desc: 'Functional scale tower crane built for the 2nd-semester ÉTS multidisciplinary project: laser-cut lattice mast, custom SolidWorks gear transmission, and wireless joystick controller.',
 					link: '/projects'
 				},
 				{
@@ -185,14 +185,14 @@
 					title: 'CanBankX — Plateforme Microservices Répartie',
 					category: 'Systèmes Distribués & Cloud',
 					stack: 'Go • Docker Compose • Redis • KrakenD • k6',
-					desc: 'Backend bancaire distribué en Go avec isolation par base de données MySQL, passerelle KrakenD API Gateway et validation de transactions ACID concurrentes par tests de charge extrêmes.',
+					desc: 'Backend bancaire en microservices (Go) avec bases MySQL isolées, passerelle KrakenD, cache Redis et tests de charge k6.',
 					link: '/projects'
 				},
 				{
-					title: 'Grue à Tour Automatisée & Téléguidée',
-					category: 'Électromécanique & Embarqué',
-					stack: 'SolidWorks • C • RF 2.4 GHz • Découpe Laser',
-					desc: 'Grue à échelle réduite électromécanique conçue lors de la compétition d’ingénierie à l’ÉTS : mât en treillis de bois découpé au laser, réducteur d’engrenages SolidWorks et télécommande radio sans fil.',
+					title: 'Grue à tour automatisée',
+					category: 'Projet multidisciplinaire (1re année)',
+					stack: 'SolidWorks • C • RF • Découpe Laser',
+					desc: 'Grue à échelle réduite conçue dans le cadre du projet multidisciplinaire de 2e session à l’ÉTS : mât en treillis découpé au laser, transmission SolidWorks et télécommande sans fil.',
 					link: '/projects'
 				},
 				{

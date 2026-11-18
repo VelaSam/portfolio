@@ -377,6 +377,8 @@
 		height: 100%;
 		display: block;
 		overflow: visible;
+		transition: transform 0.12s ease;
+		transform-origin: center;
 	}
 
 	.cursor-octa.visible {
@@ -390,8 +392,8 @@
 		margin-left: -14px;
 	}
 
-	.cursor-octa.clicking {
-		scale: 0.75;
+	.cursor-octa.clicking .octa-svg {
+		transform: scale(0.75);
 	}
 
 	@media (prefers-reduced-motion: reduce) {
