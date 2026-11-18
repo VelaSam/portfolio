@@ -30,7 +30,7 @@
 <!-- Full-bleed transparent borderless header spanning 100% viewport width -->
 <header class="header-full-bleed">
 	<nav class="navbar" aria-label="Main Navigation">
-		<!-- Brand Logo & Name -->
+		<!-- Brand Logo & Name (Samuel Velasco) -->
 		<a href="/" class="brand interactive" onclick={closeMobileMenu}>
 			<div class="brand-logo-container">
 				<img src="/logo-emblem.png" alt="Samuel Velasco Logo" class="brand-logo" />
@@ -38,12 +38,23 @@
 			<div class="brand-text">
 				<span class="brand-name">Samuel Velasco</span>
 				<span class="brand-role">
-					{i18n.locale === 'en' ? 'Software & Embedded' : 'Logiciel & Embarqué'}
+					{i18n.locale === 'en' ? 'Software Developer' : 'Développeur Logiciel'}
 				</span>
 			</div>
 		</a>
 
-		<!-- Clean Borderless Nav Links -->
+		<!-- Montreal telemetry indicator: placed to the right of Samuel Velasco and to the left of Home -->
+		<div
+			class="montreal-indicator"
+			title={i18n.locale === 'en' ? 'Based in Montreal, QC' : 'Basé à Montréal, QC'}
+		>
+			<span class="status-pulse-dot" aria-hidden="true"></span>
+			<span class="location-name">Montréal, QC</span>
+			<span class="location-sep" aria-hidden="true">•</span>
+			<span class="location-coords">45.50° N, 73.56° W</span>
+		</div>
+
+		<!-- Nav Links starting with Home -->
 		<div class="nav-links">
 			{#each navItems as item}
 				{@const isActive = page.url.pathname === item.href}
@@ -61,63 +72,27 @@
 			{/each}
 		</div>
 
-		<!-- Status, Fun Quebec Switcher & CTA -->
-		<div class="nav-right">
-			<!-- Quebec / English Toggle Button -->
-			<button
-				class="lang-switcher interactive"
-				onclick={() => i18n.toggleLocale()}
-				title={i18n.locale === 'en'
-					? 'Passer au français (Mode Québécois ⚜️)'
-					: 'Switch to English (Standard mode)'}
-				aria-label="Toggle language"
-			>
-				{#if i18n.locale === 'en'}
-					<span class="lang-flag">⚜️</span>
-					<span class="lang-text">QC</span>
-				{:else}
-					<span class="lang-flag">🇨🇦</span>
-					<span class="lang-text">EN</span>
-				{/if}
-			</button>
-
-			<div class="status-pill" title={i18n.locale === 'en' ? 'Based in Montreal, QC' : 'Basé à Montréal, QC'}>
-				<span class="status-indicator"></span>
-				<span class="status-text">Montréal, QC</span>
-			</div>
-
-			<a href="/contact" class="nav-cta interactive">
-				<span>{i18n.locale === 'en' ? 'Let’s talk' : 'Discuter'}</span>
-				<svg
-					class="cta-arrow"
-					viewBox="0 0 16 16"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-				>
-					<line x1="3" y1="8" x2="13" y2="8"></line>
-					<polyline points="9 4 13 8 9 12"></polyline>
-				</svg>
-			</a>
-
-			<!-- Mobile Burger Button -->
-			<button
-				class="mobile-toggle interactive"
-				aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-				aria-expanded={mobileMenuOpen}
-				onclick={toggleMobileMenu}
-			>
-				<span class="burger-bar" class:open={mobileMenuOpen}></span>
-				<span class="burger-bar" class:open={mobileMenuOpen}></span>
-			</button>
-		</div>
+		<!-- Mobile Burger Button -->
+		<button
+			class="mobile-toggle interactive"
+			aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+			aria-expanded={mobileMenuOpen}
+			onclick={toggleMobileMenu}
+		>
+			<span class="burger-bar" class:open={mobileMenuOpen}></span>
+			<span class="burger-bar" class:open={mobileMenuOpen}></span>
+		</button>
 	</nav>
 
 	<!-- Mobile Drawer -->
 	{#if mobileMenuOpen}
 		<div class="mobile-drawer">
+			<div class="mobile-location-row">
+				<span class="status-pulse-dot" aria-hidden="true"></span>
+				<span class="location-name">Montréal, QC</span>
+				<span class="location-coords">45.50° N, 73.56° W</span>
+			</div>
+
 			<div class="mobile-nav-links">
 				{#each navItems as item}
 					{@const isActive = page.url.pathname === item.href}
@@ -133,61 +108,73 @@
 						{/if}
 					</a>
 				{/each}
-
-				<div class="mobile-lang-row">
-					<button
-						class="mobile-lang-btn"
-						onclick={() => {
-							i18n.toggleLocale();
-							closeMobileMenu();
-						}}
-					>
-						{i18n.locale === 'en' ? '⚜️ Passer en Français (QC)' : '🇨🇦 Switch to English'}
-					</button>
-				</div>
-
-				<a href="/contact" class="mobile-nav-cta" onclick={closeMobileMenu}>
-					{i18n.locale === 'en' ? 'Get in touch' : 'Prendre contact'}
-				</a>
 			</div>
 		</div>
 	{/if}
 </header>
 
+<!-- Tactile Screen-Attached Floating Language Toggle (Fixed to Bottom-Right of Viewport) -->
+<aside class="screen-lang-dock no-print" aria-label="Language selection">
+	<button
+		class="floating-lang-pill interactive"
+		onclick={() => i18n.toggleLocale()}
+		title={i18n.locale === 'en'
+			? 'Passer au français québécois (Mode QC ⚜️)'
+			: 'Switch to English (Standard mode 🇨🇦)'}
+		aria-label="Toggle language"
+	>
+		{#if i18n.locale === 'en'}
+			<span class="lang-flag" aria-hidden="true">⚜️</span>
+			<span class="lang-active">QC</span>
+			<span class="lang-divider" aria-hidden="true">/</span>
+			<span class="lang-alt">FR</span>
+		{:else}
+			<span class="lang-flag" aria-hidden="true">🇨🇦</span>
+			<span class="lang-active">EN</span>
+			<span class="lang-divider" aria-hidden="true">/</span>
+			<span class="lang-alt">ENG</span>
+		{/if}
+	</button>
+</aside>
+
 <style>
-	/* Full-bleed transparent header spanning the full width (100%) */
+	/* Full-bleed transparent borderless header spanning 100% viewport width */
 	.header-full-bleed {
 		width: 100%;
 		background: transparent;
 		border: none;
 		box-shadow: none;
-		padding: 1.5rem 2.5rem 1rem;
+		padding: 1.5rem 3rem 1rem;
 		position: relative;
 		z-index: 900;
+		box-sizing: border-box;
 	}
 
-	/* Max-width container inside full-bleed header */
+	/* Exploded navbar taking 100% of the viewport width */
 	.navbar {
-		max-width: 1150px;
-		margin: 0 auto;
 		width: 100%;
+		max-width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		gap: 2rem;
 		background: transparent;
 		border: none;
 		box-shadow: none;
 		padding: 0;
+		box-sizing: border-box;
 	}
 
+	/* Brand */
 	.brand {
 		display: flex;
 		align-items: center;
-		gap: 0.75rem;
+		gap: 0.85rem;
 		text-decoration: none;
 		color: var(--text-primary);
 		padding: 0.2rem 0;
 		transition: transform 0.2s ease;
+		flex-shrink: 0;
 	}
 
 	.brand:hover {
@@ -224,28 +211,90 @@
 
 	.brand-name {
 		font-family: var(--font-display);
-		font-size: 1.25rem;
+		font-size: 1.3rem;
 		font-weight: 500;
 		color: var(--text-primary);
 		letter-spacing: -0.01em;
 	}
 
 	.brand-role {
+		font-family: var(--font-mono);
 		font-size: 0.68rem;
 		color: var(--text-tertiary);
-		font-weight: 600;
-		letter-spacing: 0.04em;
+		font-weight: 500;
+		letter-spacing: 0.05em;
 		text-transform: uppercase;
 	}
 
-	/* Borderless Nav Links */
+	/* Montreal Telemetry Widget (Between Samuel Velasco and Home) */
+	.montreal-indicator {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.55rem;
+		padding: 0.4rem 0.9rem;
+		background: rgba(255, 255, 255, 0.5);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+		border: 1px solid var(--border-subtle);
+		border-radius: 3px;
+		font-family: var(--font-mono);
+		font-size: 0.76rem;
+		color: var(--text-secondary);
+		transition: all 0.2s ease;
+		user-select: none;
+	}
+
+	.montreal-indicator:hover {
+		background: rgba(255, 255, 255, 0.85);
+		border-color: var(--border-medium);
+		color: var(--text-primary);
+	}
+
+	.status-pulse-dot {
+		width: 6px;
+		height: 6px;
+		border-radius: 1px;
+		background: #10b981;
+		box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+		animation: live-pulse 2.8s infinite ease-in-out;
+		flex-shrink: 0;
+	}
+
+	@keyframes live-pulse {
+		0%, 100% {
+			opacity: 1;
+			transform: scale(1);
+		}
+		50% {
+			opacity: 0.45;
+			transform: scale(0.85);
+		}
+	}
+
+	.location-name {
+		font-weight: 600;
+		color: var(--text-primary);
+	}
+
+	.location-sep {
+		color: var(--border-medium);
+		font-size: 0.7rem;
+	}
+
+	.location-coords {
+		color: var(--text-tertiary);
+		font-size: 0.72rem;
+	}
+
+	/* Nav Links */
 	.nav-links {
 		display: flex;
 		align-items: center;
-		gap: 1.75rem;
+		gap: 2.25rem;
 		background: transparent;
 		border: none;
 		padding: 0;
+		flex-shrink: 0;
 	}
 
 	.nav-item {
@@ -255,9 +304,10 @@
 		padding: 0.4rem 0;
 		text-decoration: none;
 		color: var(--text-secondary);
-		font-size: 0.88rem;
+		font-size: 0.92rem;
 		font-weight: 500;
 		transition: color 0.2s ease;
+		letter-spacing: -0.01em;
 	}
 
 	.nav-item:hover {
@@ -279,89 +329,74 @@
 		border-radius: 1px;
 	}
 
-	.nav-right {
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
+	/* Screen-Attached Floating Language Dock (Bottom Right) */
+	.screen-lang-dock {
+		position: fixed;
+		bottom: 2rem;
+		right: 2.5rem;
+		z-index: 9999;
+		pointer-events: auto;
 	}
 
-	/* Quebec / English Fun Switcher */
-	.lang-switcher {
-		display: flex;
+	.floating-lang-pill {
+		display: inline-flex;
 		align-items: center;
-		gap: 0.35rem;
-		padding: 0.35rem 0.65rem;
-		background: rgba(255, 255, 255, 0.6);
+		gap: 0.45rem;
+		padding: 0.55rem 0.95rem;
+		background: rgba(255, 255, 255, 0.88);
+		backdrop-filter: blur(18px);
+		-webkit-backdrop-filter: blur(18px);
 		border: 1px solid var(--border-medium);
-		border-radius: 3px;
+		border-radius: 4px; /* Sharp architectural aesthetic */
 		color: var(--text-primary);
 		font-family: var(--font-mono);
-		font-size: 0.76rem;
+		font-size: 0.78rem;
 		font-weight: 600;
+		letter-spacing: 0.04em;
 		cursor: pointer;
-		transition: all 0.2s ease;
+		box-shadow: 0 4px 18px -2px rgba(28, 25, 23, 0.08), 0 2px 6px -1px rgba(28, 25, 23, 0.04);
+		transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+		user-select: none;
 	}
 
-	.lang-switcher:hover {
-		border-color: var(--accent-purple);
+	.floating-lang-pill:hover {
 		background: #ffffff;
-		transform: translateY(-1px);
+		border-color: var(--accent-purple);
+		color: var(--accent-purple);
+		transform: translateY(-2px);
+		box-shadow: 0 8px 24px -4px rgba(109, 40, 217, 0.16), 0 3px 8px -2px rgba(28, 25, 23, 0.06);
+	}
+
+	.floating-lang-pill:active {
+		transform: translateY(0) scale(0.97);
 	}
 
 	.lang-flag {
-		font-size: 0.95rem;
+		font-size: 1rem;
 		line-height: 1;
 	}
 
-	.status-pill {
-		display: flex;
-		align-items: center;
-		gap: 0.45rem;
-		padding: 0.35rem 0.65rem;
-		background: rgba(255, 255, 255, 0.5);
-		border: 1px solid var(--border-subtle);
-		border-radius: 3px;
-		font-size: 0.74rem;
-		color: var(--text-secondary);
-		font-weight: 500;
+	.lang-active {
+		font-weight: 700;
+		color: var(--text-primary);
 	}
 
-	.status-indicator {
-		width: 5px;
-		height: 5px;
-		border-radius: 1px;
-		background: #10b981;
+	.lang-divider {
+		color: var(--text-tertiary);
+		font-size: 0.7rem;
 	}
 
-	.nav-cta {
-		display: flex;
-		align-items: center;
-		gap: 0.45rem;
-		padding: 0.45rem 1.05rem;
-		background: var(--text-primary);
-		color: #faf7f2;
-		border-radius: 3px;
-		text-decoration: none;
-		font-size: 0.84rem;
-		font-weight: 600;
-		transition: all 0.2s ease;
+	.lang-alt {
+		color: var(--text-tertiary);
+		font-size: 0.72rem;
 	}
 
-	.nav-cta:hover {
-		background: var(--accent-purple);
-		transform: translateY(-1px);
+	.floating-lang-pill:hover .lang-active,
+	.floating-lang-pill:hover .lang-alt {
+		color: var(--accent-purple);
 	}
 
-	.cta-arrow {
-		width: 13px;
-		height: 13px;
-		transition: transform 0.2s ease;
-	}
-
-	.nav-cta:hover .cta-arrow {
-		transform: translateX(3px);
-	}
-
+	/* Mobile Toggle & Drawer */
 	.mobile-toggle {
 		display: none;
 		flex-direction: column;
@@ -399,12 +434,25 @@
 		border-radius: 4px;
 		padding: 1.25rem;
 		box-shadow: 0 10px 25px -4px rgba(44, 38, 30, 0.08);
+		flex-direction: column;
+		gap: 0.85rem;
+	}
+
+	.mobile-location-row {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding-bottom: 0.75rem;
+		border-bottom: 1px solid var(--border-subtle);
+		font-family: var(--font-mono);
+		font-size: 0.76rem;
+		color: var(--text-secondary);
 	}
 
 	.mobile-nav-links {
 		display: flex;
 		flex-direction: column;
-		gap: 0.65rem;
+		gap: 0.5rem;
 	}
 
 	.mobile-nav-item {
@@ -432,49 +480,53 @@
 		color: var(--accent-purple);
 	}
 
-	.mobile-lang-row {
-		padding: 0.5rem 0;
-		border-top: 1px solid var(--border-subtle);
-		border-bottom: 1px solid var(--border-subtle);
-		margin: 0.25rem 0;
+	/* Responsive */
+	@media (max-width: 960px) {
+		.header-full-bleed {
+			padding: 1.25rem 2rem 0.75rem;
+		}
+
+		.location-coords,
+		.location-sep {
+			display: none;
+		}
+
+		.nav-links {
+			gap: 1.5rem;
+		}
+
+		.screen-lang-dock {
+			bottom: 1.5rem;
+			right: 1.75rem;
+		}
 	}
 
-	.mobile-lang-btn {
-		width: 100%;
-		padding: 0.65rem;
-		background: var(--bg-surface-soft);
-		border: 1px solid var(--border-medium);
-		border-radius: 3px;
-		font-weight: 600;
-		font-size: 0.85rem;
-		color: var(--text-primary);
-		cursor: pointer;
-	}
-
-	.mobile-nav-cta {
-		text-align: center;
-		padding: 0.85rem;
-		background: var(--text-primary);
-		color: #faf7f2;
-		border-radius: 3px;
-		text-decoration: none;
-		font-weight: 600;
-	}
-
-	@media (max-width: 860px) {
+	@media (max-width: 780px) {
 		.header-full-bleed {
 			padding: 1.25rem 1.25rem 0.5rem;
 		}
 
-		.nav-links,
-		.status-pill,
-		.nav-cta {
+		.montreal-indicator,
+		.nav-links {
 			display: none;
 		}
 
 		.mobile-toggle,
 		.mobile-drawer {
 			display: flex;
+		}
+
+		.screen-lang-dock {
+			bottom: 1.25rem;
+			right: 1.25rem;
+		}
+	}
+
+	/* Print Cleanliness */
+	@media print {
+		.screen-lang-dock,
+		.mobile-toggle {
+			display: none !important;
 		}
 	}
 </style>
