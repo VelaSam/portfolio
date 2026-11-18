@@ -6,7 +6,7 @@
 	let email = $state('');
 	let subject = $state('');
 	let message = $state('');
-	let botcheck = $state('');
+	let botcheck = $state(false);
 	let isSubmitting = $state(false);
 	let submitError = $state('');
 	let submitted = $state(false);
@@ -245,7 +245,7 @@
 								name="botcheck"
 								tabindex="-1"
 								autocomplete="off"
-								bind:value={botcheck}
+								bind:checked={botcheck}
 							/>
 						</div>
 
