@@ -43,7 +43,7 @@
 						'Designed, modeled, and manufactured a scale automated tower crane as our first-year undergraduate engineering competition project at ÉTS.',
 						'Modeled full 3D assembly in SolidWorks: lattice mast tower, counterweighted boom, rotational slewing bearing, and trolley winch drive.',
 						'Engineered a custom spur-and-pinion transmission driven by a micro-metal gearmotor for smooth horizontal slewing.',
-						'Hand-wired a standalone wireless remote controller: DIP microcontroller, dual-axis thumbstick, 2.4 GHz NRF24L01 RF transceiver, and 1602A LCD telemetry display.'
+						'Hand-wired a standalone wireless remote controller with a dual-axis joystick, RF telemetry link, and live status display.'
 					],
 					craneImages: [
 						{
@@ -108,7 +108,7 @@
 						'Conception, modélisation et fabrication d’une grue à tour automatisée à échelle réduite dans le cadre du projet d’intégration à l’ÉTS.',
 						'Modélisation 3D complète sous SolidWorks : mât en treillis, flèche rotative avec contrepoids, couronne d’orientation et chariot treuil.',
 						'Conception d’un boîtier de réduction sur mesure avec pignon et couronne dentée entraînés par micro-motoréducteur métallique.',
-						'Câblage complet d’une radiocommande sans fil : microcontrôleur DIP, joystick analogique, module 2.4 GHz NRF24L01 et écran LCD 1602A.'
+						'Câblage complet d’une radiocommande sans fil avec joystick analogique, liaison RF et affichage d’état en direct.'
 					],
 					craneImages: [
 						{

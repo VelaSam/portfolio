@@ -55,39 +55,39 @@
 				{
 					company: 'HumanWare',
 					location: 'Longueuil, QC',
-					role: 'C# .NET Avalonia Software Developer – Assistive Technologies',
+					role: 'C# .NET Avalonia Software Developer – Prodigi',
 					type: 'R&D Internship',
 					period: 'Sept. 2025 – Dec. 2025',
 					bullets: [
-						'Developed accessibility software and multi-screen user interfaces using C# .NET and Avalonia.',
+						'Developed features and multi-screen accessibility interfaces for the Prodigi assistive reading suite using C# .NET and Avalonia.',
 						'Integrated optical character recognition (OCR) and text-to-speech (TTS) workflows with voice activity detection.',
 						'Designed ergonomic audio and tactile navigation features tailored for visually impaired users.'
 					],
-					tags: ['C# .NET', 'Avalonia', 'OCR / TTS', 'VAD/RMS', 'Accessibility']
+					tags: ['C# .NET', 'Avalonia', 'Prodigi', 'OCR / TTS', 'Accessibility']
 				},
 				{
-					company: 'Evident Scientific',
+					company: 'Evident Scientific (formerly Olympus)',
 					location: 'Montréal, QC',
-					role: 'Fullstack Developer',
+					role: 'Software Developer – Ultrasound Systems (OmniScan / UNIS)',
 					type: 'R&D Internship',
 					period: 'May 2024 – Dec. 2024',
 					bullets: [
-						'Developed fullstack diagnostic and monitoring tools in C# .NET and Angular for industrial non-destructive testing equipment.',
-						'Turned cryptic industrial telemetry streams into clean, real-time diagnostic tools that field teams could actually troubleshoot with in seconds.'
+						'Worked on the OmniScan / UNIS phased-array ultrasound software ecosystem, bridging a C++ Data Processing Unit (DPU) backend with a modern web application.',
+						'Developed diagnostic and monitoring workflows to turn high-frequency ultrasonic telemetry streams into responsive, real-time field tools.'
 					],
-					tags: ['C# .NET', 'Angular', 'Diagnostics', 'Telemetry']
+					tags: ['C++', 'DPU', 'Angular', 'Ultrasound / NDT', 'Web App']
 				},
 				{
-					company: 'Evident Scientific',
+					company: 'Evident Scientific (formerly Olympus)',
 					location: 'Montréal, QC',
-					role: 'Frontend Developer',
+					role: 'Web Application Developer – Ultrasound Systems',
 					type: 'R&D Internship',
 					period: 'May 2023 – Dec. 2023',
 					bullets: [
-						'Built real-time telemetry dashboards and signal analysis interfaces using Angular and WebSockets.',
-						'Rendered high-frequency ultrasonic data streams with real-time performance.'
+						'Built real-time web interfaces and telemetry dashboards in Angular for industrial ultrasonic non-destructive testing (OmniScan) during the Olympus-to-Evident transition.',
+						'Rendered high-frequency ultrasonic signal and inspection data streams with smooth real-time performance.'
 					],
-					tags: ['Angular', 'WebSockets', 'Telemetry', 'UI/UX']
+					tags: ['Angular', 'TypeScript', 'Ultrasound / NDT', 'Telemetry', 'UI/UX']
 				},
 				{
 					company: 'École de Technologie Supérieure (ÉTS)',
@@ -197,39 +197,39 @@
 				{
 					company: 'HumanWare',
 					location: 'Longueuil, QC',
-					role: 'Développeur C# .NET Avalonia – Technologies d’assistance',
+					role: 'Développeur C# .NET Avalonia – Prodigi',
 					type: 'Stage R&D',
 					period: 'Sept. 2025 – Déc. 2025',
 					bullets: [
-						'Développement de fonctionnalités logicielles d’accessibilité et d’interfaces multi-écrans en C# .NET et Avalonia.',
+						'Développement de fonctionnalités d’accessibilité et d’interfaces multi-écrans pour l’application Prodigi en C# .NET et Avalonia.',
 						'Intégration de flux OCR et de synthèse vocale (TTS) couplés à la détection d’activité vocale.',
 						'Conception de modules ergonomiques de navigation audio adaptés aux personnes ayant une limitation visuelle.'
 					],
-					tags: ['C# .NET', 'Avalonia', 'OCR / TTS', 'VAD/RMS', 'Accessibilité']
+					tags: ['C# .NET', 'Avalonia', 'Prodigi', 'OCR / TTS', 'Accessibilité']
 				},
 				{
-					company: 'Evident Scientific',
+					company: 'Evident Scientific (anciennement Olympus)',
 					location: 'Montréal, QC',
-					role: 'Développeur Fullstack',
+					role: 'Développeur Logiciel – Applications Ultrasons (OmniScan / UNIS)',
 					type: 'Stage R&D',
 					period: 'Mai 2024 – Déc. 2024',
 					bullets: [
-						'Conception d’outils de diagnostic et de supervision fullstack en C# .NET et Angular pour des instruments de contrôle non destructif.',
-						'Transformation de flux télémétriques industriels complexes en outils de diagnostic temps réel clairs et rapides pour les équipes terrain.'
+						'Contribution à l’écosystème logiciel d’inspection par ultrasons OmniScan / UNIS, reliant un moteur C++ Data Processing Unit (DPU) à une application web.',
+						'Développement d’outils de diagnostic et de supervision transformant les flux ultrasonores haute fréquence en interfaces temps réel claires pour les équipes terrain.'
 					],
-					tags: ['C# .NET', 'Angular', 'Diagnostic', 'Télémétrie']
+					tags: ['C++', 'DPU', 'Angular', 'Ultrasons / CND', 'Application Web']
 				},
 				{
-					company: 'Evident Scientific',
+					company: 'Evident Scientific (anciennement Olympus)',
 					location: 'Montréal, QC',
-					role: 'Développeur Frontend',
+					role: 'Développeur Web – Applications Ultrasons',
 					type: 'Stage R&D',
 					period: 'Mai 2023 – Déc. 2023',
 					bullets: [
-						'Développement de tableaux de bord de télémétrie temps réel et d’interfaces d’analyse de signaux en Angular et WebSockets.',
-						'Affichage fluide et haute performance de flux de données ultrasonores haute fréquence.'
+						'Développement de l’application web et de tableaux de bord temps réel en Angular pour des appareils à ultrasons (OmniScan) durant la transition Olympus vers Evident Scientific.',
+						'Affichage fluide et haute performance de flux de données et de signaux ultrasonores haute fréquence.'
 					],
-					tags: ['Angular', 'WebSockets', 'Télémétrie', 'UI/UX']
+					tags: ['Angular', 'TypeScript', 'Ultrasons / CND', 'Télémétrie', 'UI/UX']
 				},
 				{
 					company: 'École de Technologie Supérieure (ÉTS)',
