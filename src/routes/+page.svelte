@@ -20,27 +20,27 @@
 			setupTag: 'Natural Habitat',
 			setupTitle: 'The "Average" Dev Setup',
 			setupSubtitle:
-				'Yes, the right half of the split Moonlander keyboard is literally inside the backpack. Yes, that is a research drone sitting next to a desk fan, an empty Pepsi, and Neovim in a flight-testing cage.',
+				'I use only the left side of my Moonlander because of my two missing S and X keys. I use a fan to cool down the research drone I was somehow trusted with, and I only drink Diet Pepsi because it saves calories.',
 			setupAnnotations: [
 				{
 					id: 'moonlander',
-					title: 'Moonlander (Backpack Mode)',
-					desc: 'Left half on the desk, right half inside the backpack. Ergonomics is a lifestyle.'
+					title: 'Left Half Moonlander',
+					desc: 'Exclusively brought in to type "S" and "X" after the laptop keys broke off.'
 				},
 				{
 					id: 'drone',
 					title: 'Autonomous Research Drone',
-					desc: 'Sitting right next to a Honeywell fan for aerodynamic "bench testing".'
+					desc: 'A real drone I was somehow entrusted with, bench-testing in a flight cage.'
 				},
 				{
-					id: 'neovim',
-					title: 'Neovim + Code',
-					desc: 'Still tweaking .vimrc between ROS 2 builds.'
+					id: 'fan',
+					title: 'Honeywell Fan',
+					desc: 'Keeping the drone from thermal throttling while idling on the table.'
 				},
 				{
 					id: 'pepsi',
-					title: 'Caffeine Reserve',
-					desc: 'Standard issue fuel for bare-metal debugging sessions.'
+					title: 'Diet Pepsi',
+					desc: 'Because it saves calories.'
 				}
 			],
 			craneTag: 'Engineering Roots • Undergrad Project',
@@ -162,27 +162,27 @@
 			setupTag: 'Habitat Naturel',
 			setupTitle: 'Mon "Setup" de Développement Habituel',
 			setupSubtitle:
-				'Oui, la moitié droite du clavier ergonomique Moonlander est littéralement coincée dans le sac à dos. Oui, c’est bien un drone de recherche à côté d’un ventilateur Honeywell, un Pepsi vide et Neovim dans une cage de vol.',
+				'J’utilise seulement le côté gauche de mon Moonlander à cause de mes deux touches S et X manquantes. J’utilise un ventilateur pour refroidir le drone de recherche qu’on m’a miraculeusement confié, et je bois seulement du Pepsi Diet parce que ça sauve des calories.',
 			setupAnnotations: [
 				{
 					id: 'moonlander',
-					title: 'Moonlander (Option Sac à Dos)',
-					desc: 'Moitié gauche sur la table, moitié droite dans le sac. L’ergonomie est un état d’esprit.'
+					title: 'Moitié gauche du Moonlander',
+					desc: 'Amenée uniquement pour taper "S" et "X" après que les touches du portable aient sauté.'
 				},
 				{
 					id: 'drone',
 					title: 'Drone de recherche autonome',
-					desc: 'Placé à côté d’un ventilateur Honeywell pour des tests aérodynamiques "rigoureux".'
+					desc: 'Un vrai drone de recherche qu’on m’a miraculeusement confié pour des tests sur banc.'
 				},
 				{
-					id: 'neovim',
-					title: 'Neovim + Code',
-					desc: 'En train de tweaker mon .vimrc entre deux compilations ROS 2.'
+					id: 'fan',
+					title: 'Ventilateur Honeywell',
+					desc: 'Pour éviter que le drone ne surchauffe pendant les tests au sol.'
 				},
 				{
 					id: 'pepsi',
-					title: 'Carburant caféiné',
-					desc: 'La ration de base pour déboguer des registres matériels.'
+					title: 'Pepsi Diet',
+					desc: 'Parce que ça sauve des calories.'
 				}
 			],
 			craneTag: 'Racines d’Ingénierie • Premier Projet',
@@ -419,7 +419,7 @@
 				/>
 				<div class="setup-overlay-badge">
 					<span class="live-dot"></span>
-					<span>Peak Engineering Ergonomics</span>
+					<span>{i18n.locale === 'en' ? 'Research Lab • Bench Testing' : 'Laboratoire de recherche • Banc d’essai'}</span>
 				</div>
 			</div>
 
