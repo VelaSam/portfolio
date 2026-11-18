@@ -119,7 +119,7 @@
 					role: 'Fullstack Developer',
 					type: 'R&D Internship',
 					company: 'Evident Scientific',
-					detail: 'Industrial testing diagnostic applications & intern mentorship'
+					detail: 'Fullstack diagnostic tooling for non-destructive testing & real-time telemetry pipelines'
 				},
 				{
 					period: 'May 2023 – Dec. 2023',
@@ -247,7 +247,7 @@
 					role: 'Développeur Fullstack',
 					type: 'Stage R&D',
 					company: 'Evident Scientific',
-					detail: 'Applications de diagnostic pour l’inspection industrielle & mentorat de stagiaires'
+					detail: 'Outils de diagnostic fullstack pour le contrôle non destructif & flux télémétriques temps réel'
 				},
 				{
 					period: 'Mai 2023 – Déc. 2023',
@@ -309,10 +309,11 @@
 			</h1>
 
 			<p class="hero-bio">
-				{content.bioLead} <strong class="name-bold">Samuel Velasco</strong>. {content.bioText}
-				<span class="emphasis">{content.bioInterest1}</span>,
-				<span class="emphasis">{content.bioInterest2}</span>, {i18n.locale === 'en' ? 'and' : 'et'}
-				<span class="emphasis">{content.bioInterest3}</span>{content.bioEnd}
+				{#if i18n.locale === 'en'}
+					Hi! I’m <strong class="name-bold">Samuel Velasco</strong>. Software developer, software engineering degree from <span class="emphasis">ÉTS</span>. Developing solid fullstack apps, clean backend systems and scalable web solutions is my day to day plus much relevant experience in <span class="emphasis">system performance</span>, <span class="emphasis">embedded microcontrollers</span>, and <span class="emphasis">autonomous robotics</span>. This allows me to have a more intuitive understanding of how the software operates from the metal up.
+				{:else}
+					Salut ! Je suis <strong class="name-bold">Samuel Velasco</strong>. Développeur logiciel, diplômé en génie logiciel à l’<span class="emphasis">ÉTS</span>. Développer des applications fullstack solides, des systèmes backend propres et des solutions web scalables est mon quotidien, avec en plus une expérience pertinente en <span class="emphasis">performance système</span>, <span class="emphasis">microcontrôleurs embarqués</span> et <span class="emphasis">robotique autonome</span>. Cela me permet d’avoir une compréhension plus intuitive du fonctionnement du logiciel, de la couche matérielle jusqu’au sommet.
+				{/if}
 			</p>
 
 			<div class="hero-actions">

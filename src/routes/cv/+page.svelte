@@ -23,7 +23,7 @@
 			technicalSkills: [
 				{
 					category: 'Web, Applications & Data',
-					skills: ['C# .NET', 'Java', 'TypeScript', 'Angular', 'SvelteKit', 'React', 'Node.js', 'PostgreSQL', 'SQL', 'WebSockets', 'Docker', 'Git']
+					skills: ['C# .NET', 'Java', 'TypeScript', 'Angular', 'SvelteKit', 'React', 'Node.js', 'PostgreSQL', 'SQL', 'Docker', 'Git']
 				},
 				{
 					category: 'Systems & Embedded',
@@ -73,9 +73,9 @@
 					period: 'May 2024 – Dec. 2024',
 					bullets: [
 						'Developed fullstack diagnostic and monitoring tools in C# .NET and Angular for industrial non-destructive testing equipment.',
-						'Supervised and mentored college engineering interns through code reviews and technical guidance.'
+						'Turned cryptic industrial telemetry streams into clean, real-time diagnostic tools that field teams could actually troubleshoot with in seconds.'
 					],
-					tags: ['C# .NET', 'Angular', 'Mentorship', 'Diagnostics']
+					tags: ['C# .NET', 'Angular', 'Diagnostics', 'Telemetry']
 				},
 				{
 					company: 'Evident Scientific',
@@ -104,7 +104,7 @@
 				{
 					company: 'DataAnnotation',
 					location: 'Remote',
-					role: 'Software Developer / AI Code Evaluator',
+					role: 'Data Annotator',
 					type: 'Technical Freelance',
 					period: 'May 2025 – Present',
 					bullets: [
@@ -115,6 +115,18 @@
 				}
 			],
 			engineeringProjects: [
+				{
+					title: 'CanBankX — Distributed Microservices Banking Platform',
+					context: 'Distributed Systems Architecture (ÉTS)',
+					repoUrl: 'https://github.com/VelaSam/CanBankX_Samuel_Velasco',
+					stack: ['Go', 'Docker Compose', 'KrakenD API Gateway', 'Redis', 'MySQL', 'k6', 'Prometheus & Grafana'],
+					bullets: [
+						'Architected a distributed microservices banking backend in Go with Database-per-Microservice isolation across 3 independent MySQL databases.',
+						'Configured KrakenD API Gateway as a unified secure ingress handling routing, JWT token validation, and inter-service aggregation.',
+						'Integrated distributed Redis caching and executed extreme automated load tests using k6 with concurrent ACID transfer operations.',
+						'Containerized the full stack (APIs, databases, gateway, Prometheus, Grafana) with automated Go data seeding scripts.'
+					]
+				},
 				{
 					title: 'Autonomous Search & Rescue Drone-Rover System',
 					context: 'Software Engineering Capstone Project (PFE ÉTS)',
@@ -187,7 +199,7 @@
 			technicalSkills: [
 				{
 					category: 'Web, Applicatif & Données',
-					skills: ['C# .NET', 'Java', 'TypeScript', 'Angular', 'SvelteKit', 'React', 'Node.js', 'PostgreSQL', 'SQL', 'WebSockets', 'Docker', 'Git']
+					skills: ['C# .NET', 'Java', 'TypeScript', 'Angular', 'SvelteKit', 'React', 'Node.js', 'PostgreSQL', 'SQL', 'Docker', 'Git']
 				},
 				{
 					category: 'Systèmes & Embarqué',
@@ -237,9 +249,9 @@
 					period: 'Mai 2024 – Déc. 2024',
 					bullets: [
 						'Conception d’outils de diagnostic et de supervision fullstack en C# .NET et Angular pour des instruments de contrôle non destructif.',
-						'Encadrement et mentorat technique de stagiaires collégiaux à travers les revues de code et le suivi de projets.'
+						'Transformation de flux télémétriques industriels complexes en outils de diagnostic temps réel clairs et rapides pour les équipes terrain.'
 					],
-					tags: ['C# .NET', 'Angular', 'Mentorat', 'Diagnostic']
+					tags: ['C# .NET', 'Angular', 'Diagnostic', 'Télémétrie']
 				},
 				{
 					company: 'Evident Scientific',
@@ -268,7 +280,7 @@
 				{
 					company: 'DataAnnotation',
 					location: 'À distance (Remote)',
-					role: 'Développeur / Évaluateur de code pour modèles d’IA',
+					role: 'Annotateur de données',
 					type: 'Pigiste technique',
 					period: 'Mai 2025 – Présent',
 					bullets: [
@@ -279,6 +291,18 @@
 				}
 			],
 			engineeringProjects: [
+				{
+					title: 'CanBankX — Plateforme Bancaire à Microservices Répartis',
+					context: 'Architecture de Systèmes Distribués (ÉTS)',
+					repoUrl: 'https://github.com/VelaSam/CanBankX_Samuel_Velasco',
+					stack: ['Go', 'Docker Compose', 'KrakenD API Gateway', 'Redis', 'MySQL', 'k6', 'Prometheus & Grafana'],
+					bullets: [
+						'Conception d’un backend bancaire distribué en Go selon le patron Database-per-Microservice (3 bases de données MySQL isolées).',
+						'Configuration de la passerelle KrakenD API Gateway comme point d’entrée unique pour le routage et la validation des jetons.',
+						'Intégration d’un cache Redis distribué et validation par tests de charge extrêmes (k6) avec transactions ACID concurrentes.',
+						'Conteneurisation complète sous Docker Compose (APIs, BDs, Passerelle, Prometheus, Grafana) avec script de génération de données en Go.'
+					]
+				},
 				{
 					title: 'Système Autonome de Recherche & Sauvetage Drone-Rover',
 					context: 'Projet de fin d’études en génie logiciel (PFE ÉTS)',
@@ -460,7 +484,22 @@
 				<article class="project-box interactive">
 					<div class="project-top">
 						<div>
-							<h3 class="project-title">{proj.title}</h3>
+							<h3 class="project-title">
+								{#if proj.repoUrl}
+									<a
+										href={proj.repoUrl}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="project-link interactive"
+										title="View repository on GitHub"
+									>
+										<span>{proj.title}</span>
+										<span class="ext-icon">↗</span>
+									</a>
+								{:else}
+									<span>{proj.title}</span>
+								{/if}
+							</h3>
 							<span class="project-context">{proj.context}</span>
 						</div>
 						<div class="project-stack">
@@ -886,6 +925,30 @@
 		font-weight: 500;
 		color: var(--text-primary);
 		margin: 0 0 0.25rem;
+	}
+
+	.project-link {
+		color: inherit;
+		text-decoration: none;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		transition: color 0.2s ease;
+	}
+
+	.project-link:hover {
+		color: var(--accent-purple);
+	}
+
+	.project-link .ext-icon {
+		font-size: 1rem;
+		opacity: 0.6;
+		transition: transform 0.2s ease, opacity 0.2s ease;
+	}
+
+	.project-link:hover .ext-icon {
+		opacity: 1;
+		transform: translate(2px, -2px);
 	}
 
 	.project-context {
