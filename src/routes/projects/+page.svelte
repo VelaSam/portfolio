@@ -15,18 +15,11 @@
 					idx: '01 / CAPSTONE',
 					title: 'Autonomous Search & Rescue (Drone + Ground Robot)',
 					context: 'Software Engineering Capstone (ÉTS Montréal)',
-					stack: [
-						'ModalAI Starling 2 Max (VOXL 2)',
-						'Waveshare UGV Rover (Jetson Orin Nano + ESP32)',
-						'Python',
-						'ROS 2 Humble',
-						'Computer Vision',
-						'WebSockets / WebRTC'
-					],
+					stack: ['Python', 'ROS 2', 'Computer Vision', 'WebSockets / WebRTC', 'Embedded Linux'],
 					bullets: [
-						'Built an autonomous aerial-ground Search & Rescue system pairing a ModalAI Starling 2 Max drone (VOXL 2 flight computer, Qualcomm QRB5165, stereo & IMX412 cameras) with a Waveshare UGV Rover (Nvidia Jetson Orin Nano running ROS 2 Humble + ESP32 sub-controller and LDLiDAR).',
-						'Implemented real-time computer vision to recognize human shapes and victims from the drone’s live video stream in indoor, GPS-denied environments.',
-						'Handled spatial orientation and coordinate alignment so the autonomous drone locates itself in space and relays target coordinates to the ground rover for autonomous navigation.'
+						'Built an autonomous aerial-ground Search & Rescue system where an autonomous drone explores indoor, GPS-denied spaces and coordinates with a ground rover.',
+						'Implemented real-time computer vision to recognize human shapes and victims from the drone’s live video stream.',
+						'Handled spatial orientation and coordinate alignment so the drone locates itself in space and relays target positions to the ground rover for autonomous navigation.'
 					],
 					hardwareGallery: [
 						{
@@ -106,17 +99,10 @@
 					idx: '01 / PFE',
 					title: 'Système Autonome de Recherche & Sauvetage (Drone + Robot)',
 					context: 'Projet de fin d’études en génie logiciel (ÉTS Montréal)',
-					stack: [
-						'ModalAI Starling 2 Max (VOXL 2)',
-						'Waveshare UGV Rover (Jetson Orin Nano + ESP32)',
-						'Python',
-						'ROS 2 Humble',
-						'Vision par ordinateur',
-						'WebSockets / WebRTC'
-					],
+					stack: ['Python', 'ROS 2', 'Vision par ordinateur', 'WebSockets / WebRTC', 'Linux embarqué'],
 					bullets: [
-						'Développement d’un système autonome de recherche et sauvetage (S&R) combinant un drone ModalAI Starling 2 Max (ordinateur de vol VOXL 2, Qualcomm QRB5165, caméras stéréo et IMX412) et un robot terrestre Waveshare UGV Rover (Nvidia Jetson Orin Nano sous ROS 2 Humble + sous-contrôleur ESP32 et LDLiDAR).',
-						'Intégration de vision par ordinateur pour la reconnaissance de formes humaines (détection de victimes) à partir du flux vidéo du drone en milieu intérieur sans GPS.',
+						'Développement d’un système autonome de recherche et sauvetage (S&R) combinant un drone autonome et un robot terrestre en milieu intérieur sans GPS.',
+						'Intégration de vision par ordinateur pour la reconnaissance de formes humaines (détection de victimes) à partir du flux vidéo du drone.',
 						'Gestion de l’orientation spatiale du drone autonome et relayage en temps réel des coordonnées vers le robot au sol pour qu’il s’y rende de manière autonome.'
 					],
 					hardwareGallery: [
@@ -579,6 +565,8 @@
 		text-decoration: underline;
 		text-underline-offset: 4px;
 		margin-left: 0.35rem;
+		white-space: nowrap;
+		display: inline-block;
 	}
 
 	@media (max-width: 900px) {

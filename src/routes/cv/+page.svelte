@@ -854,6 +854,8 @@
 		text-decoration: underline;
 		text-underline-offset: 4px;
 		margin-left: 0.35rem;
+		white-space: nowrap;
+		display: inline-block;
 	}
 
 	@media (max-width: 900px) {
