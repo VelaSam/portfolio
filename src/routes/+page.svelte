@@ -1,15 +1,13 @@
 <script lang="ts">
 	import { i18n } from '$lib/i18n.svelte';
 
+	let activeAnnotation = $state<string | null>(null);
+
 	const content = $derived({
 		en: {
 			badge: 'Software & Systems Engineer',
 			location: 'Montréal, Québec',
-			headlinePre: 'Engineered with precision,',
-			headlineMid: 'from',
-			headlineWord1: 'silicon',
-			headlineAnd: 'to',
-			headlineWord2: 'interfaces',
+			headline: 'I solve complex engineering problems so I can afford climbing chalk and Uber Eats.',
 			bioLead: 'Hello, I’m',
 			bioText:
 				'Software engineering graduate from ÉTS. I build high-performance software with an active engineering interest in',
@@ -19,6 +17,32 @@
 			btnCV: 'Explore My Resume & Experience',
 			btnContact: 'Get In Touch',
 			directAccess: 'Direct links:',
+			setupTag: 'Natural Habitat',
+			setupTitle: 'The "Average" Dev Setup',
+			setupSubtitle:
+				'Yes, the right half of the split Moonlander keyboard is literally inside the backpack. Yes, that is a research drone sitting next to a desk fan, an empty Pepsi, and Neovim in a flight-testing cage.',
+			setupAnnotations: [
+				{
+					id: 'moonlander',
+					title: 'Moonlander (Backpack Mode)',
+					desc: 'Left half on the desk, right half inside the backpack. Ergonomics is a lifestyle.'
+				},
+				{
+					id: 'drone',
+					title: 'Autonomous Research Drone',
+					desc: 'Sitting right next to a Honeywell fan for aerodynamic "bench testing".'
+				},
+				{
+					id: 'neovim',
+					title: 'Neovim + Code',
+					desc: 'Still tweaking .vimrc between ROS 2 builds.'
+				},
+				{
+					id: 'pepsi',
+					title: 'Caffeine Reserve',
+					desc: 'Standard issue fuel for bare-metal debugging sessions.'
+				}
+			],
 			quote:
 				'Bridging the gap between bare-metal microcontrollers and modern interfaces to solve tangible engineering challenges.',
 			domainsTag: 'Areas of Focus',
@@ -78,11 +102,7 @@
 		fr: {
 			badge: 'Ingénieur & Développeur Logiciel',
 			location: 'Montréal, Québec',
-			headlinePre: 'Concevoir avec rigueur,',
-			headlineMid: 'du',
-			headlineWord1: 'silicium',
-			headlineAnd: 'jusqu’aux',
-			headlineWord2: 'interfaces',
+			headline: 'Je résous des problèmes d’ingénierie complexes pour pouvoir me payer de la magnésie d’escalade et du Uber Eats.',
 			bioLead: 'Bonjour, je suis',
 			bioText:
 				'Diplômé en génie logiciel à l’ÉTS, je conçois des logiciels performants avec un intérêt marqué pour la',
@@ -92,6 +112,32 @@
 			btnCV: 'Consulter mon parcours & CV',
 			btnContact: 'Me contacter',
 			directAccess: 'Accès direct :',
+			setupTag: 'Habitat Naturel',
+			setupTitle: 'Mon "Setup" de Développement Habituel',
+			setupSubtitle:
+				'Oui, la moitié droite du clavier ergonomique Moonlander est littéralement coincée dans le sac à dos. Oui, c’est bien un drone de recherche à côté d’un ventilateur Honeywell, un Pepsi vide et Neovim dans une cage de vol.',
+			setupAnnotations: [
+				{
+					id: 'moonlander',
+					title: 'Moonlander (Option Sac à Dos)',
+					desc: 'Moitié gauche sur la table, moitié droite dans le sac. L’ergonomie est un état d’esprit.'
+				},
+				{
+					id: 'drone',
+					title: 'Drone de recherche autonome',
+					desc: 'Placé à côté d’un ventilateur Honeywell pour des tests aérodynamiques "rigoureux".'
+				},
+				{
+					id: 'neovim',
+					title: 'Neovim + Code',
+					desc: 'En train de tweaker mon .vimrc entre deux compilations ROS 2.'
+				},
+				{
+					id: 'pepsi',
+					title: 'Carburant caféiné',
+					desc: 'La ration de base pour déboguer des registres matériels.'
+				}
+			],
 			quote:
 				'Allier la précision du bas niveau et des microcontrôleurs aux interfaces modernes, pour résoudre des problématiques tangibles d’ingénierie.',
 			domainsTag: 'Domaines d’intervention',
@@ -177,9 +223,13 @@
 		</div>
 
 		<div class="hero-content">
+			<!-- Exact user-requested punchy headline -->
 			<h1 class="hero-title">
-				{content.headlinePre}<br />
-				{content.headlineMid} <span class="highlight-serif">{content.headlineWord1}</span> {content.headlineAnd} <span class="highlight-serif">{content.headlineWord2}</span>.
+				{#if i18n.locale === 'en'}
+					I solve <span class="highlight-serif">complex engineering problems</span> so I can afford <span class="highlight-serif">climbing chalk</span> and <span class="highlight-serif">Uber Eats</span>.
+				{:else}
+					Je résous des <span class="highlight-serif">problèmes d’ingénierie complexes</span> pour pouvoir me payer de la <span class="highlight-serif">magnésie d’escalade</span> et du <span class="highlight-serif">Uber Eats</span>.
+				{/if}
 			</h1>
 
 			<p class="hero-bio">
@@ -245,6 +295,41 @@
 					</svg>
 					<span>svelasco514@gmail.com</span>
 				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- "Average Dev Setup" Hilarious Feature Card -->
+	<section class="section-block setup-section">
+		<div class="section-header">
+			<span class="section-tag">{content.setupTag}</span>
+			<h2 class="section-title">{content.setupTitle}</h2>
+			<p class="section-desc">{content.setupSubtitle}</p>
+		</div>
+
+		<div class="setup-card interactive">
+			<div class="setup-image-wrap">
+				<img
+					src="/dev-setup.jpg"
+					alt="Samuel Velasco's honest development setup with backpack keyboard and drone"
+					class="setup-img"
+				/>
+				<div class="setup-overlay-badge">
+					<span class="live-dot"></span>
+					<span>Peak Engineering Ergonomics</span>
+				</div>
+			</div>
+
+			<div class="setup-annotations-grid">
+				{#each content.setupAnnotations as item}
+					<div class="annotation-box interactive">
+						<div class="annotation-header">
+							<span class="annotation-bullet"></span>
+							<h4 class="annotation-title">{item.title}</h4>
+						</div>
+						<p class="annotation-desc">{item.desc}</p>
+					</div>
+				{/each}
 			</div>
 		</div>
 	</section>
@@ -366,7 +451,7 @@
 		padding: 0.35rem 0.75rem;
 		background: rgba(109, 40, 217, 0.06);
 		border: 1px solid rgba(109, 40, 217, 0.18);
-		border-radius: 3px; /* Sharp corners */
+		border-radius: 3px;
 		font-size: 0.78rem;
 		font-weight: 600;
 		color: var(--accent-purple);
@@ -376,7 +461,7 @@
 	.badge-dot {
 		width: 5px;
 		height: 5px;
-		border-radius: 1px; /* Sharp */
+		border-radius: 1px;
 		background: var(--accent-purple);
 	}
 
@@ -395,13 +480,13 @@
 	}
 
 	.hero-content {
-		max-width: 860px;
+		max-width: 900px;
 	}
 
 	.hero-title {
 		font-family: var(--font-display);
-		font-size: 3.75rem;
-		line-height: 1.1;
+		font-size: 3.5rem;
+		line-height: 1.15;
 		font-weight: 400;
 		color: var(--text-primary);
 		letter-spacing: -0.02em;
@@ -444,7 +529,6 @@
 		margin-bottom: 2.25rem;
 	}
 
-	/* Sharp architectural buttons */
 	.btn-primary {
 		display: inline-flex;
 		align-items: center;
@@ -453,7 +537,7 @@
 		background: var(--text-primary);
 		color: #faf7f2;
 		border: 1px solid var(--text-primary);
-		border-radius: 3px; /* Sharp */
+		border-radius: 3px;
 		text-decoration: none;
 		font-size: 0.92rem;
 		font-weight: 600;
@@ -486,7 +570,7 @@
 		background: rgba(255, 255, 255, 0.8);
 		color: var(--text-primary);
 		border: 1px solid var(--border-medium);
-		border-radius: 3px; /* Sharp */
+		border-radius: 3px;
 		text-decoration: none;
 		font-size: 0.92rem;
 		font-weight: 600;
@@ -522,7 +606,7 @@
 		padding: 0.35rem 0.75rem;
 		background: rgba(255, 255, 255, 0.7);
 		border: 1px solid var(--border-subtle);
-		border-radius: 3px; /* Sharp */
+		border-radius: 3px;
 		text-decoration: none;
 		color: var(--text-secondary);
 		font-size: 0.82rem;
@@ -542,6 +626,126 @@
 		height: 14px;
 	}
 
+	/* "Average Dev Setup" Feature Card */
+	.setup-card {
+		background: rgba(255, 255, 255, 0.8);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
+		border: 1px solid var(--border-subtle);
+		border-radius: 4px;
+		padding: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		box-shadow: 0 4px 20px -2px rgba(28, 25, 23, 0.04);
+		transition: backdrop-filter 0.3s ease, border-color 0.25s ease;
+	}
+
+	.setup-card:hover {
+		backdrop-filter: blur(34px);
+		-webkit-backdrop-filter: blur(34px);
+		border-color: var(--border-medium);
+	}
+
+	.setup-image-wrap {
+		position: relative;
+		width: 100%;
+		border-radius: 3px;
+		overflow: hidden;
+		border: 1px solid var(--border-subtle);
+		background: #1c1917;
+	}
+
+	.setup-img {
+		width: 100%;
+		height: auto;
+		max-height: 540px;
+		object-fit: cover;
+		display: block;
+		transition: transform 0.4s ease;
+	}
+
+	.setup-card:hover .setup-img {
+		transform: scale(1.01);
+	}
+
+	.setup-overlay-badge {
+		position: absolute;
+		bottom: 1rem;
+		left: 1rem;
+		background: rgba(28, 25, 23, 0.82);
+		backdrop-filter: blur(8px);
+		color: #ffffff;
+		padding: 0.35rem 0.75rem;
+		border-radius: 3px;
+		font-size: 0.78rem;
+		font-weight: 600;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		border: 1px solid rgba(255, 255, 255, 0.15);
+	}
+
+	.live-dot {
+		width: 6px;
+		height: 6px;
+		border-radius: 1px;
+		background: #ef4444;
+		box-shadow: 0 0 6px #ef4444;
+	}
+
+	.setup-annotations-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1rem;
+	}
+
+	.annotation-box {
+		background: rgba(250, 246, 240, 0.75);
+		border: 1px solid var(--border-subtle);
+		border-radius: 3px;
+		padding: 1rem 1.15rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+		transition: all 0.2s ease;
+	}
+
+	.annotation-box:hover {
+		background: #ffffff;
+		border-color: var(--accent-purple);
+		transform: translateY(-2px);
+	}
+
+	.annotation-header {
+		display: flex;
+		align-items: center;
+		gap: 0.45rem;
+	}
+
+	.annotation-bullet {
+		width: 5px;
+		height: 5px;
+		border-radius: 1px;
+		background: var(--accent-purple);
+		flex-shrink: 0;
+	}
+
+	.annotation-title {
+		font-family: var(--font-sans);
+		font-size: 0.84rem;
+		font-weight: 700;
+		color: var(--text-primary);
+		margin: 0;
+	}
+
+	.annotation-desc {
+		font-size: 0.8rem;
+		line-height: 1.5;
+		color: var(--text-secondary);
+		margin: 0;
+	}
+
 	/* Quote Strip */
 	.quote-strip {
 		padding: 1rem 0;
@@ -553,7 +757,7 @@
 		-webkit-backdrop-filter: blur(18px);
 		border: 1px solid var(--border-subtle);
 		border-left: 3px solid var(--accent-purple);
-		border-radius: 4px; /* Sharp */
+		border-radius: 4px;
 		padding: 2rem 2.25rem;
 		position: relative;
 		transition: backdrop-filter 0.3s ease, border-color 0.2s ease;
@@ -634,7 +838,7 @@
 		backdrop-filter: blur(18px);
 		-webkit-backdrop-filter: blur(18px);
 		border: 1px solid var(--border-subtle);
-		border-radius: 4px; /* Sharp corners */
+		border-radius: 4px;
 		padding: 1.75rem;
 		display: flex;
 		flex-direction: column;
@@ -712,7 +916,7 @@
 		padding: 0.18rem 0.5rem;
 		background: rgba(243, 238, 228, 0.7);
 		border: 1px solid rgba(226, 219, 206, 0.8);
-		border-radius: 2px; /* Sharp */
+		border-radius: 2px;
 		color: var(--text-secondary);
 		font-weight: 500;
 	}
@@ -763,7 +967,7 @@
 		backdrop-filter: blur(16px);
 		-webkit-backdrop-filter: blur(16px);
 		border: 1px solid var(--border-subtle);
-		border-radius: 4px; /* Sharp */
+		border-radius: 4px;
 		text-decoration: none;
 		color: inherit;
 		transition: all 0.2s ease;
@@ -834,7 +1038,7 @@
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
 		border: 1px solid var(--border-subtle);
-		border-radius: 4px; /* Sharp */
+		border-radius: 4px;
 		padding: 2.75rem 2.25rem;
 		display: flex;
 		align-items: center;
@@ -869,6 +1073,10 @@
 	}
 
 	@media (max-width: 900px) {
+		.setup-annotations-grid {
+			grid-template-columns: 1fr 1fr;
+		}
+
 		.skills-grid {
 			grid-template-columns: 1fr;
 		}
@@ -883,7 +1091,13 @@
 		}
 
 		.hero-title {
-			font-size: 2.8rem;
+			font-size: 2.7rem;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.setup-annotations-grid {
+			grid-template-columns: 1fr;
 		}
 	}
 </style>
