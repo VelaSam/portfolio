@@ -6,7 +6,7 @@
 
 	const content = $derived({
 		en: {
-			badge: 'Software & Systems Engineer',
+			badge: 'Software Engineering Graduate',
 			location: 'Montréal, Québec',
 			headline: 'I solve complex engineering problems so I can afford climbing chalk and Uber Eats.',
 			bioLead: 'Hello, I’m',
@@ -19,7 +19,7 @@
 			btnContact: 'Get In Touch',
 			directAccess: 'Direct links:',
 			setupTag: 'Natural Habitat',
-			setupTitle: 'The "Average" Dev Setup',
+			setupTitle: 'My Average Dev Setup',
 			setupSubtitle:
 				'I use only the left side of my Moonlander because of my two missing S and X keys. I use a fan to cool down the research drone I was somehow trusted with, and I only drink Diet Pepsi because it saves calories.',
 			craneTag: 'Engineering Roots • Undergrad Project',
@@ -69,7 +69,7 @@
 				}
 			],
 			domainsTag: 'Areas of Focus',
-			domainsTitle: 'Core Engineering Capabilities',
+			domainsTitle: 'Core Capabilities',
 			domainsDesc:
 				'A versatile engineering mindset bridging low-level hardware performance, real-time telemetry, and modern desktop/web software.',
 			skills: [
@@ -88,10 +88,10 @@
 					tags: ['Python', 'OpenCV', 'ROS 2', 'rPPG', 'Edge Inference', 'Linux']
 				},
 				{
-					title: 'Software & Fullstack Engineering',
+					title: 'Software & Fullstack Development',
 					subtitle: 'Reactive applications & robust architectures',
 					description:
-						'High-fidelity desktop engineering (C# .NET 8, Avalonia) and real-time web applications (TypeScript, SvelteKit, WebSockets). Network diagnostic tooling, telemetry feeds, and assistive accessibility systems.',
+						'High-fidelity desktop development (C# .NET 8, Avalonia) and real-time web applications (TypeScript, SvelteKit, WebSockets). Network diagnostic tooling, telemetry feeds, and assistive accessibility systems.',
 					tags: ['C# .NET 8', 'Avalonia', 'TypeScript', 'SvelteKit', 'WebSockets', 'PostgreSQL']
 				}
 			],
@@ -102,23 +102,30 @@
 				{
 					period: 'May 2026 – Sept. 2026',
 					role: 'Digital Health Research Developer',
-					type: 'Research Internship',
+					type: 'R&D Internship',
 					company: 'National Research Council Canada (NRC / CNRC)',
-					detail: 'VitalSeer: Contactless real-time vital signs (rPPG) & edge vision on Raspberry Pi'
+					detail: 'VitalSeer: Contactless vital signs monitoring & edge computer vision'
 				},
 				{
 					period: 'Sept. 2025 – Dec. 2025',
 					role: 'C# .NET Avalonia Developer',
-					type: 'Engineering Internship',
+					type: 'R&D Internship',
 					company: 'HumanWare',
-					detail: 'Low-vision accessibility tools, multilingual OCR/TTS & voice activity detection (VAD)'
+					detail: 'Low-vision assistive applications, speech technologies & accessibility workflows'
 				},
 				{
-					period: 'May 2023 – Dec. 2024',
-					role: 'Fullstack & Frontend Developer',
-					type: 'Consecutive Internships',
+					period: 'May 2024 – Dec. 2024',
+					role: 'Fullstack Developer',
+					type: 'R&D Internship',
 					company: 'Evident Scientific',
-					detail: 'Ultrasonic testing network telemetry diagnostics & real-time WebSocket SNR tooling'
+					detail: 'Industrial testing diagnostic applications & intern mentorship'
+				},
+				{
+					period: 'May 2023 – Dec. 2023',
+					role: 'Frontend Developer',
+					type: 'R&D Internship',
+					company: 'Evident Scientific',
+					detail: 'Real-time telemetry dashboards & WebSocket signal visualization'
 				}
 			],
 			ctaTitle: 'Have an engineering challenge or opportunity to discuss?',
@@ -126,7 +133,7 @@
 			ctaBtn: 'Start a conversation'
 		},
 		fr: {
-			badge: 'Ingénieur & Développeur Logiciel',
+			badge: 'Diplômé en Génie Logiciel',
 			location: 'Montréal, Québec',
 			headline: 'Je résous des problèmes d’ingénierie complexes pour pouvoir me payer de la magnésie d’escalade et du Uber Eats.',
 			bioLead: 'Bonjour, je suis',
@@ -139,7 +146,7 @@
 			btnContact: 'Me contacter',
 			directAccess: 'Accès direct :',
 			setupTag: 'Habitat Naturel',
-			setupTitle: 'Mon "Setup" de Développement Habituel',
+			setupTitle: 'Mon Setup de Dev Habituel',
 			setupSubtitle:
 				'J’utilise seulement le côté gauche de mon Moonlander à cause de mes deux touches S et X manquantes. J’utilise un ventilateur pour refroidir le drone de recherche qu’on m’a miraculeusement confié, et je bois seulement du Pepsi Diet parce que ça sauve des calories.',
 			craneTag: 'Racines d’Ingénierie • Premier Projet',
@@ -208,7 +215,7 @@
 					tags: ['Python', 'OpenCV', 'ROS 2', 'rPPG', 'Inférence Edge', 'Linux']
 				},
 				{
-					title: 'Logiciel & Ingénierie Fullstack',
+					title: 'Développement Logiciel & Fullstack',
 					subtitle: 'Applications réactives & architectures robustes',
 					description:
 						'Conception d’applications de bureau haute fidélité (C# .NET, Avalonia) et web temps réel (WebSockets, TypeScript, SvelteKit). Outils de diagnostic réseau et accessibilité avancée.',
@@ -222,23 +229,30 @@
 				{
 					period: 'Mai 2026 – Sept. 2026',
 					role: 'Développeur recherche santé numérique',
-					type: 'Stage de recherche',
+					type: 'Stage R&D',
 					company: 'Conseil national de recherches Canada (CNRC)',
-					detail: 'Télémédecine temps réel sans contact (rPPG) & vision sur Raspberry Pi'
+					detail: 'VitalSeer : Télémédecine sans contact & vision par ordinateur sur systèmes embarqués'
 				},
 				{
 					period: 'Sept. 2025 – Déc. 2025',
 					role: 'Développeur C# .NET Avalonia',
-					type: 'Stage d’ingénierie',
+					type: 'Stage R&D',
 					company: 'HumanWare',
-					detail: 'Technologies d’assistance basse vision, OCR/TTS et détection vocale VAD'
+					detail: 'Applications d’assistance basse vision, technologies vocales et accessibilité'
 				},
 				{
-					period: 'Mai 2023 – Déc. 2024',
-					role: 'Développeur Fullstack & Frontend',
-					type: 'Stages consécutifs',
+					period: 'Mai 2024 – Déc. 2024',
+					role: 'Développeur Fullstack',
+					type: 'Stage R&D',
 					company: 'Evident Scientific',
-					detail: 'Outil de diagnostic réseau UT & télémétrie WebSocket temps réel'
+					detail: 'Applications de diagnostic pour l’inspection industrielle & mentorat de stagiaires'
+				},
+				{
+					period: 'Mai 2023 – Déc. 2023',
+					role: 'Développeur Frontend',
+					type: 'Stage R&D',
+					company: 'Evident Scientific',
+					detail: 'Tableaux de bord de télémétrie temps réel & visualisation de signaux WebSockets'
 				}
 			],
 			ctaTitle: 'Un projet ou une opportunité à discuter ?',
@@ -258,7 +272,7 @@
 </script>
 
 <svelte:head>
-	<title>{i18n.locale === 'en' ? 'Samuel Velasco • Software & Embedded Engineer' : 'Samuel Velasco • Développeur Logiciel & Robotique'}</title>
+	<title>{i18n.locale === 'en' ? 'Samuel Velasco • Software & Embedded Developer' : 'Samuel Velasco • Développeur Logiciel & Systèmes'}</title>
 	<meta
 		name="description"
 		content="Portfolio of Samuel Velasco — Software Developer specializing in embedded systems, computer vision, and robotics."

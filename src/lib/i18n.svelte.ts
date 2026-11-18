@@ -1,13 +1,13 @@
 export type Locale = 'en' | 'fr';
 
 export const easterEggs = [
-	'Still tweaking my .vimrc since 2018 (one day I will actually start coding).',
+	'Still tweaking my Neovim init.lua since 2018 (one day I will actually start coding).',
 	'One day I will have things figured out. Today is not that day.',
 	'You should try the moonlander. Seriously.',
-	'Powered by caffeine, bare-metal registers, and questionable life choices.',
+	'White Monster.',
 	'Don’t take yourself too seriously. Nobody else does anyway.',
-	'99 bugs in the bare-metal HAL, fix 1, 127 bugs in the bare-metal HAL.',
-	'Vim Tweaker Level 99. Still searching for the exit command.'
+	'I once accidentally joined a competitive salsa dance competition because I thought it was a tortilla chip tasting, but I’ll never tell anybody.',
+	'Neovim Tweaker Level 99. Still searching for the exit command.'
 ];
 
 class I18nState {

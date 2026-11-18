@@ -14,7 +14,7 @@
 				</div>
 				<p class="brand-desc">
 					{i18n.locale === 'en'
-						? 'Software engineer exploring bare-metal microcontrollers, computer vision pipelines, and robotics.'
+						? 'Software developer exploring bare-metal microcontrollers, computer vision pipelines, and robotics.'
 						: 'Développeur logiciel passionné par les systèmes embarqués, la vision par ordinateur et la robotique.'}
 				</p>
 			</div>

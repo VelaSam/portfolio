@@ -6,8 +6,7 @@
 		en: {
 			tag: 'Curriculum Vitae',
 			title: 'Trajectory & Experience',
-			subtitle: 'Software Engineer • B.Eng in Software Engineering (ÉTS) • Passionate about embedded systems & robotics',
-			btnPrint: 'Print / Save PDF',
+			subtitle: 'Software Engineering Graduate • B.Eng in Software Engineering (ÉTS) • Passionate about embedded systems & robotics',
 			btnContact: 'Get in Touch',
 			metaLocation: 'Location',
 			metaEmail: 'Email',
@@ -44,40 +43,51 @@
 					company: 'National Research Council Canada (NRC / CNRC)',
 					location: 'Boucherville, QC',
 					role: 'Digital Health Research Software Developer',
-					type: 'Research Internship',
+					type: 'R&D Internship',
 					period: 'May 2026 – Sept. 2026',
 					bullets: [
-						'Developed VitalSeer, a contactless real-time telemedicine solution measuring physiological vital signs (pulse, respiration rate, SpO₂) directly from standard video feeds.',
-						'Engineered and optimized the Python computer vision pipeline: high-framerate facial tracking, spatial-temporal extraction, and digital signal filtering (rPPG).',
-						'Deployed on Raspberry Pi nano-computers with secure backend streaming for clinical triage operations.'
+						'Contributed to the VitalSeer project, a contactless real-time telemedicine solution monitoring physiological vital signs from video feeds.',
+						'Developed and optimized computer vision pipelines for facial tracking and signal processing (rPPG).',
+						'Integrated and validated edge computing solutions on compact single-board devices.'
 					],
 					tags: ['Python', 'OpenCV', 'rPPG', 'Raspberry Pi', 'Signal Processing']
 				},
 				{
 					company: 'HumanWare',
 					location: 'Longueuil, QC',
-					role: 'C# .NET Avalonia Software Developer – Low Vision Assistive Technologies',
-					type: 'Engineering Internship',
+					role: 'C# .NET Avalonia Software Developer – Assistive Technologies',
+					type: 'R&D Internship',
 					period: 'Sept. 2025 – Dec. 2025',
 					bullets: [
-						'Engineered multi-screen accessibility features in C# .NET and Avalonia (dynamic real-time magnification, adaptive colorimetric adjustment).',
-						'Integrated a multilingual OCR and TTS pipeline paired with voice activity detection (VAD/RMS) algorithm isolating ambient noise.',
-						'Designed an ergonomic audio navigation module tailored for users with severe visual impairments.'
+						'Developed accessibility software and multi-screen user interfaces using C# .NET and Avalonia.',
+						'Integrated optical character recognition (OCR) and text-to-speech (TTS) workflows with voice activity detection.',
+						'Designed ergonomic audio and tactile navigation features tailored for visually impaired users.'
 					],
 					tags: ['C# .NET', 'Avalonia', 'OCR / TTS', 'VAD/RMS', 'Accessibility']
 				},
 				{
 					company: 'Evident Scientific',
 					location: 'Montréal, QC',
-					role: 'Fullstack Developer (2024) & Frontend Developer (2023)',
-					type: 'Consecutive Internships',
-					period: 'May 2023 – Dec. 2024',
+					role: 'Fullstack Developer',
+					type: 'R&D Internship',
+					period: 'May 2024 – Dec. 2024',
 					bullets: [
-						'Mentored and guided 2 college engineering interns: sprint planning, architectural design, and rigorous code reviews.',
-						'Architected an ultrasonic testing (UT) network diagnostic application in C# .NET and Angular to monitor telemetry integrity across industrial devices.',
-						'Built an Angular SNR evaluation dashboard with real-time rendering of C++ telemetry data over WebSockets.'
+						'Developed fullstack diagnostic and monitoring tools in C# .NET and Angular for industrial non-destructive testing equipment.',
+						'Supervised and mentored college engineering interns through code reviews and technical guidance.'
 					],
-					tags: ['C# .NET', 'Angular', 'WebSockets', 'C++', 'Telemetry']
+					tags: ['C# .NET', 'Angular', 'Mentorship', 'Diagnostics']
+				},
+				{
+					company: 'Evident Scientific',
+					location: 'Montréal, QC',
+					role: 'Frontend Developer',
+					type: 'R&D Internship',
+					period: 'May 2023 – Dec. 2023',
+					bullets: [
+						'Built real-time telemetry dashboards and signal analysis interfaces using Angular and WebSockets.',
+						'Rendered high-frequency ultrasonic data streams with real-time performance.'
+					],
+					tags: ['Angular', 'WebSockets', 'Telemetry', 'UI/UX']
 				},
 				{
 					company: 'École de Technologie Supérieure (ÉTS)',
@@ -160,8 +170,7 @@
 		fr: {
 			tag: 'Curriculum Vitae',
 			title: 'Parcours & Expériences',
-			subtitle: 'Développeur Logiciel • B.Ing en Génie Logiciel (ÉTS) • Passionné par l’embarqué et la robotique',
-			btnPrint: 'Imprimer / PDF',
+			subtitle: 'Diplômé en Génie Logiciel (ÉTS) • Passionné par l’embarqué et la robotique',
 			btnContact: 'Entrer en contact',
 			metaLocation: 'Localisation',
 			metaEmail: 'Email',
@@ -198,40 +207,51 @@
 					company: 'Conseil national de recherches Canada (CNRC)',
 					location: 'Boucherville, QC',
 					role: 'Développeur d’applications de recherche en santé numérique',
-					type: 'Stage de recherche',
+					type: 'Stage R&D',
 					period: 'Mai 2026 – Sept. 2026',
 					bullets: [
-						'Développement de VitalSeer, solution de télémédecine mesurant les signes vitaux en temps réel sans contact (pouls, fréquence respiratoire, SpO₂) à partir d’un flux vidéo standard.',
-						'Conception et optimisation du pipeline de vision par ordinateur en Python : suivi facial haute cadence, extraction et filtrage numérique du signal pléthysmographique (rPPG).',
-						'Déploiement sur nano-ordinateur Raspberry Pi avec transmission sécurisée vers les serveurs backend pour le triage clinique.'
+						'Participation au projet VitalSeer, solution de télémédecine sans contact mesurant les signes physiologiques à partir de flux vidéo.',
+						'Développement et optimisation de pipelines de vision par ordinateur pour le suivi facial et le traitement de signal (rPPG).',
+						'Intégration et validation de solutions d’inférence edge sur ordinateurs monocartes compacts.'
 					],
 					tags: ['Python', 'OpenCV', 'rPPG', 'Raspberry Pi', 'Signal Processing']
 				},
 				{
 					company: 'HumanWare',
 					location: 'Longueuil, QC',
-					role: 'Développeur C# .NET Avalonia – Technologies d’assistance basse vision',
-					type: 'Stage d’ingénierie',
+					role: 'Développeur C# .NET Avalonia – Technologies d’assistance',
+					type: 'Stage R&D',
 					period: 'Sept. 2025 – Déc. 2025',
 					bullets: [
-						'Implémentation de fonctionnalités d’accessibilité multi-écrans sous C# .NET et Avalonia (magnification dynamique, ajustement colorimétrique adaptatif).',
-						'Intégration d’un moteur OCR multilingue et TTS couplés à un algorithme de détection vocale (VAD/RMS) isolant le bruit de fond.',
-						'Conception d’un module ergonomique de navigation audio adapté aux personnes ayant une limitation visuelle sévère.'
+						'Développement de fonctionnalités logicielles d’accessibilité et d’interfaces multi-écrans en C# .NET et Avalonia.',
+						'Intégration de flux OCR et de synthèse vocale (TTS) couplés à la détection d’activité vocale.',
+						'Conception de modules ergonomiques de navigation audio adaptés aux personnes ayant une limitation visuelle.'
 					],
 					tags: ['C# .NET', 'Avalonia', 'OCR / TTS', 'VAD/RMS', 'Accessibilité']
 				},
 				{
 					company: 'Evident Scientific',
 					location: 'Montréal, QC',
-					role: 'Développeur Fullstack (2024) & Développeur Frontend (2023)',
-					type: 'Stages consécutifs',
-					period: 'Mai 2023 – Déc. 2024',
+					role: 'Développeur Fullstack',
+					type: 'Stage R&D',
+					period: 'Mai 2024 – Déc. 2024',
 					bullets: [
-						'Encadrement et mentorat technique de 2 stagiaires collégiaux : planification des sprints, revues de code et architecture logicielle.',
-						'Conception d’un outil de diagnostic réseau (C# .NET, Angular) pour surveiller l’intégrité télémétrique des appareils ultrasonores (UT).',
-						'Réalisation de l’interface d’évaluation SNR en Angular avec rendu haute fidélité en temps réel de données C++ via WebSockets.'
+						'Conception d’outils de diagnostic et de supervision fullstack en C# .NET et Angular pour des instruments de contrôle non destructif.',
+						'Encadrement et mentorat technique de stagiaires collégiaux à travers les revues de code et le suivi de projets.'
 					],
-					tags: ['C# .NET', 'Angular', 'WebSockets', 'C++', 'Télémétrie']
+					tags: ['C# .NET', 'Angular', 'Mentorat', 'Diagnostic']
+				},
+				{
+					company: 'Evident Scientific',
+					location: 'Montréal, QC',
+					role: 'Développeur Frontend',
+					type: 'Stage R&D',
+					period: 'Mai 2023 – Déc. 2023',
+					bullets: [
+						'Développement de tableaux de bord de télémétrie temps réel et d’interfaces d’analyse de signaux en Angular et WebSockets.',
+						'Affichage fluide et haute performance de flux de données ultrasonores haute fréquence.'
+					],
+					tags: ['Angular', 'WebSockets', 'Télémétrie', 'UI/UX']
 				},
 				{
 					company: 'École de Technologie Supérieure (ÉTS)',
@@ -312,10 +332,6 @@
 			]
 		}
 	}[i18n.locale]);
-
-	function printCV() {
-		window.print();
-	}
 </script>
 
 <svelte:head>
@@ -336,14 +352,6 @@
 		</div>
 
 		<div class="cv-header-actions no-print">
-			<button class="btn-print interactive" onclick={printCV}>
-				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<polyline points="6 9 6 2 18 2 18 9"></polyline>
-					<path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-					<rect width="12" height="8" x="6" y="14"></rect>
-				</svg>
-				<span>{content.btnPrint}</span>
-			</button>
 			<a href="/contact" class="btn-contact interactive">
 				<span>{content.btnContact}</span>
 			</a>
@@ -549,32 +557,6 @@
 		display: flex;
 		gap: 0.75rem;
 		align-items: center;
-	}
-
-	.btn-print {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
-		padding: 0.65rem 1.25rem;
-		background: #ffffff;
-		border: 1px solid var(--border-medium);
-		border-radius: 3px; /* Sharp */
-		color: var(--text-primary);
-		font-size: 0.86rem;
-		font-weight: 600;
-		cursor: pointer;
-		transition: all 0.2s ease;
-	}
-
-	.btn-print svg {
-		width: 15px;
-		height: 15px;
-	}
-
-	.btn-print:hover {
-		background: var(--bg-surface-soft);
-		border-color: var(--text-primary);
-		transform: translateY(-1px);
 	}
 
 	.btn-contact {

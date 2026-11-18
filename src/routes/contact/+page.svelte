@@ -74,7 +74,7 @@
 	<title>{i18n.locale === 'en' ? 'Contact • Samuel Velasco' : 'Contact • Samuel Velasco'}</title>
 	<meta
 		name="description"
-		content="Get in touch with Samuel Velasco — Software Developer & Systems Engineer."
+		content="Get in touch with Samuel Velasco — Software Engineering Graduate & Systems Developer."
 	/>
 </svelte:head>
 
