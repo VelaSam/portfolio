@@ -2,73 +2,18 @@
 	import { i18n } from '$lib/i18n.svelte';
 	import EngineeringDivider from '$lib/components/EngineeringDivider.svelte';
 
-	let selectedCraneIndex = $state(0);
-
 	const content = $derived({
 		en: {
 			badge: 'Software Developer • Software Engineering Graduate',
 			location: 'Montréal, Québec',
 			headline: 'I solve complex engineering problems so I can afford climbing chalk and Uber Eats.',
-			bioLead: 'Hello, I’m',
-			bioText:
-				'Software developer and software engineering graduate from ÉTS. My primary focus is building robust fullstack applications, clean backend architectures (Java, C#, TypeScript), and scalable web systems — with meaningful complementary experience in',
-			bioInterest1: 'systems performance',
-			bioInterest2: 'embedded microcontrollers',
-			bioInterest3: 'autonomous robotics',
-			bioEnd: ', giving me an intuitive understanding of how software runs all the way down to the metal.',
 			btnCV: 'Explore My Resume & Experience',
 			btnContact: 'Get In Touch',
 			directAccess: 'Direct links:',
 			setupTag: 'Natural Habitat',
 			setupTitle: 'My Average Dev Setup',
 			setupSubtitle:
-				'I use only the left side of my Moonlander because of my two missing S and X keys. I use a fan to cool down the research drone I was somehow trusted with, and I only drink Diet Pepsi because it saves calories.',
-			craneTag: 'Engineering Roots • Undergrad Project',
-			craneTitle: 'Automated Robotic Tower Crane',
-			craneSubtitle:
-				'Conceived, modeled, and manufactured during our first undergraduate engineering challenge at ÉTS. A complete electromechanical scale crane featuring laser-cut timber structure, custom SolidWorks gear transmission, and an embedded wireless joystick controller.',
-			craneImages: [
-				{
-					id: 'team',
-					src: '/crane-team.jpg',
-					label: 'Team & Prototype',
-					badge: 'Cover Photo • ÉTS Competition Arena',
-					caption:
-						'Our 6-person student engineering team proudly standing with the fully functional scale tower crane on competition day at ÉTS.'
-				},
-				{
-					id: 'cad',
-					src: '/crane-cad-1.jpg',
-					label: 'SolidWorks Assembly',
-					badge: '3D Kinematics & Structure',
-					caption:
-						'Complete SolidWorks CAD assembly: lattice mast tower, counterweighted boom, rotational bearing slewing ring, and cable trolley carriage.'
-				},
-				{
-					id: 'gears',
-					src: '/crane-gears.jpg',
-					label: 'Gearbox & Drive',
-					badge: 'Custom Mechanical Transmission',
-					caption:
-						'Detail of the custom rotational drive assembly: 3D printed motor bracket, micro-metal gearmotor, pinion (m0.5 N10) and spur slewing ring (N48).'
-				},
-				{
-					id: 'circuit',
-					src: '/crane-circuit.jpg',
-					label: 'Embedded Controller',
-					badge: 'Wireless RF Circuit & Telemetry',
-					caption:
-						'Hand-wired remote controller prototype: DIP microcontroller, dual-axis thumbstick, 2.4 GHz NRF24L01 wireless transceiver, and 1602A LCD real-time display.'
-				},
-				{
-					id: 'render',
-					src: '/crane-render.jpg',
-					label: '3D Render',
-					badge: 'Structural Assembly View',
-					caption:
-						'SolidWorks visualization of the interlocking laser-cut plywood truss sections and self-stabilizing cross base.'
-				}
-			],
+				'I use only the left side of my Moonlander because of my two missing D and X keys. I use a fan to cool down the research drone I was somehow trusted with, and I only drink Diet Pepsi because it saves calories.',
 			domainsTag: 'Areas of Focus',
 			domainsTitle: 'Software Engineering & Core Focus',
 			domainsDesc:
@@ -129,6 +74,33 @@
 					detail: 'Real-time telemetry dashboards & WebSocket signal visualization'
 				}
 			],
+			projectsTag: 'Projects & Engineering',
+			projectsTitle: 'Featured Projects (School & Side Work)',
+			projectsDesc: 'Distributed microservices, electromechanical prototypes, and autonomous multi-agent robotics.',
+			viewFullProjects: 'Explore all projects & photo galleries in CV',
+			featuredProjects: [
+				{
+					title: 'CanBankX — Distributed Microservices Platform',
+					category: 'Distributed Systems & Cloud',
+					stack: 'Go • Docker Compose • Redis • KrakenD • k6',
+					desc: 'Distributed banking backend in Go with Database-per-Microservice isolation across 3 MySQL databases, KrakenD API gateway routing, and extreme concurrent ACID transaction stress testing.',
+					link: '/cv'
+				},
+				{
+					title: 'Automated Robotic Tower Crane',
+					category: 'Electromechanical & Embedded',
+					stack: 'SolidWorks • C • RF 2.4 GHz • Laser Cutting',
+					desc: 'Full-scale functional scale tower crane engineered for the ÉTS engineering competition: laser-cut timber lattice mast, custom SolidWorks gear transmission, and hand-wired RF joystick controller.',
+					link: '/cv'
+				},
+				{
+					title: 'Search & Rescue Autonomous Drone & Rover',
+					category: 'Autonomous Perception & Robotics',
+					stack: 'Python • ROS 2 • OpenCV • Linux',
+					desc: 'Embedded flight software and coordinated multi-agent protocol detecting targets from video feeds via onboard computer vision and dispatching ground rover units.',
+					link: '/cv'
+				}
+			],
 			ctaTitle: 'Have an engineering challenge or opportunity to discuss?',
 			ctaSub: 'Open to software development, fullstack engineering, and systems discussions.',
 			ctaBtn: 'Start a conversation'
@@ -137,66 +109,13 @@
 			badge: 'Développeur Logiciel • Diplômé en Génie Logiciel',
 			location: 'Montréal, Québec',
 			headline: 'Je résous des problèmes d’ingénierie complexes pour pouvoir me payer de la magnésie d’escalade et du Uber Eats.',
-			bioLead: 'Bonjour, je suis',
-			bioText:
-				'Développeur logiciel et diplômé en génie logiciel à l’ÉTS. Mon focus principal est la conception d’applications fullstack robustes, d’architectures backend propres (Java, C#, TypeScript) et de systèmes web fiables — avec une expérience complémentaire marquée en',
-			bioInterest1: 'performance systèmes',
-			bioInterest2: 'microcontrôleurs embarqués',
-			bioInterest3: 'robotique autonome',
-			bioEnd: ', m’offrant une compréhension intuitive de l’exécution du logiciel jusqu’au silicium.',
 			btnCV: 'Consulter mon parcours & CV',
 			btnContact: 'Me contacter',
 			directAccess: 'Accès direct :',
 			setupTag: 'Habitat Naturel',
 			setupTitle: 'Mon Setup de Dev Habituel',
 			setupSubtitle:
-				'J’utilise seulement le côté gauche de mon Moonlander à cause de mes deux touches S et X manquantes. J’utilise un ventilateur pour refroidir le drone de recherche qu’on m’a miraculeusement confié, et je bois seulement du Pepsi Diet parce que ça sauve des calories.',
-			craneTag: 'Racines d’Ingénierie • Premier Projet',
-			craneTitle: 'Grue à Tour Automatisée & Téléguidée',
-			craneSubtitle:
-				'Conception, modélisation et usinage complet lors de notre tout premier grand projet d’ingénierie à l’ÉTS. Une grue à échelle réduite électromécanique avec mât en bois découpé au laser, réducteur de transmission SolidWorks et télécommande radio sans fil avec télémétrie LCD.',
-			craneImages: [
-				{
-					id: 'team',
-					src: '/crane-team.jpg',
-					label: 'L’Équipe & Prototype',
-					badge: 'Photo de couverture • Jour de compétition ÉTS',
-					caption:
-						'Notre équipe de 6 étudiants réunie fièrement autour de la grue à tour automatisée le jour de la compétition à l’ÉTS.'
-				},
-				{
-					id: 'cad',
-					src: '/crane-cad-1.jpg',
-					label: 'Assemblage SolidWorks',
-					badge: 'Cinématique 3D & Structure',
-					caption:
-						'Assemblage CAD complet sous SolidWorks : mât en treillis découpé au laser, flèche rotative, contrepoids et chariot de levage.'
-				},
-				{
-					id: 'gears',
-					src: '/crane-gears.jpg',
-					label: 'Boîtier & Engrenages',
-					badge: 'Transmission Mécanique',
-					caption:
-						'Vue détaillée de la transmission mécanique : support moteur usiné, pignon moteur (m0.5 N10) et couronne dentée (N48) pour la rotation fluide de la flèche.'
-				},
-				{
-					id: 'circuit',
-					src: '/crane-circuit.jpg',
-					label: 'Contrôleur Sans Fil',
-					badge: 'Circuit Embarqué & Télémétrie',
-					caption:
-						'Télécommande sans fil sur platine d’expérimentation : microcontrôleur DIP, joystick analogique, module radio NRF24L01 et écran LCD 1602A pour le retour d’état.'
-				},
-				{
-					id: 'render',
-					src: '/crane-render.jpg',
-					label: 'Rendu 3D',
-					badge: 'Rendu d’Assemblage',
-					caption:
-						'Modélisation 3D finale illustrant la structure en contreplaqué imbriqué, la flèche et la base en croix stabilisatrice.'
-				}
-			],
+				'J’utilise seulement le côté gauche de mon Moonlander à cause de mes deux touches D et X manquantes. J’utilise un ventilateur pour refroidir le drone de recherche qu’on m’a miraculeusement confié, et je bois seulement du Pepsi Diet parce que ça sauve des calories.',
 			domainsTag: 'Domaines d’intervention',
 			domainsTitle: 'Expertise Logicielle & Systèmes',
 			domainsDesc:
@@ -257,20 +176,38 @@
 					detail: 'Tableaux de bord de télémétrie temps réel & visualisation de signaux WebSockets'
 				}
 			],
+			projectsTag: 'Projets & Ingénierie',
+			projectsTitle: 'Projets Choisis (Académiques & Personnels)',
+			projectsDesc: 'Architectures microservices distribuées, prototypes électromécaniques et robotique multi-agents.',
+			viewFullProjects: 'Explorer tous les projets et galeries photo dans le CV',
+			featuredProjects: [
+				{
+					title: 'CanBankX — Plateforme Microservices Répartie',
+					category: 'Systèmes Distribués & Cloud',
+					stack: 'Go • Docker Compose • Redis • KrakenD • k6',
+					desc: 'Backend bancaire distribué en Go avec isolation par base de données MySQL, passerelle KrakenD API Gateway et validation de transactions ACID concurrentes par tests de charge extrêmes.',
+					link: '/cv'
+				},
+				{
+					title: 'Grue à Tour Automatisée & Téléguidée',
+					category: 'Électromécanique & Embarqué',
+					stack: 'SolidWorks • C • RF 2.4 GHz • Découpe Laser',
+					desc: 'Grue à échelle réduite électromécanique conçue lors de la compétition d’ingénierie à l’ÉTS : mât en treillis de bois découpé au laser, réducteur d’engrenages SolidWorks et télécommande radio sans fil.',
+					link: '/cv'
+				},
+				{
+					title: 'Système Autonome Drone & Rover',
+					category: 'Perception Autonome & Robotique',
+					stack: 'Python • ROS 2 • OpenCV • Linux',
+					desc: 'Module logiciel embarqué sur drone et protocole de communication multi-agents guidant le rover terrestre par vision par ordinateur et coordonnées géospatiales temps réel.',
+					link: '/cv'
+				}
+			],
 			ctaTitle: 'Un projet ou une opportunité à discuter ?',
 			ctaSub: 'Disponible pour échanger autour d’opportunités logicielles, fullstack ou systèmes.',
 			ctaBtn: 'Initier le contact'
 		}
 	}[i18n.locale]);
-
-	function nextCraneImage() {
-		selectedCraneIndex = (selectedCraneIndex + 1) % content.craneImages.length;
-	}
-
-	function prevCraneImage() {
-		selectedCraneIndex =
-			(selectedCraneIndex - 1 + content.craneImages.length) % content.craneImages.length;
-	}
 </script>
 
 <svelte:head>
@@ -403,71 +340,6 @@
 	</section>
 
 	<!-- Technical Engineering Caliper Divider -->
-	<EngineeringDivider label="ETS_MTL // ROBOTIC_CRANE" code="GEN-100" />
-
-	<!-- First Undergrad Project Showcase: Automated Tower Crane (Bottom thumbnail strip removed) -->
-	<section class="section-block crane-section">
-		<div class="section-header">
-			<span class="section-tag">{content.craneTag}</span>
-			<h2 class="section-title">{content.craneTitle}</h2>
-			<p class="section-desc">{content.craneSubtitle}</p>
-		</div>
-
-		<div class="crane-showcase-card interactive">
-			<!-- Main Display Area -->
-			<div class="crane-main-viewer">
-				<div class="crane-image-stage">
-					<img
-						src={content.craneImages[selectedCraneIndex].src}
-						alt={content.craneImages[selectedCraneIndex].label}
-						class="crane-active-img"
-					/>
-
-					<!-- Badges & Counter -->
-					<div class="crane-badge-overlay">
-						<span class="crane-badge-dot"></span>
-						<span>{content.craneImages[selectedCraneIndex].badge}</span>
-					</div>
-
-					<!-- Direct Arrow Nav Controls -->
-					<div class="crane-nav-overlay">
-						<button
-							class="crane-nav-btn interactive"
-							onclick={prevCraneImage}
-							aria-label="Previous project photo"
-							title="Previous photo"
-						>
-							<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-								<polyline points="10 3 5 8 10 13"></polyline>
-							</svg>
-						</button>
-						<span class="crane-counter">
-							{selectedCraneIndex + 1} / {content.craneImages.length}
-						</span>
-						<button
-							class="crane-nav-btn interactive"
-							onclick={nextCraneImage}
-							aria-label="Next project photo"
-							title="Next photo"
-						>
-							<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-								<polyline points="6 3 11 8 6 13"></polyline>
-							</svg>
-						</button>
-					</div>
-				</div>
-
-				<div class="crane-caption-bar">
-					<p class="crane-caption-text">
-						<strong>{content.craneImages[selectedCraneIndex].label} :</strong>
-						{content.craneImages[selectedCraneIndex].caption}
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Technical Engineering Caliper Divider -->
 	<EngineeringDivider label="SOFTWARE_FOCUS // WEB_BACKEND_SYSTEMS" code="FULLSTACK_SYS" />
 
 	<!-- Core Domains of Expertise -->
@@ -536,6 +408,42 @@
 							<path d="M4 8h8m-4-4l4 4-4 4"></path>
 						</svg>
 					</div>
+				</a>
+			{/each}
+		</div>
+	</section>
+
+	<!-- Technical Engineering Caliper Divider -->
+	<EngineeringDivider label="PROJECTS // CODE_AND_SYSTEMS" code="ETS_CAN" />
+
+	<!-- Section: Featured Projects (School & Side Work) -->
+	<section class="section-block projects-section">
+		<div class="section-header">
+			<div class="header-split">
+				<div>
+					<span class="section-tag">{content.projectsTag}</span>
+					<h2 class="section-title">{content.projectsTitle}</h2>
+				</div>
+				<a href="/cv" class="link-more interactive">
+					<span>{content.viewFullProjects}</span>
+					<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+						<path d="M6 3l5 5-5 5"></path>
+					</svg>
+				</a>
+			</div>
+			<p class="section-desc">{content.projectsDesc}</p>
+		</div>
+
+		<div class="featured-projects-grid">
+			{#each content.featuredProjects as proj}
+				<a href={proj.link} class="featured-project-card interactive">
+					<div class="proj-badge-row">
+						<span class="proj-category">{proj.category}</span>
+						<span class="proj-arrow">↗</span>
+					</div>
+					<h3 class="proj-title">{proj.title}</h3>
+					<div class="proj-stack">{proj.stack}</div>
+					<p class="proj-desc">{proj.desc}</p>
 				</a>
 			{/each}
 		</div>
@@ -832,141 +740,85 @@
 		box-shadow: 0 0 6px #ef4444;
 	}
 
-	/* Crane Undergrad Project Showcase (Clean) */
-	.crane-showcase-card {
-		background: rgba(255, 255, 255, 0.82);
-		backdrop-filter: blur(20px);
-		-webkit-backdrop-filter: blur(20px);
+	/* Featured Projects Section */
+	.featured-projects-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+	}
+
+	.featured-project-card {
+		background: rgba(255, 255, 255, 0.72);
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
 		border: 1px solid var(--border-subtle);
 		border-radius: 4px;
-		padding: 1.5rem;
+		padding: 1.6rem 1.4rem;
+		text-decoration: none;
+		color: inherit;
 		display: flex;
 		flex-direction: column;
-		box-shadow: 0 4px 20px -2px rgba(28, 25, 23, 0.04);
-		transition: backdrop-filter 0.3s ease, border-color 0.25s ease;
+		gap: 0.75rem;
+		transition: all 0.2s ease;
 	}
 
-	.crane-showcase-card:hover {
-		backdrop-filter: blur(34px);
-		-webkit-backdrop-filter: blur(34px);
+	.featured-project-card:hover {
+		background: rgba(255, 255, 255, 0.96);
+		backdrop-filter: blur(30px);
+		-webkit-backdrop-filter: blur(30px);
 		border-color: var(--border-medium);
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px -2px rgba(28, 25, 23, 0.06);
 	}
 
-	.crane-main-viewer {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-	}
-
-	.crane-image-stage {
-		position: relative;
-		width: 100%;
-		height: 520px;
-		background: #181513;
-		border-radius: 3px;
-		overflow: hidden;
+	.proj-badge-row {
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		border: 1px solid var(--border-subtle);
+		justify-content: space-between;
+		gap: 0.5rem;
 	}
 
-	.crane-active-img {
-		max-width: 100%;
-		max-height: 100%;
-		width: 100%;
-		height: 100%;
-		object-fit: contain;
-		display: block;
-		transition: opacity 0.3s ease;
-	}
-
-	.crane-badge-overlay {
-		position: absolute;
-		top: 1rem;
-		left: 1rem;
-		background: rgba(28, 25, 23, 0.85);
-		backdrop-filter: blur(8px);
-		color: #ffffff;
-		padding: 0.35rem 0.75rem;
-		border-radius: 3px;
-		font-size: 0.76rem;
-		font-weight: 600;
-		display: inline-flex;
-		align-items: center;
-		gap: 0.45rem;
-		border: 1px solid rgba(255, 255, 255, 0.15);
-	}
-
-	.crane-badge-dot {
-		width: 6px;
-		height: 6px;
-		border-radius: 1px;
-		background: var(--accent-purple-light);
-	}
-
-	.crane-nav-overlay {
-		position: absolute;
-		bottom: 1rem;
-		right: 1rem;
-		display: flex;
-		align-items: center;
-		gap: 0.4rem;
-		background: rgba(28, 25, 23, 0.85);
-		backdrop-filter: blur(8px);
-		padding: 0.3rem 0.6rem;
-		border-radius: 3px;
-		border: 1px solid rgba(255, 255, 255, 0.15);
-	}
-
-	.crane-nav-btn {
-		width: 30px;
-		height: 30px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background: transparent;
-		border: none;
-		color: #ffffff;
-		cursor: pointer;
-		border-radius: 2px;
-		transition: background 0.2s ease, transform 0.15s ease;
-	}
-
-	.crane-nav-btn:hover {
-		background: rgba(255, 255, 255, 0.2);
-		transform: scale(1.08);
-	}
-
-	.crane-nav-btn svg {
-		width: 15px;
-		height: 15px;
-	}
-
-	.crane-counter {
+	.proj-category {
 		font-family: var(--font-mono);
-		font-size: 0.78rem;
-		color: #e5e5e5;
-		padding: 0 0.45rem;
+		font-size: 0.7rem;
 		font-weight: 600;
+		color: var(--accent-purple);
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
 	}
 
-	.crane-caption-bar {
-		background: rgba(250, 246, 240, 0.85);
-		border: 1px solid var(--border-subtle);
-		border-radius: 3px;
-		padding: 0.9rem 1.25rem;
+	.proj-arrow {
+		font-size: 0.9rem;
+		color: var(--text-tertiary);
+		transition: transform 0.2s ease, color 0.2s ease;
 	}
 
-	.crane-caption-text {
-		margin: 0;
-		font-size: 0.88rem;
-		line-height: 1.5;
-		color: var(--text-secondary);
+	.featured-project-card:hover .proj-arrow {
+		transform: translate(2px, -2px);
+		color: var(--accent-purple);
 	}
 
-	.crane-caption-text strong {
+	.proj-title {
+		font-family: var(--font-display);
+		font-size: 1.35rem;
+		font-weight: 500;
 		color: var(--text-primary);
+		line-height: 1.25;
+		margin: 0;
+	}
+
+	.proj-stack {
+		font-family: var(--font-mono);
+		font-size: 0.76rem;
+		color: var(--text-tertiary);
+	}
+
+	.proj-desc {
+		font-size: 0.88rem;
+		color: var(--text-secondary);
+		line-height: 1.55;
+		margin: 0;
+		flex-grow: 1;
 	}
 
 	/* Section Blocks */
@@ -1281,8 +1133,8 @@
 	}
 
 	@media (max-width: 900px) {
-		.crane-image-stage {
-			height: 380px;
+		.featured-projects-grid {
+			grid-template-columns: 1fr;
 		}
 
 		.skills-grid {
@@ -1300,12 +1152,6 @@
 
 		.hero-title {
 			font-size: 2.7rem;
-		}
-	}
-
-	@media (max-width: 600px) {
-		.crane-image-stage {
-			height: 300px;
 		}
 	}
 </style>

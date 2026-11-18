@@ -2,6 +2,16 @@
 	import { i18n } from '$lib/i18n.svelte';
 	import EngineeringDivider from '$lib/components/EngineeringDivider.svelte';
 
+	let selectedCraneIndex = $state(0);
+
+	function nextCraneImage(len: number) {
+		selectedCraneIndex = (selectedCraneIndex + 1) % len;
+	}
+
+	function prevCraneImage(len: number) {
+		selectedCraneIndex = (selectedCraneIndex - 1 + len) % len;
+	}
+
 	const content = $derived({
 		en: {
 			tag: 'Curriculum Vitae',
@@ -125,6 +135,58 @@
 						'Configured KrakenD API Gateway as a unified secure ingress handling routing, JWT token validation, and inter-service aggregation.',
 						'Integrated distributed Redis caching and executed extreme automated load tests using k6 with concurrent ACID transfer operations.',
 						'Containerized the full stack (APIs, databases, gateway, Prometheus, Grafana) with automated Go data seeding scripts.'
+					]
+				},
+				{
+					title: 'Automated Robotic Tower Crane',
+					context: 'First Undergraduate Engineering Challenge (ÉTS)',
+					stack: ['SolidWorks CAD', 'C Firmware', '2.4 GHz RF', 'Laser-Cut Timber', 'LCD Telemetry'],
+					bullets: [
+						'Conceived, modeled, and manufactured a scale electromechanical tower crane featuring custom SolidWorks gear transmission and laser-cut timber structure.',
+						'Hand-wired the remote controller circuit prototype: DIP microcontroller, dual-axis thumbstick, 2.4 GHz NRF24L01 wireless transceiver, and 1602A LCD real-time display.',
+						'Successfully operated in the ÉTS departmental competition arena, achieving deterministic load stabilization and accurate coordinate placement.'
+					],
+					craneImages: [
+						{
+							id: 'team',
+							src: '/crane-team.jpg',
+							label: 'Team & Prototype',
+							badge: 'Cover Photo • ÉTS Competition Arena',
+							caption:
+								'Our 6-person student engineering team proudly standing with the fully functional scale tower crane on competition day at ÉTS.'
+						},
+						{
+							id: 'cad',
+							src: '/crane-cad-1.jpg',
+							label: 'SolidWorks Assembly',
+							badge: '3D Kinematics & Structure',
+							caption:
+								'Complete SolidWorks CAD assembly: lattice mast tower, counterweighted boom, rotational bearing slewing ring, and cable trolley carriage.'
+						},
+						{
+							id: 'gears',
+							src: '/crane-gears.jpg',
+							label: 'Gearbox & Drive',
+							badge: 'Custom Mechanical Transmission',
+							caption:
+								'Detail of the custom rotational drive assembly: 3D printed motor bracket, micro-metal gearmotor, pinion (m0.5 N10) and spur slewing ring (N48).'
+						},
+						{
+							id: 'circuit',
+							src: '/crane-circuit.jpg',
+							label: 'Embedded Controller',
+							badge: 'Wireless RF Circuit & Telemetry',
+							caption:
+								'Hand-wired remote controller prototype: DIP microcontroller, dual-axis thumbstick, 2.4 GHz NRF24L01 wireless transceiver, and 1602A LCD real-time display.'
+						},
+						{
+							id: 'render',
+							src: '/crane-render.jpg',
+							label: '3D Render',
+							badge: 'Structural Assembly View',
+							caption:
+								'SolidWorks visualization of the interlocking laser-cut plywood truss sections and self-stabilizing cross base.'
+						}
 					]
 				},
 				{
@@ -301,6 +363,58 @@
 						'Configuration de la passerelle KrakenD API Gateway comme point d’entrée unique pour le routage et la validation des jetons.',
 						'Intégration d’un cache Redis distribué et validation par tests de charge extrêmes (k6) avec transactions ACID concurrentes.',
 						'Conteneurisation complète sous Docker Compose (APIs, BDs, Passerelle, Prometheus, Grafana) avec script de génération de données en Go.'
+					]
+				},
+				{
+					title: 'Grue à Tour Automatisée & Téléguidée',
+					context: 'Premier Défi d’Ingénierie à l’ÉTS',
+					stack: ['SolidWorks CAD', 'Firmware C', 'RF 2.4 GHz', 'Découpe Laser Bois', 'Télémétrie LCD'],
+					bullets: [
+						'Conception, modélisation et usinage d’une grue à tour électromécanique à échelle réduite avec réducteur d’engrenages SolidWorks et mât en treillis de bois.',
+						'Câblage du prototype de télécommande sans fil : microcontrôleur DIP, joystick analogique, émetteur-récepteur radio NRF24L01 et écran LCD 1602A.',
+						'Participation réussie à l’arène de compétition de l’ÉTS, avec stabilisation précise de la charge et positionnement dynamique sans oscillation.'
+					],
+					craneImages: [
+						{
+							id: 'team',
+							src: '/crane-team.jpg',
+							label: 'L’Équipe & Prototype',
+							badge: 'Photo de couverture • Jour de compétition ÉTS',
+							caption:
+								'Notre équipe de 6 étudiants réunie fièrement autour de la grue à tour automatisée le jour de la compétition à l’ÉTS.'
+						},
+						{
+							id: 'cad',
+							src: '/crane-cad-1.jpg',
+							label: 'Assemblage SolidWorks',
+							badge: 'Cinématique 3D & Structure',
+							caption:
+								'Assemblage CAD complet sous SolidWorks : mât en treillis découpé au laser, flèche rotative, contrepoids et chariot de levage.'
+						},
+						{
+							id: 'gears',
+							src: '/crane-gears.jpg',
+							label: 'Boîtier & Engrenages',
+							badge: 'Transmission Mécanique',
+							caption:
+								'Vue détaillée de la transmission mécanique : support moteur usiné, pignon moteur (m0.5 N10) et couronne dentée (N48) pour la rotation fluide de la flèche.'
+						},
+						{
+							id: 'circuit',
+							src: '/crane-circuit.jpg',
+							label: 'Contrôleur Sans Fil',
+							badge: 'Circuit Embarqué & Télémétrie',
+							caption:
+								'Télécommande sans fil sur platine d’expérimentation : microcontrôleur DIP, joystick analogique, module radio NRF24L01 et écran LCD 1602A pour le retour d’état.'
+						},
+						{
+							id: 'render',
+							src: '/crane-render.jpg',
+							label: 'Rendu 3D',
+							badge: 'Rendu d’Assemblage',
+							caption:
+								'Modélisation 3D finale illustrant la structure en contreplaqué imbriqué, la flèche et la base en croix stabilisatrice.'
+						}
 					]
 				},
 				{
@@ -514,6 +628,51 @@
 							<li>{bullet}</li>
 						{/each}
 					</ul>
+
+					{#if proj.craneImages}
+						<div class="crane-showcase-cv">
+							<div class="crane-image-stage">
+								<img
+									src={proj.craneImages[selectedCraneIndex].src}
+									alt={proj.craneImages[selectedCraneIndex].label}
+									class="crane-active-img"
+								/>
+								<div class="crane-badge-overlay">
+									<span class="crane-badge-dot"></span>
+									<span>{proj.craneImages[selectedCraneIndex].badge}</span>
+								</div>
+								<div class="crane-nav-overlay">
+									<button
+										class="crane-nav-btn interactive"
+										onclick={() => prevCraneImage(proj.craneImages.length)}
+										aria-label="Previous photo"
+									>
+										<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+											<polyline points="10 3 5 8 10 13"></polyline>
+										</svg>
+									</button>
+									<span class="crane-counter">
+										{selectedCraneIndex + 1} / {proj.craneImages.length}
+									</span>
+									<button
+										class="crane-nav-btn interactive"
+										onclick={() => nextCraneImage(proj.craneImages.length)}
+										aria-label="Next photo"
+									>
+										<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+											<polyline points="6 3 11 8 6 13"></polyline>
+										</svg>
+									</button>
+								</div>
+							</div>
+							<div class="crane-caption-bar">
+								<p class="crane-caption-text">
+									<strong>{proj.craneImages[selectedCraneIndex].label} :</strong>
+									{proj.craneImages[selectedCraneIndex].caption}
+								</p>
+							</div>
+						</div>
+					{/if}
 				</article>
 			{/each}
 		</div>
@@ -976,6 +1135,129 @@
 		font-weight: 600;
 	}
 
+	/* Crane Project Photo Showcase in CV */
+	.crane-showcase-cv {
+		margin-top: 1.25rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		border: 1px solid var(--border-subtle);
+		border-radius: 4px;
+		background: rgba(255, 255, 255, 0.5);
+		padding: 0.85rem;
+	}
+
+	.crane-image-stage {
+		position: relative;
+		width: 100%;
+		height: 440px;
+		background: #181513;
+		border-radius: 3px;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid var(--border-subtle);
+	}
+
+	.crane-active-img {
+		max-width: 100%;
+		max-height: 100%;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		display: block;
+		transition: opacity 0.3s ease;
+	}
+
+	.crane-badge-overlay {
+		position: absolute;
+		top: 0.85rem;
+		left: 0.85rem;
+		background: rgba(28, 25, 23, 0.85);
+		backdrop-filter: blur(8px);
+		color: #ffffff;
+		padding: 0.3rem 0.65rem;
+		border-radius: 3px;
+		font-size: 0.74rem;
+		font-weight: 600;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		border: 1px solid rgba(255, 255, 255, 0.15);
+	}
+
+	.crane-badge-dot {
+		width: 6px;
+		height: 6px;
+		border-radius: 1px;
+		background: var(--accent-purple-light);
+	}
+
+	.crane-nav-overlay {
+		position: absolute;
+		bottom: 0.85rem;
+		right: 0.85rem;
+		display: flex;
+		align-items: center;
+		gap: 0.35rem;
+		background: rgba(28, 25, 23, 0.85);
+		backdrop-filter: blur(8px);
+		padding: 0.25rem 0.55rem;
+		border-radius: 3px;
+		border: 1px solid rgba(255, 255, 255, 0.15);
+	}
+
+	.crane-nav-btn {
+		width: 28px;
+		height: 28px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: transparent;
+		border: none;
+		color: #ffffff;
+		cursor: pointer;
+		border-radius: 2px;
+		transition: background 0.2s ease, transform 0.15s ease;
+	}
+
+	.crane-nav-btn:hover {
+		background: rgba(255, 255, 255, 0.2);
+		transform: scale(1.08);
+	}
+
+	.crane-nav-btn svg {
+		width: 14px;
+		height: 14px;
+	}
+
+	.crane-counter {
+		font-family: var(--font-mono);
+		font-size: 0.76rem;
+		color: #e5e5e5;
+		padding: 0 0.35rem;
+		font-weight: 600;
+	}
+
+	.crane-caption-bar {
+		background: rgba(250, 246, 240, 0.85);
+		border: 1px solid var(--border-subtle);
+		border-radius: 3px;
+		padding: 0.75rem 1rem;
+	}
+
+	.crane-caption-text {
+		margin: 0;
+		font-size: 0.84rem;
+		line-height: 1.5;
+		color: var(--text-secondary);
+	}
+
+	.crane-caption-text strong {
+		color: var(--text-primary);
+	}
+
 	/* Education */
 	.edu-grid {
 		display: grid;
@@ -1049,6 +1331,10 @@
 			grid-template-columns: 1fr;
 		}
 
+		.crane-image-stage {
+			height: 320px;
+		}
+
 		.item-meta-col {
 			align-items: flex-start;
 		}
@@ -1059,6 +1345,12 @@
 
 		.cv-title {
 			font-size: 2.5rem;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.crane-image-stage {
+			height: 250px;
 		}
 	}
 
