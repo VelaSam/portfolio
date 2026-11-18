@@ -55,23 +55,23 @@
 				{
 					period: 'Sept. 2025 – Dec. 2025',
 					role: 'C# .NET Avalonia Developer',
-					type: 'R&D Internship',
+					type: 'Software Dev Internship',
 					company: 'HumanWare',
-					detail: 'Low-vision assistive applications, speech technologies & accessibility workflows'
+					detail: 'Prodigi assistive application: OCR/TTS speech workflows & accessibility UI'
 				},
 				{
 					period: 'May 2024 – Dec. 2024',
-					role: 'Fullstack Developer',
-					type: 'R&D Internship',
-					company: 'Evident Scientific',
-					detail: 'Fullstack diagnostic tooling for non-destructive testing & real-time telemetry pipelines'
+					role: 'Software Developer – Ultrasound Systems',
+					type: 'Software Dev Internship',
+					company: 'Evident Scientific (formerly Olympus)',
+					detail: 'OmniScan / UNIS ultrasound software: C++ Data Processing Unit (DPU) & Angular web app'
 				},
 				{
 					period: 'May 2023 – Dec. 2023',
-					role: 'Frontend Developer',
-					type: 'R&D Internship',
-					company: 'Evident Scientific',
-					detail: 'Real-time telemetry dashboards & WebSocket signal visualization'
+					role: 'Web Application Developer – Ultrasound Systems',
+					type: 'Software Dev Internship',
+					company: 'Evident Scientific (formerly Olympus)',
+					detail: 'Angular web dashboards & real-time ultrasonic signal visualization'
 				}
 			],
 			projectsTag: 'Projects & Engineering',
@@ -157,23 +157,23 @@
 				{
 					period: 'Sept. 2025 – Déc. 2025',
 					role: 'Développeur C# .NET Avalonia',
-					type: 'Stage R&D',
+					type: 'Stage en développement logiciel',
 					company: 'HumanWare',
-					detail: 'Applications d’assistance basse vision, technologies vocales et accessibilité'
+					detail: 'Application d’assistance Prodigi : flux OCR/TTS et accessibilité'
 				},
 				{
 					period: 'Mai 2024 – Déc. 2024',
-					role: 'Développeur Fullstack',
-					type: 'Stage R&D',
-					company: 'Evident Scientific',
-					detail: 'Outils de diagnostic fullstack pour le contrôle non destructif & flux télémétriques temps réel'
+					role: 'Développeur Logiciel – Applications Ultrasons',
+					type: 'Stage en développement logiciel',
+					company: 'Evident Scientific (anciennement Olympus)',
+					detail: 'Écosystème OmniScan / UNIS : moteur C++ DPU et application web Angular'
 				},
 				{
 					period: 'Mai 2023 – Déc. 2023',
-					role: 'Développeur Frontend',
-					type: 'Stage R&D',
-					company: 'Evident Scientific',
-					detail: 'Tableaux de bord de télémétrie temps réel & visualisation de signaux WebSockets'
+					role: 'Développeur Web – Applications Ultrasons',
+					type: 'Stage en développement logiciel',
+					company: 'Evident Scientific (anciennement Olympus)',
+					detail: 'Application web Angular & visualisation temps réel de signaux ultrasonores'
 				}
 			],
 			projectsTag: 'Projets & Ingénierie',

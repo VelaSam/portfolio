@@ -62,7 +62,7 @@
 					company: 'HumanWare',
 					location: 'Longueuil, QC',
 					role: 'C# .NET Avalonia Software Developer – Prodigi',
-					type: 'R&D Internship',
+					type: 'Software Dev Internship',
 					period: 'Sept. 2025 – Dec. 2025',
 					bullets: [
 						'Developed features and multi-screen accessibility interfaces for the Prodigi assistive reading suite using C# .NET and Avalonia.',
@@ -81,7 +81,7 @@
 					company: 'Evident Scientific (formerly Olympus)',
 					location: 'Montréal, QC',
 					role: 'Software Developer – Ultrasound Systems (OmniScan / UNIS)',
-					type: 'R&D Internship',
+					type: 'Software Dev Internship',
 					period: 'May 2024 – Dec. 2024',
 					bullets: [
 						'Worked on the OmniScan / UNIS phased-array ultrasound software ecosystem, bridging a C++ Data Processing Unit (DPU) backend with a modern web application.',
@@ -99,7 +99,7 @@
 					company: 'Evident Scientific (formerly Olympus)',
 					location: 'Montréal, QC',
 					role: 'Web Application Developer – Ultrasound Systems',
-					type: 'R&D Internship',
+					type: 'Software Dev Internship',
 					period: 'May 2023 – Dec. 2023',
 					bullets: [
 						'Built real-time web interfaces and telemetry dashboards in Angular for industrial ultrasonic non-destructive testing (OmniScan) during the Olympus-to-Evident transition.',
@@ -222,7 +222,7 @@
 					company: 'HumanWare',
 					location: 'Longueuil, QC',
 					role: 'Développeur C# .NET Avalonia – Prodigi',
-					type: 'Stage R&D',
+					type: 'Stage en développement logiciel',
 					period: 'Sept. 2025 – Déc. 2025',
 					bullets: [
 						'Développement de fonctionnalités d’accessibilité et d’interfaces multi-écrans pour l’application Prodigi en C# .NET et Avalonia.',
@@ -241,7 +241,7 @@
 					company: 'Evident Scientific (anciennement Olympus)',
 					location: 'Montréal, QC',
 					role: 'Développeur Logiciel – Applications Ultrasons (OmniScan / UNIS)',
-					type: 'Stage R&D',
+					type: 'Stage en développement logiciel',
 					period: 'Mai 2024 – Déc. 2024',
 					bullets: [
 						'Contribution à l’écosystème logiciel d’inspection par ultrasons OmniScan / UNIS, reliant un moteur C++ Data Processing Unit (DPU) à une application web.',
@@ -259,7 +259,7 @@
 					company: 'Evident Scientific (anciennement Olympus)',
 					location: 'Montréal, QC',
 					role: 'Développeur Web – Applications Ultrasons',
-					type: 'Stage R&D',
+					type: 'Stage en développement logiciel',
 					period: 'Mai 2023 – Déc. 2023',
 					bullets: [
 						'Développement de l’application web et de tableaux de bord temps réel en Angular pour des appareils à ultrasons (OmniScan) durant la transition Olympus vers Evident Scientific.',
