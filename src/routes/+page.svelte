@@ -108,7 +108,7 @@
 		fr: {
 			badge: 'Développeur Logiciel • Diplômé en Génie Logiciel',
 			location: 'Montréal, Québec',
-			headline: 'Je résous des problèmes d’ingénierie complexes pour pouvoir me payer de la magnésie d’escalade et du Uber Eats.',
+			headline: 'Je résous des problèmes d’ingénierie complexes pour pouvoir me payer mon abonnement d’escalade et du Uber Eats.',
 			btnCV: 'Consulter mon parcours & CV',
 			btnContact: 'Me contacter',
 			directAccess: 'Accès direct :',
@@ -241,7 +241,7 @@
 				{#if i18n.locale === 'en'}
 					I solve <span class="highlight-serif">complex engineering problems</span> so I can afford <span class="highlight-serif">climbing chalk</span> and <span class="highlight-serif">Uber Eats</span>.
 				{:else}
-					Je résous des <span class="highlight-serif">problèmes d’ingénierie complexes</span> pour pouvoir me payer de la <span class="highlight-serif">magnésie d’escalade</span> et du <span class="highlight-serif">Uber Eats</span>.
+					Je résous des <span class="highlight-serif">problèmes d’ingénierie complexes</span> pour pouvoir me payer <span class="highlight-serif">mon abonnement d’escalade</span> et du <span class="highlight-serif">Uber Eats</span>.
 				{/if}
 			</h1>
 

@@ -14,13 +14,14 @@
 			viewRepo: 'View repository on GitHub',
 			projects: [
 				{
-					title: 'Autonomous Multi-Agent Search & Rescue Drone-Rover System',
-					context: 'Software Engineering Capstone Project (PFE ÉTS)',
-					stack: ['Python', 'ROS 2', 'OpenCV', 'Distributed Architecture', 'Linux'],
+					title: 'Autonomous GPS-Denied Search & Rescue (UAV + UGV)',
+					context: 'Software Engineering Capstone (LOG795 / GTI795 • ÉTS Montréal)',
+					stack: ['Python', 'ROS 2 Humble', 'WebSockets / UDP', 'WebRTC (WHEP)', 'VOXL 2 / Jetson', 'AprilTags', 'ESP32 UART'],
 					bullets: [
-						'Engineered distributed telemetry and messaging architecture coordinating autonomous aerial and terrestrial search agents via ROS 2.',
-						'Developed real-time computer vision detection pipelines and coordinate mapping algorithms to locate missing persons in simulated hazardous zones.',
-						'Implemented resilient state machines, heartbeat monitoring, and automated mission fail-safes for autonomous operations.'
+						'Architected a split-transport networking pipeline: REST/WebSockets for state sync, raw UDP (ports 5005/5006) for low-latency rover commands, and MediaMTX WebRTC (WHEP) for <200 ms live video streaming.',
+						'Built an async QVIO pose streamer (vio_streamer.py) on the ModalAI Starling 2 Max (VOXL 2) and affine frame-alignment transforms (spatial_transforms.py, mapper_server.py) using 3-point / AprilTag calibration to map drone coordinates into the rover’s local frame.',
+						'Implemented a ROS 2 Humble Action Client (SendPathClient) feeding Nav2 waypoints on an Nvidia Jetson UGV, bridged via custom JSON-over-UART to an ESP32 controlling wheel odometry and drive motors.',
+						'Served a live HTML5 Canvas / JS operator dashboard directly from the VOXL 2 (/map.html) for real-time dual-vehicle tracking, calibration, and waypoint injection.'
 					]
 				},
 				{
@@ -79,13 +80,14 @@
 			viewRepo: 'Voir le dépôt sur GitHub',
 			projects: [
 				{
-					title: 'Système Autonome de Recherche & Sauvetage Drone-Rover',
-					context: 'Projet de fin d’études en génie logiciel (PFE ÉTS)',
-					stack: ['Python', 'ROS 2', 'OpenCV', 'Architecture distribuée', 'Linux'],
+					title: 'Système Autonome de Recherche & Sauvetage sans GPS (Drone + Rover)',
+					context: 'Projet de fin d’études en génie logiciel (LOG795 / GTI795 • ÉTS Montréal)',
+					stack: ['Python', 'ROS 2 Humble', 'WebSockets / UDP', 'WebRTC (WHEP)', 'VOXL 2 / Jetson', 'AprilTags', 'ESP32 UART'],
 					bullets: [
-						'Conception de l’architecture de communication distribuée et de télémétrie entre drone et rover terrestre via ROS 2.',
-						'Développement de pipelines de vision par ordinateur en temps réel et d’algorithmes de calcul de coordonnées géospatiales.',
-						'Mise en place de machines à états résilientes et de protocoles de sécurité pour les opérations autonomes de recherche.'
+						'Conception d’un pipeline réseau multi-protocoles : REST/WebSockets pour la synchronisation d’état, sockets UDP bruts (ports 5005/5006) pour les commandes temps réel et MediaMTX WebRTC (WHEP) pour un flux vidéo sous 200 ms.',
+						'Développement d’un streamer QVIO asynchrone (vio_streamer.py) sur ModalAI Starling 2 Max (VOXL 2) et de transformations rigides affines (spatial_transforms.py, mapper_server.py) avec calibration 3 points / AprilTags vers le repère du rover.',
+						'Implémentation d’un client d’action ROS 2 Humble (SendPathClient) pilotant Nav2 sur Nvidia Jetson, interfacé en JSON sur UART avec un ESP32 gérant l’odométrie des encodeurs et l’asservissement moteur.',
+						'Déploiement d’une interface opérateur HTML5 Canvas / JS servie directement par le VOXL 2 (/map.html) pour le suivi temps réel des deux véhicules, la calibration et l’injection de waypoints.'
 					]
 				},
 				{
