@@ -22,20 +22,20 @@
 			sec4Title: 'Education & Community Involvement',
 			technicalSkills: [
 				{
-					category: 'Backend & Programming Languages',
-					skills: ['Java', 'C# (.NET 8)', 'TypeScript', 'Python', 'SQL (PostgreSQL)', 'C', 'C++20', 'Zig', 'Rust (basics)']
+					category: 'Web, Applications & Data',
+					skills: ['C# .NET', 'Java', 'TypeScript', 'Angular', 'SvelteKit', 'React', 'Node.js', 'PostgreSQL', 'SQL', 'WebSockets', 'Docker', 'Git']
 				},
 				{
-					category: 'Software Architecture, Web & Data',
-					skills: ['Clean Architecture', 'OOP & Design Patterns', 'REST APIs', 'Angular', 'SvelteKit / React', 'Node.js', 'PostgreSQL', 'WebSockets', 'Docker', 'Git / CI/CD']
+					category: 'Systems & Embedded',
+					skills: ['Embedded C', 'C++20', 'Zig', 'STM32 (ARM Cortex-M)', 'FreeRTOS', 'Bare-Metal', 'Hardware Drivers', 'DMA', 'SPI/I2C/UART', 'PWM']
 				},
 				{
-					category: 'Desktop, Systems & Diagnostics',
-					skills: ['C# .NET', 'Avalonia UI', 'Network Diagnostics', 'Concurrency & Asynchronous', 'Telemetry Streaming', 'Linux']
+					category: 'AI, Vision & Signal Processing',
+					skills: ['OpenCV', 'Computer Vision', 'ROS 2', 'Edge Inference (Raspberry Pi)', 'Facial Tracking', 'rPPG', 'OCR', 'Python']
 				},
 				{
-					category: 'Embedded & Robotics (Hardware Experience)',
-					skills: ['STM32 (ARM Cortex-M)', 'Embedded C', 'FreeRTOS', 'Hardware Drivers', 'OpenCV', 'ROS 2', 'Edge Inference (Raspberry Pi)']
+					category: 'Engineering, CAD & Industrial Tools',
+					skills: ['SolidWorks', 'Solid Edge', 'RSLogix 500 (PLC)', 'MATLAB / Simulink', 'Industrial Automation', 'Laser Cutting & CNC', 'Rapid Prototyping (3D Printing)']
 				}
 			],
 			experiences: [
@@ -186,20 +186,20 @@
 			sec4Title: 'Formation & Implication',
 			technicalSkills: [
 				{
-					category: 'Langages & Backend',
-					skills: ['Java', 'C# (.NET 8)', 'TypeScript', 'Python', 'SQL (PostgreSQL)', 'C', 'C++20', 'Zig', 'Rust (notions)']
+					category: 'Web, Applicatif & Données',
+					skills: ['C# .NET', 'Java', 'TypeScript', 'Angular', 'SvelteKit', 'React', 'Node.js', 'PostgreSQL', 'SQL', 'WebSockets', 'Docker', 'Git']
 				},
 				{
-					category: 'Architecture Logicielle, Web & Données',
-					skills: ['Architecture propre', 'POO & Patrons de conception', 'API REST', 'Angular', 'SvelteKit / React', 'Node.js', 'PostgreSQL', 'WebSockets', 'Docker', 'Git / CI/CD']
+					category: 'Systèmes & Embarqué',
+					skills: ['C embarqué', 'C++20', 'Zig', 'STM32 (ARM Cortex-M)', 'FreeRTOS', 'Bare-Metal', 'Drivers matériels', 'DMA', 'SPI/I2C/UART', 'PWM']
 				},
 				{
-					category: 'Applicatif, Systèmes & Diagnostic',
-					skills: ['C# .NET', 'Avalonia UI', 'Diagnostic réseau', 'Programmation concurrente', 'Flux de télémétrie', 'Linux']
+					category: 'IA, Vision & Traitement de Signal',
+					skills: ['OpenCV', 'Vision par ordinateur', 'ROS 2', 'Inférence Edge (Raspberry Pi)', 'Suivi facial', 'rPPG', 'OCR', 'Python']
 				},
 				{
-					category: 'Embarqué & Robotique (Expérience Matérielle)',
-					skills: ['STM32 (ARM Cortex-M)', 'C embarqué', 'FreeRTOS', 'Pilotes matériels', 'OpenCV', 'ROS 2', 'Inférence Edge (Raspberry Pi)']
+					category: 'Ingénierie, CAO & Outils Industriels',
+					skills: ['SolidWorks', 'Solid Edge', 'RSLogix 500 (Automates)', 'MATLAB / Simulink', 'Automatisation industrielle', 'Découpe laser & CNC', 'Prototypage rapide (Impression 3D)']
 				}
 			],
 			experiences: [
