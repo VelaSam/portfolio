@@ -32,7 +32,7 @@
 <!-- Full-bleed transparent borderless header spanning 100% viewport width -->
 <header class="header-full-bleed">
 	<nav class="navbar" aria-label="Main Navigation">
-		<!-- Left Group: Samuel Velasco Brand + Montreal Indicator (on right of Samuel Velasco, left of Home) -->
+		<!-- Left Group: Samuel Velasco Brand -->
 		<div class="nav-left-group">
 			<a href="/" data-sveltekit-reload class="brand interactive" onclick={closeMobileMenu}>
 				<div class="brand-logo-container">
@@ -45,17 +45,6 @@
 					</span>
 				</div>
 			</a>
-
-			<div class="nav-sep" aria-hidden="true"></div>
-
-			<!-- Montreal telemetry indicator: placed to the right of Samuel Velasco and to the left of Home -->
-			<div
-				class="montreal-indicator"
-				title={i18n.locale === 'en' ? 'Based in Montreal, QC' : 'Basé à Montréal, QC'}
-			>
-				<span class="status-pulse-dot" aria-hidden="true"></span>
-				<span class="location-name">Montréal, QC</span>
-			</div>
 		</div>
 
 		<!-- Right Group: Nav Links starting with Home -->
@@ -95,11 +84,6 @@
 	<!-- Mobile Drawer -->
 	{#if mobileMenuOpen}
 		<div class="mobile-drawer">
-			<div class="mobile-location-row">
-				<span class="status-pulse-dot" aria-hidden="true"></span>
-				<span class="location-name">Montréal, QC</span>
-			</div>
-
 			<div class="mobile-nav-links">
 				{#each navItems as item}
 					{@const isActive =
@@ -245,64 +229,6 @@
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
 		white-space: nowrap;
-	}
-
-	.nav-sep {
-		width: 1px;
-		height: 20px;
-		background: var(--border-subtle);
-	}
-
-	/* Montreal Telemetry Widget (Between Samuel Velasco and Home) */
-	.montreal-indicator {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
-		padding: 0.32rem 0.7rem;
-		background: rgba(255, 255, 255, 0.55);
-		backdrop-filter: blur(12px);
-		-webkit-backdrop-filter: blur(12px);
-		border: 1px solid var(--border-subtle);
-		border-radius: 3px;
-		font-family: var(--font-mono);
-		font-size: 0.76rem;
-		color: var(--text-secondary);
-		transition: all 0.2s ease;
-		user-select: none;
-		white-space: nowrap;
-		flex-shrink: 0;
-	}
-
-	.montreal-indicator:hover {
-		background: rgba(255, 255, 255, 0.85);
-		border-color: var(--border-medium);
-		color: var(--text-primary);
-	}
-
-	.status-pulse-dot {
-		width: 6px;
-		height: 6px;
-		border-radius: 1px;
-		background: #10b981;
-		box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
-		animation: live-pulse 2.8s infinite ease-in-out;
-		flex-shrink: 0;
-	}
-
-	@keyframes live-pulse {
-		0%, 100% {
-			opacity: 1;
-			transform: scale(1);
-		}
-		50% {
-			opacity: 0.45;
-			transform: scale(0.85);
-		}
-	}
-
-	.location-name {
-		font-weight: 600;
-		color: var(--text-primary);
 	}
 
 	/* Nav Links */
@@ -454,17 +380,6 @@
 		gap: 0.85rem;
 	}
 
-	.mobile-location-row {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		padding-bottom: 0.75rem;
-		border-bottom: 1px solid var(--border-subtle);
-		font-family: var(--font-mono);
-		font-size: 0.76rem;
-		color: var(--text-secondary);
-	}
-
 	.mobile-nav-links {
 		display: flex;
 		flex-direction: column;
@@ -517,8 +432,6 @@
 			padding: 1.1rem 1.25rem 0.5rem;
 		}
 
-		.montreal-indicator,
-		.nav-sep,
 		.nav-links {
 			display: none;
 		}

@@ -2,16 +2,6 @@
 	import { i18n } from '$lib/i18n.svelte';
 	import EngineeringDivider from '$lib/components/EngineeringDivider.svelte';
 
-	let selectedCraneIndex = $state(0);
-
-	function nextCraneImage(len: number) {
-		selectedCraneIndex = (selectedCraneIndex + 1) % len;
-	}
-
-	function prevCraneImage(len: number) {
-		selectedCraneIndex = (selectedCraneIndex - 1 + len) % len;
-	}
-
 	const content = $derived({
 		en: {
 			tag: 'Portfolio & Code',
@@ -52,34 +42,6 @@
 							label: 'Team & Prototype',
 							badge: 'Cover Photo • ÉTS Competition Arena',
 							caption: 'Our 6-person student engineering team proudly standing with the fully functional scale tower crane on competition day at ÉTS.'
-						},
-						{
-							id: 'cad',
-							src: '/crane-cad-1.jpg',
-							label: 'SolidWorks Assembly',
-							badge: '3D Kinematics & Structure',
-							caption: 'Complete SolidWorks CAD assembly: lattice mast tower, counterweighted boom, rotational bearing slewing ring, and cable trolley carriage.'
-						},
-						{
-							id: 'gears',
-							src: '/crane-gears.jpg',
-							label: 'Gearbox & Drive',
-							badge: 'Custom Mechanical Transmission',
-							caption: 'Detail of the custom rotational drive assembly: 3D printed motor bracket, micro-metal gearmotor, pinion (m0.5 N10) and spur slewing ring (N48).'
-						},
-						{
-							id: 'circuit',
-							src: '/crane-circuit.jpg',
-							label: 'Embedded Controller',
-							badge: 'Wireless RF Circuit & Telemetry',
-							caption: 'Hand-wired remote controller prototype: DIP microcontroller, dual-axis thumbstick, 2.4 GHz NRF24L01 wireless transceiver, and 1602A LCD real-time display.'
-						},
-						{
-							id: 'render',
-							src: '/crane-render.jpg',
-							label: '3D Render',
-							badge: 'Structural Assembly View',
-							caption: 'SolidWorks visualization of the interlocking laser-cut plywood truss sections and self-stabilizing cross base.'
 						}
 					]
 				},
@@ -94,6 +56,7 @@
 					]
 				},
 				{
+					hidden: true,
 					title: 'Micro-Kernel & Low-Level Hardware Driver Architecture',
 					context: 'Systems Programming & Memory Management',
 					stack: ['Zig', 'C', 'STM32', 'ARM Cortex-M', 'Bare-Metal Architecture'],
@@ -144,34 +107,6 @@
 							label: 'L’Équipe & Prototype',
 							badge: 'Photo de couverture • Jour de compétition ÉTS',
 							caption: 'Notre équipe de 6 étudiants réunie fièrement autour de la grue à tour automatisée le jour de la compétition à l’ÉTS.'
-						},
-						{
-							id: 'cad',
-							src: '/crane-cad-1.jpg',
-							label: 'Assemblage SolidWorks',
-							badge: 'Cinématique 3D & Structure',
-							caption: 'Assemblage CAD complet sous SolidWorks : mât en treillis découpé au laser, flèche rotative, contrepoids et chariot de levage.'
-						},
-						{
-							id: 'gears',
-							src: '/crane-gears.jpg',
-							label: 'Boîtier & Engrenages',
-							badge: 'Transmission Mécanique',
-							caption: 'Vue détaillée de la transmission mécanique : support moteur usiné, pignon moteur (m0.5 N10) et couronne dentée (N48) pour la rotation fluide de la flèche.'
-						},
-						{
-							id: 'circuit',
-							src: '/crane-circuit.jpg',
-							label: 'Contrôleur Sans Fil',
-							badge: 'Circuit Embarqué & Télémétrie',
-							caption: 'Télécommande sans fil sur platine d’expérimentation : microcontrôleur DIP, joystick analogique, module radio NRF24L01 et écran LCD 1602A pour le retour d’état.'
-						},
-						{
-							id: 'render',
-							src: '/crane-render.jpg',
-							label: 'Rendu 3D',
-							badge: 'Rendu d’Assemblage',
-							caption: 'Modélisation 3D finale illustrant la structure en contreplaqué imbriqué, la flèche et la base en croix stabilisatrice.'
 						}
 					]
 				},
@@ -186,6 +121,7 @@
 					]
 				},
 				{
+					hidden: true,
 					title: 'Micro-Noyau & Architecture de Pilotes Bas Niveau',
 					context: 'Programmation système bas niveau & gestion mémoire',
 					stack: ['Zig', 'C', 'STM32', 'ARM Cortex-M', 'Architecture Bare-Metal'],
@@ -227,7 +163,7 @@
 
 	<!-- Projects List -->
 	<div class="projects-list">
-		{#each content.projects as proj}
+		{#each content.projects.filter((p) => !p.hidden) as proj}
 			<article class="project-box interactive">
 				<div class="project-header">
 					<div>
@@ -262,47 +198,25 @@
 					{/each}
 				</ul>
 
-				<!-- Interactive Photo Showcase (Crane Project) -->
-				{#if proj.craneImages}
+				<!-- Photo Showcase (Crane Project) -->
+				{#if proj.craneImages && proj.craneImages.length > 0}
+					{@const craneImg = proj.craneImages[0]}
 					<div class="crane-showcase-card">
 						<div class="crane-image-stage">
 							<img
-								src={proj.craneImages[selectedCraneIndex].src}
-								alt={proj.craneImages[selectedCraneIndex].label}
+								src={craneImg.src}
+								alt={craneImg.label}
 								class="crane-active-img"
 							/>
 							<div class="crane-badge-overlay">
 								<span class="crane-badge-dot"></span>
-								<span>{proj.craneImages[selectedCraneIndex].badge}</span>
-							</div>
-							<div class="crane-nav-overlay">
-								<button
-									class="crane-nav-btn interactive"
-									onclick={() => prevCraneImage(proj.craneImages.length)}
-									aria-label="Previous photo"
-								>
-									<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-										<polyline points="10 3 5 8 10 13"></polyline>
-									</svg>
-								</button>
-								<span class="crane-counter">
-									{selectedCraneIndex + 1} / {proj.craneImages.length}
-								</span>
-								<button
-									class="crane-nav-btn interactive"
-									onclick={() => nextCraneImage(proj.craneImages.length)}
-									aria-label="Next photo"
-								>
-									<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-										<polyline points="6 3 11 8 6 13"></polyline>
-									</svg>
-								</button>
+								<span>{craneImg.badge}</span>
 							</div>
 						</div>
 						<div class="crane-caption-bar">
 							<p class="crane-caption-text">
-								<strong>{proj.craneImages[selectedCraneIndex].label} :</strong>
-								{proj.craneImages[selectedCraneIndex].caption}
+								<strong>{craneImg.label} :</strong>
+								{craneImg.caption}
 							</p>
 						</div>
 					</div>
@@ -544,52 +458,6 @@
 		height: 6px;
 		border-radius: 1px;
 		background: var(--accent-purple-light);
-	}
-
-	.crane-nav-overlay {
-		position: absolute;
-		bottom: 0.85rem;
-		right: 0.85rem;
-		display: flex;
-		align-items: center;
-		gap: 0.4rem;
-		background: rgba(28, 25, 23, 0.85);
-		backdrop-filter: blur(8px);
-		padding: 0.3rem 0.6rem;
-		border-radius: 3px;
-		border: 1px solid rgba(255, 255, 255, 0.15);
-	}
-
-	.crane-nav-btn {
-		width: 30px;
-		height: 30px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background: transparent;
-		border: none;
-		color: #ffffff;
-		cursor: pointer;
-		border-radius: 2px;
-		transition: background 0.2s ease, transform 0.15s ease;
-	}
-
-	.crane-nav-btn:hover {
-		background: rgba(255, 255, 255, 0.2);
-		transform: scale(1.08);
-	}
-
-	.crane-nav-btn svg {
-		width: 15px;
-		height: 15px;
-	}
-
-	.crane-counter {
-		font-family: var(--font-mono);
-		font-size: 0.78rem;
-		color: #e5e5e5;
-		padding: 0 0.45rem;
-		font-weight: 600;
 	}
 
 	.crane-caption-bar {
