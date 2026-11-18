@@ -33,7 +33,13 @@
 						'Integrated KrakenD API Gateway for centralized authentication, rate limiting, and unified request routing across downstream microservices.',
 						'Implemented Redis caching for sub-millisecond session validation and hot balance verification, dramatically reducing primary database load.',
 						'Demonstrated high throughput and zero-data-loss consistency through rigorous k6 stress testing and Grafana/Prometheus telemetry metrics.'
-					]
+					],
+					showcaseImage: {
+						src: '/canbankx-deployment.png',
+						label: 'Microservices Deployment View',
+						caption: 'Phase 3 distributed deployment architecture showing KrakenD API Gateway, isolated Go microservices, Redis cache, MySQL databases, and Prometheus/Grafana observability.',
+						isDiagram: true
+					}
 				},
 				{
 					title: 'Automated Robotic Tower Crane',
@@ -45,15 +51,12 @@
 						'Engineered a custom spur-and-pinion transmission driven by a micro-metal gearmotor for smooth horizontal slewing.',
 						'Hand-wired a standalone wireless remote controller with a dual-axis joystick, RF telemetry link, and live status display.'
 					],
-					craneImages: [
-						{
-							id: 'team',
-							src: '/crane-team.jpg',
-							label: 'Team & Prototype',
-							badge: 'Cover Photo • ÉTS Competition Arena',
-							caption: 'Our 6-person student engineering team proudly standing with the fully functional scale tower crane on competition day at ÉTS.'
-						}
-					]
+					showcaseImage: {
+						src: '/crane-team.jpg',
+						label: 'Team & Prototype',
+						caption: 'Our 6-person student engineering team proudly standing with the fully functional scale tower crane on competition day at ÉTS.',
+						isDiagram: false
+					}
 				},
 				{
 					hidden: true,
@@ -98,7 +101,13 @@
 						'Mise en place de la passerelle KrakenD API Gateway pour la centralisation de l’authentification, du rate-limiting et du routage.',
 						'Implémentation de caches Redis ultra-rapides pour la validation des sessions et la consultation des soldes chauds.',
 						'Validation de la haute disponibilité et de la cohérence des données par des tests de charge k6 intensifs et métriques Grafana/Prometheus.'
-					]
+					],
+					showcaseImage: {
+						src: '/canbankx-deployment.png',
+						label: 'Diagramme de déploiement microservices',
+						caption: 'Architecture de déploiement distribuée (Phase 3) illustrant KrakenD API Gateway, les microservices Go isolés, Redis, MySQL et la télémétrie Prometheus/Grafana.',
+						isDiagram: true
+					}
 				},
 				{
 					title: 'Grue à Tour Automatisée Robotisée',
@@ -110,15 +119,12 @@
 						'Conception d’un boîtier de réduction sur mesure avec pignon et couronne dentée entraînés par micro-motoréducteur métallique.',
 						'Câblage complet d’une radiocommande sans fil avec joystick analogique, liaison RF et affichage d’état en direct.'
 					],
-					craneImages: [
-						{
-							id: 'team',
-							src: '/crane-team.jpg',
-							label: 'L’Équipe & Prototype',
-							badge: 'Photo de couverture • Jour de compétition ÉTS',
-							caption: 'Notre équipe de 6 étudiants réunie fièrement autour de la grue à tour automatisée le jour de la compétition à l’ÉTS.'
-						}
-					]
+					showcaseImage: {
+						src: '/crane-team.jpg',
+						label: 'L’Équipe & Prototype',
+						caption: 'Notre équipe de 6 étudiants réunie fièrement autour de la grue à tour automatisée le jour de la compétition à l’ÉTS.',
+						isDiagram: false
+					}
 				},
 				{
 					hidden: true,
@@ -198,21 +204,20 @@
 					{/each}
 				</ul>
 
-				<!-- Photo Showcase (Crane Project) -->
-				{#if proj.craneImages && proj.craneImages.length > 0}
-					{@const craneImg = proj.craneImages[0]}
+				<!-- Visual Showcase (Diagram or Photo) -->
+				{#if proj.showcaseImage}
 					<div class="crane-showcase-card">
-						<div class="crane-image-stage">
+						<div class="crane-image-stage" class:diagram-stage={proj.showcaseImage.isDiagram}>
 							<img
-								src={craneImg.src}
-								alt={craneImg.label}
+								src={proj.showcaseImage.src}
+								alt={proj.showcaseImage.label}
 								class="crane-active-img"
 							/>
 						</div>
 						<div class="crane-caption-bar">
 							<p class="crane-caption-text">
-								<strong>{craneImg.label} :</strong>
-								{craneImg.caption}
+								<strong>{proj.showcaseImage.label} :</strong>
+								{proj.showcaseImage.caption}
 							</p>
 						</div>
 					</div>
@@ -420,6 +425,11 @@
 		align-items: center;
 		justify-content: center;
 		border: 1px solid var(--border-subtle);
+	}
+
+	.crane-image-stage.diagram-stage {
+		background: #ffffff;
+		padding: 0.75rem;
 	}
 
 	.crane-active-img {
