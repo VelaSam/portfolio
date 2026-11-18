@@ -126,7 +126,7 @@
 			messagePh: 'Parlez-moi de votre projet, de vos besoins ou de votre équipe...',
 			btnSubmit: 'Envoyer le message',
 			btnSending: 'Envoi en cours...',
-			antiSpamNotice: 'J’ai déjà piégé ce formulaire (honeypot), alors évitez de m’envoyer vos bots.',
+			antiSpamNotice: 'J’ai déjà honeypotté donc prenez pas la peine d’utiliser des bots pour me spammer.',
 			successTitle: 'Message reçu !',
 			successText: 'Merci {name}, votre message a bien été transmis. Je vous répondrai dans les plus brefs délais.',
 			btnReset: 'Envoyer un autre message'
