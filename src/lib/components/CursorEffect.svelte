@@ -3,10 +3,7 @@
 
 	let mouseX = $state(-200);
 	let mouseY = $state(-200);
-	let followerX = $state(-200);
-	let followerY = $state(-200);
 	let isHovering = $state(false);
-	let isOverComponent = $state(false);
 	let isClicking = $state(false);
 	let isVisible = $state(false);
 	let isTouch = $state(false);
@@ -122,21 +119,6 @@
 				target.closest('.interactive')
 			);
 			isHovering = isClickable;
-
-			// Check if cursor is over any content surface/card/component
-			const isComponent = Boolean(
-				target.closest('.skill-card') ||
-				target.closest('.timeline-item') ||
-				target.closest('.project-box') ||
-				target.closest('.info-card') ||
-				target.closest('.form-card') ||
-				target.closest('.edu-card') ||
-				target.closest('.quote-container') ||
-				target.closest('.cta-banner-inner') ||
-				target.closest('.navbar') ||
-				target.closest('.milestone-item')
-			);
-			isOverComponent = isComponent;
 		};
 
 		window.addEventListener('mousemove', handleMouseMove, { passive: true });
@@ -146,15 +128,11 @@
 		document.addEventListener('mouseleave', handleMouseLeave);
 		document.addEventListener('mouseenter', handleMouseEnter);
 
-		// Physics & 3D dodecahedron rotation loop
+		// 3D dodecahedron rotation loop
 		let angleY = 0.4;
 		let time = 0;
 
 		const loop = () => {
-			const ease = 0.04; // Very slow and ominous
-			followerX += (mouseX - followerX) * ease;
-			followerY += (mouseY - followerY) * ease;
-
 			time += 0.022;
 			angleY += isHovering ? 0.045 : 0.018;
 			const angleX = 0.38 + Math.sin(time) * 0.25;
@@ -242,18 +220,6 @@
 </script>
 
 {#if !isTouch}
-	<!-- Ominous blurry shadow residing in the background -->
-	<div
-		class="ominous-aura"
-		class:visible={isVisible}
-		class:over-component={isOverComponent}
-		class:clicking={isClicking}
-		style="transform: translate3d({followerX}px, {followerY}px, 0);"
-	>
-		<div class="shadow-core" class:deep-blur={isOverComponent}></div>
-		<div class="pixel-grain"></div>
-	</div>
-
 	<!-- Sharp 3D purple dodecahedron cursor -->
 	<div
 		class="cursor-octa"
@@ -284,71 +250,6 @@
 		:global(*) {
 			cursor: none !important;
 		}
-	}
-
-	/* Positioned far in the background behind components */
-	.ominous-aura {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 220px;
-		height: 220px;
-		margin-top: -110px;
-		margin-left: -110px;
-		pointer-events: none;
-		z-index: 1; /* In the background layer */
-		opacity: 0;
-		mix-blend-mode: multiply;
-		transition: opacity 0.6s ease;
-		will-change: transform;
-	}
-
-	.ominous-aura.visible {
-		opacity: 0.28;
-	}
-
-	.shadow-core {
-		position: absolute;
-		inset: 0;
-		border-radius: 50%;
-		background: radial-gradient(
-			circle,
-			rgba(20, 16, 25, 0.45) 0%,
-			rgba(88, 28, 135, 0.35) 30%,
-			rgba(124, 58, 237, 0.18) 50%,
-			rgba(0, 0, 0, 0) 70%
-		);
-		filter: blur(28px);
-		transform: scale(1);
-		transition: filter 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
-	}
-
-	/* When passing over components, blob diffuses heavily into the background */
-	.shadow-core.deep-blur {
-		filter: blur(55px);
-		transform: scale(1.3);
-		opacity: 0.7;
-	}
-
-	.ominous-aura.over-component {
-		opacity: 0.18;
-	}
-
-	.pixel-grain {
-		position: absolute;
-		inset: 15%;
-		border-radius: 50%;
-		opacity: 0.2;
-		background-image: radial-gradient(rgba(28, 25, 23, 0.3) 1px, transparent 1px);
-		background-size: 3px 3px;
-		filter: blur(0.5px);
-		mix-blend-mode: overlay;
-		pointer-events: none;
-	}
-
-	.ominous-aura.clicking .shadow-core {
-		transform: scale(0.85);
-		filter: blur(22px);
 	}
 
 	.cursor-octa {
@@ -397,7 +298,6 @@
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.ominous-aura,
 		.cursor-octa {
 			display: none !important;
 		}

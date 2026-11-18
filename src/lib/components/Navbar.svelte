@@ -35,9 +35,7 @@
 		<!-- Left Group: Samuel Velasco Brand -->
 		<div class="nav-left-group">
 			<a href="/" data-sveltekit-reload class="brand interactive" onclick={closeMobileMenu}>
-				<div class="brand-logo-container">
-					<img src="/logo-emblem.png" alt="Samuel Velasco Logo" class="brand-logo" />
-				</div>
+				<img src="/logo-emblem.png" alt="Samuel Velasco Logo" class="brand-logo" />
 				<div class="brand-text">
 					<span class="brand-name">Samuel Velasco</span>
 					<span class="brand-role">
@@ -136,9 +134,9 @@
 	.header-full-bleed {
 		width: 100%;
 		background: transparent;
-		border: none;
+		border-bottom: 1px solid var(--border-subtle);
 		box-shadow: none;
-		padding: 1.25rem 2.5rem 0.75rem;
+		padding: 1.15rem 2.5rem;
 		position: relative;
 		z-index: 900;
 		box-sizing: border-box;
@@ -184,24 +182,8 @@
 		transform: translateX(2px);
 	}
 
-	.brand-logo-container {
-		width: 32px;
-		height: 32px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background: rgba(109, 40, 217, 0.08);
-		border: 1px solid rgba(109, 40, 217, 0.18);
-		border-radius: 3px;
-		transition: transform 0.25s ease;
-	}
-
-	.brand:hover .brand-logo-container {
-		transform: scale(1.08);
-	}
-
 	.brand-logo {
-		width: 18px;
+		width: 22px;
 		height: auto;
 		display: block;
 	}

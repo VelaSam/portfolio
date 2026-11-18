@@ -1,19 +1,18 @@
 <script lang="ts">
 	import { i18n } from '$lib/i18n.svelte';
-	import EngineeringDivider from '$lib/components/EngineeringDivider.svelte';
 
 	const content = $derived({
 		en: {
-			tag: 'Portfolio & Code',
+			kicker: 'SELECTED WORK — CODE, ARCHITECTURE & PROTOTYPES',
 			title: 'Engineering & Software Projects',
-			subtitle: 'Distributed cloud architectures, autonomous multi-agent robotics, and electromechanical prototypes.',
-			btnContact: 'Get in Touch',
-			metaLocation: 'Location',
-			metaEmail: 'Email',
-			metaLinkedIn: 'LinkedIn',
-			viewRepo: 'View repository on GitHub',
+			subtitle: 'Autonomous search-and-rescue robotics, distributed Go microservices, and electromechanical builds.',
+			btnContact: 'Get in Touch →',
+			viewRepo: 'GitHub Repository ↗',
+			colophonLead: 'Want to see my internship history and technical stack?',
+			colophonLink: 'View Experience & Resume →',
 			projects: [
 				{
+					idx: '01 / CAPSTONE',
 					title: 'Autonomous Search & Rescue (Drone + Ground Robot)',
 					context: 'Software Engineering Capstone (ÉTS Montréal)',
 					stack: ['Python', 'ROS 2', 'Computer Vision', 'WebSockets / WebRTC', 'Embedded Linux'],
@@ -24,6 +23,7 @@
 					]
 				},
 				{
+					idx: '02 / MICROSERVICES',
 					title: 'CanBankX — Distributed Microservices Platform',
 					context: 'Distributed Systems & Cloud Architecture (Go, Docker, Redis)',
 					repoUrl: 'https://github.com/VelaSam/CanBankX_Samuel_Velasco',
@@ -36,12 +36,13 @@
 					],
 					showcaseImage: {
 						src: '/canbankx-deployment.png',
-						label: 'Microservices Deployment View',
+						label: 'Fig. 01 — Microservices Deployment View',
 						caption: 'Phase 3 distributed deployment architecture showing KrakenD API Gateway, isolated Go microservices, Redis cache, MySQL databases, and Prometheus/Grafana observability.',
 						isDiagram: true
 					}
 				},
 				{
+					idx: '03 / MULTIDISCIPLINARY',
 					title: 'Automated Tower Crane',
 					context: '1st-Year Multidisciplinary Project (2nd Semester • ÉTS Montréal)',
 					stack: ['SolidWorks CAD', 'Embedded C', 'RF Telemetry', 'Laser Cutting CNC', 'Mechanical Transmission'],
@@ -53,13 +54,14 @@
 					],
 					showcaseImage: {
 						src: '/crane-team.jpg',
-						label: 'Team & Prototype',
-						caption: 'Our 6-person student engineering team proudly standing with the fully functional scale tower crane on competition day at ÉTS.',
+						label: 'Fig. 02 — Team & Prototype',
+						caption: 'Our 6-person student engineering team standing with the functional scale tower crane on competition day at ÉTS.',
 						isDiagram: false
 					}
 				},
 				{
 					hidden: true,
+					idx: '04 / SYSTEMS',
 					title: 'Micro-Kernel & Low-Level Hardware Driver Architecture',
 					context: 'Systems Programming & Memory Management',
 					stack: ['Zig', 'C', 'STM32', 'ARM Cortex-M', 'Bare-Metal Architecture'],
@@ -72,16 +74,16 @@
 			]
 		},
 		fr: {
-			tag: 'Portfolio & Code',
-			title: 'Projets d’Ingénierie & Systèmes Logiciels',
-			subtitle: 'Architectures cloud distribuées, robotique multi-agents autonome et prototypes électromécaniques.',
-			btnContact: 'Entrer en contact',
-			metaLocation: 'Localisation',
-			metaEmail: 'Email',
-			metaLinkedIn: 'LinkedIn',
-			viewRepo: 'Voir le dépôt sur GitHub',
+			kicker: 'TRAVAUX CHOISIS — CODE, ARCHITECTURE & PROTOTYPES',
+			title: 'Projets d’Ingénierie & Logiciel',
+			subtitle: 'Robotique autonome de recherche et sauvetage, microservices Go distribués et prototypes électromécaniques.',
+			btnContact: 'Entrer en contact →',
+			viewRepo: 'Dépôt GitHub ↗',
+			colophonLead: 'Vous souhaitez consulter mes stages et mes compétences techniques ?',
+			colophonLink: 'Voir mon Parcours & CV →',
 			projects: [
 				{
+					idx: '01 / PFE',
 					title: 'Système Autonome de Recherche & Sauvetage (Drone + Robot)',
 					context: 'Projet de fin d’études en génie logiciel (ÉTS Montréal)',
 					stack: ['Python', 'ROS 2', 'Vision par ordinateur', 'WebSockets / WebRTC', 'Linux embarqué'],
@@ -92,6 +94,7 @@
 					]
 				},
 				{
+					idx: '02 / MICROSERVICES',
 					title: 'CanBankX — Plateforme de Microservices Distribués',
 					context: 'Systèmes Distribués & Architecture Cloud (Go, Docker, Redis)',
 					repoUrl: 'https://github.com/VelaSam/CanBankX_Samuel_Velasco',
@@ -104,12 +107,13 @@
 					],
 					showcaseImage: {
 						src: '/canbankx-deployment.png',
-						label: 'Diagramme de déploiement microservices',
+						label: 'Fig. 01 — Diagramme de déploiement microservices',
 						caption: 'Architecture de déploiement distribuée (Phase 3) illustrant KrakenD API Gateway, les microservices Go isolés, Redis, MySQL et la télémétrie Prometheus/Grafana.',
 						isDiagram: true
 					}
 				},
 				{
+					idx: '03 / MULTIDISCIPLINAIRE',
 					title: 'Grue à tour automatisée',
 					context: 'Projet multidisciplinaire de 1re année (2e session • ÉTS Montréal)',
 					stack: ['SolidWorks CAO', 'C embarqué', 'Télémétrie RF', 'Découpe laser CNC', 'Transmission mécanique'],
@@ -121,13 +125,14 @@
 					],
 					showcaseImage: {
 						src: '/crane-team.jpg',
-						label: 'L’Équipe & Prototype',
-						caption: 'Notre équipe de 6 étudiants réunie fièrement autour de la grue à tour automatisée le jour de la compétition à l’ÉTS.',
+						label: 'Fig. 02 — L’Équipe & Prototype',
+						caption: 'Notre équipe de 6 étudiants réunie autour de la grue à tour automatisée le jour de la compétition à l’ÉTS.',
 						isDiagram: false
 					}
 				},
 				{
 					hidden: true,
+					idx: '04 / SYSTÈMES',
 					title: 'Micro-Noyau & Architecture de Pilotes Bas Niveau',
 					context: 'Programmation système bas niveau & gestion mémoire',
 					stack: ['Zig', 'C', 'STM32', 'ARM Cortex-M', 'Architecture Bare-Metal'],
@@ -143,340 +148,364 @@
 </script>
 
 <svelte:head>
-	<title>{i18n.locale === 'en' ? 'Projects & Engineering • Samuel Velasco' : 'Projets & Ingénierie • Samuel Velasco'}</title>
+	<title>{i18n.locale === 'en' ? 'Projects — Samuel Velasco' : 'Projets — Samuel Velasco'}</title>
 	<meta
 		name="description"
 		content="Software, distributed microservices, and robotics engineering projects by Samuel Velasco."
 	/>
 </svelte:head>
 
-<div class="projects-page">
+<div class="projects-editorial">
 	<!-- Page Header -->
 	<header class="projects-header">
-		<div class="header-left">
-			<span class="header-tag">{content.tag}</span>
-			<h1 class="projects-title">{content.title}</h1>
-			<p class="projects-subtitle">{content.subtitle}</p>
-		</div>
-		<div class="header-actions">
-			<a href="/contact" class="btn-contact interactive">
+		<div class="projects-kicker">{content.kicker}</div>
+		<div class="projects-title-row">
+			<div>
+				<h1 class="projects-title">{content.title}</h1>
+				<p class="projects-subtitle">{content.subtitle}</p>
+			</div>
+			<a href="/contact" data-sveltekit-reload class="header-cta interactive">
 				{content.btnContact}
 			</a>
 		</div>
 	</header>
 
-	<EngineeringDivider label="SYSTEMS // CODE // PROTOTYPES" code="ARCH_01" />
-
-	<!-- Projects List -->
-	<div class="projects-list">
+	<!-- Editorial Case Study Rows -->
+	<div class="projects-ledger">
 		{#each content.projects.filter((p) => !p.hidden) as proj}
-			<article class="project-box interactive">
-				<div class="project-header">
-					<div>
-						<h2 class="project-title">
-							{#if proj.repoUrl}
-								<a
-									href={proj.repoUrl}
-									target="_blank"
-									rel="noopener noreferrer"
-									class="project-link interactive"
-									title={content.viewRepo}
-								>
-									<span>{proj.title}</span>
-									<span class="ext-icon">↗</span>
-								</a>
-							{:else}
-								<span>{proj.title}</span>
-							{/if}
-						</h2>
-						<span class="project-context">{proj.context}</span>
-					</div>
-					<div class="project-stack">
+			<article class="project-study">
+				<aside class="study-rail">
+					<span class="study-idx">{proj.idx}</span>
+					<span class="study-context">{proj.context}</span>
+
+					<div class="study-stack">
 						{#each proj.stack as tech}
-							<span class="stack-badge">{tech}</span>
+							<span class="study-tag">{tech}</span>
 						{/each}
 					</div>
-				</div>
 
-				<ul class="item-bullets">
-					{#each proj.bullets as bullet}
-						<li>{bullet}</li>
-					{/each}
-				</ul>
+					{#if proj.repoUrl}
+						<a
+							href={proj.repoUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="study-repo-link interactive"
+						>
+							{content.viewRepo}
+						</a>
+					{/if}
+				</aside>
 
-				<!-- Visual Showcase (Diagram or Photo) -->
-				{#if proj.showcaseImage}
-					<div class="crane-showcase-card">
-						<div class="crane-image-stage" class:diagram-stage={proj.showcaseImage.isDiagram}>
-							<img
-								src={proj.showcaseImage.src}
-								alt={proj.showcaseImage.label}
-								class="crane-active-img"
-							/>
-						</div>
-						<div class="crane-caption-bar">
-							<p class="crane-caption-text">
-								<strong>{proj.showcaseImage.label} :</strong>
+				<div class="study-main">
+					<h2 class="study-title">
+						{#if proj.repoUrl}
+							<a
+								href={proj.repoUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="study-title-link interactive"
+							>
+								<span>{proj.title}</span>
+								<span class="ext-arrow">↗</span>
+							</a>
+						{:else}
+							<span>{proj.title}</span>
+						{/if}
+					</h2>
+
+					<ul class="study-bullets">
+						{#each proj.bullets as bullet}
+							<li>{bullet}</li>
+						{/each}
+					</ul>
+
+					{#if proj.showcaseImage}
+						<figure class="study-figure">
+							<div class="study-frame" class:diagram-frame={proj.showcaseImage.isDiagram}>
+								<img
+									src={proj.showcaseImage.src}
+									alt={proj.showcaseImage.label}
+									class="study-img"
+								/>
+							</div>
+							<figcaption class="study-caption">
+								<strong>{proj.showcaseImage.label} —</strong>
 								{proj.showcaseImage.caption}
-							</p>
-						</div>
-					</div>
-				{/if}
+							</figcaption>
+						</figure>
+					{/if}
+				</div>
 			</article>
 		{/each}
 	</div>
+
+	<!-- Understated Colophon -->
+	<section class="projects-colophon">
+		<p class="colophon-text">
+			{content.colophonLead}
+			<a href="/experience" data-sveltekit-reload class="colophon-link interactive">
+				{content.colophonLink}
+			</a>
+		</p>
+	</section>
 </div>
 
 <style>
-	.projects-page {
+	.projects-editorial {
 		display: flex;
 		flex-direction: column;
-		gap: 2.5rem;
+		gap: 4rem;
 	}
 
+	/* Header */
 	.projects-header {
+		padding: 1.5rem 0 2rem;
+		border-bottom: 1px solid var(--text-primary);
 		display: flex;
-		align-items: flex-end;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.projects-kicker {
+		font-family: var(--font-mono);
+		font-size: 0.74rem;
+		letter-spacing: 0.06em;
+		color: var(--text-tertiary);
+		text-transform: uppercase;
+	}
+
+	.projects-title-row {
+		display: flex;
 		justify-content: space-between;
+		align-items: flex-end;
 		gap: 2rem;
 		flex-wrap: wrap;
-	}
-
-	.header-left {
-		max-width: 750px;
-	}
-
-	.header-tag {
-		font-family: var(--font-mono);
-		font-size: 0.76rem;
-		font-weight: 600;
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		color: var(--accent-purple);
-		display: inline-block;
-		margin-bottom: 0.5rem;
 	}
 
 	.projects-title {
 		font-family: var(--font-display);
-		font-size: 3.2rem;
-		font-weight: 500;
+		font-size: clamp(2.6rem, 5vw, 3.8rem);
+		font-weight: 400;
+		line-height: 1.05;
 		color: var(--text-primary);
-		line-height: 1.1;
-		margin: 0 0 0.85rem;
+		margin: 0 0 0.6rem;
 		letter-spacing: -0.02em;
 	}
 
 	.projects-subtitle {
-		font-size: 1.05rem;
+		font-size: 1rem;
 		color: var(--text-secondary);
-		line-height: 1.6;
 		margin: 0;
+		max-width: 660px;
 	}
 
-	.btn-contact {
-		display: inline-flex;
-		align-items: center;
-		padding: 0.75rem 1.4rem;
-		background: var(--text-primary);
-		color: #faf7f2;
-		border-radius: 3px;
-		font-size: 0.88rem;
+	.header-cta {
+		font-family: var(--font-mono);
+		font-size: 0.78rem;
 		font-weight: 600;
-		text-decoration: none;
-		transition: all 0.2s ease;
-	}
-
-	.btn-contact:hover {
-		background: var(--accent-purple);
-		transform: translateY(-2px);
-		box-shadow: 0 6px 18px -3px rgba(109, 40, 217, 0.25);
-	}
-
-	/* Projects List */
-	.projects-list {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-	}
-
-	.project-box {
-		background: rgba(255, 255, 255, 0.82);
-		backdrop-filter: blur(20px);
-		-webkit-backdrop-filter: blur(20px);
-		border: 1px solid var(--border-subtle);
-		border-radius: 4px;
-		padding: 2.25rem;
-		display: flex;
-		flex-direction: column;
-		gap: 1.4rem;
-		box-shadow: 0 4px 20px -2px rgba(28, 25, 23, 0.04);
-		transition: all 0.25s ease;
-	}
-
-	.project-box:hover {
-		background: rgba(255, 255, 255, 0.96);
-		backdrop-filter: blur(34px);
-		-webkit-backdrop-filter: blur(34px);
-		border-color: var(--border-medium);
-		box-shadow: 0 8px 28px -4px rgba(28, 25, 23, 0.08);
-	}
-
-	.project-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-		gap: 1.5rem;
-		flex-wrap: wrap;
-	}
-
-	.project-title {
-		font-family: var(--font-display);
-		font-size: 1.7rem;
-		font-weight: 500;
 		color: var(--text-primary);
-		margin: 0 0 0.35rem;
-		line-height: 1.2;
-	}
-
-	.project-link {
-		color: inherit;
 		text-decoration: none;
-		display: inline-flex;
-		align-items: center;
-		gap: 0.4rem;
-		transition: color 0.2s ease;
+		border-bottom: 1px solid var(--text-primary);
+		padding-bottom: 0.15rem;
+		transition: color 0.15s ease, border-color 0.15s ease;
 	}
 
-	.project-link:hover {
+	.header-cta:hover {
 		color: var(--accent-purple);
+		border-color: var(--accent-purple);
 	}
 
-	.ext-icon {
-		font-size: 1.1rem;
-		color: var(--accent-purple);
-		transition: transform 0.2s ease;
-	}
-
-	.project-link:hover .ext-icon {
-		transform: translate(2px, -2px);
-	}
-
-	.project-context {
-		font-family: var(--font-mono);
-		font-size: 0.82rem;
-		color: var(--accent-purple);
-		font-weight: 600;
-		text-transform: uppercase;
-		letter-spacing: 0.02em;
-	}
-
-	.project-stack {
+	/* Case Study Rows */
+	.projects-ledger {
 		display: flex;
-		gap: 0.45rem;
-		flex-wrap: wrap;
+		flex-direction: column;
 	}
 
-	.stack-badge {
+	.project-study {
+		display: grid;
+		grid-template-columns: 260px 1fr;
+		gap: 3.5rem;
+		padding: 3rem 0;
+		border-bottom: 1px solid var(--border-medium);
+		align-items: start;
+	}
+
+	.project-study:first-child {
+		padding-top: 0.5rem;
+	}
+
+	.study-rail {
+		position: sticky;
+		top: 2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.85rem;
+	}
+
+	.study-idx {
 		font-family: var(--font-mono);
-		font-size: 0.74rem;
-		padding: 0.22rem 0.55rem;
-		background: rgba(109, 40, 217, 0.08);
-		border: 1px solid rgba(109, 40, 217, 0.18);
-		border-radius: 2px;
+		font-size: 0.72rem;
+		letter-spacing: 0.08em;
 		color: var(--accent-purple);
 		font-weight: 600;
 	}
 
-	.item-bullets {
+	.study-context {
+		font-size: 0.86rem;
+		color: var(--text-secondary);
+		line-height: 1.45;
+	}
+
+	.study-stack {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		padding-top: 0.25rem;
+	}
+
+	.study-tag {
+		font-family: var(--font-mono);
+		font-size: 0.71rem;
+		color: var(--text-primary);
+		background: var(--bg-surface-soft);
+		border: 1px solid var(--border-subtle);
+		padding: 0.16rem 0.5rem;
+	}
+
+	.study-repo-link {
+		display: inline-block;
+		margin-top: 0.35rem;
+		font-family: var(--font-mono);
+		font-size: 0.76rem;
+		font-weight: 600;
+		color: var(--text-primary);
+		text-decoration: none;
+		border-bottom: 1px solid var(--text-primary);
+		align-self: flex-start;
+		padding-bottom: 0.12rem;
+		transition: color 0.15s ease, border-color 0.15s ease;
+	}
+
+	.study-repo-link:hover {
+		color: var(--accent-purple);
+		border-color: var(--accent-purple);
+	}
+
+	/* Right Column */
+	.study-main {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+
+	.study-title {
+		font-family: var(--font-display);
+		font-size: 2.15rem;
+		font-weight: 400;
+		color: var(--text-primary);
 		margin: 0;
-		padding-left: 1.25rem;
+		line-height: 1.12;
+	}
+
+	.study-title-link {
+		text-decoration: none;
+		color: inherit;
+		display: inline-flex;
+		align-items: baseline;
+		gap: 0.45rem;
+		transition: color 0.15s ease;
+	}
+
+	.study-title-link:hover {
+		color: var(--accent-purple);
+		font-style: italic;
+	}
+
+	.ext-arrow {
+		font-family: var(--font-mono);
+		font-size: 1rem;
+		font-style: normal;
+	}
+
+	.study-bullets {
+		margin: 0;
+		padding-left: 1.2rem;
 		display: flex;
 		flex-direction: column;
 		gap: 0.55rem;
 	}
 
-	.item-bullets li {
-		font-size: 0.94rem;
-		line-height: 1.6;
+	.study-bullets li {
+		font-size: 0.95rem;
+		line-height: 1.65;
 		color: var(--text-secondary);
 	}
 
-	/* Crane Photo Showcase */
-	.crane-showcase-card {
-		margin-top: 0.75rem;
+	/* Uncropped Natural Aspect Ratio Figure */
+	.study-figure {
+		margin: 0.5rem 0 0;
 		display: flex;
 		flex-direction: column;
-		gap: 0.75rem;
-		border: 1px solid var(--border-subtle);
-		border-radius: 4px;
-		background: rgba(255, 255, 255, 0.6);
-		padding: 0.85rem;
+		gap: 0.65rem;
 	}
 
-	.crane-image-stage {
-		position: relative;
-		width: 100%;
-		height: 480px;
-		background: #181513;
-		border-radius: 3px;
-		overflow: hidden;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border: 1px solid var(--border-subtle);
+	.study-frame {
+		border: 1px solid var(--border-medium);
+		background: var(--bg-surface-soft);
+		padding: 0.5rem;
 	}
 
-	.crane-image-stage.diagram-stage {
+	.study-frame.diagram-frame {
 		background: #ffffff;
-		padding: 0.75rem;
+		padding: 1.25rem;
 	}
 
-	.crane-active-img {
-		max-width: 100%;
-		max-height: 100%;
+	.study-img {
 		width: 100%;
-		height: 100%;
-		object-fit: contain;
+		height: auto;
 		display: block;
-		transition: opacity 0.3s ease;
 	}
 
-	.crane-caption-bar {
-		background: rgba(250, 246, 240, 0.85);
-		border: 1px solid var(--border-subtle);
-		border-radius: 3px;
-		padding: 0.85rem 1.15rem;
-	}
-
-	.crane-caption-text {
-		margin: 0;
-		font-size: 0.88rem;
+	.study-caption {
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
 		line-height: 1.5;
-		color: var(--text-secondary);
+		color: var(--text-tertiary);
 	}
 
-	.crane-caption-text strong {
+	.study-caption strong {
 		color: var(--text-primary);
+		font-weight: 600;
+	}
+
+	/* Colophon */
+	.projects-colophon {
+		padding-top: 1.5rem;
+	}
+
+	.colophon-text {
+		font-family: var(--font-display);
+		font-size: 1.6rem;
+		color: var(--text-primary);
+		margin: 0;
+	}
+
+	.colophon-link {
+		color: var(--accent-purple);
+		font-style: italic;
+		text-decoration: underline;
+		text-underline-offset: 4px;
+		margin-left: 0.35rem;
 	}
 
 	@media (max-width: 900px) {
-		.projects-title {
-			font-size: 2.5rem;
+		.project-study {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
 		}
 
-		.crane-image-stage {
-			height: 340px;
-		}
-	}
-
-	@media (max-width: 600px) {
-		.crane-image-stage {
-			height: 260px;
-		}
-
-		.project-box {
-			padding: 1.5rem;
+		.study-rail {
+			position: static;
 		}
 	}
 </style>

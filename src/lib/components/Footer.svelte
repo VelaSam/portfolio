@@ -21,10 +21,11 @@
 
 			<div class="footer-cols">
 				<div class="footer-col">
-					<span class="col-title">{i18n.locale === 'en' ? 'Navigation' : 'Navigation'}</span>
-					<a href="/" class="col-link interactive">{i18n.locale === 'en' ? 'Home' : 'Accueil'}</a>
-					<a href="/cv" class="col-link interactive">{i18n.locale === 'en' ? 'Resume & Experience' : 'CV & Expérience'}</a>
-					<a href="/contact" class="col-link interactive">{i18n.locale === 'en' ? 'Contact' : 'Contact'}</a>
+					<span class="col-title">Navigation</span>
+					<a href="/" data-sveltekit-reload class="col-link interactive">{i18n.locale === 'en' ? 'Home' : 'Accueil'}</a>
+					<a href="/experience" data-sveltekit-reload class="col-link interactive">{i18n.locale === 'en' ? 'Experience' : 'Expérience'}</a>
+					<a href="/projects" data-sveltekit-reload class="col-link interactive">{i18n.locale === 'en' ? 'Projects' : 'Projets'}</a>
+					<a href="/contact" data-sveltekit-reload class="col-link interactive">Contact</a>
 				</div>
 
 				<div class="footer-col">
@@ -70,8 +71,7 @@
 			</div>
 
 			<p class="location">
-				<span class="location-dot"></span>
-				{i18n.locale === 'en' ? 'Montréal, QC (EST)' : 'Montréal, QC'}
+				{i18n.locale === 'en' ? 'Montréal, QC' : 'Montréal, QC'}
 			</p>
 		</div>
 	</div>
@@ -225,17 +225,9 @@
 	}
 
 	.location {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
+		font-family: var(--font-mono);
+		font-size: 0.76rem;
 		margin: 0;
-	}
-
-	.location-dot {
-		width: 5px;
-		height: 5px;
-		border-radius: 1px; /* Sharp */
-		background: #10b981;
 	}
 
 	@media (max-width: 640px) {

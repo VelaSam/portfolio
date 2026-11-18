@@ -1,29 +1,24 @@
 <script lang="ts">
 	import { i18n } from '$lib/i18n.svelte';
-	import EngineeringDivider from '$lib/components/EngineeringDivider.svelte';
 
 	const content = $derived({
 		en: {
-			tag: 'Curriculum Vitae',
+			kicker: 'CURRICULUM VITAE — SAMUEL VELASCO — MONTRÉAL, QC',
 			title: 'Trajectory & Experience',
-			subtitle: 'Software Developer • Software Engineering Graduate (ÉTS) • Fullstack, Backend & Web Systems with Low-Level Precision',
-			btnContact: 'Get in Touch',
-			metaLocation: 'Location',
-			metaEmail: 'Email',
-			metaLinkedIn: 'LinkedIn',
-			sec1Num: '01',
+			subtitle: 'Software Developer • B.Eng. Software Engineering (ÉTS) • Fullstack, Backend & Systems',
+			btnContact: 'Get in Touch →',
+			sec1Num: '01 / STACK',
 			sec1Title: 'Technical Competencies',
-			sec2Num: '02',
+			sec2Num: '02 / ROLES',
 			sec2Title: 'Professional Experience',
-			sec3Num: '03',
-			sec3Title: 'Education & Community Involvement',
-			projectsCtaTitle: 'Looking for Engineering & Software Projects?',
-			projectsCtaDesc: 'Explore CanBankX (Go Microservices), the Automated Tower Crane (1st-Year Multidisciplinary Project), and autonomous Search & Rescue.',
-			projectsCtaBtn: 'Explore Projects Page ↗',
+			sec3Num: '03 / ACADEMIA',
+			sec3Title: 'Education & Involvement',
+			projectsColophon: 'Want to see the code, architecture diagrams, and hardware prototypes?',
+			projectsColophonLink: 'Explore Selected Projects →',
 			technicalSkills: [
 				{
 					category: 'Web, Applications & Data',
-					skills: ['C# .NET', 'Java', 'TypeScript', 'Angular', 'SvelteKit', 'React', 'Node.js', 'PostgreSQL', 'SQL', 'Docker', 'Git']
+					skills: ['C# .NET', 'Java', 'Go', 'TypeScript', 'Angular', 'SvelteKit', 'React', 'Node.js', 'PostgreSQL', 'SQL', 'Docker', 'Git']
 				},
 				{
 					category: 'Systems & Embedded',
@@ -139,7 +134,7 @@
 					degree: 'Bachelor of Software Engineering (B.Eng)',
 					date: 'Graduation: December 2026',
 					details: [
-						'Rigorous curriculum focused on software architecture, real-time systems, operating systems, and low-level computing.'
+						'Curriculum focused on software architecture, real-time systems, operating systems, and low-level computing.'
 					]
 				},
 				{
@@ -164,26 +159,22 @@
 			]
 		},
 		fr: {
-			tag: 'Curriculum Vitae',
+			kicker: 'CURRICULUM VITAE — SAMUEL VELASCO — MONTRÉAL, QC',
 			title: 'Parcours & Expériences',
-			subtitle: 'Développeur Logiciel • Diplômé en Génie Logiciel (ÉTS) • Systèmes Web, Backend & Fullstack avec Rigueur Systèmes',
-			btnContact: 'Entrer en contact',
-			metaLocation: 'Localisation',
-			metaEmail: 'Email',
-			metaLinkedIn: 'LinkedIn',
-			sec1Num: '01',
+			subtitle: 'Développeur Logiciel • Diplômé en Génie Logiciel (ÉTS) • Web, Backend & Systèmes',
+			btnContact: 'Entrer en contact →',
+			sec1Num: '01 / STACK',
 			sec1Title: 'Compétences Techniques',
-			sec2Num: '02',
+			sec2Num: '02 / MANDATS',
 			sec2Title: 'Expérience Professionnelle',
-			sec3Num: '03',
+			sec3Num: '03 / FORMATION',
 			sec3Title: 'Formation & Implication',
-			projectsCtaTitle: 'Vous cherchez mes projets logiciels & d’ingénierie ?',
-			projectsCtaDesc: 'Découvrez CanBankX (Microservices Go), la Grue à tour automatisée (projet multidisciplinaire de 1re année) et notre projet de recherche et sauvetage.',
-			projectsCtaBtn: 'Explorer la page Projets ↗',
+			projectsColophon: 'Vous cherchez mes projets logiciels, schémas d’architecture et prototypes ?',
+			projectsColophonLink: 'Explorer la page Projets →',
 			technicalSkills: [
 				{
 					category: 'Web, Applicatif & Données',
-					skills: ['C# .NET', 'Java', 'TypeScript', 'Angular', 'SvelteKit', 'React', 'Node.js', 'PostgreSQL', 'SQL', 'Docker', 'Git']
+					skills: ['C# .NET', 'Java', 'Go', 'TypeScript', 'Angular', 'SvelteKit', 'React', 'Node.js', 'PostgreSQL', 'SQL', 'Docker', 'Git']
 				},
 				{
 					category: 'Systèmes & Embarqué',
@@ -281,44 +272,44 @@
 				},
 				{
 					company: 'DataAnnotation',
-					location: 'À distance (Remote)',
-					role: 'Annotateur de données',
+					location: 'Télétravail',
+					role: 'Data Annotator',
 					type: 'Pigiste technique',
 					period: 'Mai 2025 – Présent',
 					bullets: [
-						'Revue de code critique et évaluation comparative (A/B) de modèles de fondation : analyse rigoureuse d’algorithmes complexes.',
-						'Traque de bogues logiques, validation approfondie des cas limites et rédaction d’implémentations de référence de haute qualité.'
+						'Revues de code approfondies et évaluations comparatives (A/B) de modèles d’IA : analyse d’algorithmes complexes et de structures de données.',
+						'Détection de bogues logiques, validation des cas limites et rédaction d’implémentations de référence.'
 					],
-					tags: ['Évaluation IA', 'Algorithmes', 'Code Review', 'Qualité logicielle']
+					tags: ['Évaluation IA', 'Algorithmique', 'Revue de code', 'Qualité logicielle']
 				}
 			],
 			educationAndInvolvement: [
 				{
 					institution: 'École de Technologie Supérieure (ÉTS)',
 					location: 'Montréal, QC',
-					degree: 'Baccalauréat en Génie Logiciel (B.Ing)',
-					date: 'Diplômé : Décembre 2026',
+					degree: 'Baccalauréat en génie logiciel (B.Ing)',
+					date: 'Fin prévue : Décembre 2026',
 					details: [
-						'Formation approfondie en génie logiciel, systèmes temps réel, architecture logicielle et systèmes d’exploitation.'
+						'Formation axée sur l’architecture logicielle, les systèmes temps réel, les systèmes d’exploitation et l’informatique bas niveau.'
 					]
 				},
 				{
-					institution: 'Club Scientifique RockETS',
+					institution: 'Club scientifique RockETS (Fuséologie)',
 					location: 'ÉTS Montréal',
-					degree: 'Développement de l’avionique & Stations de contrôle',
+					degree: 'Développeur Avionique & Station de contrôle au sol',
 					date: '2022 – 2023',
 					details: [
-						'Développement de l’avionique de fusée haute altitude en C sur microcontrôleurs STM32.',
-						'Conception de la station de contrôle sol en Qt/C++ et maintenance du portail web en Vue.js.'
+						'Programmation de firmwares avioniques en C sur microcontrôleurs STM32 pour fusées sondes haute altitude.',
+						'Développement de la station au sol de télémétrie en Qt/C++ et maintien du portail web en Vue.js.'
 					]
 				},
 				{
-					institution: 'Ambassadeur Étudiant en Génie Logiciel',
+					institution: 'Ambassadeur étudiant en génie logiciel',
 					location: 'ÉTS Montréal',
-					degree: 'Représentation officielle du département',
+					degree: 'Représentation départementale',
 					date: '2024',
 					details: [
-						'Sélectionné par la direction du département de génie logiciel pour représenter le programme lors des visites officielles et journées d’accueil.'
+						'Nommé par la direction du département de génie logiciel pour représenter le programme lors de délégations et panels publics.'
 					]
 				}
 			]
@@ -327,507 +318,407 @@
 </script>
 
 <svelte:head>
-	<title>{i18n.locale === 'en' ? 'Resume & Experience • Samuel Velasco' : 'Curriculum Vitae • Samuel Velasco'}</title>
+	<title>{i18n.locale === 'en' ? 'Experience & Resume — Samuel Velasco' : 'Parcours & CV — Samuel Velasco'}</title>
 	<meta
 		name="description"
-		content="Detailed trajectory of Samuel Velasco — Software Developer specialized in embedded systems, computer vision, and robotics."
+		content="Professional trajectory and technical competencies of Samuel Velasco — Software Developer."
 	/>
 </svelte:head>
 
-<div class="cv-page">
-	<!-- Page Header / Actions -->
+<div class="cv-editorial">
+	<!-- Page Header -->
 	<header class="cv-header">
-		<div class="cv-header-left">
-			<span class="header-tag">{content.tag}</span>
-			<h1 class="cv-title">{content.title}</h1>
-			<p class="cv-subtitle">{content.subtitle}</p>
-		</div>
-
-		<div class="cv-header-actions no-print">
-			<a href="/contact" class="btn-contact interactive">
-				<span>{content.btnContact}</span>
-			</a>
+		<div class="cv-kicker">{content.kicker}</div>
+		<div class="cv-title-row">
+			<div>
+				<h1 class="cv-title">{content.title}</h1>
+				<p class="cv-subtitle">{content.subtitle}</p>
+			</div>
+			<div class="cv-meta-links no-print">
+				<a href="mailto:svelasco514@gmail.com" class="meta-link interactive">svelasco514@gmail.com ↗</a>
+				<a href="https://linkedin.com/in/samuelvelascodev" target="_blank" rel="noopener noreferrer" class="meta-link interactive">LinkedIn ↗</a>
+				<a href="/contact" data-sveltekit-reload class="meta-cta interactive">{content.btnContact}</a>
+			</div>
 		</div>
 	</header>
 
-	<!-- Quick Metadata Strip -->
-	<section class="cv-meta-strip">
-		<div class="meta-item">
-			<span class="meta-label">{content.metaLocation}</span>
-			<span class="meta-val">Montréal, QC</span>
-		</div>
-		<div class="meta-divider"></div>
-		<div class="meta-item">
-			<span class="meta-label">{content.metaEmail}</span>
-			<a href="mailto:svelasco514@gmail.com" class="meta-val link interactive">svelasco514@gmail.com</a>
-		</div>
-		<div class="meta-divider"></div>
-		<div class="meta-item">
-			<span class="meta-label">{content.metaLinkedIn}</span>
-			<a href="https://linkedin.com/in/samuelvelascodev" target="_blank" rel="noopener noreferrer" class="meta-val link interactive">
-				samuelvelascodev ↗
-			</a>
-		</div>
-	</section>
-
-	<!-- 01 Compétences Techniques -->
+	<!-- 01 / Technical Competencies (Architectural Spec Table) -->
 	<section class="cv-section">
-		<div class="section-title-wrap">
-			<span class="section-num">{content.sec1Num}</span>
-			<h2 class="section-heading">{content.sec1Title}</h2>
+		<div class="section-rail">
+			<span class="rail-index">{content.sec1Num}</span>
+			<h2 class="rail-heading">{content.sec1Title}</h2>
 		</div>
 
-		<div class="skills-catalog">
-			{#each content.technicalSkills as cat}
-				<div class="skill-category-card interactive">
-					<h3 class="category-title">{cat.category}</h3>
-					<div class="category-badges">
-						{#each cat.skills as skill}
-							<span class="skill-chip">{skill}</span>
-						{/each}
-					</div>
-				</div>
-			{/each}
-		</div>
-	</section>
-
-	<EngineeringDivider label="EXPERIENCE // STAGES" code="0x02" />
-
-	<!-- 02 Expérience Professionnelle -->
-	<section class="cv-section">
-		<div class="section-title-wrap">
-			<span class="section-num">{content.sec2Num}</span>
-			<h2 class="section-heading">{content.sec2Title}</h2>
-		</div>
-
-		<div class="timeline">
-			{#each content.experiences as exp}
-				<article class="timeline-item interactive">
-					<div class="item-header">
-						<div class="item-title-col">
-							<div class="company-badge-line">
-								<h3 class="item-company">{exp.company}</h3>
-								<span class="internship-chip">{exp.type}</span>
-							</div>
-							<div class="item-role">{exp.role}</div>
-						</div>
-						<div class="item-meta-col">
-							<span class="item-period">{exp.period}</span>
-							<span class="item-location">{exp.location}</span>
+		<div class="section-main">
+			<div class="competency-ledger">
+				{#each content.technicalSkills as cat}
+					<div class="competency-row">
+						<h3 class="comp-domain">{cat.category}</h3>
+						<div class="comp-items">
+							{#each cat.skills as skill}
+								<span class="comp-tag">{skill}</span>
+							{/each}
 						</div>
 					</div>
-
-					<ul class="item-bullets">
-						{#each exp.bullets as bullet}
-							<li>{bullet}</li>
-						{/each}
-					</ul>
-
-					<div class="item-tags no-print">
-						{#each exp.tags as tag}
-							<span class="tag-crumb">{tag}</span>
-						{/each}
-					</div>
-
-					{#if exp.externalCard}
-						<a
-							href={exp.externalCard.url}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="external-ref-card no-print interactive"
-						>
-							<div class="ext-card-body">
-								<span class="ext-card-title">{exp.externalCard.title}</span>
-								<span class="ext-card-sub">{exp.externalCard.subtitle}</span>
-							</div>
-							<div class="ext-card-meta">
-								<span class="ext-card-domain">{exp.externalCard.domain}</span>
-								<span class="ext-card-arrow">↗</span>
-							</div>
-						</a>
-					{/if}
-				</article>
-			{/each}
-		</div>
-	</section>
-
-	<EngineeringDivider label="ACADEMIA // ETS_MONTREAL" code="B.ING" />
-
-	<!-- 03 Formation & Implication -->
-	<section class="cv-section">
-		<div class="section-title-wrap">
-			<span class="section-num">{content.sec3Num}</span>
-			<h2 class="section-heading">{content.sec3Title}</h2>
-		</div>
-
-		<div class="edu-grid">
-			{#each content.educationAndInvolvement as item}
-				<div class="edu-card interactive">
-					<div class="edu-header">
-						<div>
-							<h3 class="edu-title">{item.institution}</h3>
-							<span class="edu-degree">{item.degree}</span>
-						</div>
-						<span class="edu-date">{item.date}</span>
-					</div>
-					<ul class="edu-details">
-						{#each item.details as det}
-							<li>{det}</li>
-						{/each}
-					</ul>
-				</div>
-			{/each}
-		</div>
-	</section>
-
-	<!-- Dedicated Projects Page CTA Banner -->
-	<section class="projects-cta-section no-print">
-		<div class="projects-cta-card">
-			<div class="projects-cta-left">
-				<span class="cta-tag">Portfolio & Showcase</span>
-				<h3 class="cta-title">{content.projectsCtaTitle}</h3>
-				<p class="cta-desc">{content.projectsCtaDesc}</p>
+				{/each}
 			</div>
-			<a href="/projects" data-sveltekit-reload class="btn-projects-cta interactive">
-				<span>{content.projectsCtaBtn}</span>
-			</a>
 		</div>
+	</section>
+
+	<!-- 02 / Professional Experience (Editorial Split Timeline) -->
+	<section class="cv-section">
+		<div class="section-rail">
+			<span class="rail-index">{content.sec2Num}</span>
+			<h2 class="rail-heading">{content.sec2Title}</h2>
+		</div>
+
+		<div class="section-main">
+			<div class="exp-ledger">
+				{#each content.experiences as exp}
+					<article class="exp-entry">
+						<div class="exp-meta-col">
+							<span class="exp-period">{exp.period}</span>
+							<span class="exp-type">{exp.type}</span>
+							<span class="exp-loc">{exp.location}</span>
+						</div>
+
+						<div class="exp-body-col">
+							<header class="exp-head">
+								<h3 class="exp-role">{exp.role}</h3>
+								<div class="exp-company">{exp.company}</div>
+							</header>
+
+							<ul class="exp-bullets">
+								{#each exp.bullets as bullet}
+									<li>{bullet}</li>
+								{/each}
+							</ul>
+
+							<div class="exp-tags no-print">
+								{#each exp.tags as tag}
+									<span class="exp-tag">{tag}</span>
+								{/each}
+							</div>
+
+							{#if exp.externalCard}
+								<a
+									href={exp.externalCard.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="external-ref-card no-print interactive"
+								>
+									<div class="ext-card-body">
+										<span class="ext-card-title">{exp.externalCard.title}</span>
+										<span class="ext-card-sub">{exp.externalCard.subtitle}</span>
+									</div>
+									<div class="ext-card-meta">
+										<span class="ext-card-domain">{exp.externalCard.domain}</span>
+										<span class="ext-card-arrow">↗</span>
+									</div>
+								</a>
+							{/if}
+						</div>
+					</article>
+				{/each}
+			</div>
+		</div>
+	</section>
+
+	<!-- 03 / Education & Involvement -->
+	<section class="cv-section">
+		<div class="section-rail">
+			<span class="rail-index">{content.sec3Num}</span>
+			<h2 class="rail-heading">{content.sec3Title}</h2>
+		</div>
+
+		<div class="section-main">
+			<div class="edu-ledger">
+				{#each content.educationAndInvolvement as item}
+					<div class="edu-row">
+						<div class="edu-meta">
+							<span class="edu-date">{item.date}</span>
+							<span class="edu-loc">{item.location}</span>
+						</div>
+						<div class="edu-body">
+							<h3 class="edu-degree">{item.degree}</h3>
+							<div class="edu-inst">{item.institution}</div>
+							{#each item.details as detail}
+								<p class="edu-detail">{detail}</p>
+							{/each}
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
+	</section>
+
+	<!-- Understated Colophon to Projects -->
+	<section class="cv-colophon no-print">
+		<p class="colophon-text">
+			{content.projectsColophon}
+			<a href="/projects" data-sveltekit-reload class="colophon-link interactive">
+				{content.projectsColophonLink}
+			</a>
+		</p>
 	</section>
 </div>
 
 <style>
-	.cv-page {
+	.cv-editorial {
 		display: flex;
 		flex-direction: column;
-		gap: 3.5rem;
+		gap: 4.5rem;
 	}
 
 	/* Header */
 	.cv-header {
+		padding: 1.5rem 0 2rem;
+		border-bottom: 1px solid var(--text-primary);
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.cv-kicker {
+		font-family: var(--font-mono);
+		font-size: 0.74rem;
+		letter-spacing: 0.06em;
+		color: var(--text-tertiary);
+		text-transform: uppercase;
+	}
+
+	.cv-title-row {
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
 		gap: 2rem;
 		flex-wrap: wrap;
-		padding-bottom: 2rem;
-		border-bottom: 1px solid var(--border-subtle);
-	}
-
-	.header-tag {
-		font-size: 0.76rem;
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		font-weight: 600;
-		color: var(--accent-purple);
-		display: block;
-		margin-bottom: 0.5rem;
 	}
 
 	.cv-title {
 		font-family: var(--font-display);
-		font-size: 3.2rem;
-		line-height: 1.1;
+		font-size: clamp(2.6rem, 5vw, 3.8rem);
 		font-weight: 400;
+		line-height: 1.05;
 		color: var(--text-primary);
-		margin: 0 0 0.5rem;
+		margin: 0 0 0.6rem;
+		letter-spacing: -0.02em;
 	}
 
 	.cv-subtitle {
-		font-size: 1.05rem;
+		font-size: 1rem;
 		color: var(--text-secondary);
 		margin: 0;
 	}
 
-	.cv-header-actions {
-		display: flex;
-		gap: 0.75rem;
-		align-items: center;
-	}
-
-	.btn-contact {
-		display: inline-flex;
-		align-items: center;
-		padding: 0.65rem 1.25rem;
-		background: var(--text-primary);
-		color: #faf7f2;
-		border-radius: 3px; /* Sharp */
-		text-decoration: none;
-		font-size: 0.86rem;
-		font-weight: 600;
-		transition: all 0.2s ease;
-	}
-
-	.btn-contact:hover {
-		background: var(--accent-purple);
-		transform: translateY(-1px);
-	}
-
-	/* Metadata strip */
-	.cv-meta-strip {
+	.cv-meta-links {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
-		padding: 1.25rem 1.75rem;
-		background: rgba(255, 255, 255, 0.75);
-		backdrop-filter: blur(16px);
-		-webkit-backdrop-filter: blur(16px);
-		border: 1px solid var(--border-subtle);
-		border-radius: 4px; /* Sharp */
+		gap: 1.35rem;
 		flex-wrap: wrap;
-		gap: 1.25rem;
-		transition: backdrop-filter 0.3s ease;
 	}
 
-	.cv-meta-strip:hover {
-		backdrop-filter: blur(28px);
-		-webkit-backdrop-filter: blur(28px);
-	}
-
-	.meta-item {
-		display: flex;
-		flex-direction: column;
-		gap: 0.2rem;
-	}
-
-	.meta-label {
-		font-size: 0.72rem;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		color: var(--text-tertiary);
-		font-weight: 600;
-	}
-
-	.meta-val {
-		font-size: 0.92rem;
-		color: var(--text-primary);
-		font-weight: 500;
-	}
-
-	.meta-val.link {
-		text-decoration: none;
-		color: var(--accent-purple);
-		transition: underline 0.2s ease;
-	}
-
-	.meta-val.link:hover {
-		text-decoration: underline;
-	}
-
-	.meta-divider {
-		width: 1px;
-		height: 28px;
-		background: var(--border-subtle);
-	}
-
-	/* Section Base */
-	.cv-section {
-		display: flex;
-		flex-direction: column;
-		gap: 1.75rem;
-	}
-
-	.section-title-wrap {
-		display: flex;
-		align-items: baseline;
-		gap: 0.85rem;
-		border-bottom: 1px solid var(--border-subtle);
-		padding-bottom: 0.75rem;
-	}
-
-	.section-num {
-		font-family: var(--font-mono);
-		font-size: 0.85rem;
-		color: var(--accent-purple);
-		font-weight: 600;
-	}
-
-	.section-heading {
-		font-family: var(--font-display);
-		font-size: 2rem;
-		font-weight: 400;
-		color: var(--text-primary);
-		margin: 0;
-	}
-
-	/* Skills catalog */
-	.skills-catalog {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1.25rem;
-	}
-
-	.skill-category-card {
-		background: rgba(255, 255, 255, 0.72);
-		backdrop-filter: blur(18px);
-		-webkit-backdrop-filter: blur(18px);
-		border: 1px solid var(--border-subtle);
-		border-radius: 4px; /* Sharp */
-		padding: 1.5rem;
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		transition: all 0.2s ease;
-	}
-
-	.skill-category-card:hover {
-		background: rgba(255, 255, 255, 0.95);
-		backdrop-filter: blur(32px);
-		-webkit-backdrop-filter: blur(32px);
-		border-color: var(--border-medium);
-	}
-
-	.category-title {
-		font-size: 0.95rem;
-		font-weight: 600;
-		color: var(--text-primary);
-		margin: 0;
-	}
-
-	.category-badges {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.4rem;
-	}
-
-	.skill-chip {
+	.meta-link {
 		font-family: var(--font-mono);
 		font-size: 0.76rem;
-		padding: 0.25rem 0.6rem;
-		background: rgba(243, 238, 228, 0.7);
-		border: 1px solid rgba(226, 219, 206, 0.8);
-		border-radius: 2px; /* Sharp */
+		color: var(--text-secondary);
+		text-decoration: none;
+		transition: color 0.15s ease;
+	}
+
+	.meta-link:hover {
+		color: var(--accent-purple);
+	}
+
+	.meta-cta {
+		font-family: var(--font-mono);
+		font-size: 0.78rem;
+		font-weight: 600;
 		color: var(--text-primary);
-		font-weight: 500;
+		text-decoration: none;
+		border-bottom: 1px solid var(--text-primary);
+		padding-bottom: 0.15rem;
+		transition: color 0.15s ease, border-color 0.15s ease;
 	}
 
-	/* Timeline */
-	.timeline {
+	.meta-cta:hover {
+		color: var(--accent-purple);
+		border-color: var(--accent-purple);
+	}
+
+	/* Section Layout */
+	.cv-section {
+		display: grid;
+		grid-template-columns: 260px 1fr;
+		gap: 3.5rem;
+		align-items: start;
+	}
+
+	.cv-section + .cv-section {
+		padding-top: 3rem;
+		border-top: 1px solid var(--border-medium);
+	}
+
+	.section-rail {
+		position: sticky;
+		top: 2rem;
 		display: flex;
 		flex-direction: column;
-		gap: 1.5rem;
+		gap: 0.5rem;
 	}
 
-	.timeline-item {
-		background: rgba(255, 255, 255, 0.75);
-		backdrop-filter: blur(18px);
-		-webkit-backdrop-filter: blur(18px);
-		border: 1px solid var(--border-subtle);
-		border-radius: 4px; /* Sharp */
-		padding: 1.85rem;
-		display: flex;
-		flex-direction: column;
-		gap: 1.25rem;
-		transition: all 0.25s ease;
-	}
-
-	.timeline-item:hover {
-		background: rgba(255, 255, 255, 0.96);
-		backdrop-filter: blur(34px);
-		-webkit-backdrop-filter: blur(34px);
-		border-color: var(--border-medium);
-		box-shadow: 0 6px 20px -3px rgba(28, 25, 23, 0.05);
-	}
-
-	.item-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-		gap: 1rem;
-		flex-wrap: wrap;
-	}
-
-	.item-title-col {
-		display: flex;
-		flex-direction: column;
-		gap: 0.35rem;
-	}
-
-	.company-badge-line {
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
-		flex-wrap: wrap;
-	}
-
-	.internship-chip {
+	.rail-index {
 		font-family: var(--font-mono);
 		font-size: 0.72rem;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.04em;
-		padding: 0.15rem 0.55rem;
-		background: rgba(109, 40, 217, 0.08);
-		border: 1px solid rgba(109, 40, 217, 0.25);
-		border-radius: 2px;
+		letter-spacing: 0.08em;
 		color: var(--accent-purple);
-	}
-
-	.item-company {
-		font-family: var(--font-display);
-		font-size: 1.55rem;
-		font-weight: 500;
-		color: var(--text-primary);
-		margin: 0;
-	}
-
-	.item-role {
-		font-size: 0.95rem;
 		font-weight: 600;
-		color: var(--accent-purple);
 	}
 
-	.item-meta-col {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-		gap: 0.2rem;
-	}
-
-	.item-period {
-		font-family: var(--font-mono);
-		font-size: 0.8rem;
-		font-weight: 500;
+	.rail-heading {
+		font-family: var(--font-display);
+		font-size: 2.1rem;
+		font-weight: 400;
+		line-height: 1.12;
 		color: var(--text-primary);
-		background: rgba(109, 40, 217, 0.06);
-		padding: 0.15rem 0.55rem;
-		border-radius: 2px; /* Sharp */
-		border: 1px solid rgba(109, 40, 217, 0.12);
-	}
-
-	.item-location {
-		font-size: 0.8rem;
-		color: var(--text-tertiary);
-	}
-
-	.item-bullets {
 		margin: 0;
-		padding-left: 1.25rem;
+	}
+
+	/* 01 / Competency Ledger */
+	.competency-ledger {
 		display: flex;
 		flex-direction: column;
-		gap: 0.55rem;
-	}
-
-	.item-bullets li {
-		font-size: 0.92rem;
-		line-height: 1.6;
-		color: var(--text-secondary);
-	}
-
-	.item-tags {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.4rem;
-		padding-top: 0.75rem;
 		border-top: 1px solid var(--border-subtle);
 	}
 
-	.tag-crumb {
-		font-size: 0.74rem;
-		padding: 0.15rem 0.55rem;
-		background: rgba(243, 238, 228, 0.6);
+	.competency-row {
+		display: grid;
+		grid-template-columns: 230px 1fr;
+		gap: 1.5rem;
+		align-items: baseline;
+		padding: 1.35rem 0;
+		border-bottom: 1px solid var(--border-subtle);
+	}
+
+	.comp-domain {
+		font-size: 0.94rem;
+		font-weight: 600;
+		color: var(--text-primary);
+		margin: 0;
+	}
+
+	.comp-items {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.45rem;
+	}
+
+	.comp-tag {
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		color: var(--text-primary);
+		background: var(--bg-surface-soft);
 		border: 1px solid var(--border-subtle);
-		border-radius: 2px; /* Sharp */
+		padding: 0.2rem 0.55rem;
+	}
+
+	/* 02 / Experience Ledger */
+	.exp-ledger {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.exp-entry {
+		display: grid;
+		grid-template-columns: 185px 1fr;
+		gap: 2rem;
+		padding: 2.25rem 0;
+		border-bottom: 1px solid var(--border-subtle);
+	}
+
+	.exp-entry:first-child {
+		padding-top: 0;
+	}
+
+	.exp-meta-col {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		font-family: var(--font-mono);
+	}
+
+	.exp-period {
+		font-size: 0.78rem;
+		font-weight: 600;
+		color: var(--text-primary);
+	}
+
+	.exp-type {
+		font-size: 0.68rem;
+		color: var(--accent-purple);
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+	}
+
+	.exp-loc {
+		font-size: 0.74rem;
+		color: var(--text-tertiary);
+	}
+
+	.exp-body-col {
+		display: flex;
+		flex-direction: column;
+		gap: 0.95rem;
+	}
+
+	.exp-head {
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
+	}
+
+	.exp-role {
+		font-family: var(--font-display);
+		font-size: 1.65rem;
+		font-weight: 400;
+		color: var(--text-primary);
+		margin: 0;
+		line-height: 1.18;
+	}
+
+	.exp-company {
+		font-size: 0.94rem;
+		font-weight: 600;
 		color: var(--text-secondary);
+	}
+
+	.exp-bullets {
+		margin: 0;
+		padding-left: 1.15rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.45rem;
+	}
+
+	.exp-bullets li {
+		font-size: 0.93rem;
+		line-height: 1.62;
+		color: var(--text-secondary);
+	}
+
+	.exp-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+	}
+
+	.exp-tag {
+		font-family: var(--font-mono);
+		font-size: 0.71rem;
+		color: var(--text-secondary);
+		background: var(--bg-surface-soft);
+		border: 1px solid var(--border-subtle);
+		padding: 0.14rem 0.5rem;
 	}
 
 	.external-ref-card {
@@ -836,25 +727,23 @@
 		justify-content: space-between;
 		gap: 1rem;
 		margin-top: 0.25rem;
-		padding: 0.8rem 1rem;
-		background: rgba(250, 246, 240, 0.72);
-		border: 1px solid var(--border-subtle);
-		border-radius: 3px;
+		padding: 0.75rem 1rem;
+		background: var(--bg-surface-soft);
+		border: 1px solid var(--border-medium);
 		text-decoration: none;
 		color: inherit;
-		transition: all 0.2s ease;
+		transition: border-color 0.18s ease, background-color 0.18s ease;
 	}
 
 	.external-ref-card:hover {
 		background: #ffffff;
 		border-color: var(--accent-purple);
-		transform: translateX(3px);
 	}
 
 	.ext-card-body {
 		display: flex;
 		flex-direction: column;
-		gap: 0.15rem;
+		gap: 0.1rem;
 	}
 
 	.ext-card-title {
@@ -871,7 +760,7 @@
 	.ext-card-meta {
 		display: flex;
 		align-items: center;
-		gap: 0.5rem;
+		gap: 0.45rem;
 		flex-shrink: 0;
 		font-family: var(--font-mono);
 		font-size: 0.72rem;
@@ -880,172 +769,112 @@
 
 	.ext-card-arrow {
 		font-size: 0.9rem;
-		font-weight: 700;
 	}
 
-	/* Education */
-	.edu-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1.25rem;
-	}
-
-	.edu-card {
-		background: rgba(255, 255, 255, 0.75);
-		backdrop-filter: blur(18px);
-		-webkit-backdrop-filter: blur(18px);
-		border: 1px solid var(--border-subtle);
-		border-radius: 4px; /* Sharp */
-		padding: 1.65rem;
+	/* 03 / Education Ledger */
+	.edu-ledger {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
-		transition: all 0.2s ease;
 	}
 
-	.edu-card:hover {
-		background: rgba(255, 255, 255, 0.96);
-		backdrop-filter: blur(32px);
-		-webkit-backdrop-filter: blur(32px);
-		border-color: var(--border-medium);
+	.edu-row {
+		display: grid;
+		grid-template-columns: 185px 1fr;
+		gap: 2rem;
+		padding: 1.75rem 0;
+		border-bottom: 1px solid var(--border-subtle);
 	}
 
-	.edu-header {
+	.edu-row:first-child {
+		padding-top: 0;
+	}
+
+	.edu-meta {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		font-family: var(--font-mono);
+	}
+
+	.edu-date {
+		font-size: 0.78rem;
+		color: var(--text-primary);
+		font-weight: 500;
+	}
+
+	.edu-loc {
+		font-size: 0.74rem;
+		color: var(--text-tertiary);
+	}
+
+	.edu-body {
 		display: flex;
 		flex-direction: column;
 		gap: 0.35rem;
 	}
 
-	.edu-title {
-		font-family: var(--font-display);
-		font-size: 1.25rem;
-		font-weight: 500;
-		color: var(--text-primary);
-		margin: 0;
-	}
-
 	.edu-degree {
-		font-size: 0.86rem;
-		font-weight: 600;
-		color: var(--accent-purple);
-	}
-
-	.edu-date {
-		font-family: var(--font-mono);
-		font-size: 0.76rem;
-		color: var(--text-tertiary);
-	}
-
-	.edu-details {
-		margin: 0;
-		padding-left: 1.15rem;
-		display: flex;
-		flex-direction: column;
-		gap: 0.4rem;
-	}
-
-	.edu-details li {
-		font-size: 0.86rem;
-		line-height: 1.5;
-		color: var(--text-secondary);
-	}
-
-	/* Projects CTA Card */
-	.projects-cta-section {
-		margin-top: 1rem;
-	}
-
-	.projects-cta-card {
-		background: rgba(255, 255, 255, 0.85);
-		backdrop-filter: blur(20px);
-		-webkit-backdrop-filter: blur(20px);
-		border: 1px solid var(--border-medium);
-		border-radius: 4px;
-		padding: 2rem 2.25rem;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 2rem;
-		box-shadow: 0 6px 24px -3px rgba(28, 25, 23, 0.05);
-	}
-
-	.projects-cta-left {
-		max-width: 680px;
-	}
-
-	.cta-tag {
-		font-family: var(--font-mono);
-		font-size: 0.72rem;
-		font-weight: 600;
-		color: var(--accent-purple);
-		text-transform: uppercase;
-		letter-spacing: 0.06em;
-		display: inline-block;
-		margin-bottom: 0.35rem;
-	}
-
-	.cta-title {
 		font-family: var(--font-display);
-		font-size: 1.6rem;
-		font-weight: 500;
+		font-size: 1.5rem;
+		font-weight: 400;
 		color: var(--text-primary);
-		margin: 0 0 0.45rem;
-	}
-
-	.cta-desc {
-		font-size: 0.92rem;
-		color: var(--text-secondary);
-		line-height: 1.55;
 		margin: 0;
+		line-height: 1.2;
 	}
 
-	.btn-projects-cta {
-		display: inline-flex;
-		align-items: center;
-		padding: 0.8rem 1.6rem;
-		background: var(--text-primary);
-		color: #faf7f2;
-		border-radius: 3px;
+	.edu-inst {
 		font-size: 0.9rem;
 		font-weight: 600;
-		text-decoration: none;
-		white-space: nowrap;
-		transition: all 0.2s ease;
-		flex-shrink: 0;
+		color: var(--accent-purple);
 	}
 
-	.btn-projects-cta:hover {
-		background: var(--accent-purple);
-		transform: translateY(-2px);
-		box-shadow: 0 6px 18px -3px rgba(109, 40, 217, 0.25);
+	.edu-detail {
+		font-size: 0.9rem;
+		line-height: 1.6;
+		color: var(--text-secondary);
+		margin: 0.2rem 0 0;
+	}
+
+	/* Colophon */
+	.cv-colophon {
+		padding-top: 2rem;
+		border-top: 1px solid var(--text-primary);
+	}
+
+	.colophon-text {
+		font-family: var(--font-display);
+		font-size: 1.6rem;
+		color: var(--text-primary);
+		margin: 0;
+	}
+
+	.colophon-link {
+		color: var(--accent-purple);
+		font-style: italic;
+		text-decoration: underline;
+		text-underline-offset: 4px;
+		margin-left: 0.35rem;
 	}
 
 	@media (max-width: 900px) {
-		.skills-catalog,
-		.edu-grid {
+		.cv-section,
+		.competency-row,
+		.exp-entry,
+		.edu-row {
 			grid-template-columns: 1fr;
+			gap: 1rem;
 		}
 
-		.item-meta-col {
-			align-items: flex-start;
-		}
-
-		.meta-divider {
-			display: none;
-		}
-
-		.cv-title {
-			font-size: 2.5rem;
+		.section-rail {
+			position: static;
 		}
 	}
 
-	/* Flawless Print / PDF export styles */
 	@media print {
 		.no-print,
-		:global(.navbar-wrapper),
+		:global(.header-full-bleed),
 		:global(.footer),
-		:global(.ominous-aura),
-		:global(.cursor-dot),
+		:global(.cursor-octa),
 		:global(.ambient-grain) {
 			display: none !important;
 		}
@@ -1053,23 +882,12 @@
 		:global(body),
 		:global(html) {
 			background: #ffffff !important;
-		}
-		:global(body),
-		:global(html) {
 			color: #000000 !important;
 		}
 
-		.cv-page {
-			gap: 1.25rem;
-		}
-
-		.timeline-item,
-		.skill-category-card,
-		.edu-card {
+		.exp-entry,
+		.edu-row {
 			break-inside: avoid;
-			box-shadow: none !important;
-			border: 1px solid #ddd !important;
-			background: #ffffff !important;
 		}
 	}
 </style>
