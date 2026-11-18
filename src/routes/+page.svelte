@@ -18,37 +18,7 @@
 			setupCaption: 'Fig. 01 — Left half of a Moonlander, desk fan pointed at a VOXL 2 research drone, and Diet Pepsi.',
 			setupSubtitle:
 				'I use only the left side of my Moonlander because of my two missing D and X keys. I use a fan to cool down the research drone I was somehow trusted with, and I only drink Diet Pepsi because it saves calories.',
-			domainsNum: '02 / FOCUS',
-			domainsTitle: 'What I Actually Build',
-			domainsDesc:
-				'Software developer first: building maintainable web, desktop, and backend systems with B.Eng architectural discipline, backed by hands-on embedded and robotics work.',
-			skills: [
-				{
-					idx: '01',
-					title: 'Software Development & Web Architecture',
-					subtitle: 'Backend Services • Fullstack Web • Databases',
-					description:
-						'Grounded in core software engineering: object-oriented design (Java, C# .NET, Go), relational database schemas (SQL, PostgreSQL, MySQL), REST APIs, and reactive frontends (TypeScript, Angular, SvelteKit). Used to production codebases, code reviews, automated testing, and Dockerized deployments.',
-					tags: ['Java', 'C# .NET', 'Go', 'TypeScript', 'Angular', 'SvelteKit', 'PostgreSQL', 'Docker']
-				},
-				{
-					idx: '02',
-					title: 'Systems, Diagnostics & Real-Time Tooling',
-					subtitle: 'Low-Latency Streams • Desktop Apps • Concurrency',
-					description:
-						'Connecting application logic to high-frequency data: real-time ultrasonic telemetry and C++ Data Processing Unit (DPU) integration (Evident Scientific), accessible multi-screen desktop software in Avalonia (HumanWare Prodigi), and split-protocol networking (WebSockets, WebRTC, raw UDP).',
-					tags: ['C++', 'C# .NET 8', 'Avalonia', 'WebSockets / WebRTC', 'Concurrency', 'Linux']
-				},
-				{
-					idx: '03',
-					title: 'Embedded Systems & Robotics',
-					subtitle: 'Physical Computing • From the Metal Up',
-					description:
-						'Hands-on work interfacing software directly with hardware: ARM Cortex-M microcontrollers (STM32, C, Zig), computer vision pipelines (OpenCV, rPPG, AprilTags), and ROS 2 autonomous navigation. Knowing what happens at the register and memory level makes it much easier to write fast, predictable backend code.',
-					tags: ['STM32', 'Embedded C', 'Zig', 'Python', 'OpenCV', 'ROS 2', 'FreeRTOS']
-				}
-			],
-			trajectoryNum: '03 / TRAJECTORY',
+			trajectoryNum: '02 / TRAJECTORY',
 			trajectoryTitle: 'Internships & Roles',
 			viewFullCV: 'Full resume & technical competencies',
 			milestones: [
@@ -81,7 +51,7 @@
 					detail: 'Angular web dashboards & real-time ultrasonic signal visualization'
 				}
 			],
-			projectsNum: '04 / WORK',
+			projectsNum: '03 / WORK',
 			projectsTitle: 'Selected Projects',
 			viewFullProjects: 'Full case studies & diagrams',
 			featuredProjects: [
@@ -129,37 +99,7 @@
 			setupCaption: 'Fig. 01 — Moitié gauche de Moonlander, ventilateur pointé sur un drone de recherche VOXL 2 et Pepsi Diet.',
 			setupSubtitle:
 				'J’utilise seulement le côté gauche de mon Moonlander à cause de mes deux touches D et X manquantes. J’utilise un ventilateur pour refroidir le drone de recherche qu’on m’a miraculeusement confié, et je bois seulement du Pepsi Diet parce que ça sauve des calories.',
-			domainsNum: '02 / FOCUS',
-			domainsTitle: 'Ce que je construis',
-			domainsDesc:
-				'Développeur logiciel avant tout : conception d’applications web, bureau et backend maintenables avec la rigueur d’un bachelier en génie logiciel, complétée par une vraie pratique de l’embarqué et de la robotique.',
-			skills: [
-				{
-					idx: '01',
-					title: 'Développement Logiciel & Architecture Web',
-					subtitle: 'Services Backend • Web Fullstack • Bases de données',
-					description:
-						'Ancré dans les fondamentaux du génie logiciel : conception orientée objet (Java, C# .NET, Go), schémas relationnels (SQL, PostgreSQL, MySQL), API REST et interfaces réactives (TypeScript, Angular, SvelteKit). Habitué aux revues de code, aux tests automatisés et aux déploiements Docker.',
-					tags: ['Java', 'C# .NET', 'Go', 'TypeScript', 'Angular', 'SvelteKit', 'PostgreSQL', 'Docker']
-				},
-				{
-					idx: '02',
-					title: 'Systèmes, Diagnostic & Temps Réel',
-					subtitle: 'Flux Basse Latence • Applications Bureau • Concurrence',
-					description:
-						'Lien direct entre logique applicative et données haute fréquence : télémétrie ultrasonore et intégration avec un moteur C++ Data Processing Unit (Evident Scientific), application de bureau accessible sous Avalonia (HumanWare Prodigi) et protocoles réseau temps réel (WebSockets, WebRTC, UDP).',
-					tags: ['C++', 'C# .NET 8', 'Avalonia', 'WebSockets / WebRTC', 'Concurrence', 'Linux']
-				},
-				{
-					idx: '03',
-					title: 'Systèmes Embarqués & Robotique',
-					subtitle: 'Informatique Physique • De la couche matérielle au sommet',
-					description:
-						'Expérience concrète à l’interface matériel-logiciel : microcontrôleurs ARM Cortex-M (STM32, C, Zig), pipelines de vision par ordinateur (OpenCV, rPPG, AprilTags) et navigation autonome ROS 2. Comprendre ce qui se passe au niveau de la mémoire et du silicium aide directement à écrire du code backend sobre et performant.',
-					tags: ['STM32', 'C embarqué', 'Zig', 'Python', 'OpenCV', 'ROS 2', 'FreeRTOS']
-				}
-			],
-			trajectoryNum: '03 / PARCOURS',
+			trajectoryNum: '02 / PARCOURS',
 			trajectoryTitle: 'Stages & Mandats',
 			viewFullCV: 'Voir le CV complet & les compétences',
 			milestones: [
@@ -192,7 +132,7 @@
 					detail: 'Application web Angular & visualisation temps réel de signaux ultrasonores'
 				}
 			],
-			projectsNum: '04 / PROJETS',
+			projectsNum: '03 / PROJETS',
 			projectsTitle: 'Projets Choisis',
 			viewFullProjects: 'Détails techniques & schémas',
 			featuredProjects: [
@@ -318,38 +258,7 @@
 		</div>
 	</section>
 
-	<!-- 02 / What I Actually Build (Editorial numbered index, no SaaS 3-box grid) -->
-	<section class="editorial-section">
-		<div class="section-rail">
-			<span class="rail-index">{content.domainsNum}</span>
-			<h2 class="rail-heading">{content.domainsTitle}</h2>
-			<p class="rail-note">{content.domainsDesc}</p>
-		</div>
-
-		<div class="section-main">
-			<div class="focus-ledger">
-				{#each content.skills as skill}
-					<article class="focus-row">
-						<div class="focus-row-top">
-							<span class="focus-idx">{skill.idx}</span>
-							<div class="focus-titles">
-								<h3 class="focus-title">{skill.title}</h3>
-								<span class="focus-sub">{skill.subtitle}</span>
-							</div>
-						</div>
-						<p class="focus-desc">{skill.description}</p>
-						<div class="focus-tags">
-							{#each skill.tags as tag}
-								<span class="mono-tag">{tag}</span>
-							{/each}
-						</div>
-					</article>
-				{/each}
-			</div>
-		</div>
-	</section>
-
-	<!-- 03 / Trajectory (Scannable typographic ledger) -->
+	<!-- 02 / Trajectory (Scannable typographic ledger) -->
 	<section class="editorial-section">
 		<div class="section-rail">
 			<span class="rail-index">{content.trajectoryNum}</span>
@@ -692,85 +601,7 @@
 		line-height: 1.5;
 	}
 
-	/* 02 / Focus Ledger */
-	.focus-ledger {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.focus-row {
-		padding: 1.75rem 0;
-		border-bottom: 1px solid var(--border-subtle);
-		display: flex;
-		flex-direction: column;
-		gap: 0.9rem;
-	}
-
-	.focus-row:first-child {
-		padding-top: 0;
-	}
-
-	.focus-row-top {
-		display: flex;
-		align-items: baseline;
-		gap: 1.1rem;
-	}
-
-	.focus-idx {
-		font-family: var(--font-mono);
-		font-size: 0.76rem;
-		color: var(--accent-purple);
-		font-weight: 600;
-	}
-
-	.focus-titles {
-		display: flex;
-		flex-direction: column;
-		gap: 0.15rem;
-	}
-
-	.focus-title {
-		font-family: var(--font-display);
-		font-size: 1.65rem;
-		font-weight: 400;
-		color: var(--text-primary);
-		margin: 0;
-		line-height: 1.18;
-	}
-
-	.focus-sub {
-		font-family: var(--font-mono);
-		font-size: 0.72rem;
-		color: var(--text-tertiary);
-		text-transform: uppercase;
-		letter-spacing: 0.04em;
-	}
-
-	.focus-desc {
-		font-size: 0.95rem;
-		line-height: 1.65;
-		color: var(--text-secondary);
-		margin: 0;
-		padding-left: 2.1rem;
-	}
-
-	.focus-tags {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.45rem;
-		padding-left: 2.1rem;
-	}
-
-	.mono-tag {
-		font-family: var(--font-mono);
-		font-size: 0.72rem;
-		color: var(--text-primary);
-		background: var(--bg-surface-soft);
-		border: 1px solid var(--border-subtle);
-		padding: 0.15rem 0.5rem;
-	}
-
-	/* 03 / Trajectory Ledger Table */
+	/* 02 / Trajectory Ledger Table */
 	.ledger-table {
 		display: flex;
 		flex-direction: column;
@@ -987,11 +818,6 @@
 
 		.section-rail {
 			position: static;
-		}
-
-		.focus-desc,
-		.focus-tags {
-			padding-left: 0;
 		}
 
 		.ledger-row {
