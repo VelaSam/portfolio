@@ -98,7 +98,7 @@
 			messagePh: 'Tell me about your team, project, or technical challenge...',
 			btnSubmit: 'Send Message',
 			btnSending: 'Sending Message...',
-			antiSpamNotice: 'Protected by honeypot anti-spam verification.',
+			antiSpamNotice: 'I already honeypotted this form, so don’t bother trying to use bots to spam me.',
 			successTitle: 'Message Received!',
 			successText: 'Thank you {name}, your message has been transmitted successfully. I will get back to you shortly.',
 			btnReset: 'Send another message'
@@ -126,7 +126,7 @@
 			messagePh: 'Parlez-moi de votre projet, de vos besoins ou de votre équipe...',
 			btnSubmit: 'Envoyer le message',
 			btnSending: 'Envoi en cours...',
-			antiSpamNotice: 'Protégé par piège anti-robot et filtres anti-spam.',
+			antiSpamNotice: 'J’ai déjà piégé ce formulaire (honeypot), alors évitez de m’envoyer vos bots.',
 			successTitle: 'Message reçu !',
 			successText: 'Merci {name}, votre message a bien été transmis. Je vous répondrai dans les plus brefs délais.',
 			btnReset: 'Envoyer un autre message'
@@ -694,10 +694,12 @@
 	.anti-spam-indicator {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.4rem;
+		gap: 0.5rem;
 		font-family: var(--font-mono);
-		font-size: 0.72rem;
+		font-size: 0.74rem;
+		line-height: 1.4;
 		color: var(--text-tertiary);
+		max-width: 360px;
 		user-select: none;
 	}
 
