@@ -6,7 +6,7 @@
 		en: {
 			tag: 'Curriculum Vitae',
 			title: 'Trajectory & Experience',
-			subtitle: 'Software Engineering Graduate • B.Eng in Software Engineering (ÉTS) • Passionate about embedded systems & robotics',
+			subtitle: 'Software Developer • Software Engineering Graduate (ÉTS) • Fullstack, Backend & Web Systems with Low-Level Precision',
 			btnContact: 'Get in Touch',
 			metaLocation: 'Location',
 			metaEmail: 'Email',
@@ -17,25 +17,25 @@
 			sec2Num: '02',
 			sec2Title: 'Professional Experience',
 			sec3Num: '03',
-			sec3Title: 'Engineering & Technical Projects',
+			sec3Title: 'Software & Technical Projects',
 			sec4Num: '04',
 			sec4Title: 'Education & Community Involvement',
 			technicalSkills: [
 				{
-					category: 'Programming Languages',
-					skills: ['C# (.NET 8)', 'TypeScript', 'Python', 'C', 'C++20', 'Zig', 'Java', 'SQL', 'Rust (basics)']
+					category: 'Backend & Programming Languages',
+					skills: ['Java', 'C# (.NET 8)', 'TypeScript', 'Python', 'SQL (PostgreSQL)', 'C', 'C++20', 'Zig', 'Rust (basics)']
 				},
 				{
-					category: 'Web, Applications & Data',
-					skills: ['C# .NET', 'Avalonia', 'Angular', 'React', 'WebSockets', 'Node.js', 'PostgreSQL', 'Docker', 'Git']
+					category: 'Software Architecture, Web & Data',
+					skills: ['Clean Architecture', 'OOP & Design Patterns', 'REST APIs', 'Angular', 'SvelteKit / React', 'Node.js', 'PostgreSQL', 'WebSockets', 'Docker', 'Git / CI/CD']
 				},
 				{
-					category: 'Systems & Embedded',
-					skills: ['Embedded C', 'FreeRTOS', 'STM32', 'Bare-metal', 'Hardware Drivers', 'DMA', 'SPI/I2C/UART', 'PWM']
+					category: 'Desktop, Systems & Diagnostics',
+					skills: ['C# .NET', 'Avalonia UI', 'Network Diagnostics', 'Concurrency & Asynchronous', 'Telemetry Streaming', 'Linux']
 				},
 				{
-					category: 'AI, Vision & Signal Processing',
-					skills: ['OpenCV', 'Computer Vision', 'Edge Inference (Raspberry Pi)', 'Facial Tracking', 'rPPG', 'OCR', 'ROS 2']
+					category: 'Embedded & Robotics (Hardware Experience)',
+					skills: ['STM32 (ARM Cortex-M)', 'Embedded C', 'FreeRTOS', 'Hardware Drivers', 'OpenCV', 'ROS 2', 'Edge Inference (Raspberry Pi)']
 				}
 			],
 			experiences: [
@@ -116,23 +116,23 @@
 			],
 			engineeringProjects: [
 				{
-					title: 'Search & Rescue Autonomous Drone & Rover System',
-					context: 'Capstone Engineering Project (PFE ÉTS)',
-					stack: ['Python', 'OpenCV', 'ROS 2', 'Linux'],
+					title: 'Autonomous Search & Rescue Drone-Rover System',
+					context: 'Software Engineering Capstone Project (PFE ÉTS)',
+					stack: ['Python', 'ROS 2', 'OpenCV', 'Distributed Architecture', 'Linux'],
 					bullets: [
-						'Engineered the embedded software module in Python on an autonomous drone for coordinated search and rescue (S&R) missions.',
-						'Implemented a computer vision pipeline for target and victim detection on the ground via the onboard camera.',
-						'Extracted geospatial coordinates in real time to navigate and dispatch the autonomous ground rover.'
+						'Architected the distributed communication and telemetry protocol between autonomous drone and ground rover nodes via ROS 2.',
+						'Engineered real-time computer vision detection pipelines and target geospatial coordinate translation algorithms.',
+						'Designed resilient state machines and automatic fail-safe procedures for dynamic search and rescue operations.'
 					]
 				},
 				{
-					title: 'Bare-Metal Microkernel & HAL in Zig for ARM Cortex-M',
-					context: 'Low-Level Embedded Engineering',
-					stack: ['Zig', 'C', 'STM32', 'Bare-Metal'],
+					title: 'Freestanding Microkernel & Low-Level Driver Architecture',
+					context: 'Systems Programming & Performance Engineering',
+					stack: ['Zig', 'C', 'STM32', 'ARM Cortex-M', 'Bare-Metal Architecture'],
 					bullets: [
-						'Engineered a freestanding Hardware Abstraction Layer (HAL) with zero external runtime dependencies for STM32 microcontrollers.',
-						'Directly programmed hardware registers (NVIC interrupts, timers, PWM generators) and high-speed DMA circular transfers.',
-						'Validated on a mobile robotic platform with real-time PID feedback control and serial telemetry.'
+						'Designed an architectural Hardware Abstraction Layer (HAL) with zero external runtime dependencies for ARM Cortex-M microcontrollers.',
+						'Implemented asynchronous interrupt handlers (NVIC), high-speed circular DMA channels, and deterministic PID control loops.',
+						'Gained fundamental mastery of hardware memory boundaries, cache locality, and race-condition prevention, directly applicable to high-throughput backend software.'
 					]
 				}
 			],
@@ -170,7 +170,7 @@
 		fr: {
 			tag: 'Curriculum Vitae',
 			title: 'Parcours & Expériences',
-			subtitle: 'Diplômé en Génie Logiciel (ÉTS) • Passionné par l’embarqué et la robotique',
+			subtitle: 'Développeur Logiciel • Diplômé en Génie Logiciel (ÉTS) • Systèmes Web, Backend & Fullstack avec Rigueur Systèmes',
 			btnContact: 'Entrer en contact',
 			metaLocation: 'Localisation',
 			metaEmail: 'Email',
@@ -181,25 +181,25 @@
 			sec2Num: '02',
 			sec2Title: 'Expérience Professionnelle',
 			sec3Num: '03',
-			sec3Title: 'Projets Techniques & Ingénierie',
+			sec3Title: 'Projets Logiciels & Techniques',
 			sec4Num: '04',
 			sec4Title: 'Formation & Implication',
 			technicalSkills: [
 				{
-					category: 'Langages de programmation',
-					skills: ['C# (.NET 8)', 'TypeScript', 'Python', 'C', 'C++20', 'Zig', 'Java', 'SQL', 'Rust (notions)']
+					category: 'Langages & Backend',
+					skills: ['Java', 'C# (.NET 8)', 'TypeScript', 'Python', 'SQL (PostgreSQL)', 'C', 'C++20', 'Zig', 'Rust (notions)']
 				},
 				{
-					category: 'Web, Applicatif & Données',
-					skills: ['C# .NET', 'Avalonia', 'Angular', 'React', 'WebSockets', 'Node.js', 'PostgreSQL', 'Docker', 'Git']
+					category: 'Architecture Logicielle, Web & Données',
+					skills: ['Architecture propre', 'POO & Patrons de conception', 'API REST', 'Angular', 'SvelteKit / React', 'Node.js', 'PostgreSQL', 'WebSockets', 'Docker', 'Git / CI/CD']
 				},
 				{
-					category: 'Systèmes & Embarqué',
-					skills: ['C embarqué', 'FreeRTOS', 'STM32', 'Bare-metal', 'Drivers matériels', 'DMA', 'SPI/I2C/UART', 'PWM']
+					category: 'Applicatif, Systèmes & Diagnostic',
+					skills: ['C# .NET', 'Avalonia UI', 'Diagnostic réseau', 'Programmation concurrente', 'Flux de télémétrie', 'Linux']
 				},
 				{
-					category: 'IA, Vision & Traitement de Signal',
-					skills: ['OpenCV', 'Vision par ordinateur', 'Inférence Edge (Raspberry Pi)', 'Suivi facial', 'rPPG', 'OCR', 'ROS 2']
+					category: 'Embarqué & Robotique (Expérience Matérielle)',
+					skills: ['STM32 (ARM Cortex-M)', 'C embarqué', 'FreeRTOS', 'Pilotes matériels', 'OpenCV', 'ROS 2', 'Inférence Edge (Raspberry Pi)']
 				}
 			],
 			experiences: [
@@ -280,23 +280,23 @@
 			],
 			engineeringProjects: [
 				{
-					title: 'Système de Recherche et Sauvetage Drone & Rover',
-					context: 'Projet de Fin d’Études (PFE ÉTS)',
-					stack: ['Python', 'OpenCV', 'ROS 2', 'Linux'],
+					title: 'Système Autonome de Recherche & Sauvetage Drone-Rover',
+					context: 'Projet de fin d’études en génie logiciel (PFE ÉTS)',
+					stack: ['Python', 'ROS 2', 'OpenCV', 'Architecture distribuée', 'Linux'],
 					bullets: [
-						'Développement du module logiciel embarqué en Python sur le drone pour des missions coordonnées de recherche et sauvetage (S&R).',
-						'Implémentation d’un pipeline de vision par ordinateur pour la détection de cibles et de personnes au sol via la caméra embarquée.',
-						'Extraction des positions géospatiales et transmission des coordonnées en temps réel pour guider la navigation du véhicule terrestre autonome.'
+						'Conception de l’architecture de communication distribuée et de télémétrie entre drone et rover terrestre via ROS 2.',
+						'Développement de pipelines de vision par ordinateur en temps réel et d’algorithmes de calcul de coordonnées géospatiales.',
+						'Mise en place de machines à états résilientes et de protocoles de sécurité pour les opérations autonomes de recherche.'
 					]
 				},
 				{
-					title: 'Micro-Noyau & HAL Bare-Metal en Zig pour ARM Cortex-M',
-					context: 'Ingénierie embarquée bas niveau',
-					stack: ['Zig', 'C', 'STM32', 'Bare-Metal'],
+					title: 'Micro-Noyau & Architecture de Pilotes Bas Niveau',
+					context: 'Programmation système bas niveau & gestion mémoire',
+					stack: ['Zig', 'C', 'STM32', 'ARM Cortex-M', 'Architecture Bare-Metal'],
 					bullets: [
-						'Conception d’une couche d’abstraction matérielle (HAL) sans dépendance (freestanding) pour microcontrôleur STM32.',
-						'Implémentation directe des registres matériels (NVIC, timers, PWM) et orchestrateur de transferts DMA haute vitesse.',
-						'Validation expérimentale sur robot mobile avec boucle d’asservissement PID temps réel et télémétrie série.'
+						'Conception d’une couche d’abstraction matérielle (HAL) modulaire et sans dépendance externe pour ARM Cortex-M.',
+						'Implémentation directe des gestionnaires d’interruptions (NVIC), transferts DMA circulaires et boucles de régulation PID.',
+						'Maîtrise approfondie des modèles mémoire, de la localité de cache et de la concurrence, directement transposable aux architectures backend scalables.'
 					]
 				}
 			],
@@ -446,7 +446,7 @@
 		</div>
 	</section>
 
-	<EngineeringDivider label="PROJECTS // ROBOTICS_EMBEDDED" code="0x03" />
+	<EngineeringDivider label="PROJECTS // DISTRIBUTED_SYSTEMS" code="0x03" />
 
 	<!-- 03 Projets Techniques & Ingénierie -->
 	<section class="cv-section">

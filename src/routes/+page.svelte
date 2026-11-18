@@ -6,15 +6,16 @@
 
 	const content = $derived({
 		en: {
-			badge: 'Software Engineering Graduate',
+			badge: 'Software Developer • Software Engineering Graduate',
 			location: 'Montréal, Québec',
 			headline: 'I solve complex engineering problems so I can afford climbing chalk and Uber Eats.',
 			bioLead: 'Hello, I’m',
 			bioText:
-				'Software engineering graduate from ÉTS. I build high-performance software with an active engineering interest in',
-			bioInterest1: 'autonomous robotics',
-			bioInterest2: 'bare-metal embedded systems',
-			bioInterest3: 'computer vision pipelines',
+				'Software developer and software engineering graduate from ÉTS. My primary focus is building robust fullstack applications, clean backend architectures (Java, C#, TypeScript), and scalable web systems — with meaningful complementary experience in',
+			bioInterest1: 'systems performance',
+			bioInterest2: 'embedded microcontrollers',
+			bioInterest3: 'autonomous robotics',
+			bioEnd: ', giving me an intuitive understanding of how software runs all the way down to the metal.',
 			btnCV: 'Explore My Resume & Experience',
 			btnContact: 'Get In Touch',
 			directAccess: 'Direct links:',
@@ -69,30 +70,30 @@
 				}
 			],
 			domainsTag: 'Areas of Focus',
-			domainsTitle: 'Core Capabilities',
+			domainsTitle: 'Software Engineering & Core Focus',
 			domainsDesc:
-				'A versatile engineering mindset bridging low-level hardware performance, real-time telemetry, and modern desktop/web software.',
+				'First and foremost a software developer: building maintainable web, desktop, and backend systems with the architectural discipline of a B.Eng graduate, complemented by low-level systems insight.',
 			skills: [
 				{
-					title: 'Embedded Systems & Bare-Metal',
-					subtitle: 'Hardware layer & deterministic timing',
+					title: 'Software Development & Web Architecture',
+					subtitle: 'Clean Architecture • Backend Services • Modern Web',
 					description:
-						'Direct firmware development on ARM Cortex-M microcontrollers (STM32) in Zig and C without heavy runtimes. Custom HALs, direct register programming (NVIC, DMA, PWM timers), and real-time PID control loops.',
-					tags: ['STM32', 'Zig', 'C', 'FreeRTOS', 'Bare-Metal', 'DMA', 'PID']
+						'First and foremost a software developer grounded in solid B.Eng software engineering fundamentals: object-oriented design (Java, C# .NET), relational database schemas (SQL, PostgreSQL), REST APIs, and responsive frontends (TypeScript, Angular, SvelteKit). Experienced in production environments, code reviews, unit testing, and design patterns.',
+					tags: ['Java', 'C# .NET', 'TypeScript', 'Angular', 'SvelteKit', 'PostgreSQL', 'OOP & Design Patterns', 'REST APIs', 'Docker']
 				},
 				{
-					title: 'Computer Vision & Robotics',
-					subtitle: 'Autonomous perception & signal processing',
+					title: 'Systems, Diagnostics & Real-Time Tooling',
+					subtitle: 'Low-Latency Execution • Network Diagnostics • Concurrency',
 					description:
-						'OpenCV pipelines and edge inference on nano-computers (Raspberry Pi). High-frame-rate facial tracking, contactless rPPG vital signs extraction, and ROS 2 coordinate transmission for autonomous drone/rover missions.',
-					tags: ['Python', 'OpenCV', 'ROS 2', 'rPPG', 'Edge Inference', 'Linux']
+						'Bridging application logic and distributed performance: real-time telemetry streaming over WebSockets, custom diagnostic tools for industrial instrumentation (Evident Scientific), desktop application engineering with Avalonia (HumanWare), and asynchronous concurrency.',
+					tags: ['C# .NET 8', 'Avalonia', 'WebSockets', 'Network Diagnostics', 'Concurrency', 'CI/CD & Git', 'Linux']
 				},
 				{
-					title: 'Software & Fullstack Development',
-					subtitle: 'Reactive applications & robust architectures',
+					title: 'Embedded Systems & Robotics (Hardware Experience)',
+					subtitle: 'Physical Computing • Hardware-Level Intuition',
 					description:
-						'High-fidelity desktop development (C# .NET 8, Avalonia) and real-time web applications (TypeScript, SvelteKit, WebSockets). Network diagnostic tooling, telemetry feeds, and assistive accessibility systems.',
-					tags: ['C# .NET 8', 'Avalonia', 'TypeScript', 'SvelteKit', 'WebSockets', 'PostgreSQL']
+						'Meaningful hands-on experience interfacing software directly with physical hardware: ARM Cortex-M microcontrollers (STM32, C, Zig), computer vision pipelines (OpenCV, Python), and ROS 2 coordinate tracking. Working close to hardware gives me a rare edge in standard software development: I intuitively understand memory allocation, cache locality, network overhead, and concurrency pitfalls.',
+					tags: ['STM32', 'C', 'Zig', 'Python', 'OpenCV', 'ROS 2', 'FreeRTOS', 'Hardware Intuition']
 				}
 			],
 			trajectoryTag: 'Professional Experience',
@@ -129,19 +130,20 @@
 				}
 			],
 			ctaTitle: 'Have an engineering challenge or opportunity to discuss?',
-			ctaSub: 'Open to software, embedded systems, and robotics discussions.',
+			ctaSub: 'Open to software development, fullstack engineering, and systems discussions.',
 			ctaBtn: 'Start a conversation'
 		},
 		fr: {
-			badge: 'Diplômé en Génie Logiciel',
+			badge: 'Développeur Logiciel • Diplômé en Génie Logiciel',
 			location: 'Montréal, Québec',
 			headline: 'Je résous des problèmes d’ingénierie complexes pour pouvoir me payer de la magnésie d’escalade et du Uber Eats.',
 			bioLead: 'Bonjour, je suis',
 			bioText:
-				'Diplômé en génie logiciel à l’ÉTS, je conçois des logiciels performants avec un intérêt marqué pour la',
-			bioInterest1: 'robotique autonome',
-			bioInterest2: 'les systèmes embarqués bare-metal',
-			bioInterest3: 'la vision par ordinateur',
+				'Développeur logiciel et diplômé en génie logiciel à l’ÉTS. Mon focus principal est la conception d’applications fullstack robustes, d’architectures backend propres (Java, C#, TypeScript) et de systèmes web fiables — avec une expérience complémentaire marquée en',
+			bioInterest1: 'performance systèmes',
+			bioInterest2: 'microcontrôleurs embarqués',
+			bioInterest3: 'robotique autonome',
+			bioEnd: ', m’offrant une compréhension intuitive de l’exécution du logiciel jusqu’au silicium.',
 			btnCV: 'Consulter mon parcours & CV',
 			btnContact: 'Me contacter',
 			directAccess: 'Accès direct :',
@@ -196,30 +198,30 @@
 				}
 			],
 			domainsTag: 'Domaines d’intervention',
-			domainsTitle: 'Ce que j’apporte aux projets',
+			domainsTitle: 'Expertise Logicielle & Systèmes',
 			domainsDesc:
-				'Une expertise polyvalente liant le génie logiciel aux systèmes matériels temps réel et au traitement de signaux.',
+				'Avant tout un développeur logiciel : conception d’applications web, applicatives et backend fiables avec la rigueur architecturale d’un diplômé en génie logiciel, enrichie par une solide expérience pratique en embarqué et robotique.',
 			skills: [
 				{
-					title: 'Systèmes Embarqués & Bare-Metal',
-					subtitle: 'Couche matérielle & performance',
+					title: 'Génie Logiciel & Architecture (Fullstack & Backend)',
+					subtitle: 'Architecture Propre • Services Backend • Web Moderne',
 					description:
-						'Développement direct sur microcontrôleurs ARM Cortex-M (STM32) en Zig et C, sans runtime lourd. Implémentation directe de pilotes DMA, timers PWM et boucles PID temps réel.',
-					tags: ['STM32', 'Zig', 'C', 'FreeRTOS', 'Bare-Metal', 'DMA', 'PID']
+						'Avant tout un développeur logiciel : pratiques d’ingénierie rigoureuses issues de mon baccalauréat à l’ÉTS. Conception d’architectures orientées objet maintenables (Java, C# .NET), modélisation de bases de données relationnelles (SQL, PostgreSQL), API RESTful et interfaces réactives (TypeScript, Angular, SvelteKit). Habitué aux revues de code, tests et intégration continue.',
+					tags: ['Java', 'C# .NET', 'TypeScript', 'Angular', 'SvelteKit', 'PostgreSQL', 'Architecture logicielle', 'POO', 'API REST', 'Docker']
 				},
 				{
-					title: 'Vision par Ordinateur & Robotique',
-					subtitle: 'Perception autonome & traitement de signal',
+					title: 'Systèmes, Diagnostic & Temps Réel',
+					subtitle: 'Performance • Outils de Diagnostic • Concurrence',
 					description:
-						'Pipelines OpenCV et inférence edge sur nano-ordinateurs (Raspberry Pi). Suivi facial haute cadence, extraction rPPG de signaux vitaux sans contact et guidage ROS 2 drone-rover.',
-					tags: ['Python', 'OpenCV', 'ROS 2', 'rPPG', 'Inférence Edge', 'Linux']
+						'Rapprochement de la logique métier et des performances système : flux de télémétrie temps réel via WebSockets, outils de diagnostic réseau pour équipements industriels (Evident Scientific), développement d’applications de bureau haute fidélité sous Avalonia (HumanWare) et programmation asynchrone.',
+					tags: ['C# .NET 8', 'Avalonia', 'WebSockets', 'Diagnostic réseau', 'Concurrence', 'CI/CD & Git', 'Linux']
 				},
 				{
-					title: 'Développement Logiciel & Fullstack',
-					subtitle: 'Applications réactives & architectures robustes',
+					title: 'Systèmes Embarqués & Robotique (Atout Matériel)',
+					subtitle: 'Informatique Physique • Compréhension Bas Niveau',
 					description:
-						'Conception d’applications de bureau haute fidélité (C# .NET, Avalonia) et web temps réel (WebSockets, TypeScript, SvelteKit). Outils de diagnostic réseau et accessibilité avancée.',
-					tags: ['C# .NET 8', 'Avalonia', 'TypeScript', 'SvelteKit', 'WebSockets', 'PostgreSQL']
+						'Une compréhension pratique du logiciel jusqu’au silicium : microcontrôleurs ARM Cortex-M (STM32, C, Zig), vision par ordinateur (OpenCV, Python) et navigation ROS 2. Cette proximité avec le matériel constitue un atout direct en développement applicatif : compréhension intuitive de la mémoire, de la localité de cache, de la latence réseau et des verrous de concurrence.',
+					tags: ['STM32', 'C', 'Zig', 'Python', 'OpenCV', 'ROS 2', 'FreeRTOS', 'Compréhension matérielle']
 				}
 			],
 			trajectoryTag: 'Expérience Professionnelle',
@@ -256,7 +258,7 @@
 				}
 			],
 			ctaTitle: 'Un projet ou une opportunité à discuter ?',
-			ctaSub: 'Disponible pour échanger autour de défis logiciels, embarqués ou robotiques.',
+			ctaSub: 'Disponible pour échanger autour d’opportunités logicielles, fullstack ou systèmes.',
 			ctaBtn: 'Initier le contact'
 		}
 	}[i18n.locale]);
@@ -310,7 +312,7 @@
 				{content.bioLead} <strong class="name-bold">Samuel Velasco</strong>. {content.bioText}
 				<span class="emphasis">{content.bioInterest1}</span>,
 				<span class="emphasis">{content.bioInterest2}</span>, {i18n.locale === 'en' ? 'and' : 'et'}
-				<span class="emphasis">{content.bioInterest3}</span>.
+				<span class="emphasis">{content.bioInterest3}</span>{content.bioEnd}
 			</p>
 
 			<div class="hero-actions">
@@ -465,7 +467,7 @@
 	</section>
 
 	<!-- Technical Engineering Caliper Divider -->
-	<EngineeringDivider label="DOMAINS // EMBEDDED_VISION" code="C20/ZIG" />
+	<EngineeringDivider label="SOFTWARE_FOCUS // WEB_BACKEND_SYSTEMS" code="FULLSTACK_SYS" />
 
 	<!-- Core Domains of Expertise -->
 	<section class="section-block">
