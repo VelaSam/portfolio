@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { i18n } from '$lib/i18n.svelte';
+	import EngineeringDivider from '$lib/components/EngineeringDivider.svelte';
 
 	let selectedCraneIndex = $state(0);
 
@@ -21,33 +22,10 @@
 			setupTitle: 'The "Average" Dev Setup',
 			setupSubtitle:
 				'I use only the left side of my Moonlander because of my two missing S and X keys. I use a fan to cool down the research drone I was somehow trusted with, and I only drink Diet Pepsi because it saves calories.',
-			setupAnnotations: [
-				{
-					id: 'moonlander',
-					title: 'Left Half Moonlander',
-					desc: 'Exclusively brought in to type "S" and "X" after the laptop keys broke off.'
-				},
-				{
-					id: 'drone',
-					title: 'Autonomous Research Drone',
-					desc: 'A real drone I was somehow entrusted with, bench-testing in a flight cage.'
-				},
-				{
-					id: 'fan',
-					title: 'Honeywell Fan',
-					desc: 'Keeping the drone from thermal throttling while idling on the table.'
-				},
-				{
-					id: 'pepsi',
-					title: 'Diet Pepsi',
-					desc: 'Because it saves calories.'
-				}
-			],
 			craneTag: 'Engineering Roots • Undergrad Project',
 			craneTitle: 'Automated Robotic Tower Crane',
 			craneSubtitle:
 				'Conceived, modeled, and manufactured during our first undergraduate engineering challenge at ÉTS. A complete electromechanical scale crane featuring laser-cut timber structure, custom SolidWorks gear transmission, and an embedded wireless joystick controller.',
-			craneCoverLabel: 'Cover Photo: The Team & Prototype',
 			craneImages: [
 				{
 					id: 'team',
@@ -90,8 +68,6 @@
 						'SolidWorks visualization of the interlocking laser-cut plywood truss sections and self-stabilizing cross base.'
 				}
 			],
-			quote:
-				'Bridging the gap between bare-metal microcontrollers and modern interfaces to solve tangible engineering challenges.',
 			domainsTag: 'Areas of Focus',
 			domainsTitle: 'Core Engineering Capabilities',
 			domainsDesc:
@@ -119,25 +95,28 @@
 					tags: ['C# .NET 8', 'Avalonia', 'TypeScript', 'SvelteKit', 'WebSockets', 'PostgreSQL']
 				}
 			],
-			trajectoryTag: 'Recent Trajectory',
-			trajectoryTitle: 'Selected Experience & Roles',
+			trajectoryTag: 'Professional Experience',
+			trajectoryTitle: 'Selected Internships & Roles',
 			viewFullCV: 'View full breakdown in resume',
 			milestones: [
 				{
 					period: 'May 2026 – Sept. 2026',
-					role: 'Digital Health Research Software Developer',
+					role: 'Digital Health Research Developer',
+					type: 'Research Internship',
 					company: 'National Research Council Canada (NRC / CNRC)',
 					detail: 'VitalSeer: Contactless real-time vital signs (rPPG) & edge vision on Raspberry Pi'
 				},
 				{
 					period: 'Sept. 2025 – Dec. 2025',
-					role: 'C# .NET Avalonia Software Developer',
+					role: 'C# .NET Avalonia Developer',
+					type: 'Engineering Internship',
 					company: 'HumanWare',
 					detail: 'Low-vision accessibility tools, multilingual OCR/TTS & voice activity detection (VAD)'
 				},
 				{
 					period: 'May 2023 – Dec. 2024',
-					role: 'Fullstack & Frontend Software Developer',
+					role: 'Fullstack & Frontend Developer',
+					type: 'Consecutive Internships',
 					company: 'Evident Scientific',
 					detail: 'Ultrasonic testing network telemetry diagnostics & real-time WebSocket SNR tooling'
 				}
@@ -163,33 +142,10 @@
 			setupTitle: 'Mon "Setup" de Développement Habituel',
 			setupSubtitle:
 				'J’utilise seulement le côté gauche de mon Moonlander à cause de mes deux touches S et X manquantes. J’utilise un ventilateur pour refroidir le drone de recherche qu’on m’a miraculeusement confié, et je bois seulement du Pepsi Diet parce que ça sauve des calories.',
-			setupAnnotations: [
-				{
-					id: 'moonlander',
-					title: 'Moitié gauche du Moonlander',
-					desc: 'Amenée uniquement pour taper "S" et "X" après que les touches du portable aient sauté.'
-				},
-				{
-					id: 'drone',
-					title: 'Drone de recherche autonome',
-					desc: 'Un vrai drone de recherche qu’on m’a miraculeusement confié pour des tests sur banc.'
-				},
-				{
-					id: 'fan',
-					title: 'Ventilateur Honeywell',
-					desc: 'Pour éviter que le drone ne surchauffe pendant les tests au sol.'
-				},
-				{
-					id: 'pepsi',
-					title: 'Pepsi Diet',
-					desc: 'Parce que ça sauve des calories.'
-				}
-			],
 			craneTag: 'Racines d’Ingénierie • Premier Projet',
 			craneTitle: 'Grue à Tour Automatisée & Téléguidée',
 			craneSubtitle:
 				'Conception, modélisation et usinage complet lors de notre tout premier grand projet d’ingénierie à l’ÉTS. Une grue à échelle réduite électromécanique avec mât en bois découpé au laser, réducteur de transmission SolidWorks et télécommande radio sans fil avec télémétrie LCD.',
-			craneCoverLabel: 'Photo de couverture : L’équipe & le prototype',
 			craneImages: [
 				{
 					id: 'team',
@@ -232,8 +188,6 @@
 						'Modélisation 3D finale illustrant la structure en contreplaqué imbriqué, la flèche et la base en croix stabilisatrice.'
 				}
 			],
-			quote:
-				'Allier la précision du bas niveau et des microcontrôleurs aux interfaces modernes, pour résoudre des problématiques tangibles d’ingénierie.',
 			domainsTag: 'Domaines d’intervention',
 			domainsTitle: 'Ce que j’apporte aux projets',
 			domainsDesc:
@@ -261,25 +215,28 @@
 					tags: ['C# .NET 8', 'Avalonia', 'TypeScript', 'SvelteKit', 'WebSockets', 'PostgreSQL']
 				}
 			],
-			trajectoryTag: 'Aperçu récent',
-			trajectoryTitle: 'Mandats & Expériences',
+			trajectoryTag: 'Expérience Professionnelle',
+			trajectoryTitle: 'Stages & Mandats Choisis',
 			viewFullCV: 'Voir le détail complet dans le CV',
 			milestones: [
 				{
 					period: 'Mai 2026 – Sept. 2026',
 					role: 'Développeur recherche santé numérique',
+					type: 'Stage de recherche',
 					company: 'Conseil national de recherches Canada (CNRC)',
 					detail: 'Télémédecine temps réel sans contact (rPPG) & vision sur Raspberry Pi'
 				},
 				{
 					period: 'Sept. 2025 – Déc. 2025',
 					role: 'Développeur C# .NET Avalonia',
+					type: 'Stage d’ingénierie',
 					company: 'HumanWare',
 					detail: 'Technologies d’assistance basse vision, OCR/TTS et détection vocale VAD'
 				},
 				{
 					period: 'Mai 2023 – Déc. 2024',
 					role: 'Développeur Fullstack & Frontend',
+					type: 'Stages consécutifs',
 					company: 'Evident Scientific',
 					detail: 'Outil de diagnostic réseau UT & télémétrie WebSocket temps réel'
 				}
@@ -402,7 +359,10 @@
 		</div>
 	</section>
 
-	<!-- "Average Dev Setup" Feature Card (High-Res Version) -->
+	<!-- Technical Engineering Caliper Divider -->
+	<EngineeringDivider label="HABITAT // LAB_BENCH" code="0x7E" />
+
+	<!-- "Average Dev Setup" Feature Card (Clean, annotations removed) -->
 	<section class="section-block setup-section">
 		<div class="section-header">
 			<span class="section-tag">{content.setupTag}</span>
@@ -422,22 +382,13 @@
 					<span>{i18n.locale === 'en' ? 'Research Lab • Bench Testing' : 'Laboratoire de recherche • Banc d’essai'}</span>
 				</div>
 			</div>
-
-			<div class="setup-annotations-grid">
-				{#each content.setupAnnotations as item}
-					<div class="annotation-box interactive">
-						<div class="annotation-header">
-							<span class="annotation-bullet"></span>
-							<h4 class="annotation-title">{item.title}</h4>
-						</div>
-						<p class="annotation-desc">{item.desc}</p>
-					</div>
-				{/each}
-			</div>
 		</div>
 	</section>
 
-	<!-- First Undergrad Project Showcase: Automated Tower Crane -->
+	<!-- Technical Engineering Caliper Divider -->
+	<EngineeringDivider label="ETS_MTL // ROBOTIC_CRANE" code="GEN-100" />
+
+	<!-- First Undergrad Project Showcase: Automated Tower Crane (Bottom thumbnail strip removed) -->
 	<section class="section-block crane-section">
 		<div class="section-header">
 			<span class="section-tag">{content.craneTag}</span>
@@ -461,6 +412,7 @@
 						<span>{content.craneImages[selectedCraneIndex].badge}</span>
 					</div>
 
+					<!-- Direct Arrow Nav Controls -->
 					<div class="crane-nav-overlay">
 						<button
 							class="crane-nav-btn interactive"
@@ -495,35 +447,11 @@
 					</p>
 				</div>
 			</div>
-
-			<!-- Interactive Thumbnail Strip -->
-			<div class="crane-thumbnail-strip">
-				{#each content.craneImages as img, idx}
-					{@const isSelected = selectedCraneIndex === idx}
-					<button
-						class="crane-thumb-btn interactive"
-						class:selected={isSelected}
-						onclick={() => (selectedCraneIndex = idx)}
-						title={img.label}
-					>
-						<img src={img.src} alt={img.label} class="crane-thumb-img" />
-						<div class="crane-thumb-info">
-							<span class="crane-thumb-idx">{idx === 0 ? '★ Cover' : `0${idx + 1}`}</span>
-							<span class="crane-thumb-name">{img.label}</span>
-						</div>
-					</button>
-				{/each}
-			</div>
 		</div>
 	</section>
 
-	<!-- Editorial Highlight Strip -->
-	<section class="quote-strip">
-		<div class="quote-container interactive">
-			<span class="quote-mark">“</span>
-			<p class="quote-text">{content.quote}</p>
-		</div>
-	</section>
+	<!-- Technical Engineering Caliper Divider -->
+	<EngineeringDivider label="DOMAINS // EMBEDDED_VISION" code="C20/ZIG" />
 
 	<!-- Core Domains of Expertise -->
 	<section class="section-block">
@@ -552,7 +480,10 @@
 		</div>
 	</section>
 
-	<!-- Recent Trajectory Preview -->
+	<!-- Technical Engineering Caliper Divider -->
+	<EngineeringDivider label="TRAJECTORY // INTERNSHIPS" code="2023-2026" />
+
+	<!-- Professional Experience & Internships Preview -->
 	<section class="section-block trajectory-section">
 		<div class="section-header">
 			<div class="header-split">
@@ -572,9 +503,14 @@
 		<div class="milestones-list">
 			{#each content.milestones as item}
 				<a href="/cv" class="milestone-item interactive">
-					<div class="milestone-time">{item.period}</div>
+					<div class="milestone-time-col">
+						<span class="milestone-time">{item.period}</span>
+						<span class="internship-badge">{item.type}</span>
+					</div>
 					<div class="milestone-content">
-						<div class="milestone-role">{item.role}</div>
+						<div class="milestone-role-row">
+							<span class="milestone-role">{item.role}</span>
+						</div>
 						<div class="milestone-company">{item.company}</div>
 						<div class="milestone-detail">{item.detail}</div>
 					</div>
@@ -587,6 +523,9 @@
 			{/each}
 		</div>
 	</section>
+
+	<!-- Technical Engineering Caliper Divider -->
+	<EngineeringDivider label="DISCUSS // CONNECT" code="MTL_QC" />
 
 	<!-- Call to Action Banner -->
 	<section class="cta-banner">
@@ -610,12 +549,12 @@
 	.landing {
 		display: flex;
 		flex-direction: column;
-		gap: 5rem;
+		gap: 3.5rem;
 	}
 
 	/* Hero Section */
 	.hero-section {
-		padding: 2rem 0 1rem;
+		padding: 1.5rem 0 0.5rem;
 	}
 
 	.hero-header {
@@ -809,17 +748,16 @@
 		height: 14px;
 	}
 
-	/* "Average Dev Setup" Feature Card */
+	/* "Average Dev Setup" Feature Card (Clean) */
 	.setup-card {
 		background: rgba(255, 255, 255, 0.8);
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
 		border: 1px solid var(--border-subtle);
 		border-radius: 4px;
-		padding: 1.5rem;
+		padding: 1.25rem;
 		display: flex;
 		flex-direction: column;
-		gap: 1.5rem;
 		box-shadow: 0 4px 20px -2px rgba(28, 25, 23, 0.04);
 		transition: backdrop-filter 0.3s ease, border-color 0.25s ease;
 	}
@@ -842,7 +780,7 @@
 	.setup-img {
 		width: 100%;
 		height: auto;
-		max-height: 540px;
+		max-height: 560px;
 		object-fit: cover;
 		display: block;
 		transition: transform 0.4s ease;
@@ -856,7 +794,7 @@
 		position: absolute;
 		bottom: 1rem;
 		left: 1rem;
-		background: rgba(28, 25, 23, 0.82);
+		background: rgba(28, 25, 23, 0.85);
 		backdrop-filter: blur(8px);
 		color: #ffffff;
 		padding: 0.35rem 0.75rem;
@@ -877,69 +815,16 @@
 		box-shadow: 0 0 6px #ef4444;
 	}
 
-	.setup-annotations-grid {
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		gap: 1rem;
-	}
-
-	.annotation-box {
-		background: rgba(250, 246, 240, 0.75);
-		border: 1px solid var(--border-subtle);
-		border-radius: 3px;
-		padding: 1rem 1.15rem;
-		display: flex;
-		flex-direction: column;
-		gap: 0.35rem;
-		transition: all 0.2s ease;
-	}
-
-	.annotation-box:hover {
-		background: #ffffff;
-		border-color: var(--accent-purple);
-		transform: translateY(-2px);
-	}
-
-	.annotation-header {
-		display: flex;
-		align-items: center;
-		gap: 0.45rem;
-	}
-
-	.annotation-bullet {
-		width: 5px;
-		height: 5px;
-		border-radius: 1px;
-		background: var(--accent-purple);
-		flex-shrink: 0;
-	}
-
-	.annotation-title {
-		font-family: var(--font-sans);
-		font-size: 0.84rem;
-		font-weight: 700;
-		color: var(--text-primary);
-		margin: 0;
-	}
-
-	.annotation-desc {
-		font-size: 0.8rem;
-		line-height: 1.5;
-		color: var(--text-secondary);
-		margin: 0;
-	}
-
-	/* Crane Undergrad Project Showcase */
+	/* Crane Undergrad Project Showcase (Clean) */
 	.crane-showcase-card {
 		background: rgba(255, 255, 255, 0.82);
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
 		border: 1px solid var(--border-subtle);
 		border-radius: 4px;
-		padding: 1.75rem;
+		padding: 1.5rem;
 		display: flex;
 		flex-direction: column;
-		gap: 1.5rem;
 		box-shadow: 0 4px 20px -2px rgba(28, 25, 23, 0.04);
 		transition: backdrop-filter 0.3s ease, border-color 0.25s ease;
 	}
@@ -959,7 +844,7 @@
 	.crane-image-stage {
 		position: relative;
 		width: 100%;
-		height: 480px;
+		height: 520px;
 		background: #181513;
 		border-radius: 3px;
 		overflow: hidden;
@@ -1012,14 +897,14 @@
 		gap: 0.4rem;
 		background: rgba(28, 25, 23, 0.85);
 		backdrop-filter: blur(8px);
-		padding: 0.25rem 0.5rem;
+		padding: 0.3rem 0.6rem;
 		border-radius: 3px;
 		border: 1px solid rgba(255, 255, 255, 0.15);
 	}
 
 	.crane-nav-btn {
-		width: 28px;
-		height: 28px;
+		width: 30px;
+		height: 30px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -1028,23 +913,25 @@
 		color: #ffffff;
 		cursor: pointer;
 		border-radius: 2px;
-		transition: background 0.2s ease;
+		transition: background 0.2s ease, transform 0.15s ease;
 	}
 
 	.crane-nav-btn:hover {
 		background: rgba(255, 255, 255, 0.2);
+		transform: scale(1.08);
 	}
 
 	.crane-nav-btn svg {
-		width: 14px;
-		height: 14px;
+		width: 15px;
+		height: 15px;
 	}
 
 	.crane-counter {
 		font-family: var(--font-mono);
-		font-size: 0.75rem;
+		font-size: 0.78rem;
 		color: #e5e5e5;
-		padding: 0 0.35rem;
+		padding: 0 0.45rem;
+		font-weight: 600;
 	}
 
 	.crane-caption-bar {
@@ -1065,117 +952,11 @@
 		color: var(--text-primary);
 	}
 
-	/* Thumbnail Strip */
-	.crane-thumbnail-strip {
-		display: grid;
-		grid-template-columns: repeat(5, 1fr);
-		gap: 0.75rem;
-	}
-
-	.crane-thumb-btn {
-		background: rgba(250, 246, 240, 0.75);
-		border: 1px solid var(--border-subtle);
-		border-radius: 3px;
-		padding: 0.5rem;
-		display: flex;
-		flex-direction: column;
-		gap: 0.45rem;
-		cursor: pointer;
-		text-align: left;
-		transition: all 0.2s ease;
-	}
-
-	.crane-thumb-btn:hover {
-		background: #ffffff;
-		border-color: var(--border-medium);
-		transform: translateY(-2px);
-	}
-
-	.crane-thumb-btn.selected {
-		background: #ffffff;
-		border-color: var(--accent-purple);
-		box-shadow: 0 0 0 1px var(--accent-purple);
-	}
-
-	.crane-thumb-img {
-		width: 100%;
-		height: 72px;
-		object-fit: cover;
-		border-radius: 2px;
-		display: block;
-		background: #181513;
-	}
-
-	.crane-thumb-info {
-		display: flex;
-		flex-direction: column;
-		gap: 0.1rem;
-		overflow: hidden;
-	}
-
-	.crane-thumb-idx {
-		font-family: var(--font-mono);
-		font-size: 0.68rem;
-		color: var(--accent-purple);
-		font-weight: 700;
-	}
-
-	.crane-thumb-name {
-		font-size: 0.74rem;
-		font-weight: 600;
-		color: var(--text-primary);
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-
-	/* Quote Strip */
-	.quote-strip {
-		padding: 1rem 0;
-	}
-
-	.quote-container {
-		background: rgba(255, 255, 255, 0.75);
-		backdrop-filter: blur(18px);
-		-webkit-backdrop-filter: blur(18px);
-		border: 1px solid var(--border-subtle);
-		border-left: 3px solid var(--accent-purple);
-		border-radius: 4px;
-		padding: 2rem 2.25rem;
-		position: relative;
-		transition: backdrop-filter 0.3s ease, border-color 0.2s ease;
-	}
-
-	.quote-container:hover {
-		backdrop-filter: blur(32px);
-		-webkit-backdrop-filter: blur(32px);
-		border-color: var(--border-medium);
-	}
-
-	.quote-mark {
-		font-family: var(--font-display);
-		font-size: 2.8rem;
-		color: var(--accent-purple);
-		line-height: 0.8;
-		opacity: 0.4;
-		display: block;
-		margin-bottom: 0.25rem;
-	}
-
-	.quote-text {
-		font-family: var(--font-display);
-		font-size: 1.45rem;
-		line-height: 1.4;
-		color: var(--text-primary);
-		font-style: italic;
-		margin: 0;
-	}
-
 	/* Section Blocks */
 	.section-block {
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
+		gap: 1.75rem;
 	}
 
 	.section-header {
@@ -1304,7 +1085,7 @@
 		font-weight: 500;
 	}
 
-	/* Trajectory */
+	/* Trajectory / Internships */
 	.header-split {
 		display: flex;
 		align-items: flex-end;
@@ -1337,15 +1118,15 @@
 	.milestones-list {
 		display: flex;
 		flex-direction: column;
-		gap: 0.65rem;
+		gap: 0.75rem;
 	}
 
 	.milestone-item {
 		display: grid;
-		grid-template-columns: 200px 1fr 30px;
+		grid-template-columns: 210px 1fr 30px;
 		align-items: center;
 		gap: 1.5rem;
-		padding: 1.25rem 1.6rem;
+		padding: 1.35rem 1.6rem;
 		background: rgba(255, 255, 255, 0.7);
 		backdrop-filter: blur(16px);
 		-webkit-backdrop-filter: blur(16px);
@@ -1365,26 +1146,53 @@
 		box-shadow: 0 4px 16px -2px rgba(28, 25, 23, 0.05);
 	}
 
+	.milestone-time-col {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+		align-items: flex-start;
+	}
+
 	.milestone-time {
 		font-family: var(--font-mono);
 		font-size: 0.78rem;
 		color: var(--text-tertiary);
 	}
 
+	.internship-badge {
+		font-family: var(--font-mono);
+		font-size: 0.68rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		padding: 0.15rem 0.55rem;
+		background: rgba(109, 40, 217, 0.08);
+		border: 1px solid rgba(109, 40, 217, 0.25);
+		border-radius: 2px;
+		color: var(--accent-purple);
+	}
+
 	.milestone-content {
 		display: flex;
 		flex-direction: column;
-		gap: 0.2rem;
+		gap: 0.25rem;
+	}
+
+	.milestone-role-row {
+		display: flex;
+		align-items: center;
+		gap: 0.65rem;
+		flex-wrap: wrap;
 	}
 
 	.milestone-role {
 		font-weight: 600;
-		font-size: 0.98rem;
+		font-size: 1rem;
 		color: var(--text-primary);
 	}
 
 	.milestone-company {
-		font-size: 0.86rem;
+		font-size: 0.88rem;
 		color: var(--accent-purple);
 		font-weight: 500;
 	}
@@ -1456,14 +1264,6 @@
 	}
 
 	@media (max-width: 900px) {
-		.setup-annotations-grid {
-			grid-template-columns: 1fr 1fr;
-		}
-
-		.crane-thumbnail-strip {
-			grid-template-columns: repeat(3, 1fr);
-		}
-
 		.crane-image-stage {
 			height: 380px;
 		}
@@ -1474,7 +1274,7 @@
 
 		.milestone-item {
 			grid-template-columns: 1fr;
-			gap: 0.65rem;
+			gap: 0.75rem;
 		}
 
 		.milestone-arrow {
@@ -1487,14 +1287,6 @@
 	}
 
 	@media (max-width: 600px) {
-		.setup-annotations-grid {
-			grid-template-columns: 1fr;
-		}
-
-		.crane-thumbnail-strip {
-			grid-template-columns: repeat(2, 1fr);
-		}
-
 		.crane-image-stage {
 			height: 300px;
 		}

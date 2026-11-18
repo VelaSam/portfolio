@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { i18n } from '$lib/i18n.svelte';
+	import EngineeringDivider from '$lib/components/EngineeringDivider.svelte';
 
 	const content = $derived({
 		en: {
@@ -395,6 +396,8 @@
 		</div>
 	</section>
 
+	<EngineeringDivider label="EXPERIENCE // STAGES" code="0x02" />
+
 	<!-- 02 Expérience Professionnelle -->
 	<section class="cv-section">
 		<div class="section-title-wrap">
@@ -407,7 +410,10 @@
 				<article class="timeline-item interactive">
 					<div class="item-header">
 						<div class="item-title-col">
-							<h3 class="item-company">{exp.company}</h3>
+							<div class="company-badge-line">
+								<h3 class="item-company">{exp.company}</h3>
+								<span class="internship-chip">{exp.type}</span>
+							</div>
 							<div class="item-role">{exp.role}</div>
 						</div>
 						<div class="item-meta-col">
@@ -431,6 +437,8 @@
 			{/each}
 		</div>
 	</section>
+
+	<EngineeringDivider label="PROJECTS // ROBOTICS_EMBEDDED" code="0x03" />
 
 	<!-- 03 Projets Techniques & Ingénierie -->
 	<section class="cv-section">
@@ -463,6 +471,8 @@
 			{/each}
 		</div>
 	</section>
+
+	<EngineeringDivider label="ACADEMIA // ETS_MONTREAL" code="B.ING" />
 
 	<!-- 04 Formation & Implication -->
 	<section class="cv-section">
@@ -762,7 +772,27 @@
 	.item-title-col {
 		display: flex;
 		flex-direction: column;
-		gap: 0.25rem;
+		gap: 0.35rem;
+	}
+
+	.company-badge-line {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+	}
+
+	.internship-chip {
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		padding: 0.15rem 0.55rem;
+		background: rgba(109, 40, 217, 0.08);
+		border: 1px solid rgba(109, 40, 217, 0.25);
+		border-radius: 2px;
+		color: var(--accent-purple);
 	}
 
 	.item-company {
