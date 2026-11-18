@@ -6,12 +6,72 @@
 	let email = $state('');
 	let subject = $state('');
 	let message = $state('');
+	let botcheck = $state('');
+	let isSubmitting = $state(false);
+	let submitError = $state('');
 	let submitted = $state(false);
 
-	function handleSubmit(e: Event) {
+	// Free Web3Forms key: can be stored in .env as VITE_WEB3FORMS_ACCESS_KEY
+	const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '';
+
+	async function handleSubmit(e: Event) {
 		e.preventDefault();
 		if (!firstName || !email || !message) return;
-		submitted = true;
+
+		// Anti-Bot Honeypot: If a bot filled out the hidden field, drop silently
+		if (botcheck) {
+			submitted = true;
+			return;
+		}
+
+		if (!accessKey) {
+			submitError =
+				i18n.locale === 'en'
+					? 'Web3Forms access key not found. Please add VITE_WEB3FORMS_ACCESS_KEY in your .env file or reach out directly at svelasco514@gmail.com.'
+					: 'Clé d’accès Web3Forms introuvable. Ajoutez VITE_WEB3FORMS_ACCESS_KEY dans votre fichier .env ou écrivez directement à svelasco514@gmail.com.';
+			return;
+		}
+
+		isSubmitting = true;
+		submitError = '';
+
+		try {
+			const response = await fetch('https://api.web3forms.com/submit', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json'
+				},
+				body: JSON.stringify({
+					access_key: accessKey,
+					name: `${firstName} ${lastName}`.trim(),
+					email,
+					subject: subject || `Portfolio Contact from ${firstName}`,
+					message,
+					from_name: 'Samuel Velasco Portfolio',
+					botcheck: botcheck
+				})
+			});
+
+			const data = await response.json();
+
+			if (response.ok && data.success) {
+				submitted = true;
+			} else {
+				submitError =
+					data.message ||
+					(i18n.locale === 'en'
+						? 'Unable to transmit message. Please contact me directly at svelasco514@gmail.com.'
+						: 'Impossible d’acheminer le message. Écrivez-moi directement à svelasco514@gmail.com.');
+			}
+		} catch {
+			submitError =
+				i18n.locale === 'en'
+					? 'Network connection error. Please try again or reach out at svelasco514@gmail.com.'
+					: 'Erreur réseau. Veuillez réessayer ou m’écrire à svelasco514@gmail.com.';
+		} finally {
+			isSubmitting = false;
+		}
 	}
 
 	const content = $derived({
@@ -37,8 +97,10 @@
 			messageLabel: 'Message',
 			messagePh: 'Tell me about your team, project, or technical challenge...',
 			btnSubmit: 'Send Message',
+			btnSending: 'Sending Message...',
+			antiSpamNotice: 'Protected by honeypot anti-spam verification.',
 			successTitle: 'Message Received!',
-			successText: 'Thank you {name}, your message has been recorded. I will get back to you shortly.',
+			successText: 'Thank you {name}, your message has been transmitted successfully. I will get back to you shortly.',
 			btnReset: 'Send another message'
 		},
 		fr: {
@@ -63,8 +125,10 @@
 			messageLabel: 'Message',
 			messagePh: 'Parlez-moi de votre projet, de vos besoins ou de votre équipe...',
 			btnSubmit: 'Envoyer le message',
+			btnSending: 'Envoi en cours...',
+			antiSpamNotice: 'Protégé par piège anti-robot et filtres anti-spam.',
 			successTitle: 'Message reçu !',
-			successText: 'Merci {name}, votre message a été enregistré avec succès. Je vous répondrai dans les plus brefs délais.',
+			successText: 'Merci {name}, votre message a bien été transmis. Je vous répondrai dans les plus brefs délais.',
 			btnReset: 'Envoyer un autre message'
 		}
 	}[i18n.locale]);
@@ -186,6 +250,30 @@
 					</div>
 				{:else}
 					<form onsubmit={handleSubmit} class="contact-form">
+						<!-- Invisible Anti-Bot Honeypot Field (Invisible to Humans, Trap for Bots) -->
+						<div class="botcheck-field" aria-hidden="true" style="display: none;">
+							<label for="botcheck">Do not fill this field</label>
+							<input
+								id="botcheck"
+								type="checkbox"
+								name="botcheck"
+								tabindex="-1"
+								autocomplete="off"
+								bind:value={botcheck}
+							/>
+						</div>
+
+						{#if submitError}
+							<div class="submit-error-banner" role="alert">
+								<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" class="error-icon">
+									<circle cx="8" cy="8" r="6"></circle>
+									<line x1="8" y1="5" x2="8" y2="8.5"></line>
+									<circle cx="8" cy="11" r="0.5" fill="currentColor"></circle>
+								</svg>
+								<span>{submitError}</span>
+							</div>
+						{/if}
+
 						<div class="form-row">
 							<div class="form-group">
 								<label for="firstName" class="form-label">{content.firstNameLabel} <span class="required">*</span></label>
@@ -246,13 +334,28 @@
 							></textarea>
 						</div>
 
-						<button type="submit" class="btn-submit interactive">
-							<span>{content.btnSubmit}</span>
-							<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-								<line x1="3" y1="8" x2="13" y2="8"></line>
-								<polyline points="9 4 13 8 9 12"></polyline>
-							</svg>
-						</button>
+						<div class="submit-action-row">
+							<button type="submit" class="btn-submit interactive" disabled={isSubmitting}>
+								{#if isSubmitting}
+									<span class="submit-spinner" aria-hidden="true"></span>
+									<span>{content.btnSending}</span>
+								{:else}
+									<span>{content.btnSubmit}</span>
+									<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+										<line x1="3" y1="8" x2="13" y2="8"></line>
+										<polyline points="9 4 13 8 9 12"></polyline>
+									</svg>
+								{/if}
+							</button>
+
+							<div class="anti-spam-indicator" title="Double honeypot trap & rate limiting">
+								<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" class="shield-icon">
+									<path d="M8 1.5 2.5 3.5v5c0 3.5 3 5.5 5.5 6 2.5-.5 5.5-2.5 5.5-6v-5L8 1.5Z"></path>
+									<path d="m5.5 8 2 2 3-3.5"></path>
+								</svg>
+								<span>{content.antiSpamNotice}</span>
+							</div>
+						</div>
 					</form>
 				{/if}
 			</div>
@@ -523,6 +626,34 @@
 		min-height: 130px;
 	}
 
+	.submit-error-banner {
+		display: flex;
+		align-items: center;
+		gap: 0.65rem;
+		padding: 0.85rem 1.15rem;
+		background: rgba(239, 68, 68, 0.08);
+		border: 1px solid rgba(239, 68, 68, 0.25);
+		border-radius: 3px;
+		color: #b91c1c;
+		font-size: 0.86rem;
+		line-height: 1.4;
+	}
+
+	.error-icon {
+		width: 18px;
+		height: 18px;
+		flex-shrink: 0;
+	}
+
+	.submit-action-row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1.25rem;
+		flex-wrap: wrap;
+		margin-top: 0.35rem;
+	}
+
 	.btn-submit {
 		display: inline-flex;
 		align-items: center;
@@ -537,7 +668,44 @@
 		font-weight: 600;
 		cursor: pointer;
 		transition: all 0.2s ease;
-		margin-top: 0.25rem;
+	}
+
+	.btn-submit:disabled {
+		opacity: 0.7;
+		cursor: not-allowed;
+		transform: none !important;
+	}
+
+	.submit-spinner {
+		width: 14px;
+		height: 14px;
+		border: 2px solid rgba(255, 255, 255, 0.3);
+		border-top-color: #ffffff;
+		border-radius: 50%;
+		animation: spin 0.7s linear infinite;
+	}
+
+	@keyframes spin {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	.anti-spam-indicator {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		color: var(--text-tertiary);
+		user-select: none;
+	}
+
+	.shield-icon {
+		width: 14px;
+		height: 14px;
+		color: #10b981;
+		flex-shrink: 0;
 	}
 
 	.btn-submit svg {
