@@ -41,9 +41,9 @@
 		const normals: [number, number, number][] = [];
 		for (const s1 of [-1, 1]) {
 			for (const s2 of [-1, 1]) {
-				normals.push([0, s1, s2 * PHI]);
-				normals.push([s1, s2 * PHI, 0]);
-				normals.push([s2 * PHI, 0, s1]);
+				normals.push([0, s1 * PHI, s2]);
+				normals.push([s2, 0, s1 * PHI]);
+				normals.push([s1 * PHI, s2, 0]);
 			}
 		}
 		return normals.map((nRaw) => {
@@ -206,9 +206,9 @@
 				const alpha = isHovering ? 0.32 + shade * 0.25 : 0.92;
 
 				const proj = (v: [number, number, number]) => {
-					const persp = 3.5 / (3.5 - v[2]);
-					const px = 16 + v[0] * 10.2 * persp;
-					const py = 16 + v[1] * 10.2 * persp;
+					const persp = 5.5 / (5.5 - v[2]);
+					const px = 16 + v[0] * 11.2 * persp;
+					const py = 16 + v[1] * 11.2 * persp;
 					return `${px.toFixed(1)},${py.toFixed(1)}`;
 				};
 
