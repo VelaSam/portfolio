@@ -11,29 +11,82 @@
 	let isVisible = $state(false);
 	let isTouch = $state(false);
 
-	// 3D Octahedron state
+	// 3D Dodecahedron state (20 vertices, 12 regular pentagon faces)
 	type FaceRender = { points: string; fill: string; z: number };
-	let octaFaces = $state<FaceRender[]>([]);
+	let dodecaFaces = $state<FaceRender[]>([]);
 
-	const OCTA_VERTS: [number, number, number][] = [
-		[0, -1, 0], // top
-		[0, 1, 0],  // bottom
-		[1, 0, 0],  // right
-		[0, 0, 1],  // front
-		[-1, 0, 0], // left
-		[0, 0, -1]  // back
-	];
+	const PHI = (1 + Math.sqrt(5)) / 2;
+	const INV_PHI = 1 / PHI;
+	const NORM = Math.sqrt(3);
 
-	const OCTA_FACES: [number, number, number][] = [
-		[0, 2, 3],
-		[0, 5, 2],
-		[0, 4, 5],
-		[0, 3, 4],
-		[1, 3, 2],
-		[1, 2, 5],
-		[1, 5, 4],
-		[1, 4, 3]
-	];
+	const DODECA_VERTS: [number, number, number][] = (() => {
+		const pts: [number, number, number][] = [];
+		for (const sx of [-1, 1]) {
+			for (const sy of [-1, 1]) {
+				for (const sz of [-1, 1]) pts.push([sx / NORM, sy / NORM, sz / NORM]);
+			}
+		}
+		for (const s1 of [-1, 1]) {
+			for (const s2 of [-1, 1]) {
+				pts.push([0, (s1 * INV_PHI) / NORM, (s2 * PHI) / NORM]);
+				pts.push([(s1 * INV_PHI) / NORM, (s2 * PHI) / NORM, 0]);
+				pts.push([(s2 * PHI) / NORM, 0, (s1 * INV_PHI) / NORM]);
+			}
+		}
+		return pts;
+	})();
+
+	// Generate 12 outward-facing CCW pentagons from dual icosahedron face normals
+	const DODECA_FACES: number[][] = (() => {
+		const normals: [number, number, number][] = [];
+		for (const s1 of [-1, 1]) {
+			for (const s2 of [-1, 1]) {
+				normals.push([0, s1, s2 * PHI]);
+				normals.push([s1, s2 * PHI, 0]);
+				normals.push([s2 * PHI, 0, s1]);
+			}
+		}
+		return normals.map((nRaw) => {
+			const nLen = Math.hypot(nRaw[0], nRaw[1], nRaw[2]);
+			const n: [number, number, number] = [nRaw[0] / nLen, nRaw[1] / nLen, nRaw[2] / nLen];
+
+			// Pick top 5 vertices closest to normal n
+			const ranked = DODECA_VERTS.map((v, idx) => ({
+				idx,
+				v,
+				d: v[0] * n[0] + v[1] * n[1] + v[2] * n[2]
+			}))
+				.sort((a, b) => b.d - a.d)
+				.slice(0, 5);
+
+			// Orthonormal tangent basis (u, w) with u x w = n
+			const up: [number, number, number] = Math.abs(n[1]) < 0.9 ? [0, 1, 0] : [1, 0, 0];
+			const ux = up[1] * n[2] - up[2] * n[1];
+			const uy = up[2] * n[0] - up[0] * n[2];
+			const uz = up[0] * n[1] - up[1] * n[0];
+			const uLen = Math.hypot(ux, uy, uz);
+			const u: [number, number, number] = [ux / uLen, uy / uLen, uz / uLen];
+			const w: [number, number, number] = [
+				n[1] * u[2] - n[2] * u[1],
+				n[2] * u[0] - n[0] * u[2],
+				n[0] * u[1] - n[1] * u[0]
+			];
+
+			ranked.sort((a, b) => {
+				const angA = Math.atan2(
+					a.v[0] * w[0] + a.v[1] * w[1] + a.v[2] * w[2],
+					a.v[0] * u[0] + a.v[1] * u[1] + a.v[2] * u[2]
+				);
+				const angB = Math.atan2(
+					b.v[0] * w[0] + b.v[1] * w[1] + b.v[2] * w[2],
+					b.v[0] * u[0] + b.v[1] * u[1] + b.v[2] * u[2]
+				);
+				return angA - angB;
+			});
+
+			return ranked.map((r) => r.idx);
+		});
+	})();
 
 	const LIGHT_DIR: [number, number, number] = [0.42, -0.58, 0.7];
 
@@ -93,7 +146,7 @@
 		document.addEventListener('mouseleave', handleMouseLeave);
 		document.addEventListener('mouseenter', handleMouseEnter);
 
-		// Physics & 3D octahedron rotation loop
+		// Physics & 3D dodecahedron rotation loop
 		let angleY = 0.4;
 		let time = 0;
 
@@ -102,16 +155,16 @@
 			followerX += (mouseX - followerX) * ease;
 			followerY += (mouseY - followerY) * ease;
 
-			time += 0.025;
-			angleY += isHovering ? 0.05 : 0.022;
-			const angleX = 0.42 + Math.sin(time) * 0.22;
+			time += 0.022;
+			angleY += isHovering ? 0.045 : 0.018;
+			const angleX = 0.38 + Math.sin(time) * 0.25;
 
 			const cosY = Math.cos(angleY);
 			const sinY = Math.sin(angleY);
 			const cosX = Math.cos(angleX);
 			const sinX = Math.sin(angleX);
 
-			const transformed = OCTA_VERTS.map(([x, y, z]): [number, number, number] => {
+			const transformed = DODECA_VERTS.map(([x, y, z]): [number, number, number] => {
 				// Rotate Y
 				const x1 = x * cosY + z * sinY;
 				const z1 = -x * sinY + z * cosY;
@@ -122,12 +175,12 @@
 			});
 
 			const faces: FaceRender[] = [];
-			for (const [i0, i1, i2] of OCTA_FACES) {
-				const v0 = transformed[i0];
-				const v1 = transformed[i1];
-				const v2 = transformed[i2];
+			for (const idxs of DODECA_FACES) {
+				const v0 = transformed[idxs[0]];
+				const v1 = transformed[idxs[1]];
+				const v2 = transformed[idxs[2]];
 
-				// Edge vectors for normal
+				// Edge vectors for outward normal
 				const ux = v1[0] - v0[0];
 				const uy = v1[1] - v0[1];
 				const uz = v1[2] - v0[2];
@@ -150,24 +203,26 @@
 				const r = Math.round(76 + shade * 78);   // 76..154
 				const g = Math.round(29 + shade * 74);   // 29..103
 				const b = Math.round(149 + shade * 96);  // 149..245
-				const alpha = isHovering ? 0.35 + shade * 0.25 : 0.92;
+				const alpha = isHovering ? 0.32 + shade * 0.25 : 0.92;
 
 				const proj = (v: [number, number, number]) => {
-					const persp = 3.4 / (3.4 - v[2]);
-					const px = 16 + v[0] * 10.5 * persp;
-					const py = 16 + v[1] * 10.5 * persp;
+					const persp = 3.5 / (3.5 - v[2]);
+					const px = 16 + v[0] * 10.2 * persp;
+					const py = 16 + v[1] * 10.2 * persp;
 					return `${px.toFixed(1)},${py.toFixed(1)}`;
 				};
 
+				const zAvg = idxs.reduce((sum, idx) => sum + transformed[idx][2], 0) / idxs.length;
+
 				faces.push({
-					points: `${proj(v0)} ${proj(v1)} ${proj(v2)}`,
+					points: idxs.map((idx) => proj(transformed[idx])).join(' '),
 					fill: `rgba(${r}, ${g}, ${b}, ${alpha.toFixed(2)})`,
-					z: (v0[2] + v1[2] + v2[2]) / 3
+					z: zAvg
 				});
 			}
 
 			faces.sort((a, b) => a.z - b.z);
-			octaFaces = faces;
+			dodecaFaces = faces;
 
 			rafId = requestAnimationFrame(loop);
 		};
@@ -199,7 +254,7 @@
 		<div class="pixel-grain"></div>
 	</div>
 
-	<!-- Sharp 3D purple octahedron cursor -->
+	<!-- Sharp 3D purple dodecahedron cursor -->
 	<div
 		class="cursor-octa"
 		class:visible={isVisible}
@@ -208,7 +263,7 @@
 		style="transform: translate3d({mouseX}px, {mouseY}px, 0);"
 	>
 		<svg viewBox="0 0 32 32" class="octa-svg" aria-hidden="true">
-			{#each octaFaces as face}
+			{#each dodecaFaces as face}
 				<polygon
 					points={face.points}
 					fill={face.fill}

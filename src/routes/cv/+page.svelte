@@ -50,7 +50,13 @@
 						'Developed and optimized computer vision pipelines for facial tracking and signal processing (rPPG).',
 						'Integrated and validated edge computing solutions on compact single-board devices.'
 					],
-					tags: ['Python', 'OpenCV', 'rPPG', 'Raspberry Pi', 'Signal Processing']
+					tags: ['Python', 'OpenCV', 'rPPG', 'Raspberry Pi', 'Signal Processing'],
+					externalCard: {
+						title: 'NRC VitalSeer — Official Publication',
+						subtitle: 'Contactless video-based vital signs monitoring research (NRC Canada)',
+						url: 'https://nrc-publications.canada.ca/eng/view/object/?id=87a9660d-1b51-4760-bad0-5afee3606302',
+						domain: 'nrc-publications.canada.ca'
+					}
 				},
 				{
 					company: 'HumanWare',
@@ -63,7 +69,13 @@
 						'Integrated optical character recognition (OCR) and text-to-speech (TTS) workflows with voice activity detection.',
 						'Designed ergonomic audio and tactile navigation features tailored for visually impaired users.'
 					],
-					tags: ['C# .NET', 'Avalonia', 'Prodigi', 'OCR / TTS', 'Accessibility']
+					tags: ['C# .NET', 'Avalonia', 'Prodigi', 'OCR / TTS', 'Accessibility'],
+					externalCard: {
+						title: 'HumanWare Prodigi — Official Product Page',
+						subtitle: 'Low-vision magnification, OCR, and TTS assistive software suite',
+						url: 'https://store.humanware.com/hca/prodigi-for-windows-advanced-low-vision-software.html',
+						domain: 'store.humanware.com'
+					}
 				},
 				{
 					company: 'Evident Scientific (formerly Olympus)',
@@ -75,7 +87,13 @@
 						'Worked on the OmniScan / UNIS phased-array ultrasound software ecosystem, bridging a C++ Data Processing Unit (DPU) backend with a modern web application.',
 						'Developed diagnostic and monitoring workflows to turn high-frequency ultrasonic telemetry streams into responsive, real-time field tools.'
 					],
-					tags: ['C++', 'DPU', 'Angular', 'Ultrasound / NDT', 'Web App']
+					tags: ['C++', 'DPU', 'Angular', 'Ultrasound / NDT', 'Web App'],
+					externalCard: {
+						title: 'Evident OmniScan — Official Product Line',
+						subtitle: 'Phased-array ultrasonic flaw detection instruments & UNIS platform',
+						url: 'https://ims.evidentscientific.com/en/products/phased-array/omniscan-x4',
+						domain: 'ims.evidentscientific.com'
+					}
 				},
 				{
 					company: 'Evident Scientific (formerly Olympus)',
@@ -192,7 +210,13 @@
 						'Développement et optimisation de pipelines de vision par ordinateur pour le suivi facial et le traitement de signal (rPPG).',
 						'Intégration et validation de solutions d’inférence edge sur ordinateurs monocartes compacts.'
 					],
-					tags: ['Python', 'OpenCV', 'rPPG', 'Raspberry Pi', 'Signal Processing']
+					tags: ['Python', 'OpenCV', 'rPPG', 'Raspberry Pi', 'Signal Processing'],
+					externalCard: {
+						title: 'CNRC VitalSeer — Publication officielle',
+						subtitle: 'Suivi sans contact des signes vitaux par caméra (CNRC Canada)',
+						url: 'https://nrc-publications.canada.ca/eng/view/object/?id=87a9660d-1b51-4760-bad0-5afee3606302',
+						domain: 'nrc-publications.canada.ca'
+					}
 				},
 				{
 					company: 'HumanWare',
@@ -205,7 +229,13 @@
 						'Intégration de flux OCR et de synthèse vocale (TTS) couplés à la détection d’activité vocale.',
 						'Conception de modules ergonomiques de navigation audio adaptés aux personnes ayant une limitation visuelle.'
 					],
-					tags: ['C# .NET', 'Avalonia', 'Prodigi', 'OCR / TTS', 'Accessibilité']
+					tags: ['C# .NET', 'Avalonia', 'Prodigi', 'OCR / TTS', 'Accessibilité'],
+					externalCard: {
+						title: 'HumanWare Prodigi — Page produit officielle',
+						subtitle: 'Suite logicielle d’accessibilité, loupe numérique, OCR et synthèse vocale',
+						url: 'https://store.humanware.com/hca/prodigi-for-windows-advanced-low-vision-software.html',
+						domain: 'store.humanware.com'
+					}
 				},
 				{
 					company: 'Evident Scientific (anciennement Olympus)',
@@ -217,7 +247,13 @@
 						'Contribution à l’écosystème logiciel d’inspection par ultrasons OmniScan / UNIS, reliant un moteur C++ Data Processing Unit (DPU) à une application web.',
 						'Développement d’outils de diagnostic et de supervision transformant les flux ultrasonores haute fréquence en interfaces temps réel claires pour les équipes terrain.'
 					],
-					tags: ['C++', 'DPU', 'Angular', 'Ultrasons / CND', 'Application Web']
+					tags: ['C++', 'DPU', 'Angular', 'Ultrasons / CND', 'Application Web'],
+					externalCard: {
+						title: 'Evident OmniScan — Gamme de produits officielle',
+						subtitle: 'Appareils de contrôle non destructif par ultrasons multiéléments & plateforme UNIS',
+						url: 'https://ims.evidentscientific.com/en/products/phased-array/omniscan-x4',
+						domain: 'ims.evidentscientific.com'
+					}
 				},
 				{
 					company: 'Evident Scientific (anciennement Olympus)',
@@ -392,6 +428,24 @@
 							<span class="tag-crumb">{tag}</span>
 						{/each}
 					</div>
+
+					{#if exp.externalCard}
+						<a
+							href={exp.externalCard.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="external-ref-card no-print interactive"
+						>
+							<div class="ext-card-body">
+								<span class="ext-card-title">{exp.externalCard.title}</span>
+								<span class="ext-card-sub">{exp.externalCard.subtitle}</span>
+							</div>
+							<div class="ext-card-meta">
+								<span class="ext-card-domain">{exp.externalCard.domain}</span>
+								<span class="ext-card-arrow">↗</span>
+							</div>
+						</a>
+					{/if}
 				</article>
 			{/each}
 		</div>
@@ -774,6 +828,59 @@
 		border: 1px solid var(--border-subtle);
 		border-radius: 2px; /* Sharp */
 		color: var(--text-secondary);
+	}
+
+	.external-ref-card {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		margin-top: 0.25rem;
+		padding: 0.8rem 1rem;
+		background: rgba(250, 246, 240, 0.72);
+		border: 1px solid var(--border-subtle);
+		border-radius: 3px;
+		text-decoration: none;
+		color: inherit;
+		transition: all 0.2s ease;
+	}
+
+	.external-ref-card:hover {
+		background: #ffffff;
+		border-color: var(--accent-purple);
+		transform: translateX(3px);
+	}
+
+	.ext-card-body {
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+	}
+
+	.ext-card-title {
+		font-size: 0.84rem;
+		font-weight: 600;
+		color: var(--text-primary);
+	}
+
+	.ext-card-sub {
+		font-size: 0.76rem;
+		color: var(--text-secondary);
+	}
+
+	.ext-card-meta {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		flex-shrink: 0;
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		color: var(--accent-purple);
+	}
+
+	.ext-card-arrow {
+		font-size: 0.9rem;
+		font-weight: 700;
 	}
 
 	/* Education */
