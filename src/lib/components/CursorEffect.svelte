@@ -11,6 +11,32 @@
 	let isVisible = $state(false);
 	let isTouch = $state(false);
 
+	// 3D Octahedron state
+	type FaceRender = { points: string; fill: string; z: number };
+	let octaFaces = $state<FaceRender[]>([]);
+
+	const OCTA_VERTS: [number, number, number][] = [
+		[0, -1, 0], // top
+		[0, 1, 0],  // bottom
+		[1, 0, 0],  // right
+		[0, 0, 1],  // front
+		[-1, 0, 0], // left
+		[0, 0, -1]  // back
+	];
+
+	const OCTA_FACES: [number, number, number][] = [
+		[0, 2, 3],
+		[0, 5, 2],
+		[0, 4, 5],
+		[0, 3, 4],
+		[1, 3, 2],
+		[1, 2, 5],
+		[1, 5, 4],
+		[1, 4, 3]
+	];
+
+	const LIGHT_DIR: [number, number, number] = [0.42, -0.58, 0.7];
+
 	onMount(() => {
 		if (window.matchMedia('(pointer: coarse)').matches) {
 			isTouch = true;
@@ -67,11 +93,82 @@
 		document.addEventListener('mouseleave', handleMouseLeave);
 		document.addEventListener('mouseenter', handleMouseEnter);
 
-		// Physics loop: Much slower, ominous heavy drag
+		// Physics & 3D octahedron rotation loop
+		let angleY = 0.4;
+		let time = 0;
+
 		const loop = () => {
 			const ease = 0.04; // Very slow and ominous
 			followerX += (mouseX - followerX) * ease;
 			followerY += (mouseY - followerY) * ease;
+
+			time += 0.025;
+			angleY += isHovering ? 0.05 : 0.022;
+			const angleX = 0.42 + Math.sin(time) * 0.22;
+
+			const cosY = Math.cos(angleY);
+			const sinY = Math.sin(angleY);
+			const cosX = Math.cos(angleX);
+			const sinX = Math.sin(angleX);
+
+			const transformed = OCTA_VERTS.map(([x, y, z]): [number, number, number] => {
+				// Rotate Y
+				const x1 = x * cosY + z * sinY;
+				const z1 = -x * sinY + z * cosY;
+				// Rotate X
+				const y2 = y * cosX - z1 * sinX;
+				const z2 = y * sinX + z1 * cosX;
+				return [x1, y2, z2];
+			});
+
+			const faces: FaceRender[] = [];
+			for (const [i0, i1, i2] of OCTA_FACES) {
+				const v0 = transformed[i0];
+				const v1 = transformed[i1];
+				const v2 = transformed[i2];
+
+				// Edge vectors for normal
+				const ux = v1[0] - v0[0];
+				const uy = v1[1] - v0[1];
+				const uz = v1[2] - v0[2];
+				const vx = v2[0] - v0[0];
+				const vy = v2[1] - v0[1];
+				const vz = v2[2] - v0[2];
+
+				const nx = uy * vz - uz * vy;
+				const ny = uz * vx - ux * vz;
+				const nz = ux * vy - uy * vx;
+
+				// Back-face culling
+				if (nz <= 0) continue;
+
+				const nLen = Math.hypot(nx, ny, nz) || 1;
+				const dot = (nx * LIGHT_DIR[0] + ny * LIGHT_DIR[1] + nz * LIGHT_DIR[2]) / nLen;
+				const shade = Math.max(0.15, Math.min(1, (dot + 1) * 0.5));
+
+				// Purple facet palette
+				const r = Math.round(76 + shade * 78);   // 76..154
+				const g = Math.round(29 + shade * 74);   // 29..103
+				const b = Math.round(149 + shade * 96);  // 149..245
+				const alpha = isHovering ? 0.35 + shade * 0.25 : 0.92;
+
+				const proj = (v: [number, number, number]) => {
+					const persp = 3.4 / (3.4 - v[2]);
+					const px = 16 + v[0] * 10.5 * persp;
+					const py = 16 + v[1] * 10.5 * persp;
+					return `${px.toFixed(1)},${py.toFixed(1)}`;
+				};
+
+				faces.push({
+					points: `${proj(v0)} ${proj(v1)} ${proj(v2)}`,
+					fill: `rgba(${r}, ${g}, ${b}, ${alpha.toFixed(2)})`,
+					z: (v0[2] + v1[2] + v2[2]) / 3
+				});
+			}
+
+			faces.sort((a, b) => a.z - b.z);
+			octaFaces = faces;
+
 			rafId = requestAnimationFrame(loop);
 		};
 
@@ -102,14 +199,26 @@
 		<div class="pixel-grain"></div>
 	</div>
 
-	<!-- Sharp precision cursor point -->
+	<!-- Sharp 3D purple octahedron cursor -->
 	<div
-		class="cursor-dot"
+		class="cursor-octa"
 		class:visible={isVisible}
 		class:hovering={isHovering}
 		class:clicking={isClicking}
 		style="transform: translate3d({mouseX}px, {mouseY}px, 0);"
-	></div>
+	>
+		<svg viewBox="0 0 32 32" class="octa-svg" aria-hidden="true">
+			{#each octaFaces as face}
+				<polygon
+					points={face.points}
+					fill={face.fill}
+					stroke="rgba(255, 255, 255, 0.45)"
+					stroke-width="0.65"
+					stroke-linejoin="round"
+				/>
+			{/each}
+		</svg>
+	</div>
 {/if}
 
 <style>
@@ -187,48 +296,52 @@
 		filter: blur(22px);
 	}
 
-	.cursor-dot {
+	.cursor-octa {
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 6px;
-		height: 6px;
-		margin-top: -3px;
-		margin-left: -3px;
-		border-radius: 1px; /* Sharper geometric designer dot */
-		background: #6d28d9;
+		width: 20px;
+		height: 20px;
+		margin-top: -10px;
+		margin-left: -10px;
 		pointer-events: none;
 		z-index: 9999;
 		opacity: 0;
-		box-shadow: 0 0 8px rgba(109, 40, 217, 0.3);
-		transition: opacity 0.2s ease, width 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-			height 0.2s cubic-bezier(0.16, 1, 0.3, 1), margin 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-			background-color 0.2s ease, border-radius 0.2s ease;
+		filter: drop-shadow(0 2px 6px rgba(109, 40, 217, 0.35));
+		transition:
+			opacity 0.2s ease,
+			width 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+			height 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+			margin 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+			scale 0.12s ease;
 		will-change: transform;
 	}
 
-	.cursor-dot.visible {
+	.octa-svg {
+		width: 100%;
+		height: 100%;
+		display: block;
+		overflow: visible;
+	}
+
+	.cursor-octa.visible {
 		opacity: 1;
 	}
 
-	.cursor-dot.hovering {
-		width: 24px;
-		height: 24px;
-		margin-top: -12px;
-		margin-left: -12px;
-		background: rgba(109, 40, 217, 0.08);
-		border: 1px solid rgba(109, 40, 217, 0.7);
-		border-radius: 3px; /* Sharp corners on hover */
-		backdrop-filter: blur(2px);
+	.cursor-octa.hovering {
+		width: 28px;
+		height: 28px;
+		margin-top: -14px;
+		margin-left: -14px;
 	}
 
-	.cursor-dot.clicking {
-		transform: scale(0.7);
+	.cursor-octa.clicking {
+		scale: 0.75;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
 		.ominous-aura,
-		.cursor-dot {
+		.cursor-octa {
 			display: none !important;
 		}
 	}
