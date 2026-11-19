@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { i18n } from '$lib/i18n.svelte';
+	import EngineeringDivider from '$lib/components/EngineeringDivider.svelte';
 
 	const content = $derived({
 		en: {
@@ -195,7 +196,10 @@
 
 	<!-- Editorial Case Study Rows -->
 	<div class="projects-ledger">
-		{#each content.projects.filter((p) => !p.hidden) as proj}
+		{#each content.projects.filter((p) => !p.hidden) as proj, idx}
+			{#if idx > 0}
+				<EngineeringDivider label={`0x0${idx + 1}`} />
+			{/if}
 			<article class="project-study">
 				<aside class="study-rail">
 					<span class="study-idx">{proj.idx}</span>
@@ -357,8 +361,7 @@
 		display: grid;
 		grid-template-columns: 260px 1fr;
 		gap: 3.5rem;
-		padding: 3rem 0;
-		border-bottom: 1px solid var(--border-medium);
+		padding: 2.25rem 0;
 		align-items: start;
 	}
 
