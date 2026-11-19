@@ -23,13 +23,13 @@
 					hardwareGallery: [
 						{
 							src: '/starling-2-max.png',
-							label: 'Fig. 01a — Aerial Platform: ModalAI Starling 2 Max',
-							specs: 'VOXL 2 (Qualcomm QRB5165, 15 TOPS NPU, PX4) • OnSemi AR0144 stereo + Sony IMX412 cameras • 5G Sierra Wireless EM9291'
+							label: 'Fig. 01a — ModalAI Starling 2 Max',
+							specs: 'VOXL 2 • PX4 • 5G'
 						},
 						{
 							src: '/waveshare-ugv-rover.jpg',
-							label: 'Fig. 01b — Ground Platform: Waveshare UGV Rover',
-							specs: 'Nvidia Jetson Orin Nano (Ubuntu 22.04, ROS 2 Humble) • ESP32 motor/encoder sub-controller (JSON over UART) • LDLiDAR & pan-tilt camera'
+							label: 'Fig. 01b — Waveshare UGV Rover',
+							specs: 'Jetson Orin Nano • ESP32 • LiDAR'
 						}
 					]
 				},
@@ -106,13 +106,13 @@
 					hardwareGallery: [
 						{
 							src: '/starling-2-max.png',
-							label: 'Fig. 01a — Plateforme aérienne : ModalAI Starling 2 Max',
-							specs: 'VOXL 2 (Qualcomm QRB5165, NPU 15 TOPS, PX4) • Caméras stéréo OnSemi AR0144 + Sony IMX412 • Modem 5G Sierra Wireless EM9291'
+							label: 'Fig. 01a — ModalAI Starling 2 Max',
+							specs: 'VOXL 2 • PX4 • 5G'
 						},
 						{
 							src: '/waveshare-ugv-rover.jpg',
-							label: 'Fig. 01b — Plateforme terrestre : Waveshare UGV Rover',
-							specs: 'Nvidia Jetson Orin Nano (Ubuntu 22.04, ROS 2 Humble) • Sous-contrôleur ESP32 moteurs/encodeurs (JSON sur UART) • LDLiDAR & caméra pan-tilt'
+							label: 'Fig. 01b — Waveshare UGV Rover',
+							specs: 'Jetson Orin Nano • ESP32 • LiDAR'
 						}
 					]
 				},
