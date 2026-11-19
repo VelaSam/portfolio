@@ -107,6 +107,16 @@
 		scrollbar-gutter: stable;
 	}
 
+	:global(::view-transition-old(root)),
+	:global(::view-transition-new(root)) {
+		animation: none;
+		mix-blend-mode: normal;
+	}
+
+	:global(::view-transition-new(root)) {
+		z-index: 9999;
+	}
+
 	:global(body) {
 		margin: 0;
 		padding: 0;

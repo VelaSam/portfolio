@@ -28,6 +28,41 @@
 	function closeMobileMenu() {
 		mobileMenuOpen = false;
 	}
+
+	async function handleThemeToggle(e: MouseEvent) {
+		const btn = e.currentTarget as HTMLElement;
+		const rect = btn.getBoundingClientRect();
+		const vw = window.innerWidth;
+		const vh = window.innerHeight;
+
+		if (
+			!document.startViewTransition ||
+			window.matchMedia('(prefers-reduced-motion: reduce)').matches
+		) {
+			theme.toggle();
+			return;
+		}
+
+		const transition = document.startViewTransition(() => {
+			theme.toggle();
+		});
+
+		await transition.ready;
+
+		const startInset = `inset(${rect.top}px ${vw - rect.right}px ${vh - rect.bottom}px ${rect.left}px round 4px)`;
+		const endInset = `inset(0px 0px 0px 0px round 0px)`;
+
+		document.documentElement.animate(
+			{
+				clipPath: [startInset, endInset]
+			},
+			{
+				duration: 550,
+				easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+				pseudoElement: '::view-transition-new(root)'
+			}
+		);
+	}
 </script>
 
 <!-- Full-bleed transparent borderless header spanning 100% viewport width -->
@@ -108,7 +143,7 @@
 <aside class="screen-theme-dock no-print" aria-label="Theme selection">
 	<button
 		class="floating-theme-pill interactive"
-		onclick={() => theme.toggle()}
+		onclick={handleThemeToggle}
 		title={theme.current === 'light'
 			? (i18n.locale === 'en' ? 'Switch to dark mode' : 'Passer en mode sombre')
 			: (i18n.locale === 'en' ? 'Switch to light mode' : 'Passer en mode clair')}
