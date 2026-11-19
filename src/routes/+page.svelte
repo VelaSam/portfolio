@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { i18n } from '$lib/i18n.svelte';
+	import EngineeringDivider from '$lib/components/EngineeringDivider.svelte';
 
 	const content = $derived({
 		en: {
@@ -243,6 +244,8 @@
 		</div>
 	</section>
 
+	<EngineeringDivider label="0x01" />
+
 	<!-- 01 / The Bench (Real uncropped photo + dry humor) -->
 	<section class="editorial-section">
 		<div class="section-rail">
@@ -264,6 +267,8 @@
 			</figure>
 		</div>
 	</section>
+
+	<EngineeringDivider label="0x02" />
 
 	<!-- 02 / Trajectory (Scannable typographic ledger) -->
 	<section class="editorial-section">
@@ -298,7 +303,9 @@
 		</div>
 	</section>
 
-	<!-- 04 / Selected Work (Editorial project index) -->
+	<EngineeringDivider label="0x03" />
+
+	<!-- 03 / Selected Work (Editorial project index) -->
 	<section class="editorial-section">
 		<div class="section-rail">
 			<span class="rail-index">{content.projectsNum}</span>
@@ -560,8 +567,7 @@
 		display: grid;
 		grid-template-columns: 280px 1fr;
 		gap: 3.5rem;
-		padding-top: 2.5rem;
-		border-top: 1px solid var(--border-medium);
+		padding-top: 0.5rem;
 		align-items: start;
 	}
 
