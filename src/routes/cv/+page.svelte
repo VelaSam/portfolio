@@ -736,7 +736,7 @@
 	}
 
 	.external-ref-card:hover {
-		background: #ffffff;
+		background: var(--bg-surface);
 		border-color: var(--accent-purple);
 	}
 

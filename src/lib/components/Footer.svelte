@@ -81,7 +81,7 @@
 	.footer {
 		margin-top: 6rem;
 		border-top: 1px solid var(--border-subtle);
-		background: rgba(246, 241, 233, 0.7);
+		background: var(--bg-surface-soft);
 		padding: 4rem 1.5rem 3rem;
 	}
 
@@ -193,7 +193,7 @@
 	}
 
 	.easter-egg-btn {
-		background: rgba(255, 255, 255, 0.6);
+		background: var(--bg-surface);
 		border: 1px solid var(--border-subtle);
 		border-radius: 3px; /* Sharp corners */
 		padding: 0.25rem 0.55rem;
@@ -209,7 +209,7 @@
 	}
 
 	.easter-egg-btn:hover {
-		background: #ffffff;
+		background: var(--bg-surface-elevated);
 		border-color: var(--border-medium);
 		color: var(--text-primary);
 		transform: translateY(-1px);

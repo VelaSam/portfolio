@@ -80,6 +80,28 @@
 		--font-mono: 'JetBrains Mono', monospace;
 	}
 
+	:global(html[data-theme='dark']) {
+		--bg-canvas: #141210;
+		--bg-surface: #1c1917;
+		--bg-surface-elevated: #24201d;
+		--bg-surface-soft: #1f1b18;
+		--bg-card: #1c1917;
+
+		--text-primary: #f4efe6;
+		--text-secondary: #c2b9ad;
+		--text-tertiary: #8f867b;
+		--text-muted: #6e665d;
+
+		--border-subtle: #2b2622;
+		--border-medium: #3d3630;
+		--border-focus: #a78bfa;
+
+		--accent-purple: #a78bfa;
+		--accent-purple-light: #c4b5fd;
+		--accent-purple-dark: #7c3aed;
+		--accent-purple-tint: rgba(167, 139, 250, 0.12);
+	}
+
 	:global(html) {
 		background-color: var(--bg-canvas);
 		scrollbar-gutter: stable;

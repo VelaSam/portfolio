@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { i18n } from '$lib/i18n.svelte';
+	import { theme } from '$lib/theme.svelte';
 
 	const navItems = $derived(
 		i18n.locale === 'en'
@@ -102,6 +103,38 @@
 		</div>
 	{/if}
 </header>
+
+<!-- Tactile Screen-Attached Floating Theme Toggle (Fixed to Bottom-Left of Viewport) -->
+<aside class="screen-theme-dock no-print" aria-label="Theme selection">
+	<button
+		class="floating-theme-pill interactive"
+		onclick={() => theme.toggle()}
+		title={theme.current === 'light'
+			? (i18n.locale === 'en' ? 'Switch to dark mode' : 'Passer en mode sombre')
+			: (i18n.locale === 'en' ? 'Switch to light mode' : 'Passer en mode clair')}
+		aria-label="Toggle light and dark mode"
+	>
+		{#if theme.current === 'light'}
+			<!-- Moon icon (click for dark) -->
+			<svg viewBox="0 0 24 24" class="theme-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+				<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+			</svg>
+		{:else}
+			<!-- Sun icon (click for light) -->
+			<svg viewBox="0 0 24 24" class="theme-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+				<circle cx="12" cy="12" r="4" />
+				<path d="M12 2v2" />
+				<path d="M12 20v2" />
+				<path d="m4.93 4.93 1.41 1.41" />
+				<path d="m17.66 17.66 1.41 1.41" />
+				<path d="M2 12h2" />
+				<path d="M20 12h2" />
+				<path d="m6.34 17.66-1.41 1.41" />
+				<path d="m19.07 4.93-1.41 1.41" />
+			</svg>
+		{/if}
+	</button>
+</aside>
 
 <!-- Tactile Screen-Attached Floating Language Toggle (Fixed to Bottom-Right of Viewport) -->
 <aside class="screen-lang-dock no-print" aria-label="Language selection">
@@ -251,6 +284,51 @@
 		border-radius: 1px;
 	}
 
+	/* Screen-Attached Floating Theme Dock (Bottom Left) */
+	.screen-theme-dock {
+		position: fixed;
+		bottom: 2rem;
+		left: 2.5rem;
+		z-index: 9999;
+		pointer-events: auto;
+	}
+
+	.floating-theme-pill {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 36px;
+		background: var(--bg-surface);
+		backdrop-filter: blur(18px);
+		-webkit-backdrop-filter: blur(18px);
+		border: 1px solid var(--border-medium);
+		border-radius: 4px;
+		color: var(--text-primary);
+		cursor: pointer;
+		box-shadow: 0 4px 18px -2px rgba(0, 0, 0, 0.14);
+		transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+		user-select: none;
+	}
+
+	.floating-theme-pill:hover {
+		background: var(--bg-surface-elevated);
+		border-color: var(--accent-purple);
+		color: var(--accent-purple);
+		transform: translateY(-2px);
+		box-shadow: 0 8px 24px -4px rgba(109, 40, 217, 0.2);
+	}
+
+	.floating-theme-pill:active {
+		transform: translateY(0) scale(0.97);
+	}
+
+	.theme-icon {
+		width: 17px;
+		height: 17px;
+		display: block;
+	}
+
 	/* Screen-Attached Floating Language Dock (Bottom Right) */
 	.screen-lang-dock {
 		position: fixed;
@@ -265,7 +343,7 @@
 		align-items: center;
 		gap: 0.45rem;
 		padding: 0.55rem 0.95rem;
-		background: rgba(255, 255, 255, 0.88);
+		background: var(--bg-surface);
 		backdrop-filter: blur(18px);
 		-webkit-backdrop-filter: blur(18px);
 		border: 1px solid var(--border-medium);
@@ -276,17 +354,17 @@
 		font-weight: 600;
 		letter-spacing: 0.04em;
 		cursor: pointer;
-		box-shadow: 0 4px 18px -2px rgba(28, 25, 23, 0.08), 0 2px 6px -1px rgba(28, 25, 23, 0.04);
+		box-shadow: 0 4px 18px -2px rgba(0, 0, 0, 0.14);
 		transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 		user-select: none;
 	}
 
 	.floating-lang-pill:hover {
-		background: #ffffff;
+		background: var(--bg-surface-elevated);
 		border-color: var(--accent-purple);
 		color: var(--accent-purple);
 		transform: translateY(-2px);
-		box-shadow: 0 8px 24px -4px rgba(109, 40, 217, 0.16), 0 3px 8px -2px rgba(28, 25, 23, 0.06);
+		box-shadow: 0 8px 24px -4px rgba(109, 40, 217, 0.2);
 	}
 
 	.floating-lang-pill:active {
@@ -349,7 +427,7 @@
 
 	.mobile-drawer {
 		margin-top: 1rem;
-		background: rgba(255, 255, 255, 0.98);
+		background: var(--bg-surface);
 		backdrop-filter: blur(20px);
 		border: 1px solid var(--border-subtle);
 		border-radius: 4px;
@@ -401,6 +479,11 @@
 			gap: 1.35rem;
 		}
 
+		.screen-theme-dock {
+			bottom: 1.5rem;
+			left: 1.75rem;
+		}
+
 		.screen-lang-dock {
 			bottom: 1.5rem;
 			right: 1.75rem;
@@ -420,6 +503,11 @@
 			display: flex;
 		}
 
+		.screen-theme-dock {
+			bottom: 1.25rem;
+			left: 1.25rem;
+		}
+
 		.screen-lang-dock {
 			bottom: 1.25rem;
 			right: 1.25rem;
@@ -428,6 +516,7 @@
 
 	/* Print Cleanliness */
 	@media print {
+		.screen-theme-dock,
 		.screen-lang-dock,
 		.mobile-toggle {
 			display: none !important;

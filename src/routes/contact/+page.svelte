@@ -419,7 +419,7 @@
 
 	/* Right Form */
 	.contact-form-wrap {
-		background: #ffffff;
+		background: var(--bg-surface);
 		border: 1px solid var(--border-medium);
 		padding: 2.25rem;
 	}
@@ -466,7 +466,7 @@
 
 	.form-input:focus,
 	.form-textarea:focus {
-		background: #ffffff;
+		background: var(--bg-surface);
 		border-color: var(--accent-purple);
 	}
 
@@ -559,7 +559,7 @@
 	}
 
 	.btn-reset:hover {
-		background: #ffffff;
+		background: var(--bg-surface);
 		border-color: var(--text-primary);
 	}
 
