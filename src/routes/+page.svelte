@@ -192,9 +192,9 @@
 			<div class="hero-bio-col">
 				<p class="hero-bio">
 					{#if i18n.locale === 'en'}
-						Hi! I’m <strong>Samuel Velasco</strong>. Software developer, software engineering degree from <span class="ink-underline">ÉTS</span>. Developing solid fullstack apps, clean backend systems and scalable web solutions is my day to day plus much relevant experience in <span class="ink-underline">system performance</span>, <span class="ink-underline">embedded microcontrollers</span>, and <span class="ink-underline">autonomous robotics</span>. This allows me to have a more intuitive understanding of how the software operates from the metal up.
+						Hi! My name is <strong>Sam</strong>. I’m a Software Engineering graduate from <span class="ink-underline">ÉTS</span> focused on building clean, performant backend and fullstack applications. I also have a strong interest in <span class="ink-underline">embedded systems</span>, <span class="ink-underline">autonomous robotics</span>, and <span class="ink-underline">systems programming</span>—I think it’s important to have a good understanding of both the low-level and high-level sides of an application.
 					{:else}
-						Salut ! Je suis <strong>Samuel Velasco</strong>. Développeur logiciel, diplômé en génie logiciel à l’<span class="ink-underline">ÉTS</span>. Développer des applications fullstack solides, des systèmes backend propres et des solutions web scalables est mon quotidien, avec en plus une expérience pertinente en <span class="ink-underline">performance système</span>, <span class="ink-underline">microcontrôleurs embarqués</span> et <span class="ink-underline">robotique autonome</span>. Cela me permet d’avoir une compréhension plus intuitive du fonctionnement du logiciel, de la couche matérielle jusqu’au sommet.
+						Salut ! Je m’appelle <strong>Sam</strong>. Je suis diplômé en génie logiciel à l’<span class="ink-underline">ÉTS</span> et je me concentre sur le développement d’applications backend et fullstack propres et performantes. Je m’intéresse aussi particulièrement aux <span class="ink-underline">systèmes embarqués</span>, à la <span class="ink-underline">robotique autonome</span> et à la <span class="ink-underline">programmation système</span> — je trouve important de bien comprendre autant le bas niveau que le haut niveau d’une application.
 					{/if}
 				</p>
 

@@ -5,7 +5,6 @@
 		en: {
 			kicker: 'SELECTED WORK — CODE, ARCHITECTURE & PROTOTYPES',
 			title: 'Engineering & Software Projects',
-			subtitle: 'Autonomous search-and-rescue robotics, distributed Go microservices, and electromechanical builds.',
 			btnContact: 'Get in Touch →',
 			viewRepo: 'GitHub Repository ↗',
 			colophonLead: 'Want to see my internship history and technical stack?',
@@ -89,7 +88,6 @@
 		fr: {
 			kicker: 'TRAVAUX CHOISIS — CODE, ARCHITECTURE & PROTOTYPES',
 			title: 'Projets d’Ingénierie & Logiciel',
-			subtitle: 'Robotique autonome de recherche et sauvetage, microservices Go distribués et prototypes électromécaniques.',
 			btnContact: 'Entrer en contact →',
 			viewRepo: 'Dépôt GitHub ↗',
 			colophonLead: 'Vous souhaitez consulter mes stages et mes compétences techniques ?',
@@ -188,7 +186,6 @@
 		<div class="projects-title-row">
 			<div>
 				<h1 class="projects-title">{content.title}</h1>
-				<p class="projects-subtitle">{content.subtitle}</p>
 			</div>
 			<a href="/contact" class="header-cta interactive">
 				{content.btnContact}
@@ -330,15 +327,8 @@
 		font-weight: 400;
 		line-height: 1.05;
 		color: var(--text-primary);
-		margin: 0 0 0.6rem;
-		letter-spacing: -0.02em;
-	}
-
-	.projects-subtitle {
-		font-size: 1rem;
-		color: var(--text-secondary);
 		margin: 0;
-		max-width: 660px;
+		letter-spacing: -0.02em;
 	}
 
 	.header-cta {
