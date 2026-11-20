@@ -193,9 +193,9 @@
 			<div class="hero-bio-col">
 				<p class="hero-bio">
 					{#if i18n.locale === 'en'}
-						Hi! My name is <strong>Sam</strong>. I’m a Software Engineering graduate from <span class="ink-underline">ÉTS</span> focused on building clean, performant backend and fullstack applications. I also have a strong interest in <span class="ink-underline">embedded systems</span>, <span class="ink-underline">autonomous robotics</span>, and <span class="ink-underline">systems programming</span>—I think it’s important to have a good understanding of both the low-level and high-level sides of an application.
+						Hi! My name is <strong>Sam</strong>. I’m a Software Engineering graduate from <span class="ink-underline">ÉTS</span> focused on building clean, performant backend and fullstack applications. I also have a strong interest in <span class="ink-underline">embedded systems</span>, <span class="ink-underline">autonomous robotics</span>, and <span class="ink-underline">systems programming</span>. I think it’s important to have a good understanding of both the low-level and high-level sides of an application.
 					{:else}
-						Salut ! Je m’appelle <strong>Sam</strong>. Je suis diplômé en génie logiciel à l’<span class="ink-underline">ÉTS</span> et je me concentre sur le développement d’applications backend et fullstack propres et performantes. Je m’intéresse aussi particulièrement aux <span class="ink-underline">systèmes embarqués</span>, à la <span class="ink-underline">robotique autonome</span> et à la <span class="ink-underline">programmation système</span> — je trouve important de bien comprendre autant le bas niveau que le haut niveau d’une application.
+						Salut ! Je m’appelle <strong>Sam</strong>. Je suis diplômé en génie logiciel à l’<span class="ink-underline">ÉTS</span> et je me concentre sur le développement d’applications backend et fullstack propres et performantes. Je m’intéresse aussi particulièrement aux <span class="ink-underline">systèmes embarqués</span>, à la <span class="ink-underline">robotique autonome</span> et à la <span class="ink-underline">programmation système</span>. Je trouve important de bien comprendre autant le bas niveau que le haut niveau d’une application.
 					{/if}
 				</p>
 
