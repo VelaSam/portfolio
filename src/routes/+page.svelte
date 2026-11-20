@@ -81,7 +81,7 @@
 					link: '/projects'
 				}
 			],
-			colophonLead: 'Looking for a software developer who understands the stack from web APIs down to the metal?',
+			colophonLead: 'Interested in working together, or just want to talk code?',
 			colophonLink: 'Send a message'
 		},
 		fr: {
@@ -162,7 +162,7 @@
 					link: '/projects'
 				}
 			],
-			colophonLead: 'Vous cherchez un développeur logiciel à l’aise autant sur une architecture web/backend qu’au niveau système ?',
+			colophonLead: 'Intéressé à travailler ensemble, ou juste envie de parler code ?',
 			colophonLink: 'Écrire un message'
 		}
 	}[i18n.locale]);
